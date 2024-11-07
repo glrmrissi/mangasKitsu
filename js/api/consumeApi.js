@@ -63,3 +63,58 @@ const fetchMangasSliders = async () => {
 }
 
 fetchMangasSliders()
+
+const mangaContainer = document.getElementById("manga-container");
+const paginationContainer = document.getElementById("pagination");
+const pageSize = 16; // 4x4 grid
+let currentPage = 1;
+const totalPages = 10; // Define o total de páginas (pode ser dinâmico)
+
+async function fetchMangas(page) {
+    const offset = (page - 1) * pageSize;
+    try {
+        const response = await fetch(`https://kitsu.io/api/edge/manga?page[limit]=${pageSize}&page[offset]=${offset}`);
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error("Erro ao carregar mangás:", error);
+        return [];
+    }
+}
+
+function renderMangas(mangas) {
+    mangaContainer.innerHTML = ""; // Limpa o container
+    mangas.forEach((manga) => {
+        const mangaItem = document.createElement("div");
+        mangaItem.classList.add("grid");
+        mangaItem.innerHTML = `
+            <img src="${manga.attributes.posterImage.small}" alt="${manga.attributes.canonicalTitle}">
+        `;
+        mangaContainer.appendChild(mangaItem);
+    });
+}
+
+function renderPagination() {
+    paginationContainer.innerHTML = ""; // Limpa a paginação
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement("button");
+        button.innerText = i;
+        button.classList.add(i === currentPage ? "active" : "");
+        button.addEventListener("click", () => {
+            currentPage = i;
+            loadPage(currentPage);
+        });
+        paginationContainer.appendChild(button);
+    }
+}
+
+async function loadPage(page) {
+    const mangas = await fetchMangas(page);
+    renderMangas(mangas);
+    renderPagination();
+}
+
+
+// Carrega a primeira página ao iniciar
+loadPage(currentPage);

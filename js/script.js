@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-
     let count = 1;
     const totalSlides = 6;
 
