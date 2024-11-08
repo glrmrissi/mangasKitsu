@@ -11,33 +11,9 @@ const fetchMangasSliders = async () => {
             <h1 class="hover-effect">Mais lidos:</h1>
         </div>
             <section id="my" class="slider">
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <input type="radio" name="radio-btn" id="radio5">
-                <input type="radio" name="radio-btn" id="radio6">
                 <article class="slider-car first">
                     <!-- Essa bosta carrega as imagens do slider -->
-                </article>
-        
-                <div class="auto_pass">
-                    <div class="auto_btn auto_btn1"></div>
-                    <div class="auto_btn auto_btn2"></div>
-                    <div class="auto_btn auto_btn3"></div>
-                    <div class="auto_btn auto_btn4"></div>
-                </div>
-                <div class="manual_pass">
-                    <label for="radio1" class="manual_btn manual_btn_1"></label>
-                    <label for="radio2" class="manual_btn manual_btn_2"></label>
-                    <label for="radio3" class="manual_btn manual_btn_3"></label>
-                    <label for="radio4" class="manual_btn manual_btn_4"></label>
-                    <label for="radio5" class="manual_btn manual_btn_5"></label>
-                    <label for="radio6" class="manual_btn manual_btn_6"></label>
-                    <label for="radio7" class="manual_btn manual_btn_7"></label>
-                    <label for="radio8" class="manual_btn manual_btn_8"></label>
-                </div>
-            
+                </article>    
             </section>
         </aside>
             `
@@ -51,9 +27,22 @@ const fetchMangasSliders = async () => {
             divSliderCard.className = "imgs-slider"
             sliderCard.appendChild(divSliderCard)
 
-            const imgElementSlider = document.createElement("img");
-            imgElementSlider.src = manga.attributes.posterImage.medium
+            const sliderItems = Array.from(sliderCard.children);
 
+            const imgElementSlider = document.createElement("img");
+            const overlayImg = document.createElement("span");
+
+            overlayImg.className = "overlay"
+            
+            let countOverlay = 0;
+
+            for (var i = 0; i < sliderItems.length; i++) {
+                countOverlay++;
+            }
+            overlayImg.textContent = countOverlay;
+            imgElementSlider.src = manga.attributes.posterImage.large
+
+            divSliderCard.appendChild(overlayImg)
             divSliderCard.appendChild(imgElementSlider)
         });
     })
@@ -68,7 +57,7 @@ const mangaContainer = document.getElementById("manga-container");
 const paginationContainer = document.getElementById("pagination");
 const pageSize = 16; // 4x4 grid
 let currentPage = 1;
-const totalPages = 10; // Define o total de páginas (pode ser dinâmico, porém, não sei como faz?!?!)
+const totalPages = 20; // Define o total de páginas (pode ser dinâmico, porém, não sei como faz?!?!
 
 async function fetchMangas(page) {
     const offset = (page - 1) * pageSize;
@@ -84,6 +73,7 @@ async function fetchMangas(page) {
 }
 
 function renderMangas(mangas) {
+    showLoading()
     mangaContainer.innerHTML = ""; // Limpa o container
     mangas.forEach((manga) => {
         const mangaItem = document.createElement("div");
@@ -92,6 +82,7 @@ function renderMangas(mangas) {
             <img src="${manga.attributes.posterImage.medium}" alt="${manga.attributes.canonicalTitle}">
         `;
         mangaContainer.appendChild(mangaItem);
+        hideLoading()
     });
 }
 
@@ -101,9 +92,22 @@ function renderPagination() {
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement("button");
         button.innerText = i;
+
+        if (i === currentPage) {
+            button.classList.add("active");
+        }
+
         button.addEventListener("click", () => {
+            showLoading()
+            window.scrollTo(0, 600)
             currentPage = i;
             loadPage(currentPage);
+            document.querySelectorAll(".pagination button").forEach(btn => {
+                btn.classList.remove("active");
+                hideLoading()
+            });
+    
+            button.classList.add("active");
         });
         paginationContainer.appendChild(button);
     }
@@ -113,7 +117,6 @@ async function loadPage(page) {
     const mangas = await fetchMangas(page);
     renderMangas(mangas);
     renderPagination();
-    window.scrollTo(0, 600)
 }
 
 loadPage(currentPage);
