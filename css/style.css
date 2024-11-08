@@ -1,3 +1,4 @@
+@import url(../css/medias/mobile.css);
 @import url(../css/animations/animations.css);
 
 * {
@@ -6,17 +7,31 @@
     box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+    width: 3px;
+    background-color: #202020;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #ff7070;
+    border-radius: 8px;  
+}
+
 body {
     position: relative;
     background-color: #181818;
     color: #fff;
     font-family: sans-serif;
-    background-image: 
-    url(../imgs/back.jpg);
-    background-position:top;
+    background-image:
+        url(../imgs/back.jpg);
+    background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
+}
+
+body.loadingCursor {
+    cursor: progress;
 }
 
 .loading {
@@ -29,7 +44,7 @@ body {
     color: white;
     filter: brightness(500%);
 }
-  
+
 .header {
     position: fixed;
     display: flex;
@@ -74,6 +89,7 @@ body {
     word-break: break-all;
     flex-wrap: wrap;
     cursor: pointer;
+    user-select: none;
 }
 
 .title-realeased {
@@ -86,6 +102,7 @@ body {
     word-break: break-all;
     flex-wrap: wrap;
     cursor: pointer;
+    user-select: none;
 }
 
 .hover-effect {
@@ -98,14 +115,13 @@ body {
     text-decoration: none;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(
-    to right,
-    #ca3737,
-    #ca3737 50%,
-    #fff 50%);
+    background-image: linear-gradient(to right,
+            #ca3737,
+            #ca3737 50%,
+            #fff 50%);
     background-size: 200% 100%;
     background-position: -100%;
-    z-index:1;
+    z-index: 1;
     transition: all 0.3s;
 }
 
@@ -118,20 +134,21 @@ body {
     height: 3px;
     border-radius: 6px;
     transform-origin: right;
-    background:#ca3737;
-    transition:transform 0.3s, ease-in-out 0.3s;
+    background: #ca3737;
+    transition: transform 0.3s, ease-in-out 0.3s;
     transform: scaleX(0);
-    z-index:0;
+    z-index: 0;
 }
 
-.hover-effect:hover::after{
+.hover-effect:hover::after {
     color: #fff;
     width: 100%;
     transform-origin: right;
-    transition:transform 0.3s;
-    
+    transition: transform 0.3s;
+
     transform: scaleX(1);
 }
+
 .hover-effect:hover {
     letter-spacing: 1px;
     color: #b985b9;
@@ -143,27 +160,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 51px;
+    width: 100%;
     border-radius: 50%;
-    padding: 1px;
-    border: solid 2px #fff;
-    transition: 0.2s linear;
-    filter: hue-rotate(0deg);
-    animation: redHueShift 3s infinite;
-}
-
-.profile-icon:hover {
-    border: solid 2px #ca3737;
-    transform: scale(0.9);
+    padding: 4.5vh;
 }
 
 .profile-icon img {
     border-radius: 50%;
-    display: block; 
+    display: block;
     cursor: pointer;
     user-select: none;
+    transition: linear 0.2s;
 }
 
+.profile-icon img:hover {
+    transform: scale(0.9);
+}
 .main-container {
     padding: 5% 3% 5% 10%;
 }
@@ -171,8 +183,9 @@ body {
 .slider-container {
     padding-top: 10vh;
     overflow: hidden;
-    position: relative;   
+    position: relative;
 }
+
 .limited-overflow {
     width: 100%;
     overflow: hidden;
@@ -212,7 +225,7 @@ body {
     position: absolute;
     display: flex;
     padding: 1vh;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: 600;
     left: 0;
 }
@@ -242,7 +255,7 @@ input {
 
 .others-imgs {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding-top: 10vh;
 }
 
@@ -253,11 +266,11 @@ input {
 
 .grid-launcher {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     place-items: center;
     width: 100%;
     height: 100%;
-    gap: 15px;
+    gap: 20px;
     padding: 2vh;
     border-radius: 5px;
     overflow: hidden;
@@ -269,11 +282,62 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    padding: 2vh;
+}
+
+.grid .overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #181818;
+    font-weight: 600;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.grid:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    display: inline-block;
+    padding: 1vh;
+    color: #ca3737;
+    font-size: 1.1em;
+    width: 100%;
+    height: 100%;
+    text-overflow: ellipsis;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.text-overlay p {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 500;
+    width: 100%;
 }
 
 .grid img {
-    width: 80%;
-    border-radius: 3px;
+    width: 100%;
+    border-radius: 4px;
     height: auto;
     image-rendering: auto;
 }
@@ -285,7 +349,7 @@ input {
     transition: transform 0.3s, filter 0.3s;
 }
 
-.grid::after{
+.grid::after {
     content: '';
     position: absolute;
     top: 0;
@@ -304,7 +368,7 @@ input {
 
 .pagination button {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     text-align: center;
     padding: 5px 10px;
@@ -327,3 +391,17 @@ input {
     background-color: #ff7070;
     color: #fff;
 }
+
+@media (max-width: 600px) {
+    .grid-launcher {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
