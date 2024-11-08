@@ -16,6 +16,7 @@ body {
     background-position:top;
     background-size: contain;
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
 }
 
 .header {
@@ -262,44 +263,45 @@ input {
     padding-top: 10vh;
 }
 
-.grid-launcher {
+.flex-container {
     display: flex;
     flex-direction: column;
 }
 
-.grid {
+.grid-launcher {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 100%;
     gap: 10px;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-
-.grid-item {
-    border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
-    background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.grid-item img {
-    width: 100%;
+.grid img {
+    width: 80%;
     height: auto;
+    cursor: pointer;
 }
 
 .pagination {
     display: flex;
+    justify-content: end;
     gap: 5px;
 }
 
 .pagination button {
     padding: 5px 10px;
+    border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
     border: 1px solid #ddd;
     background-color: #fff;
+}
+
+.pagination button:hover {
+    background-color: #ca3737;
 }
 
 .pagination button.active {
