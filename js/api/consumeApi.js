@@ -56,7 +56,7 @@ const mangaContainer = document.getElementById("manga-container");
 const paginationContainer = document.getElementById("pagination");
 const pageSize = 20; // 4x4 grid
 let currentPage = 1;
-let totalPages = 1; // Define o total de páginas (pode ser dinâmico, porém, não sei como faz?!?!
+let totalPages = 1; // Define o total de páginas, agora está dinâmico
 let visiblePages = 10
 async function fetchMangas(page) {
     const offset = (page - 1) * pageSize;
@@ -123,7 +123,7 @@ function renderPagination() {
     paginationContainer.innerHTML = "";
 
     const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
-    const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+    const endPage = Math.min(totalPages, startPage + visiblePages + 1);
 
      for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");

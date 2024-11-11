@@ -1,1 +1,0 @@
-// Descontinuado a porra do slider
