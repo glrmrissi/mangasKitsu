@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 730px) {
     .grid-launcher {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -10,6 +10,7 @@
         overflow: hidden;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
   }
 
   /* JAJA ARRUMO ISSO AQ, CALMA AI */

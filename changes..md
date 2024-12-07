@@ -1,0 +1,1 @@
+Particionar as pastas do jeito correto e que faça sentido no consumo da api, utilizando routes etc, talvez transcrever em TYpeScript... Vou tentar fazer isso, vai ser complicado, mas vamos ver 

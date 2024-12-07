@@ -60,7 +60,8 @@ body.loadingCursor {
     justify-content: space-between;
     align-items: center;
     width: 7%;
-    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
     background-color: var(--background-main);
     z-index: 999;
 }
@@ -70,6 +71,7 @@ body.loadingCursor {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 100%;
     padding: 1vh 0;
 }
@@ -165,19 +167,23 @@ body.loadingCursor {
 }
 
 .profile-icon {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
+    height: auto;
+    padding: 3.50dvh;
     border-radius: 50%;
-    padding: 4.5vh;
 }
 
 .profile-icon img {
     border-radius: 50%;
-    display: block;
+    display: flex;
+    padding: 1vh;
+    width: 100%;
     cursor: pointer;
     user-select: none;
+    object-fit: cover;
     transition: linear 0.2s;
 }
 
@@ -185,8 +191,15 @@ body.loadingCursor {
     transform: scale(0.9);
 }
 
+.hidden {
+    display: none;
+}
+
 .main-container {
     padding: 5% 3% 5% 10%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .slider-container {
@@ -203,7 +216,7 @@ body.loadingCursor {
 .slider {
     display: flex;
     flex-wrap: wrap;
-    width: 400%;
+    width: 100%;
     overflow: hidden;
     position: relative;
     border-radius: 2px;
@@ -212,7 +225,7 @@ body.loadingCursor {
 
 .slider-car {
     display: flex;
-    width: 25%;
+    width: 100%;
     height: 35vh;
     background-color: var(--tertiary-font-color);
     overflow: hidden;
@@ -260,7 +273,6 @@ body.loadingCursor {
 input {
     display: none;
 }
-
 
 .others-imgs {
     width: 100%;
