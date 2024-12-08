@@ -58,7 +58,7 @@ const pageSize = 20; // 4x4 grid
 let currentPage = 1;
 let totalPages = 1; // Define o total de páginas, agora está dinâmico
 let visiblePages = 10
-async function fetchMangas(page) {
+async function fetchMangas(page) { // Paginação
     const offset = (page - 1) * pageSize;
     showLoading()
 
@@ -85,7 +85,7 @@ async function fetchMangas(page) {
     }
 }
 
-function renderMangas(mangas) {
+function renderMangas(mangas) { // Este está renderizando os mangás ok ok ok 
     mangaContainer.innerHTML = "";
 
     mangas.forEach((manga) => {
@@ -105,10 +105,10 @@ function renderMangas(mangas) {
         const title = document.createElement("h4");
 
         const synopsis = document.createElement("p")
-        
+
         title.textContent = manga.attributes.canonicalTitle;
         synopsis.textContent = manga.attributes.synopsis;
-        
+
         textOverlay.appendChild(title);
         textOverlay.appendChild(synopsis)
         overlay.appendChild(textOverlay);
@@ -125,7 +125,7 @@ function renderPagination() {
     const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
     const endPage = Math.min(totalPages, startPage + visiblePages + 1);
 
-     for (let i = startPage; i <= endPage; i++) {
+    for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.innerText = i;
 
