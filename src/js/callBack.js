@@ -4,6 +4,7 @@
         function loadNextScripts() {
             if (index < scripts.length) {
                 let script = document.createElement("script");
+                script.type = "module"
                 script.src = scripts[index]
                 script.onload = function () {
                     console.log(`Scripts carregados: ${scripts[index]}`);
@@ -25,7 +26,8 @@
 
     loadScripts([
         'src/templates/header/header.js',
-        'src/templates/footer/footer.js'
+        'src/templates/footer/footer.js',
+        'src/js/styles/styles.js'
 
     ], function () {
         console.log("Scripts carregados");

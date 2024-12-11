@@ -18,20 +18,24 @@ window.addEventListener('resize', adjustHeaderHeight);
 adjustHeaderHeight();
 
 
-const mediaQuery = window.matchMedia('(max-width: 1024px)');
-const toggleMenuVisibility = (event) => {
-    const mobileMenu = document.getElementById("header_mobile");
-    const navMenu = document.getElementById("header_nav");
+async function styleParams() {
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    const toggleMenuVisibility = async (event) => {
+        const mobileMenu = document.getElementById("header_mobile");
+        const navMenu = document.getElementById("header_nav");
+    
+        if (event.matches) {
+            navMenu.classList.add('hidden');
+            mobileMenu.classList.remove('hidden');
+        } else {
+            navMenu.classList.remove('hidden');
+            mobileMenu.classList.add('hidden');
+        }
+    };
+    
+    toggleMenuVisibility(mediaQuery);
+    
+    mediaQuery.addEventListener('change', toggleMenuVisibility);    
+}
 
-    if (event.matches) {
-        navMenu.classList.add('hidden');
-        mobileMenu.classList.remove('hidden');
-    } else {
-        navMenu.classList.remove('hidden');
-        mobileMenu.classList.add('hidden');
-    }
-};
-
-toggleMenuVisibility(mediaQuery);
-
-mediaQuery.addEventListener('change', toggleMenuVisibility);
+styleParams()
