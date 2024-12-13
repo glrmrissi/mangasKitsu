@@ -1,29 +1,33 @@
+const btnShrink = document.querySelectorAll(".btn_shrink")
 
-// function headerChangeObserver() {
-//     const widthPage = window.innerWidth
-
-//     if(widthPage < 768) {
-//         console.log(widthPage)
-//     }
-
-//     console.log(widthPage)
-// }
+btnShrink.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const header = document.getElementById("side_bar");
+        header.classList.contains("resize_shrink_side_bar") ? header.classList.remove("resize_shrink_side_bar") :
+        header.classList.add("resize_shrink_side_bar");
+    });
+});
 
 function adjustHeaderHeight() {
-    const header = document.querySelector('.header');
-    header.style.height = `${window.innerHeight}px`;
-}
+    const sideBar = document.querySelector('.side-bar');
+    sideBar.style.height = `${window.innerHeight}px`;
+};
 
 window.addEventListener('resize', adjustHeaderHeight);
 adjustHeaderHeight();
 
 
-async function styleParams() {
+function styleParams() {
     const mediaQuery = window.matchMedia('(max-width: 1024px)');
     const toggleMenuVisibility = async (event) => {
         const mobileMenu = document.getElementById("header_mobile");
         const navMenu = document.getElementById("header_nav");
-    
+
+        if (!mobileMenu || !navMenu) {
+            console.error("Elementos do menu não encontrados no DOM!");
+            return;
+        }
+
         if (event.matches) {
             navMenu.classList.add('hidden');
             mobileMenu.classList.remove('hidden');
@@ -32,10 +36,13 @@ async function styleParams() {
             mobileMenu.classList.add('hidden');
         }
     };
-    
-    toggleMenuVisibility(mediaQuery);
-    
-    mediaQuery.addEventListener('change', toggleMenuVisibility);    
-}
 
-styleParams()
+    toggleMenuVisibility(mediaQuery);
+
+    mediaQuery.addEventListener('change', toggleMenuVisibility);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    styleParams();
+});
+
+console.log("Carregado");

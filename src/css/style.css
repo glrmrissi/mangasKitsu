@@ -30,8 +30,8 @@ body {
     background-color: #181818;
     color: var(--primary-font-color);
     font-family: sans-serif;
-    background-image:
-        url(../imgs/back.jpg);
+    /* background-image:
+        url(../imgs/back.jpg); */
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
@@ -40,6 +40,22 @@ body {
 
 body.loadingCursor {
     cursor: progress;
+}
+
+.iconsSize {
+    width: 1.2em;
+}
+
+.logo {
+    width: 2.5em;
+}
+
+.fillWhite {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+.fillBlack {
+    filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg);
 }
 
 .loading {
@@ -53,16 +69,33 @@ body.loadingCursor {
     filter: brightness(500%);
 }
 
-.header {
+.header_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #494949f3;
+    backdrop-filter: blur(10px);
+}
+
+
+.side-bar.resize_shrink_side_bar{
     position: fixed;
+    left: 0vw;
+}
+
+.side-bar {
+    position: fixed;
+    top: 0vh;
+    left: -16vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 7%;
+    width: 10%;
     height: 100dvh;
     min-height: 100vh;
     background-color: var(--background-main);
+    transition: all 0.3s;
     z-index: 999;
 }
 
@@ -79,13 +112,46 @@ body.loadingCursor {
 .nav-list {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    margin: 1vh;
+    width: 100%;
+    height: 100%;
+    margin: 0.6em;
+    font-size: 0.875em;
     list-style: none;
     word-break: break-all;
     flex-wrap: wrap;
+    gap: 5px;
+}
+
+.shrink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh;
+    width: 100%;
+}
+
+.hover_side_bar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 0.2vw;
+    cursor: pointer;
+}
+.hover_side_bar:hover {
+    background-color: #6156a0;
+    border-radius: 8px;
+}
+
+.nav-link {
+    display: flex;
+    text-align: left;
+    font-size: 0.875em;
+    border-radius: 8px;
+    margin: 0 0.8vh;
+    padding: 0.5vh;
+    background-color: #261d30;
 }
 
 .title {
@@ -167,12 +233,10 @@ body.loadingCursor {
 }
 
 .profile-icon {
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    padding: 3.50dvh;
+    margin: 4.5vh;
     border-radius: 50%;
 }
 
@@ -188,7 +252,7 @@ body.loadingCursor {
 }
 
 .profile-icon img:hover {
-    transform: scale(0.9);
+    transform: scale(1.1);
 }
 
 .hidden {
@@ -196,7 +260,7 @@ body.loadingCursor {
 }
 
 .main-container {
-    padding: 5% 3% 5% 10%;
+    padding: 5%;
     width: 100%;
     height: 100%;
     overflow-x: hidden;

@@ -11,14 +11,23 @@
 </head>
 
 <body>
-    <header class="header" id="header"></header>
+    <header class="header_main">
+        <nav>
+            <div class="shrink">
+                <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize"
+                        src="src/icon/arrows-expand-vertical.svg" alt="" srcset=""></span>
+            </div>
+        </nav>
+    </header>
+    <aside class="side-bar" id="side_bar"></aside>
     <main class="main-container">
         <section class="slider-container" id="slider_container">
             <!-- Componente criado na mão, está em js/api/consumeApi.js-->
+
         </section>
         <section class="others-imgs">
             <div class="title-realeased">
-                <h1 class="hover-effect">Released recently:</h1> 
+                <h1 class="hover-effect">Released recently:</h1>
             </div>
             <aside class="flex-container">
                 <div id="manga-container" class="grid-launcher"></div>
@@ -43,13 +52,16 @@
 
         </section>
         <section class="codeView">
-             
+
         </section>
+        <footer id="footer"></footer>
     </main>
-    <footer id="footer"></footer>
+
+
+    <script src="src/js/callBack.js" defer></script>
+    <script type="module" src="src/js/components/pagination/pagination.js"></script>
+    <script src="src/js/loading/loading.js"></script>
+    <script type="module" src="src/js/api/consumeApi.js"></script>
 </body>
-<script src="src/js/callBack.js"></script>
-<script type="module" src="src/js/components/pagination/pagination.js"></script>
-<script src="src/js/loading/loading.js"></script>
-<script type = "module"src="src/js/api/consumeApi.js"></script>
+
 </html>
