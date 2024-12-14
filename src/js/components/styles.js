@@ -6,16 +6,13 @@ btnShrink.forEach((btn) => {
         if (header.classList.contains("resize_shrink_side_bar")) {
             sideBarOverlay.style.display = "none";
             header.classList.remove("resize_shrink_side_bar");
-            document.body.style.overflow = "auto";
-            return
+            document.body.style.overflow = "auto";  
         } else {
             sideBarOverlay.style.display = "block";
             header.classList.add("resize_shrink_side_bar");
-            document.body.style.overflow = "hidden";
-            return
+            document.body.style.overflow = "hidden";    
         }
     });
-    return
 });
 
 function adjustHeaderHeight() {

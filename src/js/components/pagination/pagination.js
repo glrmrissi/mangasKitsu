@@ -23,7 +23,7 @@ export async function fetchMangas(page) { // Paginação
         }
 
         return data.data;
-        hideLoading()
+        hideLoading();
     } catch (error) {
         console.error("Erro ao carregar mangás:", error);
         return [];

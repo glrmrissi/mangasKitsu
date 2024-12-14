@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--background-main);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--secondary-font-color);
+    border-radius: 8px;
+}
+
+body {
+    position: relative;
+    background-color: #181818;
+    color: var(--primary-font-color);
+    font-family: sans-serif;
+    /* background-image:
+        url(../imgs/back.jpg); */
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+
+body.loadingCursor {
+    cursor: progress;
+}
+
+.iconsSize {
+    width: 1.2em;
+}
+
+.logo {
+    width: 2.5em;
+    z-index: 1;
+}
+
+.fillWhite {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+.fillBlack {
+    filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg);
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 47%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    filter: brightness(500%);
+}
+
+.hover-effect {
+    position: relative;
+    display: block;
+    font-weight: 600;
+    font-size: 1em;
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right,
+            var(--secondary-font-color),
+            var(--tertiary-font-color) 50%,
+            var(--primary-font-color) 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    z-index: 1;
+    transition: all 0.3s;
+    &:after {
+        content: "";
+        bottom: 2px;
+        position: absolute;
+        left: 0px;
+        width: 0%;
+        height: 3px;
+        border-radius: 6px;
+        transform-origin: right;
+        background: var(--secondary-font-color);
+        transition: transform 0.3s, ease-in-out 0.3s;
+        transform: scaleX(0);
+        z-index: 0;
+    }
+    &:hover::after {
+        color: #fff;
+        width: 100%;
+        transform-origin: right;
+        transition: transform 0.3s;
+    
+        transform: scaleX(1);
+    }
+    &:hover {
+        letter-spacing: 1px;
+        color: var(--tertiary-font-color);
+        transform-origin: left;
+        background-position: 0%;
+    }
+}
+
+.hidden {
+    display: none;
+}

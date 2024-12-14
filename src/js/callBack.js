@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
         'src/templates/sideBar/sideBar.js',
         'src/templates/footer/footer.js',
-        'src/js/styles/styles.js'
+        'src/js/components/styles.js'
 
     ], function () {
         console.log("Scripts carregados");
