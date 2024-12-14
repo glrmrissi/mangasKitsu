@@ -1,11 +1,21 @@
 const btnShrink = document.querySelectorAll(".btn_shrink")
-
 btnShrink.forEach((btn) => {
     btn.addEventListener("click", () => {
+        const sideBarOverlay = document.getElementById("sideBarOverlay");
         const header = document.getElementById("side_bar");
-        header.classList.contains("resize_shrink_side_bar") ? header.classList.remove("resize_shrink_side_bar") :
-        header.classList.add("resize_shrink_side_bar");
+        if (header.classList.contains("resize_shrink_side_bar")) {
+            sideBarOverlay.style.display = "none";
+            header.classList.remove("resize_shrink_side_bar");
+            document.body.style.overflow = "auto";
+            return
+        } else {
+            sideBarOverlay.style.display = "block";
+            header.classList.add("resize_shrink_side_bar");
+            document.body.style.overflow = "hidden";
+            return
+        }
     });
+    return
 });
 
 function adjustHeaderHeight() {
@@ -22,11 +32,6 @@ function styleParams() {
     const toggleMenuVisibility = async (event) => {
         const mobileMenu = document.getElementById("header_mobile");
         const navMenu = document.getElementById("header_nav");
-
-        if (!mobileMenu || !navMenu) {
-            console.error("Elementos do menu não encontrados no DOM!");
-            return;
-        }
 
         if (event.matches) {
             navMenu.classList.add('hidden');

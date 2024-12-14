@@ -38,6 +38,7 @@ body {
     scroll-behavior: smooth;
 }
 
+
 body.loadingCursor {
     cursor: progress;
 }
@@ -48,6 +49,7 @@ body.loadingCursor {
 
 .logo {
     width: 2.5em;
+    z-index: 1;
 }
 
 .fillWhite {
@@ -78,10 +80,11 @@ body.loadingCursor {
 }
 
 
-.side-bar.resize_shrink_side_bar{
+.side-bar.resize_shrink_side_bar {
     position: fixed;
     left: 0vw;
 }
+
 
 .side-bar {
     position: fixed;
@@ -98,6 +101,21 @@ body.loadingCursor {
     transition: all 0.3s;
     z-index: 999;
 }
+
+.side-bar-overlay {
+    display: none;
+    /* Inicialmente invisível */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Cor de fundo escurecido */
+    backdrop-filter: blur(3px);
+    /* Efeito de desfoque */
+}
+
 
 .navigation {
     display: flex;
@@ -139,6 +157,7 @@ body.loadingCursor {
     padding: 0.2vw;
     cursor: pointer;
 }
+
 .hover_side_bar:hover {
     background-color: #6156a0;
     border-radius: 8px;
@@ -236,7 +255,7 @@ body.loadingCursor {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 4.5vh;
+    margin: 6vh;
     border-radius: 50%;
 }
 
@@ -248,6 +267,7 @@ body.loadingCursor {
     cursor: pointer;
     user-select: none;
     object-fit: cover;
+    z-index: 1;
     transition: linear 0.2s;
 }
 

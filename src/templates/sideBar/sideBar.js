@@ -1,4 +1,4 @@
-fetch('/src/templates/sideBar/sideBar.html')
+fetch('src/templates/sideBar/sideBar.html')
     .then(response => response.text())
     .then(data => {
             document.getElementById("side_bar").innerHTML = data; 
