@@ -66,16 +66,16 @@ body.loadingCursor {
     font-weight: 600;
     font-size: 1em;
     color: #fff;
-    padding: 5px;
     text-decoration: none;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(to right,
-            var(--secondary-font-color),
-            var(--tertiary-font-color) 50%,
-            var(--primary-font-color) 50%);
+            $secondary-font-color,
+            $tertiary-font-color 50%,
+            $primary-font-color 50%);
     background-size: 200% 100%;
     background-position: -100%;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     transition: all 0.3s;
     &:after {

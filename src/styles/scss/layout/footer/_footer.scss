@@ -21,10 +21,22 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        list-style: none;
+        padding: 0.5vh;
+        color: #fff;
+        list-style: none;
+        transition: ease-in-out .2s;
+    }
 }
-.footer__list li,
-a {
-    padding: 10px;
+.footer__list li{
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: #fff;
     list-style: none;

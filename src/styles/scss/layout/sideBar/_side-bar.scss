@@ -14,7 +14,7 @@
     width: 10%;
     height: 100dvh;
     min-height: 100vh;
-    background-color: var(--background-main);
+    background-color: $background-main;
     transition: all 0.3s;
     z-index: 999;
 }
@@ -74,6 +74,7 @@
     padding: 0.2vw;
     color: #fff;
     cursor: pointer;
+
     &:hover {
         background-color: #6156a0;
         border-radius: 8px;
@@ -89,6 +90,13 @@
     padding: 0.5vh;
     color: #fff;
     background-color: #261d30;
+    z-index: 1;
+    a {
+        width: 100%;
+        padding: 5px;
+        height: 100%;
+        background-color: #fff;
+    }
 }
 
 .profile-icon {

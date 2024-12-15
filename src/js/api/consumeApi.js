@@ -72,20 +72,22 @@ export async function renderMangas(mangas) { // Este estÃ¡ renderizando os mangÃ
         const textOverlay = document.createElement("span");
         textOverlay.classList.add("text-overlay");
 
-        const title = document.createElement("h4");
+        const imgOverlay = document.createElement("img");
+        imgOverlay.classList.add("img-overlay")
 
-        const synopsis = document.createElement("p")
+        imgOverlay.src = "src/icon/book.svg"
 
-        title.textContent = manga.attributes.canonicalTitle;
-        synopsis.textContent = manga.attributes.synopsis;
-
-        textOverlay.appendChild(title);
-        textOverlay.appendChild(synopsis)
         overlay.appendChild(textOverlay);
+        textOverlay.appendChild(imgOverlay);
         mangaItem.appendChild(img);
         mangaItem.appendChild(overlay);
 
         mangaContainer.appendChild(mangaItem);
+        mangaItem.addEventListener('click', () => {
+            localStorage.setItem('selectedAnimeId', manga.id)
+
+            window.location.href = 'anime.html'
+        })
         hideLoading()
     });
 }
