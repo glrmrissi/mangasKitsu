@@ -1,17 +1,6 @@
 const btnShrink = document.querySelectorAll(".btn_shrink")
 const overlayShrink = document.querySelector(".side-bar-overlay")
 const header = document.getElementById("side_bar");
-overlayShrink.addEventListener("click", () => {
-    if (header.classList.contains("resize_shrink_side_bar")) {
-        sideBarOverlay.style.display = "none";
-        header.classList.remove("resize_shrink_side_bar");
-        document.body.style.overflow = "auto";  
-    } else {
-        sideBarOverlay.style.display = "block";
-        header.classList.add("resize_shrink_side_bar");
-        document.body.style.overflow = "hidden";    
-    }
-})
 
 btnShrink.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -27,6 +16,24 @@ btnShrink.forEach((btn) => {
         }
     });
 });
+function loadShrinkOverlay() {
+    if (!overlayShrink || !header || !sideBarOverlay) {
+        console.error("Elementos necessários não foram encontrados!");
+        return;
+    }
+
+    overlayShrink.addEventListener("click", () => {
+        if (header.classList.contains("resize_shrink_side_bar")) {
+            sideBarOverlay.style.display = "none";
+            header.classList.remove("resize_shrink_side_bar");
+            document.body.style.overflow = "auto";  
+        } else {
+            sideBarOverlay.style.display = "block";
+            header.classList.add("resize_shrink_side_bar");
+            document.body.style.overflow = "hidden";    
+        }
+    })
+}
 
 function adjustHeaderHeight() {
     const sideBar = document.querySelector('.side-bar');
@@ -56,8 +63,5 @@ function styleParams() {
 
     mediaQuery.addEventListener('change', toggleMenuVisibility);
 }
-document.addEventListener("DOMContentLoaded", () => {
-    styleParams();
-});
-
-console.log("Carregado");
+loadShrinkOverlay();
+styleParams();

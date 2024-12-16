@@ -63,7 +63,7 @@ export async function renderMangas(mangas) { // Este est√° renderizando os mang√
         mangaItem.classList.add("grid");
 
         const img = document.createElement("img");
-        img.src = manga.attributes.posterImage.medium;
+        img.src = manga.attributes.posterImage.small;
         img.alt = manga.attributes.canonicalTitle;
 
         const overlay = document.createElement("span");

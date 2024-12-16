@@ -1,9 +1,9 @@
 import { loadPage } from "../../api/consumeApi.js";
 
-let visiblePages = 10
+let visiblePages = 8
 let totalPages = 1;
 let currentPage = 1;
-let pageSize = 20;
+let pageSize = 18;
 const paginationContainer = document.getElementById("pagination");
 export async function fetchMangas(page) { // Paginação
     const offset = (page - 1) * pageSize;
@@ -22,8 +22,8 @@ export async function fetchMangas(page) { // Paginação
             console.error("Erro: meta.count não encontrado na resposta da API.");
         }
 
-        return data.data;
         hideLoading();
+        return data.data;
     } catch (error) {
         console.error("Erro ao carregar mangás:", error);
         return [];
@@ -35,7 +35,7 @@ export async function fetchMangas(page) { // Paginação
 export async function renderPagination() {
     paginationContainer.innerHTML = "";
     const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
-    const endPage = Math.min(totalPages, startPage + visiblePages + 1);
+    const endPage = Math.min(totalPages, startPage + visiblePages);
 
     for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
