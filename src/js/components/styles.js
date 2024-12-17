@@ -16,7 +16,7 @@ btnShrink.forEach((btn) => {
         }
     });
 });
-function loadShrinkOverlay() {
+async function loadShrinkOverlay() {
     if (!overlayShrink || !header || !sideBarOverlay) {
         console.error("Elementos necessários não foram encontrados!");
         return;
@@ -41,8 +41,6 @@ function adjustHeaderHeight() {
 };
 
 window.addEventListener('resize', adjustHeaderHeight);
-adjustHeaderHeight();
-
 
 function styleParams() {
     const mediaQuery = window.matchMedia('(max-width: 1024px)');
@@ -63,5 +61,7 @@ function styleParams() {
 
     mediaQuery.addEventListener('change', toggleMenuVisibility);
 }
-loadShrinkOverlay();
+
 styleParams();
+adjustHeaderHeight();
+await loadShrinkOverlay();

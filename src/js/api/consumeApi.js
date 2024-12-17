@@ -4,6 +4,7 @@ const fetchMangasSliders = async () => {
     fetch('https://kitsu.io/api/edge/trending/manga')
         .then(response => response.json())
         .then(data => {
+            
             const sliderContainer = document.getElementById('slider_container')
             const trendSlider = document.createElement('div');
 
@@ -86,7 +87,7 @@ export async function renderMangas(mangas) { // Este estÃ¡ renderizando os mangÃ
         mangaItem.addEventListener('click', () => {
             localStorage.setItem('selectedAnimeId', manga.id)
 
-            window.location.href = 'anime.html'
+            window.location.href = 'manga.html'
         })
         hideLoading()
     });

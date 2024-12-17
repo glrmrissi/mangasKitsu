@@ -6,6 +6,7 @@ function loadScripts(scripts, callback) {
             let script = document.createElement("script");
             script.type = "module"
             script.src = scripts[index]
+            script.defer = true
             script.onload = function () {
                 console.log(`Scripts carregados: ${scripts[index]}`);
                 index++;

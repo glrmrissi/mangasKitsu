@@ -23,7 +23,9 @@ export async function fetchMangas(page) { // Paginação
         }
 
         hideLoading();
-        return data.data;
+        const safeMangas = data.data.filter((manga) => manga.attributes.ageRating !== 'R18');
+
+        return safeMangas
     } catch (error) {
         console.error("Erro ao carregar mangás:", error);
         return [];

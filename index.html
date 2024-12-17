@@ -21,7 +21,33 @@
             </div>
         </nav>
     </header>
-    <aside class="side-bar" id="side_bar"></aside>
+    <aside class="side-bar" id="side_bar">
+        <div class="side-bar-overlay" id="sideBarOverlay"></div>
+        <nav class="navigation">
+            <div class="shrink">
+                <img src="src/icon/logo.png" class="logo" srcset="">
+                <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize" src="src/icon/arrow-left.svg"
+                        alt="" srcset=""></span>
+            </div>
+            <ul class="nav-list" id="header_nav">
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/house.svg" alt=""><a
+                        class="hover-effect" href=""> Home</a></li>
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/stack.svg" alt=""><a
+                        class="hover-effect" href="src/pages/categories/categories.html">Categories</a></li>
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/book.svg" alt=""><a
+                        class="hover-effect" href="">Mangás</a></li>
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/book-half.svg" alt=""><a
+                        class="hover-effect" href="">Manhuas</a></li>
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/book-fill.svg" alt=""><a
+                        class="hover-effect" href="">Manhwas</a></li>
+                <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/question-circle.svg" alt=""><a
+                        class="hover-effect" href="src/pages/about/about.html">About</a></li>
+            </ul>
+            <div class="mobile-header hidden" id="header_mobile">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+    </aside>
     <main class="main-container">
         <section class="slider-container" id="slider_container">
             <!-- Componente criado na mão, está em js/api/consumeApi.js-->
