@@ -32,6 +32,12 @@ body.loadingCursor {
   cursor: progress;
 }
 
+.d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .iconsSize {
   width: 1.2em;
 }
@@ -692,4 +698,38 @@ footer {
      object-fit: cover;
   z-index: 1;
   transition: linear 0.2s;
+}
+
+.main-details {
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  padding: 2vh;
+}
+
+.mg-details {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.mg-details p {
+  font-weight: 500;
+}
+
+.left-side {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.right-side {
+  width: 100%;
+  height: 100%;
+}
+
+.img-details {
+  width: 250px;
+  height: 355px;
 }/*# sourceMappingURL=import.css.map */

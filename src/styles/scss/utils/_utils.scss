@@ -32,6 +32,12 @@ body.loadingCursor {
     cursor: progress;
 }
 
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .iconsSize {
     width: 1.2em;
 }
