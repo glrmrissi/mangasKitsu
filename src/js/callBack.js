@@ -26,8 +26,8 @@ function loadScripts(scripts, callback) {
 };
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
-        'src/templates/sideBar/sideBar.js',
         'src/templates/footer/footer.js',
+        'src/js/script.js',
         'src/js/components/styles.js'
 
     ], function () {

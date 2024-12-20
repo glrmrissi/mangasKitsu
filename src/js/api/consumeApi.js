@@ -46,10 +46,18 @@ const fetchMangasSliders = async () => {
                 imgElementSlider.src = manga.attributes.posterImage.large
                 divSliderCard.appendChild(overlayImg)
                 divSliderCard.appendChild(imgElementSlider)
+
+                divSliderCard.ty
+
+                divSliderCard.addEventListener('click', () => {
+                    localStorage.setItem('selectedAnimeId', manga.id)
+        
+                    window.open('manga.html', '_blank')
+                })
             });
         })
         .catch(error => {
-            console.error(error, "%cERROR", "color: red")
+            console.error(error)
         })
 }
 
@@ -87,7 +95,7 @@ export async function renderMangas(mangas) { // Este estÃ¡ renderizando os mangÃ
         mangaItem.addEventListener('click', () => {
             localStorage.setItem('selectedAnimeId', manga.id)
 
-            window.location.href = 'manga.html'
+            window.open('manga.html', '_blank')
         })
         hideLoading()
     });
