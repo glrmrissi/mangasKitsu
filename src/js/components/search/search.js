@@ -30,7 +30,6 @@ async function fetchManga(name, isLoadMore = false) {
                         <img class="img-manga-container" id="openInfosmangas" src="${manga.attributes.posterImage.small}" alt="${manga.attributes.canonicalTitle}">
                     </div>
                     <div class="desc-overlay">
-                            <span class="close-synopsis"><img src="assets/img/close.svg" /></span>
                             <div class="desc-paragraph">
                                 <p>&nbsp; ${manga.attributes.synopsis}</p>
                                 <h3>Age: &nbsp;${manga.attributes.ageRating}</h3>

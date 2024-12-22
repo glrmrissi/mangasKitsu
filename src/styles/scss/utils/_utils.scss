@@ -68,7 +68,7 @@ body.loadingCursor {
 
 .hover-effect {
     position: relative;
-    display: block;
+    display: flex;
     font-weight: 600;
     font-size: 1em;
     color: #fff;
@@ -80,20 +80,19 @@ body.loadingCursor {
             $primary-font-color 50%);
     background-size: 200% 100%;
     background-position: -100%;
-    width: 100%;
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
     &:after {
         content: "";
-        bottom: 2px;
+        bottom: 6px;
         position: absolute;
         left: 0px;
         width: 0%;
         height: 3px;
         border-radius: 6px;
         transform-origin: right;
-        background: var(--secondary-font-color);
+        background: $secondary-font-color;
         transition: transform 0.3s, ease-in-out 0.3s;
         transform: scaleX(0);
         z-index: 0;
@@ -108,7 +107,7 @@ body.loadingCursor {
     }
     &:hover {
         letter-spacing: 1px;
-        color: var(--tertiary-font-color);
+        color: $tertiary-font-color;
         transform-origin: left;
         background-position: 0%;
     }
