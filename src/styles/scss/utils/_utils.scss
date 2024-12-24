@@ -25,6 +25,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
 }
 
 

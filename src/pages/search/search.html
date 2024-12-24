@@ -4,15 +4,20 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shit da silva</title>
+    <link rel="stylesheet" href="/src/styles/import.css">
   </head>
   <body>
+    <header class="header_main">
+      <nav class="nav-bar">
         <div class="search">
-          <input type="text" id="mangasName" placeholder="Digite o nome do mangas" />
-        </div>>
+          <input type="text" id="mangasName" placeholder="Digite o nome do anime" />
+        </div>
+      </nav>
+    </header>
     <main class="main-container">
       <section class="mangassSection" id="mangasList">
       </section>
-      <button id="loadMoreButton">LOAD</button>
+      <button style="background-color: black;" id="loadMoreButton"><img class="iconsSize fillWhite" src="/src/icon/stack.svg" alt="" srcset=""></button>
     </main>
     <script src="../../js/loading/loading.js"></script>
     <script src="../../js/components/search/search.js" defer></script>

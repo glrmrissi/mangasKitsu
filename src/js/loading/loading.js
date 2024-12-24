@@ -5,7 +5,7 @@ function showLoading() {
     div.classList.add('loading');
     const label = document.createElement("label")
     const img = document.createElement("img")
-    img.src = "../../../src/imgs/load.gif"
+    img.src = "src/imgs/load.gif"
     document.body.appendChild(div)
     label.appendChild(img)
     div.appendChild(label)

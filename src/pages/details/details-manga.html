@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalhes do manga</title>
-  <link rel="stylesheet" href="src/styles/import.css">
+  <link rel="stylesheet" href="scss/style.css">
 </head>
 
 <body>
   <main class="main-details">
-    <a href="index.html">z-</a>
-    <div class="mg-details d-center" id="manga-details"></div>
+    <div class="mg-details" id="manga-details">
+    </div>
   </main>
   </div>
   <script>
@@ -31,15 +31,20 @@
       const manga = await fetchMangaDetails(mangaId);
       const mangaDetails = document.getElementById('manga-details');
       mangaDetails.innerHTML = `
-    <aside class="left-side d-center">
-    <h2>${manga.attributes.titles.en || manga.attributes.titles.ja_jp}</h2>
-    <img class="img-details" src="${manga.attributes.posterImage.large}" alt="${manga.attributes.titles.en || manga.attributes.titles.ja_jp}" />
-    <p><strong>Status:</strong>&nbsp; ${manga.attributes.status}</p>
-    <p><strong>Rating:</strong>&nbsp; ${manga.attributes.ratingRank}</p>
-    </aside>
-    <aside class="right-side d-center">
-    <p>&nbsp; ${manga.attributes.synopsis}</p>
-    </aside>
+        <div class="banner_manga">
+          <img src="${manga.attributes.posterImage.original || manga.attributes.posterImage.small}" />
+        </div>
+        <section class="grid-manga-details">
+          <aside class="left-side d-center">
+            <h2>${manga.attributes.titles.en || manga.attributes.titles.ja_jp || "Content not found"}</h2>
+            <img class="img-details" src="${manga.attributes.posterImage.large}" alt="${manga.attributes.titles.en || manga.attributes.titles.ja_jp}" />
+            <p><strong>Status:</strong>&nbsp; ${manga.attributes.status}</p>
+            <p><strong>Rating:</strong>&nbsp; ${manga.attributes.ratingRank}</p>
+          </aside>
+          <aside class="right-side d-center">
+            <p>&nbsp; ${manga.attributes.synopsis || "Content not found"}</p>
+          </aside>
+        </section>
     `;
     }
 
