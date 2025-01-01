@@ -1,6 +1,5 @@
 let nextPageUrl = null;
-
-async function fetchManga(name, isLoadMore = false) {
+export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore && nextPageUrl ? nextPageUrl : `https://kitsu.io/api/edge/manga?filter[text]=${name}`;
     
     showLoading(); // SHOW
@@ -42,30 +41,14 @@ async function fetchManga(name, isLoadMore = false) {
         });
 
         nextPageUrl = data.links.next;  // Guarda a URL da próxima página
+        
+        
         hideLoading(); // HIDE
-
+        
     } catch (error) {
         console.error('Erro ao buscar mangas:', error);
         hideLoading(); // Caso algum um erro ele esconder o loading
     }
 }
+export { nextPageUrl };
 
-document.getElementById('mangasName').addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        const mangaName = document.getElementById('mangasName').value;
-        const loadMoreButton = document.getElementById("loadMoreButton");
-        loadMoreButton.style.display = "flex"
-        nextPageUrl = null; // Reinicia o controle de páginas ao começar uma nova busca
-        fetchManga(mangaName);
-    }
-});
-
-// Função para carregar mais títulos
-function loadMoremanga() {
-    const mangasName = document.getElementById('mangasName').value;
-    if (nextPageUrl) {
-        fetchManga(mangasName, true);  // Busca mais títulos sem remover os já exibidos
-    }
-}
-
-document.getElementById('loadMoreButton').addEventListener('click', loadMoremanga);

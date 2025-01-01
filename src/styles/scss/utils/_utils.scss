@@ -6,18 +6,18 @@
 
 *::-webkit-scrollbar {
     width: 3px;
-    background-color: var(--background-main);
+    background-color: $background-main;
 }
 
 *::-webkit-scrollbar-thumb {
-    background: var(--secondary-font-color);
+    background: $secondary-font-color;
     border-radius: 8px;
 }
 
 body {
     position: relative;
-    background-color: #181818;
-    color: var(--primary-font-color);
+    background-color: $background-main;
+    color: $primary-font-color;
     font-family: sans-serif;
     /* background-image:
         url(../imgs/back.jpg); */
