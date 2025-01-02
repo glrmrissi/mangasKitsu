@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shit da silva</title>
-  <link rel="stylesheet" href="/src/styles/import.css">
+  <title>Search - </title>
+  <link rel="shortcut icon" href="../../../src/icon/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../../src/styles/import.css">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
     }
 
     const query = getQueryParams();
-    if (query) {
+    if (query.trim() !== '') {
       fetchManga(query);
       console.log(query)
     } else {

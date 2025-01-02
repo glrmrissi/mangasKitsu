@@ -26,8 +26,6 @@
     background-color: $tertiary-font-color;
     overflow: hidden;
     position: relative;
-    pointer-events: none;
-    cursor: grab;
 }
 
 .imgs-slider {
@@ -36,7 +34,6 @@
     object-fit: cover;
     overflow: hidden;
     position: relative;
-    pointer-events: none;
 }
 
 .imgs-slider .overlay {
@@ -53,13 +50,11 @@
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s;
-    user-select: none;
-    pointer-events: none;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .imgs-slider img:hover {
-    transform: scale(1.1);
+    filter: brightness(80%);
 }
 
 .slider-car .imgs-slider {

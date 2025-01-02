@@ -33,8 +33,8 @@ const fetchMangasSliders = async () => {
 
                 const sliderItems = Array.from(sliderCard.children);
 
-                const imgElementSlider = document.createElement("img");
                 const overlayImg = document.createElement("span");
+                const imgElementSlider = document.createElement("img");
                 overlayImg.className = "overlay"
 
                 let countOverlay = 0;
@@ -47,12 +47,11 @@ const fetchMangasSliders = async () => {
                 divSliderCard.appendChild(overlayImg)
                 divSliderCard.appendChild(imgElementSlider)
 
-                divSliderCard.ty
-
                 divSliderCard.addEventListener('click', () => {
+                    console.log("Setedetdawfaw")
                     localStorage.setItem('selectedAnimeId', manga.id)
         
-                    window.open('manga.html', '_blank')
+                    window.open('src/pages/details/details-manga.html', '_blank')
                 })
             });
         })
@@ -74,25 +73,27 @@ export async function renderMangas(mangas) { // Este estÃ¡ renderizando os mangÃ
         const img = document.createElement("img");
         img.src = manga.attributes.posterImage.small;
         img.alt = manga.attributes.canonicalTitle;
-
+        
+        const imgOverlay = document.createElement("img");
+        imgOverlay.classList.add("img-overlay")
+        
         const overlay = document.createElement("span");
         overlay.classList.add("overlay");
 
         const textOverlay = document.createElement("span");
         textOverlay.classList.add("text-overlay");
 
-        const imgOverlay = document.createElement("img");
-        imgOverlay.classList.add("img-overlay")
 
         imgOverlay.src = "src/icon/book.svg"
 
         overlay.appendChild(textOverlay);
         textOverlay.appendChild(imgOverlay);
-        mangaItem.appendChild(img);
         mangaItem.appendChild(overlay);
+        mangaItem.appendChild(img);
 
         mangaContainer.appendChild(mangaItem);
         mangaItem.addEventListener('click', () => {
+            console.log("Setedetdawfaw", manga.id)
             localStorage.setItem('selectedAnimeId', manga.id)
 
             window.open('src/pages/details/details-manga.html', '_blank')

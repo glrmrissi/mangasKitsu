@@ -88,7 +88,7 @@ body.loadingCursor {
     transition: all 0.3s;
     &:after {
         content: "";
-        bottom: 6px;
+        bottom: -4px;
         position: absolute;
         left: 0px;
         width: 0%;
@@ -118,4 +118,20 @@ body.loadingCursor {
 
 .hidden {
     display: none;
+}
+
+.hover-effect-nav {
+    outline: none;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 1em;
+    color: $primary-font-color;
+    transition: all .3s;
+}
+
+.hover-effect-nav:hover {
+    color: $tertiary-font-color;
+
 }

@@ -86,7 +86,7 @@ body.loadingCursor {
 }
 .hover-effect:after {
   content: "";
-  bottom: 6px;
+  bottom: -4px;
   position: absolute;
   left: 0px;
   width: 0%;
@@ -114,6 +114,21 @@ body.loadingCursor {
 
 .hidden {
   display: none;
+}
+
+.hover-effect-nav {
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 1em;
+  color: #e0e0e0;
+  transition: all 0.3s;
+}
+
+.hover-effect-nav:hover {
+  color: #503769;
 }
 
 .header_main {
@@ -158,9 +173,21 @@ body.loadingCursor {
 }
 
 .mangaInput {
+  border: none;
+  border-radius: 4px;
+  padding: 2px 5px;
   margin-right: 10px;
   background: #ffffff url("/src/icon/search.svg") no-repeat right;
-  background-size: contain;
+  background-size: 10%;
+  outline: none;
+}
+
+.mangaInput::-moz-placeholder {
+  padding: 0 5px;
+}
+
+.mangaInput::placeholder {
+  padding: 0 5px;
 }
 
 .side-bar.resize_shrink_side_bar {
@@ -258,7 +285,6 @@ body.loadingCursor {
   width: 100%;
   padding: 5px;
   height: 100%;
-  background-color: #fff;
 }
 
 .main-container {
@@ -434,8 +460,6 @@ body.loadingCursor {
   background-color: #503769;
   overflow: hidden;
   position: relative;
-  pointer-events: none;
-  cursor: grab;
 }
 
 .imgs-slider {
@@ -445,7 +469,6 @@ body.loadingCursor {
      object-fit: cover;
   overflow: hidden;
   position: relative;
-  pointer-events: none;
 }
 
 .imgs-slider .overlay {
@@ -463,15 +486,11 @@ body.loadingCursor {
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.3s;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
-  cursor: grab;
+  cursor: pointer;
 }
 
 .imgs-slider img:hover {
-  transform: scale(1.1);
+  filter: brightness(80%);
 }
 
 .slider-car .imgs-slider {
@@ -675,7 +694,6 @@ footer {
   width: 100%;
   padding: 5px;
   height: 100%;
-  background-color: #fff;
 }
 
 .main-details {
