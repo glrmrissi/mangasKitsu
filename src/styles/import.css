@@ -157,6 +157,12 @@ body.loadingCursor {
   transition: linear 0.2s;
 }
 
+.mangaInput {
+  margin-right: 10px;
+  background: #ffffff url("/src/icon/search.svg") no-repeat right;
+  background-size: contain;
+}
+
 .side-bar.resize_shrink_side_bar {
   position: fixed;
   left: 0vw;

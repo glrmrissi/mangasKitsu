@@ -1,4 +1,5 @@
 let nextPageUrl = null;
+
 export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore && nextPageUrl ? nextPageUrl : `https://kitsu.io/api/edge/manga?filter[text]=${name}`;
     
@@ -40,14 +41,12 @@ export async function fetchManga(name, isLoadMore = false) {
             document.getElementById('mangasList').appendChild(mangaItem);
         });
 
-        nextPageUrl = data.links.next;  // Guarda a URL da próxima página
-        
-        
+        nextPageUrl = data.links.next;   
         hideLoading(); // HIDE
         
     } catch (error) {
         console.error('Erro ao buscar mangas:', error);
-        hideLoading(); // Caso algum um erro ele esconder o loading
+        hideLoading();
     }
 }
 export { nextPageUrl };

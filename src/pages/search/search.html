@@ -41,8 +41,8 @@ function loadMoremanga() {
     const loadMoreButton = document.getElementById("loadMoreButton");
     if (nextPageUrl) {
         loadMoreButton.style.display = "flex"
-        console.log("loadmore")
-        fetchManga(query, true);  // Busca mais títulos sem remover os já exibidos
+        console.log("loadmore", nextPageUrl)
+        fetchManga(query, true); 
     }
 }
 document.getElementById('loadMoreButton').addEventListener('click', loadMoremanga);
