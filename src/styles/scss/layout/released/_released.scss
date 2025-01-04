@@ -114,6 +114,7 @@
     border: none;
     border-radius: 50%;
     background-color: $background-secondary;
+    color: $primary-font-color;
     transition: all 0.2s;
     &:hover {
         background-color: $secondary-font-color;

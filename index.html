@@ -16,9 +16,10 @@
                 <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize" src="src/icon/list-ul.svg"
                         alt="Button of side bar" srcset=""></span>
             </div>
-            <input class="mangaInput" type="text" id="mangasName" placeholder="Digite" />
+            <input class="mangaInput" type="text" id="mangasName" placeholder="Write an anime" />
             <div class="profile-icon">
-                <img class="iconsSize" src="src/icon/profile.svg" alt="Profile Icon">
+                <a href="src/pages/profile/profile.html" target="_blank"><img  class="iconsSize" src="src/icon/profile.svg" alt="Profile Icon"></a>
+                
             </div>
         </nav>
     </header>
@@ -32,11 +33,11 @@
             </div>
             <ul class="nav-list" id="header_nav">
                 <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/house.svg" alt=""><a
-                    class="hover-effect-nav" href="">Home</a></li>
+                    class="hover-effect-nav" href="index.html">Home</a></li>
                     <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/stack.svg" alt=""><a
                         class="hover-effect-nav" href="src/pages/categories/categories.html">Categories</a></li>
                 <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/book.svg" alt=""><a
-                        class="hover-effect-nav" href="">Mangás</a></li>
+                        class="hover-effect-nav" href="#">Mangás</a></li>
                 <li class="nav-link"><img class="fillWhite iconsSize" src="src/icon/question-circle.svg" alt=""><a
                         class="hover-effect-nav" href="src/pages/about/about.html" target="_blank">About</a></li>
             </ul>
@@ -61,10 +62,11 @@
         <footer id="footer"></footer>
     </main>
 
-    <script src="src/js/callBack.js" defer></script>
+    <script src="src/js/callBack.js" defer></script> 
     <script type="module" src="src/js/components/pagination/pagination.js"></script>
     <script src="src/js/loading/loading.js"></script>
     <script type="module" src="src/js/api/consumeApi.js"></script>
+   
 </body>
 
 </html>

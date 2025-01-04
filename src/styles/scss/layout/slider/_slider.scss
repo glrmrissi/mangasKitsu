@@ -51,6 +51,7 @@
     object-fit: cover;
     transition: transform 0.3s;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .imgs-slider img:hover {

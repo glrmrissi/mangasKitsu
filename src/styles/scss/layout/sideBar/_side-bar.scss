@@ -51,6 +51,7 @@
     word-break: break-all;
     flex-wrap: wrap;
     gap: 5px;
+    z-index: 1;
 }
 
 .shrink {
@@ -72,6 +73,7 @@
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s;
+    z-index: 1;
     &:hover {
         background-color: $highlight-color;
     }
@@ -91,5 +93,6 @@
         width: 100%;
         padding: 5px;
         height: 100%;
+        z-index: 1;
     }
 }

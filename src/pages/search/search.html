@@ -26,14 +26,16 @@
 
     function getQueryParams() {
       const params = new URLSearchParams(window.location.search);
-      return params.get('query');
+      return params.get('name');
     }
 
     const query = getQueryParams();
     if (query.trim() !== '') {
+      document.title = `Searched ${query} - Rissi`;
       fetchManga(query);
       console.log(query)
     } else {
+      document.title = `Searched nothing} - Rissi`;
       document.getElementById('mangasList').innerHTML = '<p>Nenhuma pesquisa realizada.</p>';
     }
 

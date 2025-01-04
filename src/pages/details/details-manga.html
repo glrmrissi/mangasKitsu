@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalhes do manga</title>
   <link rel="stylesheet" href="scss/style.css">
+  <title></title>
+  <link rel="shortcut icon" href="../../../src/icon/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -30,9 +31,12 @@
 
       const manga = await fetchMangaDetails(mangaId);
       const mangaDetails = document.getElementById('manga-details');
+
+      document.title = `Details ${manga.attributes.titles.en || manga.attributes.titles.jp || "Don't have title"} - Rissi`;
+      
       mangaDetails.innerHTML = `
-        <div class="banner_manga">
-          <img src="${manga.attributes.posterImage.original || manga.attributes.posterImage.small}" />
+      <div class="banner_manga">
+        <img src="${manga.attributes.posterImage.original || manga.attributes.posterImage.small}" />
         </div>
         <section class="grid-manga-details">
           <aside class="left-side d-center">
@@ -40,12 +44,12 @@
             <img class="img-details" src="${manga.attributes.posterImage.large}" alt="${manga.attributes.titles.en || manga.attributes.titles.ja_jp}" />
             <p><strong>Status:</strong>&nbsp; ${manga.attributes.status}</p>
             <p><strong>Rating:</strong>&nbsp; ${manga.attributes.ratingRank}</p>
-          </aside>
-          <aside class="right-side d-center">
-            <p>&nbsp; ${manga.attributes.synopsis || "Content not found"}</p>
-          </aside>
-        </section>
-    `;
+            </aside>
+            <aside class="right-side d-center">
+              <p>&nbsp; ${manga.attributes.synopsis || "Content not found"}</p>
+              </aside>
+              </section>
+              `;
     }
 
     displayMangaDetails();

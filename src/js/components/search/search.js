@@ -3,7 +3,7 @@ let nextPageUrl = null;
 export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore && nextPageUrl ? nextPageUrl : `https://kitsu.io/api/edge/manga?filter[text]=${name}`;
     
-    showLoading(); // SHOW
+    showLoading();
 
     try {
         const response = await fetch(url, {
@@ -16,7 +16,7 @@ export async function fetchManga(name, isLoadMore = false) {
         const data = await response.json();
 
         if (!isLoadMore) {
-            document.getElementById('mangasList').innerHTML = '';  // Limpa os resultados anteriores só se não for uma carga adicional
+            document.getElementById('mangasList').innerHTML = '';
         }
 
         data.data.forEach(manga => {
@@ -42,12 +42,12 @@ export async function fetchManga(name, isLoadMore = false) {
         });
 
         nextPageUrl = data.links.next;   
-        hideLoading(); // HIDE
-        
+        hideLoading();
+
     } catch (error) {
         console.error('Erro ao buscar mangas:', error);
         hideLoading();
     }
 }
-export { nextPageUrl };
 
+export { nextPageUrl };
