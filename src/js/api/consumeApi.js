@@ -1,3 +1,5 @@
+/* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/ 
+
 import { renderPagination, fetchMangas } from "../components/pagination/pagination.js";
 
 const fetchMangasSliders = async () => {
@@ -74,20 +76,22 @@ export async function renderMangas(mangas) { // Este está renderizando os mang�
         img.src = manga.attributes.posterImage.small;
         img.alt = manga.attributes.canonicalTitle;
         
-        const imgOverlay = document.createElement("img");
-        imgOverlay.classList.add("img-overlay")
-        
         const overlay = document.createElement("span");
         overlay.classList.add("overlay");
 
         const textOverlay = document.createElement("span");
-        textOverlay.classList.add("text-overlay");
 
-
+        const imgOverlay = document.createElement("img");
+        imgOverlay.classList.add("img-overlay")
+        
+        textOverlay.classList.add("text-overlay")
+        textOverlay.textContent = `${manga.attributes.canonicalTitle}`
+        
         imgOverlay.src = "src/icon/book.svg"
+        
 
-        overlay.appendChild(textOverlay);
         textOverlay.appendChild(imgOverlay);
+        overlay.appendChild(textOverlay);
         mangaItem.appendChild(overlay);
         mangaItem.appendChild(img);
 

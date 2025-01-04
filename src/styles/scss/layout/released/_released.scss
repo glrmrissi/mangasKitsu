@@ -39,6 +39,7 @@
 .grid .overlay {
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     left: 0;
@@ -61,10 +62,11 @@
 .text-overlay {
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1vh;
-    color: $secondary-font-color;
+    color: $tertiary-font-color;
     font-size: 1.1em;
     width: 100%;
     height: 100%;
