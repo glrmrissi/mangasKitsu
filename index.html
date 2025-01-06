@@ -14,7 +14,8 @@
         <nav>
             <div class="shrink">
                 <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize" src="src/icon/list-ul.svg"
-                        alt="Button of side bar" srcset=""></span>
+                        alt="Button of side bar" srcset="">
+                </span>
             </div>
             <input class="mangaInput" type="text" id="mangasName" placeholder="Write a manga" />
             <div class="profile-icon">
@@ -45,21 +46,24 @@
     </aside>
     <main class="main-container">
         <section class="slider-container" id="slider_container">
-            <!-- Componente criado na mão, está em js/api/consumeApi.js-->
+            <!-- Está em js/api/consumeApi.js-->
         </section>
         <section class="others-imgs">
             <div class="title-realeased">
                 <h1 class="hover-effect">Released recently:</h1>
             </div>
             <aside class="flex-container">
-                <div id="manga-container" class="grid-launcher"></div>
-                <div id="pagination" class="pagination"></div>
+                <div id="manga-container" class="grid-launcher">
+                    <!-- Está em src/js/api/consumeApi.js-->
+                </div>
+                <div id="pagination" class="pagination">
+                    <!-- Está em src/js/component/pagination/consumeApi.js-->
+                </div>
             </aside>
         </section>
-        <section class="codeView">
-
-        </section>
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <!-- Está em src/templates/footer/footer.js -->
+        </footer>
     </main>
 
     <script src="src/js/callBack.js" defer></script> 

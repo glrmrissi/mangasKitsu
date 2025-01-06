@@ -8,7 +8,7 @@ function loadScripts(scripts, callback) {
             script.src = scripts[index]
             script.defer = true
             script.onload = function () {
-                console.log(`Scripts carregados: ${scripts[index]}`);
+                // console.log(`Scripts carregados: ${scripts[index]}`);
                 index++;
                 loadNextScripts();
             };
@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         'src/js/components/styles.js'
 
     ], function () {
-        console.log("Scripts carregados");
+        // console.log("Scripts carregados");
     }, { type: "module", defer: true })
 })

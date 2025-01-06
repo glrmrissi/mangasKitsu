@@ -2,7 +2,7 @@ let nextPageUrl = null;
 
 export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore && nextPageUrl ? nextPageUrl : `https://kitsu.io/api/edge/manga?filter[text]=${name}`;
-    
+
     showLoading();
 
     try {
@@ -22,17 +22,18 @@ export async function fetchManga(name, isLoadMore = false) {
         data.data.forEach(manga => {
             const mangaItem = document.createElement('section');
             mangaItem.className = 'manga-item'
-             mangaItem.innerHTML = `
+            const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
+            mangaItem.innerHTML = `
                 <div class="manga-display">
                 <div class="manga-container"> 
                     <div class="card-front">
-                        <h4>${manga.attributes.canonicalTitle}</h4>
-                        <img class="img-manga-container" id="openInfosmangas" src="${manga.attributes.posterImage.small}" alt="${manga.attributes.canonicalTitle}">
+                        <h4>${canonicalTitle}</h4>
+                        <img class="img-manga-container" id="openInfosmangas" src="${posterImage.small}" alt="${canonicalTitle}">
                     </div>
                     <div class="desc-overlay">
                             <div class="desc-paragraph">
-                                <p>&nbsp; ${manga.attributes.synopsis}</p>
-                                <h3>Age: &nbsp;${manga.attributes.ageRating}</h3>
+                                <p>&nbsp; ${synopsis}</p>
+                                <h3>Age: &nbsp;${ageRating}</h3>
                             </div>
                         </div>
                     </div>
@@ -41,7 +42,7 @@ export async function fetchManga(name, isLoadMore = false) {
             document.getElementById('mangasList').appendChild(mangaItem);
         });
 
-        nextPageUrl = data.links.next;   
+        nextPageUrl = data.links.next;
         hideLoading();
 
     } catch (error) {

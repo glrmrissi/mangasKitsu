@@ -1,4 +1,3 @@
-
 document.getElementById('mangasName').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         const mangaName = document.getElementById('mangasName').value;

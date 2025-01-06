@@ -17,7 +17,6 @@ export async function fetchMangas(page) { // Paginação
         if (data.meta && data.meta.count) {
             const totalItems = data.meta.count;
             totalPages = Math.ceil(totalItems / pageSize);
-            console.log(`Total de itens: ${totalItems}, Total de páginas: ${totalPages}`);
         } else {
             console.error("Erro: meta.count não encontrado na resposta da API.");
         }
@@ -52,7 +51,6 @@ export async function renderPagination() {
             currentPage = i;
             loadPage(currentPage);
 
-            // Atualizar o botão ativo
             document.querySelectorAll(".pagination button").forEach((btn) => {
                 btn.classList.remove("active");
             });

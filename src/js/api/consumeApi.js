@@ -10,7 +10,7 @@ const fetchMangasSliders = async () => {
             const sliderContainer = document.getElementById('slider_container')
             const trendSlider = document.createElement('div');
 
-            // Mó preguiça de passar isso pra textcontent, dps faço kkk
+            // Nota: passar para textcontent
             trendSlider.innerHTML = `
         <aside class="limited-overflow">
         <div class="title">
@@ -28,6 +28,9 @@ const fetchMangasSliders = async () => {
 
             // Carrega as imagens dos mangas mais lidos, tenho que deixa isso mais legível
             data.data.forEach(manga => {
+
+                const { canonicalTitle, synopsis, posterImage, ageRating} = manga.attributes
+
                 const divSliderCard = document.createElement("div")
 
                 divSliderCard.className = "imgs-slider"
@@ -45,7 +48,7 @@ const fetchMangasSliders = async () => {
                     countOverlay++;
                 }
                 overlayImg.textContent = countOverlay;
-                imgElementSlider.src = manga.attributes.posterImage.large
+                imgElementSlider.src = posterImage.large
                 divSliderCard.appendChild(overlayImg)
                 divSliderCard.appendChild(imgElementSlider)
 
@@ -65,39 +68,45 @@ const fetchMangasSliders = async () => {
 fetchMangasSliders()
 
 const mangaContainer = document.getElementById("manga-container");
-export async function renderMangas(mangas) { // Este está renderizando os mangás ok ok ok 
+export async function renderMangas(mangas) { // Este está renderizando os mangás ok ok ok, da parte do releases, dizendo novamente. Tenho que modularizar certo isso aqui. 
     mangaContainer.innerHTML = "";
 
     mangas.forEach((manga) => {
+
+        const { canonicalTitle, synopsis, posterImage, ageRating} = manga.attributes
+
         const mangaItem = document.createElement("div");
         mangaItem.classList.add("grid");
 
         const img = document.createElement("img");
-        img.src = manga.attributes.posterImage.small;
-        img.alt = manga.attributes.canonicalTitle;
+        img.src = posterImage.small;
+        img.alt = canonicalTitle;
         
         const overlay = document.createElement("span");
         overlay.classList.add("overlay");
 
         const textOverlay = document.createElement("span");
+        const ageRatingOverlay = document.createElement("span");
 
         const imgOverlay = document.createElement("img");
         imgOverlay.classList.add("img-overlay")
         
         textOverlay.classList.add("text-overlay")
-        textOverlay.textContent = `${manga.attributes.canonicalTitle}`
+        ageRatingOverlay.classList.add("text-overlay")
+        ageRatingOverlay.textContent = `${ageRating}`
+        textOverlay.textContent = `${canonicalTitle}`
         
         imgOverlay.src = "src/icon/book.svg"
         
-
         textOverlay.appendChild(imgOverlay);
+        ageRatingOverlay.appendChild(textOverlay);
         overlay.appendChild(textOverlay);
         mangaItem.appendChild(overlay);
         mangaItem.appendChild(img);
 
         mangaContainer.appendChild(mangaItem);
         mangaItem.addEventListener('click', () => {
-            console.log("Setedetdawfaw", manga.id)
+            console.log( manga.id)
             localStorage.setItem('selectedAnimeId', manga.id)
 
             window.open('src/pages/details/details-manga.html', '_blank')

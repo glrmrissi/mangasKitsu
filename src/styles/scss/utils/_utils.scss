@@ -92,6 +92,7 @@ body.loadingCursor {
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
+
     &:after {
         content: "";
         bottom: -4px;
@@ -106,14 +107,16 @@ body.loadingCursor {
         transform: scaleX(0);
         z-index: 0;
     }
+
     &:hover::after {
         color: #fff;
         width: 100%;
         transform-origin: right;
         transition: transform 0.3s;
-    
+
         transform: scaleX(1);
     }
+
     &:hover {
         letter-spacing: 1px;
         color: $tertiary-font-color;
@@ -141,4 +144,14 @@ body.loadingCursor {
 .hover-effect-nav:hover {
     color: $secondary-font-color;
 
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -150% -150%;
+    }
+
+    100% {
+        background-position: 150% 150%;
+    }
 }
