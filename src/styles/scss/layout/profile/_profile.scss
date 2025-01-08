@@ -1,16 +1,16 @@
 .profile-infos {
-    background-color: rgba(218, 0, 0, 0);
-    width: 100%;
-    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    background: linear-gradient(-45deg, #574868 25%, #251e2e 50%);
+    width: 100%;
+    height: 45vh;
+    border-radius: 4px;
 }
 
 .circle {
-    background-color: rgba(0, 255, 255, 0);
+    background-color: #ffffff00;
     background-position: center center;
     width: 150px;
     height: 150px;
@@ -22,7 +22,8 @@
 }
 
 .user_img {
-    border: 2px rgb(255, 255, 255) solid;
+    border: 2px $tertiary-font-color solid;
+    box-shadow: 2px 0px 30px 10px$tertiary-font-color;
     width: 130px;
     height: 130px; 
     border-radius: 50%;
@@ -48,18 +49,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    height: 40px;
-    width: 40px;
+    height: 130px;
+    width: 130px;
     padding: 2px 2px;
     border-radius: 50%;
-    transform: translateX(-90%);
-    margin-top: 100px;
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    box-shadow: 2px 3px 3px rgb(0, 0, 0), green, rgb(0, 0, 0);
+    color: $primary-font-color;
+    background-color: #00000013;
+    &:hover {
+        filter: brightness(80%);
+        backdrop-filter: brightness(80%);
+    }
 }
+
 
 #btnupload svg {
     padding-top: 10px;

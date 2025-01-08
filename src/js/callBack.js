@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
         'src/js/components/search/btnSearch.js',
         'src/js/components/search/search.js',
+        'src/js/components/loadProfilePhoto/loadProfilePhoto.js',
+        'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
         'src/js/script.js',
         'src/js/components/styles.js'

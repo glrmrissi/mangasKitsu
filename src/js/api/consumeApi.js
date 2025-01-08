@@ -1,4 +1,4 @@
-/* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/ 
+/* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/
 
 import { renderPagination, fetchMangas } from "../components/pagination/pagination.js";
 
@@ -6,7 +6,7 @@ const fetchMangasSliders = async () => {
     fetch('https://kitsu.io/api/edge/trending/manga')
         .then(response => response.json())
         .then(data => {
-            
+
             const sliderContainer = document.getElementById('slider_container')
             const trendSlider = document.createElement('div');
 
@@ -29,7 +29,7 @@ const fetchMangasSliders = async () => {
             // Carrega as imagens dos mangas mais lidos, tenho que deixa isso mais legível
             data.data.forEach(manga => {
 
-                const { canonicalTitle, synopsis, posterImage, ageRating} = manga.attributes
+                const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
 
                 const divSliderCard = document.createElement("div")
 
@@ -55,7 +55,7 @@ const fetchMangasSliders = async () => {
                 divSliderCard.addEventListener('click', () => {
                     console.log("Setedetdawfaw")
                     localStorage.setItem('selectedAnimeId', manga.id)
-        
+
                     window.open('src/pages/details/details-manga.html', '_blank')
                 })
             });
@@ -73,15 +73,16 @@ export async function renderMangas(mangas) { // Este está renderizando os mang�
 
     mangas.forEach((manga) => {
 
-        const { canonicalTitle, synopsis, posterImage, ageRating} = manga.attributes
+        const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
 
         const mangaItem = document.createElement("div");
+        mangaItem.classList.add("loadingGrid");
         mangaItem.classList.add("grid");
 
         const img = document.createElement("img");
         img.src = posterImage.small;
         img.alt = canonicalTitle;
-        
+
         const overlay = document.createElement("span");
         overlay.classList.add("overlay");
 
@@ -90,14 +91,14 @@ export async function renderMangas(mangas) { // Este está renderizando os mang�
 
         const imgOverlay = document.createElement("img");
         imgOverlay.classList.add("img-overlay")
-        
+
         textOverlay.classList.add("text-overlay")
         ageRatingOverlay.classList.add("text-overlay")
         ageRatingOverlay.textContent = `${ageRating}`
         textOverlay.textContent = `${canonicalTitle}`
-        
+
         imgOverlay.src = "src/icon/book.svg"
-        
+
         textOverlay.appendChild(imgOverlay);
         ageRatingOverlay.appendChild(textOverlay);
         overlay.appendChild(textOverlay);
@@ -105,12 +106,25 @@ export async function renderMangas(mangas) { // Este está renderizando os mang�
         mangaItem.appendChild(img);
 
         mangaContainer.appendChild(mangaItem);
+
+
+        // Colocar em loading. Dar um jeito de funcionar
+
+        const cardImgs = document.querySelectorAll('.grid img')
+        cardImgs.forEach((cardImg) => {
+            cardImg.onload = () => {
+                console.log('CU')
+                document.querySelector('.grid').classList.remove('loadingGrid');
+            };
+        });
+
         mangaItem.addEventListener('click', () => {
-            console.log( manga.id)
+            console.log(manga.id)
             localStorage.setItem('selectedAnimeId', manga.id)
 
             window.open('src/pages/details/details-manga.html', '_blank')
         })
+
         hideLoading()
     });
 }

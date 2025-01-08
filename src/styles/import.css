@@ -139,10 +139,13 @@ body.loadingCursor {
 
 @keyframes shimmer {
   0% {
-    background-position: -150% -150%;
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
   }
   100% {
-    background-position: 150% 150%;
+    background-position: 0%;
   }
 }
 .header_main {
@@ -191,7 +194,7 @@ body.loadingCursor {
   border-radius: 4px;
   padding: 2px 7px;
   margin-right: 20px;
-  background: #ffffff url("/src/icon/search.svg") no-repeat center right;
+  background: #ffffff url("../../../../../src/icon/search.svg") no-repeat center right;
   background-position: right 10px center;
   background-clip: padding-box;
   background-size: 9%;
@@ -207,17 +210,18 @@ body.loadingCursor {
 }
 
 .profile-infos {
-  background-color: rgba(218, 0, 0, 0);
-  width: 100%;
-  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: linear-gradient(-45deg, #574868 25%, #251e2e 50%);
+  width: 100%;
+  height: 45vh;
+  border-radius: 4px;
 }
 
 .circle {
-  background-color: rgba(0, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
   background-position: center center;
   width: 150px;
   height: 150px;
@@ -229,7 +233,8 @@ body.loadingCursor {
 }
 
 .user_img {
-  border: 2px rgb(255, 255, 255) solid;
+  border: 2px #503769 solid;
+  box-shadow: 2px 0px 30px 10px #503769;
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -256,17 +261,18 @@ body.loadingCursor {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  height: 40px;
-  width: 40px;
+  height: 130px;
+  width: 130px;
   padding: 2px 2px;
   border-radius: 50%;
-  transform: translateX(-90%);
-  margin-top: 100px;
   cursor: pointer;
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
-  box-shadow: 2px 3px 3px rgb(0, 0, 0), green, rgb(0, 0, 0);
+  color: #e0e0e0;
+  background-color: rgba(0, 0, 0, 0.0745098039);
+}
+#btnupload:hover {
+  filter: brightness(80%);
+  -webkit-backdrop-filter: brightness(80%);
+          backdrop-filter: brightness(80%);
 }
 
 #btnupload svg {
@@ -393,17 +399,22 @@ body.loadingCursor {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.grid.loadingGrid {
+  width: 256px;
+  height: 362px;
+  background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
+  border-radius: 4px;
+}
+
 .grid {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 256px;
-  height: 362px;
-  background: linear-gradient(90deg, #ffffff 25%, #acacac 50%, #a1a1a1 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   transition: all 0.3s;
 }
@@ -550,12 +561,18 @@ body.loadingCursor {
 }
 
 .slider-car {
+  position: relative;
   display: flex;
   width: 100%;
   height: 35vh;
-  background-color: #503769;
   overflow: hidden;
-  position: relative;
+}
+
+.slider-car.loadingGrid {
+  background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
+  border-radius: 4px;
 }
 
 .imgs-slider {
