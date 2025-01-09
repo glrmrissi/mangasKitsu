@@ -73,7 +73,7 @@ export async function renderMangas(mangas) { // Este est√° renderizando os mang√
 
     mangas.forEach((manga) => {
 
-        const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
+        const { canonicalTitle, synopsis, posterImage, averageRating } = manga.attributes
 
         const mangaItem = document.createElement("div");
         mangaItem.classList.add("loadingGrid");
@@ -94,7 +94,7 @@ export async function renderMangas(mangas) { // Este est√° renderizando os mang√
 
         textOverlay.classList.add("text-overlay")
         ageRatingOverlay.classList.add("text-overlay")
-        ageRatingOverlay.textContent = `${ageRating}`
+        ageRatingOverlay.textContent = `${averageRating}`
         textOverlay.textContent = `${canonicalTitle}`
 
         imgOverlay.src = "src/icon/book.svg"

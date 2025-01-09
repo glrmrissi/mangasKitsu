@@ -175,10 +175,11 @@ body.loadingCursor {
 }
 
 .profile-icon img {
+  width: 5vh;
+  height: 5vh;
   border-radius: 50%;
   display: flex;
   padding: 1vh;
-  width: 5vh;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -215,8 +216,9 @@ body.loadingCursor {
   align-items: center;
   text-align: center;
   background: linear-gradient(-45deg, #574868 25%, #251e2e 50%);
+  box-shadow: 20px 20px 10px 10px #251e2e;
   width: 100%;
-  height: 45vh;
+  height: 50vh;
   border-radius: 4px;
 }
 
@@ -849,7 +851,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 30vh;
+  top: 25vh;
   left: 15%;
   float: right;
 }
@@ -857,14 +859,14 @@ body {
 .banner_manga {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #000000;
   width: 100%;
-  height: 37vh;
+  height: 30vh;
   overflow: hidden;
 }
 
 .banner_manga img {
-  filter: blur(4px);
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -875,6 +877,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  margin: 0 20px;
+  border-radius: 4px;
   flex: 1;
   flex-direction: column;
   width: 100%;

@@ -24,10 +24,11 @@
 }
 
 .profile-icon img {
+    width: 5vh;
+    height: 5vh;
     border-radius: 50%;
     display: flex;
     padding: 1vh;
-    width: 5vh;
     cursor: pointer;
     user-select: none;
     object-fit: cover;
