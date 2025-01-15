@@ -12,12 +12,17 @@
 <body>
   <header class="header_main">
     <nav>
-        <div class="shrink">
-            <a href="../../../index.html" target="_self"><span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize"
-                        src="../../../src/icon/arrow-left.svg" alt="Button of side bar" srcset=""></span></a>
-        </div>
+      <div class="shrink">
+        <a href="../../../index.html" target="_self"><span class="hover_side_bar btn_shrink"><img
+              class="fillWhite iconsSize" src="../../../src/icon/arrow-left.svg" alt="Button of side bar"
+              srcset=""></span></a>
+      </div>
+      <div class="profile-icon">
+        <a href="../../../src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal" class="iconsSize"
+            src="../../../src/icon/profile.svg" alt="Profile Icon"></a>
+      </div>
     </nav>
-</header>
+  </header>
   <main class="main-container">
     <section class="mangassSection" id="mangasList">
     </section>
@@ -42,19 +47,21 @@
       document.getElementById('mangasList').innerHTML = '<p>Nenhuma pesquisa realizada.</p>';
     }
 
-    
-function loadMoremanga() {
-    const loadMoreButton = document.getElementById("loadMoreButton");
-    if (nextPageUrl) {
+
+    function loadMoremanga() {
+      const loadMoreButton = document.getElementById("loadMoreButton");
+      if (nextPageUrl) {
         loadMoreButton.style.display = "flex"
         console.log("loadmore", nextPageUrl)
-        fetchManga(query, true); 
+        fetchManga(query, true);
+      }
     }
-}
-document.getElementById('loadMoreButton').addEventListener('click', loadMoremanga);
+    document.getElementById('loadMoreButton').addEventListener('click', loadMoremanga);
 
   </script>
-  <script src="../../js/loading/loading.js"></script>
+  <script type="module" src="../../../src/js/components/loadProfilePhoto/loadProfilePhoto.js"></script>
+  <script type="module" src="../../../src/pages/profile/process/process.js"></script>
+  <script src="../../../src/js/loading/loading.js"></script>
 </body>
 
 </html>

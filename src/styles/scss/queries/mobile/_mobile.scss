@@ -1,0 +1,45 @@
+@media (min-width: 0px) and (max-width: $max-width-mobile) {
+    .main-container {
+        padding: 5%;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .slider-car {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .imgs-slider {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        min-width: 100%;
+        height: auto;
+        object-fit: cover;
+        overflow: hidden;
+        position: relative;
+    } 
+
+    .imgs-slider .overlay {
+        padding: 2vh;
+    }
+
+    .imgs-slider img {
+        padding: 1vh;
+    }
+    
+    .grid-launcher {
+        grid-template-columns: 1fr !important;
+        padding: 4vh;
+        gap: 5px;
+    }
+    .grid .overlay {
+        padding: 3vh;
+    }    
+}

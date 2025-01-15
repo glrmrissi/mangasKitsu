@@ -3,7 +3,6 @@
 
 @import "scss/layout/header/header";
 @import "scss/layout/profile/profile";
-@import "scss/layout/sideBar/side-bar";
 @import "scss/layout/mainContainer/main-container";
 @import "scss/layout/released/released";
 @import "scss/layout/slider/slider";
@@ -11,6 +10,11 @@
 @import "scss/layout/sideBar/side-bar";
 @import "scss/layout/mangaDetails/manga-details";
 @import "scss/layout/searchInput/search-input";
+
+@import "scss/queries/mobile/mobile";
+@import "scss/queries/notebook/notebook";
+@import "scss/queries/tablet/tablet";
+@import "scss/queries/tv/tv";
 
 @import "scss/themes/dark";
 @import "scss/themes/white";
