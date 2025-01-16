@@ -3,7 +3,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(-45deg, #574868 25%, #251e2e 50%);
+    background: linear-gradient(45deg, #574868, #251e2e, #574868);
+    background-size: 400% 400%;
+    animation: waveAnimation 10s ease infinite;
     box-shadow: 20px 20px 10px 10px #251e2e;
     width: 100%;
     height: 50vh;

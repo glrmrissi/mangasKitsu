@@ -1,4 +1,5 @@
 footer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,18 +12,21 @@ footer {
     height: 30vh;
     backdrop-filter: blur(10px);
 }
+
 .footer_logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .footer__list {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+
     a {
         width: 100%;
         height: 100%;
@@ -34,7 +38,8 @@ footer {
         transition: ease-in-out .2s;
     }
 }
-.footer__list li{
+
+.footer__list li {
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -42,10 +47,12 @@ footer {
     list-style: none;
     transition: ease-in-out .2s;
 }
+
 .footer__list a:hover {
     color: aquamarine;
 
 }
+
 .footer_logo img {
     width: 100px;
     object-fit: cover;

@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 export function getImageProfile() {
     const imageUrl = localStorage.getItem('userImage');
-    return imageUrl || '../../../src/icon/profile.svg' || 'src/icon/profile.svg';
+    return imageUrl || '../../../src/icon/profile.svg' || './src/icon/profile.svg';
 }
