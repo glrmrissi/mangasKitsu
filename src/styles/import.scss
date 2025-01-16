@@ -10,10 +10,11 @@
 @import "scss/layout/sideBar/side-bar";
 @import "scss/layout/mangaDetails/manga-details";
 @import "scss/layout/searchInput/search-input";
+@import "scss/layout/search/search";
 
+@import "scss/queries/tablet/tablet";
 @import "scss/queries/mobile/mobile";
 @import "scss/queries/notebook/notebook";
-@import "scss/queries/tablet/tablet";
 @import "scss/queries/tv/tv";
 
 @import "scss/themes/dark";

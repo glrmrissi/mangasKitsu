@@ -5,6 +5,11 @@
         height: 100%;
         overflow-x: hidden;
     }
+    
+    .side-bar {
+        left: -75vw;
+        width: 40vw;
+    }
 
     .slider-car {
         position: relative;
@@ -42,4 +47,14 @@
     .grid .overlay {
         padding: 3vh;
     }    
+    
+    .text-overlay {
+        user-select: none;
+    }
+
+    // Search 
+    .mangasSection {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

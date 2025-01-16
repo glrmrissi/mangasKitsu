@@ -18,7 +18,6 @@ const fetchMangasSliders = async () => {
         </div>
             <section id="my" class="slider">
                 <article class="slider-car first">
-                    <!-- Essa bosta carrega as imagens do slider -->
                 </article>    
             </section>
         </aside>
@@ -26,7 +25,6 @@ const fetchMangasSliders = async () => {
             sliderContainer.appendChild(trendSlider);
             const sliderCard = trendSlider.querySelector(".slider-car")
 
-            // Carrega as imagens dos mangas mais lidos, tenho que deixa isso mais legível
             data.data.forEach(manga => {
 
                 const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
@@ -68,7 +66,7 @@ const fetchMangasSliders = async () => {
 fetchMangasSliders()
 
 const mangaContainer = document.getElementById("manga-container");
-export async function renderMangas(mangas) { // Este está renderizando os mangás ok ok ok, da parte do releases, dizendo novamente. Tenho que modularizar certo isso aqui. 
+export async function renderMangas(mangas) {
     mangaContainer.innerHTML = "";
 
     mangas.forEach((manga) => {

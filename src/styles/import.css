@@ -422,7 +422,7 @@ body.loadingCursor {
 }
 
 .slider-container {
-  padding-top: 10vh;
+  padding-top: 1vh;
   overflow: hidden;
   position: relative;
 }
@@ -859,12 +859,185 @@ body {
     transform: translateX(0);
   }
 }
+.mangasSection {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manga-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.img-manga-container {
+  width: 100%;
+}
+
+.manga-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.manga-container:hover {
+  cursor: pointer;
+  -webkit-backdrop-filter: brightness(80%);
+          backdrop-filter: brightness(80%);
+}
+.manga-containerhover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
+  mix-blend-mode: multiply;
+}
+
+.manga-container .desc-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3764705882);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: #e0e0e0;
+  font-weight: 600;
+  height: 100%;
+  padding: 1vh;
+  border-radius: 4px;
+  opacity: 0;
+  overflow: auto;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+.manga-container:hover .desc-overlay {
+  opacity: 1;
+}
+
+.desc-paragraph {
+  height: 100%;
+  font-size: 0.9em;
+}
+
+.card-front {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card-front h4 {
+  width: 250px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.load-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  background-color: #1b1b1b;
+  margin-top: 2vh;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #e0e0e0;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.load-btn:hover {
+  background-color: #121212;
+}
+.load-btn img {
+  width: 3vh;
+}
+
+@media (min-width: 576px) and (max-width: 820px) {
+  .main-container {
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  .side-bar {
+    left: -40vw;
+    width: 40vw;
+  }
+  .slider-car {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 1vh;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .imgs-slider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+    position: relative;
+  }
+  .imgs-slider .overlay {
+    padding: 2vh;
+  }
+  .imgs-slider img {
+    padding: 0.5vh;
+  }
+  .grid-launcher {
+    grid-template-columns: repeat(3, 1fr) !important;
+    padding: 4vh;
+    gap: 5px;
+  }
+  .grid .overlay {
+    padding: 3vh;
+  }
+  .mangasSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (min-width: 0px) and (max-width: 576px) {
   .main-container {
     padding: 5%;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+  }
+  .side-bar {
+    left: -75vw;
+    width: 40vw;
   }
   .slider-car {
     position: relative;
@@ -898,5 +1071,14 @@ body {
   }
   .grid .overlay {
     padding: 3vh;
+  }
+  .text-overlay {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .mangasSection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=import.css.map */
