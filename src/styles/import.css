@@ -171,6 +171,17 @@ body.loadingCursor {
     background-position: 0%;
   }
 }
+@keyframes waveAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 @keyframes wave {
   0% {
     transform: translateX(0);
@@ -253,7 +264,7 @@ body.loadingCursor {
   text-align: center;
   background: linear-gradient(45deg, #574868, #251e2e, #574868);
   background-size: 400% 400%;
-  animation: waveAnimation 10s ease infinite;
+  animation: waveAnimation 7s ease-in-out infinite;
   box-shadow: 20px 20px 10px 10px #251e2e;
   width: 100%;
   height: 50vh;
@@ -435,17 +446,17 @@ body.loadingCursor {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 5px 10px;
   max-width: 30px;
-  border-radius: 3px;
   font-size: 16px;
+  border-radius: 3px;
   cursor: pointer;
   outline: none;
   border: none;
   border-radius: 50%;
   background-color: #1b1b1b;
   color: #e0e0e0;
+  font-weight: 500;
   transition: all 0.2s;
 }
 .pagination button:hover {
@@ -474,7 +485,6 @@ body.loadingCursor {
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -483,6 +493,7 @@ body.loadingCursor {
   display: flex;
   width: 100%;
   height: 35vh;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -501,6 +512,17 @@ body.loadingCursor {
   overflow: hidden;
   position: relative;
 }
+.imgs-slider img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.imgs-slider img:hover {
+  filter: brightness(80%);
+}
 
 .imgs-slider .overlay {
   position: absolute;
@@ -510,19 +532,6 @@ body.loadingCursor {
   font-size: 1.4em;
   font-weight: 600;
   left: 0;
-}
-
-.imgs-slider img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: transform 0.3s;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.imgs-slider img:hover {
-  filter: brightness(80%);
 }
 
 .slider-car .imgs-slider {
@@ -603,24 +612,34 @@ footer {
   width: 100%;
   height: 100%;
 }
-.footer__list a {
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  list-style: none;
-  padding: 0.5vh;
-  color: #fff;
-  list-style: none;
-  transition: ease-in-out 0.2s;
-}
-
 .footer__list li {
   width: 100%;
   height: 100%;
   text-decoration: none;
   color: #fff;
+  margin: 1vh;
   list-style: none;
   transition: ease-in-out 0.2s;
+}
+.footer__list a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  list-style: none;
+  padding: 0.3vh;
+  color: #fff;
+  list-style: none;
+  transition: ease-in-out 0.2s;
+}
+.footer__list img {
+  padding: 1vh;
+  border-radius: 7px;
+  background-color: #503769;
+  transition: all 0.3s;
+}
+.footer__list img:hover {
+  border-radius: 14px;
+  background-color: #6c498b;
 }
 
 .footer__list a:hover {
@@ -1000,7 +1019,9 @@ body {
   width: 100%;
   height: 5vh;
   background-color: #1b1b1b;
+  color: #e0e0e0;
   margin-top: 2vh;
+  font-size: 2em;
   font-weight: 700;
   cursor: pointer;
   outline: none;
@@ -1009,10 +1030,13 @@ body {
   transition: all 0.3s;
 }
 .load-btn:hover {
+  border: 2px solid #503769;
   background-color: #121212;
+  color: #6c498b;
 }
-.load-btn img {
-  width: 3vh;
+.load-btn span {
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 576px) and (max-width: 820px) {

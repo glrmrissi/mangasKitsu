@@ -100,7 +100,9 @@
     width: 100%;
     height: 5vh;
     background-color: $background-secondary;
+    color: $primary-font-color;
     margin-top: 2vh;
+    font-size: 2em;
     font-weight: 700;
     cursor: pointer;
     outline: none;
@@ -108,9 +110,12 @@
     border-radius: 3px;
     transition: all 0.3s;
     &:hover {
+        border: 2px solid $tertiary-font-color;
         background-color: $background-main;
-    }
-    img {
-        width: 3vh;
+        color: $secondary-font-color;
+    }    
+    span {
+        width: 100%;
+        height: 100%;
     }
 }

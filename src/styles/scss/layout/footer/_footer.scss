@@ -27,26 +27,41 @@ footer {
     width: 100%;
     height: 100%;
 
+    li {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #fff;
+        margin: 1vh;
+        list-style: none;
+        transition: ease-in-out .2s;
+    }
+
     a {
         width: 100%;
         height: 100%;
         text-decoration: none;
         list-style: none;
-        padding: 0.5vh;
+        padding: 0.3vh;
         color: #fff;
         list-style: none;
         transition: ease-in-out .2s;
     }
+    
+    img {
+        padding: 1vh;
+        border-radius: 7px;
+        background-color: $tertiary-font-color;
+        transition: all 0.3s;
+        &:hover {
+            border-radius: 14px;
+            background-color: $secondary-font-color;
+        }
+    }
+
+
 }
 
-.footer__list li {
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #fff;
-    list-style: none;
-    transition: ease-in-out .2s;
-}
 
 .footer__list a:hover {
     color: aquamarine;

@@ -118,17 +118,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 5px 10px;
     max-width: 30px;
-    border-radius: 3px;
     font-size: 16px;
+    border-radius: 3px;
     cursor: pointer;
     outline: none;
     border: none;
     border-radius: 50%;
     background-color: $background-secondary;
     color: $primary-font-color;
+    font-weight: 500;
     transition: all 0.2s;
     &:hover {
         background-color: $secondary-font-color;
