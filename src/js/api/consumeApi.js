@@ -87,34 +87,17 @@ export async function renderMangas(mangas) {
         const textOverlay = document.createElement("span");
         const ageRatingOverlay = document.createElement("span");
 
-        const imgOverlay = document.createElement("img");
-        imgOverlay.classList.add("img-overlay")
-
         textOverlay.classList.add("text-overlay")
         ageRatingOverlay.classList.add("text-overlay")
         ageRatingOverlay.textContent = `${averageRating}`
         textOverlay.textContent = `${canonicalTitle}`
 
-        imgOverlay.src = "src/icon/book.svg"
-
-        textOverlay.appendChild(imgOverlay);
         ageRatingOverlay.appendChild(textOverlay);
         overlay.appendChild(textOverlay);
         mangaItem.appendChild(overlay);
         mangaItem.appendChild(img);
 
         mangaContainer.appendChild(mangaItem);
-
-
-        // Colocar em loading. Dar um jeito de funcionar
-
-        // const cardImgs = document.querySelectorAll('.grid img')
-        // cardImgs.forEach((cardImg) => {
-        //     cardImg.onload = () => {
-        //         console.log('CU')
-        //         document.querySelector('.grid').classList.remove('loadingGrid');
-        //     };
-        // });
 
         mangaItem.addEventListener('click', () => {
             console.log(manga.id)

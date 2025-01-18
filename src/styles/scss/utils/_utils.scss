@@ -72,6 +72,7 @@ body.loadingCursor {
     align-items: center;
     color: white;
     filter: brightness(500%);
+    z-index: 999;
 }
 
 .hover-effect {

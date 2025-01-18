@@ -18,6 +18,16 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        list-style: none;
+        padding: 0.3vh;
+        color: #fff;
+        list-style: none;
+        transition: ease-in-out .2s;
+    }
 }
 
 .footer__list {
@@ -36,17 +46,6 @@ footer {
         list-style: none;
         transition: ease-in-out .2s;
     }
-
-    a {
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        list-style: none;
-        padding: 0.3vh;
-        color: #fff;
-        list-style: none;
-        transition: ease-in-out .2s;
-    }
     
     img {
         padding: 1vh;
@@ -62,11 +61,6 @@ footer {
 
 }
 
-
-.footer__list a:hover {
-    color: aquamarine;
-
-}
 
 .footer_logo img {
     width: 100px;

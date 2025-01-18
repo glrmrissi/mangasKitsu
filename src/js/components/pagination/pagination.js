@@ -47,6 +47,16 @@ export async function renderPagination() {
         }
 
         button.addEventListener("click", () => {
+            const cardImgs = document.querySelectorAll('.grid img')
+            cardImgs.forEach((cardImg) => {
+               cardImg.onload = () => {
+                   console.log('CU')
+                   document.querySelectorAll('.grid').forEach((grid) => {
+                       grid.classList.remove('loadingGrid');
+                   });
+               };
+           });
+   
             window.scrollTo(0, 600);
             currentPage = i;
             loadPage(currentPage);
