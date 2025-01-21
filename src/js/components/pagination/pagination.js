@@ -5,7 +5,7 @@ let totalPages = 1;
 let currentPage = 1;
 let pageSize = 18;
 const paginationContainer = document.getElementById("pagination");
-export async function fetchMangas(page) { // Paginação
+export async function fetchMangas(page) {
     const offset = (page - 1) * pageSize;
     showLoading()
 
@@ -47,20 +47,12 @@ export async function renderPagination() {
         }
 
         button.addEventListener("click", () => {
-            const cardImgs = document.querySelectorAll('.grid img')
-            cardImgs.forEach((cardImg) => {
-               cardImg.onload = () => {
-                   console.log('CU')
-                   document.querySelectorAll('.grid').forEach((grid) => {
-                       grid.classList.remove('loadingGrid');
-                   });
-               };
-           });
-   
             window.scrollTo(0, 600);
             currentPage = i;
             loadPage(currentPage);
-
+            document.querySelectorAll('.grid').forEach((grid) => {
+                grid.classList.remove('loadingGrid');
+            });
             document.querySelectorAll(".pagination button").forEach((btn) => {
                 btn.classList.remove("active");
             });

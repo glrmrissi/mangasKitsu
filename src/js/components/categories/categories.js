@@ -31,6 +31,13 @@ const categories = async () => {
                 categoriesDiv.appendChild(div)
                 div.appendChild(img)
                 div.appendChild(p)
+
+                div.addEventListener('click', () => {
+                    console.log(categories.id)
+                    localStorage.setItem('selectedAnimeId', categories.id)
+        
+                    window.open('../../../src/pages/details/details-manga.html', '_blank')
+                })
             });
         })
         .catch(error => {
