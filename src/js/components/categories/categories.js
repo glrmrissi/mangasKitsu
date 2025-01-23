@@ -9,7 +9,7 @@ categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
         url = btns.getAttribute("value")
         titleCategory.textContent = `Categories - ${url}`
-        setTimeout(function() {
+        setTimeout(function () {
             target.style.display = "flex"
         }, 1000);
         categoriesDiv.innerHTML = "";
@@ -25,19 +25,34 @@ const categories = async () => {
         .then(response => response.json())
         .then(data => {
             data.data.forEach(categories => {
-                const div = document.createElement("div")
+                const div = document.createElement("div");
+                const divTooltip = document.createElement("div");
+                const spanTooltip = document.createElement("span");
+                const asideDetails = document.createElement("aside")
+                const h3 = document.createElement("h3")
                 const p = document.createElement("p");
                 const img = document.createElement("img");
-                img.src = categories.attributes.posterImage.small
-                p.textContent = `${categories.attributes.canonicalTitle}`
-                categoriesDiv.appendChild(div)
-                div.appendChild(img)
-                div.appendChild(p)
+
+                div.classList.add("card-front");
+                divTooltip.classList.add("tooltip");
+                spanTooltip.classList.add("tooltiptext");
+                asideDetails.classList.add("details-tooltip");
+
+                img.src = categories.attributes.posterImage.small;
+                h3.textContent = `${categories.attributes.canonicalTitle} - ${categories.attributes.startDate}`;
+                p.innerHTML = `&nbsp; ${categories.attributes.synopsis}`;
+                categoriesDiv.appendChild(div);
+                div.appendChild(divTooltip);
+                divTooltip.appendChild(spanTooltip);
+                divTooltip.appendChild(img);
+                spanTooltip.appendChild(asideDetails);
+                asideDetails.appendChild(h3);
+                asideDetails.appendChild(p);
 
                 div.addEventListener('click', () => {
                     console.log(categories.id)
-                    localStorage.setItem('selectedAnimeId', categories.id)
-        
+                    localStorage.setItem('selectedAnimeId', categories.id);
+
                     window.open('../../../src/pages/details/details-manga.html', '_blank')
                 })
             });
@@ -47,14 +62,15 @@ const categories = async () => {
         })
 }
 
+categories();
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                offset += 10;
-                console.log(offset)
-                categories();
-            }
-        });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            offset += 10;
+            console.log(offset)
+            categories();
+        }
     });
-    observer.observe(target);
+});
+observer.observe(target);
