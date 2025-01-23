@@ -4,9 +4,11 @@ let limit = 10;
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
 const categorySelected = document.querySelectorAll(".categoriesNames");
+const titleCategory = document.getElementById("titleCategory")
 categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
         url = btns.getAttribute("value")
+        titleCategory.textContent = `Categories - ${url}`
         setTimeout(function() {
             target.style.display = "flex"
         }, 1000);

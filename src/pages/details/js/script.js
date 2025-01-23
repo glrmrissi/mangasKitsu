@@ -26,7 +26,7 @@ async function fetchMangaDetails(id) {
           <img class="img-details" src="${manga.attributes.posterImage.large}" alt="${manga.attributes.titles.en || manga.attributes.titles.en_jp || manga.attributes.titles.ja_jp}" />
           <p><strong>Status:</strong>&nbsp; ${manga.attributes.status}</p>
           <p><strong>Rating:</strong>&nbsp; ${manga.attributes.averageRating}</p>
-          <p><strong>Chapters:</strong>&nbsp; ${manga.attributes.episodeCount}</p>
+          <p><strong>Chapters:</strong>&nbsp; ${manga.attributes.volumeCount}</p>
           </aside>
           <aside class="right-side d-center">
             <p>&nbsp; &nbsp;${manga.attributes.synopsis || "Content not found"}</p>

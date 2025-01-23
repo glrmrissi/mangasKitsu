@@ -50,9 +50,14 @@
         border-radius: 4px;
         background-color: $background-secondary;
     }
+    img {
+        cursor: pointer;
+    }
 }
 
 #listItem {
+    position: absolute;
     display: none;
+    bottom: 10px;
     opacity: 0;
 }
