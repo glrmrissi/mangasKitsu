@@ -919,95 +919,9 @@ footer {
   place-items: center;
   width: 100%;
   height: 100%;
-  gap: 20px;
+  gap: 5px;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.manga-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.img-manga-container {
-  width: 100%;
-}
-
-.manga-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-.manga-container:hover {
-  cursor: pointer;
-  -webkit-backdrop-filter: brightness(80%);
-          backdrop-filter: brightness(80%);
-}
-.manga-containerhover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
-  mix-blend-mode: multiply;
-}
-
-.manga-container .desc-overlay {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3764705882);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  color: #e0e0e0;
-  font-weight: 600;
-  height: 100%;
-  padding: 1vh;
-  border-radius: 4px;
-  opacity: 0;
-  overflow: auto;
-  transition: 0.3s ease;
-  z-index: 1;
-}
-
-.manga-container:hover .desc-overlay {
-  opacity: 1;
-}
-
-.desc-paragraph {
-  height: 100%;
-  font-size: 0.9em;
-}
-
-.card-front {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.card-front h4 {
-  width: 250px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .load-btn {
@@ -1037,10 +951,23 @@ footer {
   height: 100%;
 }
 
+.card-front {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.card-front h4 {
+  width: 250px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .gridCategory {
   position: relative;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 4fr 1fr;
 }
 
 .category {
@@ -1080,7 +1007,7 @@ footer {
   width: 100%;
   height: 100%;
   gap: 20px;
-  padding: 5vh;
+  padding: 2vh;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -1092,16 +1019,29 @@ footer {
   cursor: pointer;
 }
 
+.highlight-title {
+  color: #865cb1;
+}
+
 #listItem {
   position: absolute;
   display: none;
-  bottom: 10px;
+  bottom: 300px;
   opacity: 0;
+}
+
+.tooltip.loadingGrid {
+  width: 256px;
+  height: 362px;
+  background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
+  border-radius: 4px;
 }
 
 .tooltip {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 100%;
   height: 100%;
 }
@@ -1110,11 +1050,12 @@ footer {
   visibility: hidden;
   width: 100%;
   height: 100%;
-  background-color: #1f1f1f;
+  background-color: #211f22;
+  border: 1px solid #4c464e;
   color: #fff;
-  padding: 5px 0;
+  padding: 5px;
   position: absolute;
-  z-index: 999;
+  z-index: 1;
   bottom: 0%;
   left: 130%;
   margin-left: -60px;
@@ -1122,15 +1063,26 @@ footer {
   transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.tooltiptext::after {
   content: "";
   position: absolute;
-  top: 20%;
-  right: 100%;
+  top: 15%;
+  left: -8%;
   margin-left: -5px;
-  border-width: 10px;
+  border-width: 15px;
   border-style: solid;
-  border-color: transparent #1f1f1f transparent transparent;
+  border-color: transparent #211f22 transparent transparent;
+  z-index: 1;
+}
+
+.tooltiptext.right {
+  left: -90%;
+}
+
+.tooltiptext.right::after {
+  top: 15%;
+  left: 100%;
+  border-color: transparent transparent transparent #211f22;
 }
 
 .tooltip:hover .tooltiptext {
@@ -1145,7 +1097,7 @@ footer {
 .details-tooltip h3 {
   width: 100%;
   white-space: wrap;
-  color: #6c498b;
+  color: #865cb1;
 }
 .details-tooltip p {
   width: 100%;

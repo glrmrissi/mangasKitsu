@@ -102,7 +102,6 @@ export async function renderMangas(mangas) {
         const cardImgs = document.querySelectorAll('.grid img')
             cardImgs.forEach((cardImg) => {
                cardImg.onload = () => {
-                   console.log('CU')
                    document.querySelectorAll('.grid').forEach((grid) => {
                        grid.classList.remove('loadingGrid');
                    });

@@ -8,7 +8,7 @@ const titleCategory = document.getElementById("titleCategory")
 categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
         url = btns.getAttribute("value")
-        titleCategory.textContent = `Categories - ${url}`
+        titleCategory.innerHTML = `Categories <span class="highlight-title">- ${url}</span>`
         setTimeout(function () {
             target.style.display = "flex"
         }, 1000);
@@ -20,7 +20,6 @@ categorySelected.forEach(btns => {
 
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
-    console.log(KitsuUrl)
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
@@ -49,16 +48,25 @@ const categories = async () => {
                 asideDetails.appendChild(h3);
                 asideDetails.appendChild(p);
 
+                const cardImgs = document.querySelectorAll('.tooltip img')
+                cardImgs.forEach((cardImg) => {
+                    cardImg.onload = () => {
+                        document.querySelectorAll('.tooltip').forEach((tooltip) => {
+                            tooltip.classList.remove('loadingGrid');
+                        });
+                    };
+                });
+
                 div.addEventListener('click', () => {
                     console.log(categories.id)
                     localStorage.setItem('selectedAnimeId', categories.id);
 
                     window.open('../../../src/pages/details/details-manga.html', '_blank')
-                })
+                });
             });
         })
         .catch(error => {
-            console.log("Erro em categories")
+            console.log(error.message, "Erro em categories")
         })
 }
 
