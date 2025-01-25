@@ -6,7 +6,7 @@
         overflow-x: hidden;
     }
 
-    .side-bar {  
+    .side-bar {
         left: -40vw;
         width: 40vw;
     }
@@ -30,7 +30,7 @@
         object-fit: cover;
         overflow: hidden;
         position: relative;
-    } 
+    }
 
     .imgs-slider .overlay {
         padding: 2vh;
@@ -39,18 +39,39 @@
     .imgs-slider img {
         padding: 0.5vh;
     }
-    
+
     .grid-launcher {
-        grid-template-columns: repeat(3, 1fr)!important;
+        grid-template-columns: repeat(3, 1fr) !important;
         padding: 4vh;
         gap: 5px;
     }
+
     .grid .overlay {
         padding: 3vh;
-    }    
+    }
+
     // Search
 
     .mangasSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // Category 
+    .gridCategory {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .category {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        height: 100%;
+    }
+
+    .categoryMangasShow {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
