@@ -15,6 +15,10 @@
   border-radius: 8px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   background-color: #121212;
@@ -158,6 +162,41 @@ body.loadingCursor {
   background-color: #503769;
   border-radius: 50%;
   animation: wave 7s infinite cubic-bezier(0.45, 0, 0.58, 1);
+}
+
+#btnTop {
+  display: flex;
+  position: fixed;
+  right: 40px;
+  bottom: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(39, 39, 39, 0.2039215686);
+  border-radius: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 9999;
+  transition: all 0.2s ease-in-out;
+}
+
+#btnTop:hover {
+  background-color: rgba(39, 39, 39, 0.6117647059);
+}
+
+.arrow {
+  border: solid #FFF;
+  border-width: 0px 4px 4px 0;
+  border-radius: 1px;
+  padding: 4px;
+  align-items: center;
+  display: inline-block;
+}
+
+.up {
+  transform: rotate(-135deg);
 }
 
 @keyframes shimmer {
@@ -965,19 +1004,19 @@ footer {
 }
 
 .gridCategory {
-  position: relative;
-  display: grid;
-  grid-template-columns: 4fr 1fr;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .category {
-  position: fixed;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  margin: 5dvh 0 5dvh 0;
   gap: 3px;
   right: 0%;
-  width: 400px;
-  height: 300px;
   z-index: 1;
 }
 .category li {
@@ -1002,7 +1041,7 @@ footer {
 
 .categoryMangasShow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   place-items: center;
   width: 100%;
   height: 100%;

@@ -20,8 +20,10 @@
         </nav>
     </header>
     <h1 style="margin-left: 20px;" id="titleCategory">Categories</h1>
+    <div id="btnTop" onmousedown="ocultar()">
+        <i class="arrow up"></i>
+    </div>
     <section class="gridCategory">
-        <div class="categoryMangasShow" id="categoriesMain"></div>
         <aside class="category">
             <li><a class="categoriesNames" value="Adventure">Adventure</a></li>
             <li><a class="categoriesNames" value="Action">Action</a></li>
@@ -64,8 +66,9 @@
             <li><a class="categoriesNames" value="Josei">Josei</a></li>
         </aside>
     </section>
+    <section class="categoryMangasShow" id="categoriesMain"></section>
     <div id="listItem">🌭</div>
-    <script src="../../../src/templates/footer/footer.js"></script>
+    <script src="../../../src/js/components/goToTop/goToTop.js"></script>
     <script src="../../../src/js/components/tooltip/tooltip.js"></script>
     <script src="../../js/components/categories/categories.js"></script>
 </body>

@@ -16,6 +16,10 @@
     border-radius: 8px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     position: relative;
     background-color: $background-main;
@@ -167,6 +171,41 @@ body.loadingCursor {
     background-color: $tertiary-font-color;
     border-radius: 50%;
     animation: wave 7s infinite cubic-bezier(0.45, 0, 0.58, 1);
+}
+
+#btnTop {
+    display: flex;
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: #27272734;
+    border-radius: 50%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 9999;
+    transition: all 0.2s ease-in-out;
+}
+
+#btnTop:hover {
+    background-color: #2727279c;
+}
+
+.arrow {
+    border: solid #FFF;
+    border-width: 0px 4px 4px 0;
+    border-radius: 1px;
+    padding: 4px;
+    align-items: center;
+    display: inline-block;
+}
+
+.up {
+    transform: rotate(-135deg);
 }
 
 @keyframes shimmer {
