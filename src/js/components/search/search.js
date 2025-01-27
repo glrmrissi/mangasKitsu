@@ -1,10 +1,10 @@
 let nextPageUrl = null;
-let offsetCustom = 10;
+let offsetCustom = 18;
 
 export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore
-        ? `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=10&page[offset]=${offsetCustom}`
-        : `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=10&page[offset]=10`;
+        ? `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=${offsetCustom}`
+        : `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=10`;
 
 
     showLoading();
@@ -57,8 +57,8 @@ export async function fetchManga(name, isLoadMore = false) {
             })
             document.getElementById('mangasList').appendChild(div);
         });
-        offsetCustom += 10;
-        nextPageUrl = `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=10&page[offset]=${offsetCustom}`;
+        offsetCustom += 18;
+        nextPageUrl = `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=${offsetCustom}`;
         hideLoading();
 
     } catch (error) {
