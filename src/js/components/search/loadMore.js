@@ -1,4 +1,4 @@
-import { fetchManga, nextPageUrl } from '../../js/components/search/search.js';
+import { fetchManga, nextPageUrl } from '../search/search.js';
 
 function getQueryParams() {
   const params = new URLSearchParams(window.location.search);

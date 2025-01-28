@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vh;
+    height: 5dvh;
     background-color: $background-main;
     color: $primary-font-color;
     backdrop-filter: blur(10px);
@@ -24,8 +24,8 @@
 }
 
 .profile-icon img {
-    width: 5vh;
-    height: 5vh;
+    width: 5dvh;
+    height: 5dvh;
     border-radius: 50%;
     display: flex;
     padding: 1vh;
@@ -41,7 +41,7 @@
     border-radius: 9px;
     padding: 2px 7px;
     margin-right: 20px;
-    background: #dbdbdb url('../../../../../src/icon/search.svg') no-repeat center right;
+    background: $input-search-color url('../../../../../src/icon/search.svg') no-repeat center right;
     background-position: right 10px center;
     background-clip: padding-box;
     background-size: 8%;
@@ -51,5 +51,5 @@
 
 .mangaInput::placeholder {
     padding: 0 5px;
-    color: #020202;
+    color: $background-main;
 }   

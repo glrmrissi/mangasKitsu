@@ -236,7 +236,7 @@ body.loadingCursor {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  height: 5dvh;
   background-color: #121212;
   color: #e0e0e0;
   -webkit-backdrop-filter: blur(10px);
@@ -259,8 +259,8 @@ body.loadingCursor {
 }
 
 .profile-icon img {
-  width: 5vh;
-  height: 5vh;
+  width: 5dvh;
+  height: 5dvh;
   border-radius: 50%;
   display: flex;
   padding: 1vh;
@@ -288,12 +288,12 @@ body.loadingCursor {
 
 .mangaInput::-moz-placeholder {
   padding: 0 5px;
-  color: #020202;
+  color: #121212;
 }
 
 .mangaInput::placeholder {
   padding: 0 5px;
-  color: #020202;
+  color: #121212;
 }
 
 .profile-infos {
