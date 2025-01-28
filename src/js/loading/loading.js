@@ -1,20 +1,22 @@
-// Loading entre as requisições da API, tenho que dar algumas arrumadas
+window.AppConfig = {
+    loadingImage: "/src/imgs/load.gif"
+};
 
-function showLoading() {
+function showLoading(customImagePath) {
     const div = document.createElement('div');
     div.classList.add('loading');
     const label = document.createElement("label");
     const img = document.createElement("img");
-    img.src = "../src/imgs/load.gif";
+    
+    img.src = customImagePath || window.AppConfig.loadingImage;
+    
     img.alt = "Loading...";
     document.body.appendChild(div);
     label.appendChild(img);
     div.appendChild(label);
 }
 
-function hideLoading() {
+function hideLoading() { 
     const loadings = document.getElementsByClassName("loading");
-      if(loadings.length) {
-        loadings[0].remove();
-    }
+    if (loadings.length) loadings[0].remove();
 }

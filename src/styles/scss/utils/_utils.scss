@@ -208,6 +208,104 @@ body.loadingCursor {
     transform: rotate(-135deg);
 }
 
+
+.tooltip.loadingGrid {
+    width: 256px;
+    height: 362px;
+    background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
+    background-size: 200% 100%;
+    animation: shimmer 1s infinite;
+    border-radius: 4px;
+}
+
+
+.tooltip {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $tooltip;
+    border: 1px solid #4c464e;
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    left: 130%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: -8%;
+    margin-left: -5px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent $tooltip transparent transparent;
+    z-index: 1;
+}
+
+.tooltiptext.right {
+    left: -90%;
+}
+
+.tooltiptext.right::after {
+    top: 15%;
+    left: 100%;
+    border-color: transparent transparent transparent $tooltip;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.details-tooltip {
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+    max-height: 100%;
+    overflow: auto;
+
+    h3 {
+        width: 100%;
+        white-space: wrap;
+        color: $highlight-color;
+    }
+
+    p {
+        width: 100%;
+        height: 100%;
+        white-space: wrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.card-front {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+    h4 {
+        width: 250px;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
 @keyframes shimmer {
     0% {
         background-position: 0%;
@@ -222,13 +320,15 @@ body.loadingCursor {
     }
 }
 
-@keyframes waveAnimation  {
+@keyframes waveAnimation {
     0% {
         background-position: 0% 0%;
     }
+
     50% {
         background-position: 100% 0%;
     }
+
     100% {
         background-position: 0% 0%;
     }
