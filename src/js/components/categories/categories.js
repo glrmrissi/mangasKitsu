@@ -1,6 +1,6 @@
 let url = null;
 let offset = 0;
-let limit = 10;
+let limit = 18;
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
 const categorySelected = document.querySelectorAll(".categoriesNames");
@@ -13,7 +13,7 @@ categorySelected.forEach(btns => {
             target.style.display = "flex"
         }, 1000);
         categoriesDiv.innerHTML = "";
-        offset = 10
+        offset = 18
         categories();
     })
 })
@@ -75,7 +75,7 @@ categories();
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            offset += 10;
+            offset += 18;
             console.log(offset)
             categories();
         }
