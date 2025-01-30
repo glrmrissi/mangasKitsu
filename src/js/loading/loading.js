@@ -1,5 +1,5 @@
 window.AppConfig = {
-    loadingImage: "/src/imgs/load.gif"
+    loadingImage: "./src/imgs/load.gif"
 };
 
 function showLoading(customImagePath) {

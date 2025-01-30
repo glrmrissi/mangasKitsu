@@ -32,27 +32,33 @@ export async function fetchManga(name, isLoadMore = false) {
             const h3 = document.createElement("h3")
             const p = document.createElement("p");
             const img = document.createElement("img");
+            const articleMobile = document.createElement("article");
+            const h3Mobile = document.createElement("h3");
 
             div.classList.add("card-front");
             divTooltip.classList.add("tooltip");
             spanTooltip.classList.add("tooltiptext");
             asideDetails.classList.add("details-tooltip");
+            articleMobile.classList.add("article-mobile");
 
             img.src = posterImage.small;
             h3.textContent = `${canonicalTitle} - ${startDate}`;
             p.innerHTML = `&nbsp; ${synopsis}`;
+            h3Mobile.textContent = `${canonicalTitle} - ${startDate}`;
             div.appendChild(divTooltip);
+            div.appendChild(articleMobile);
+            articleMobile.appendChild(h3Mobile)
             divTooltip.appendChild(spanTooltip);
             divTooltip.appendChild(img);
             spanTooltip.appendChild(asideDetails);
             asideDetails.appendChild(h3);
             asideDetails.appendChild(p);
 
-            
+
             div.addEventListener('click', () => {
                 console.log(manga.id)
                 localStorage.setItem('selectedAnimeId', manga.id)
-                
+
                 window.open('../../../src/pages/details/details-manga.html', '_blank')
             })
             document.getElementById('mangasList').appendChild(div);

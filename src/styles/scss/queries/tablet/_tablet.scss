@@ -51,10 +51,9 @@
     }
 
     // Search
-
     .mangasSection {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     // Category 
@@ -73,6 +72,26 @@
 
     .categoryMangasShow {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tooltip {
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+    }
+
+    .tooltiptext {
+        display: none;
+    }
+
+    .article-mobile {
+        display: flex;
+        width: 164px;
+        height: 100%;
+        overflow: hidden;
+        h3 {
+            font-size: 0.7em;
+        }
     }
 }
