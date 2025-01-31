@@ -291,6 +291,7 @@ body.loadingCursor {
     p {
         width: 100%;
         height: 100%;
+        font-weight: 500;
         white-space: wrap;
         text-overflow: ellipsis;
     }
@@ -310,6 +311,12 @@ body.loadingCursor {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+}
+
+.popularity-rank-p {
+    font-size: 0.9em;
+    font-size: 600;
+    padding: 7px 0 7px 0;
 }
 
 @keyframes shimmer {

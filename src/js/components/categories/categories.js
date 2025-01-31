@@ -24,12 +24,15 @@ const categories = async () => {
         .then(response => response.json())
         .then(data => {
             data.data.forEach(categories => {
+                const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank} = categories.attributes
+
                 const div = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
                 const asideDetails = document.createElement("aside")
                 const h3 = document.createElement("h3")
                 const p = document.createElement("p");
+                const popularityRankP = document.createElement("p");
                 const img = document.createElement("img");
                 const articleMobile = document.createElement("article");
                 const h3Mobile = document.createElement("h3");
@@ -39,12 +42,14 @@ const categories = async () => {
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
                 articleMobile.classList.add("article-mobile");
+                popularityRankP.classList.add("popularity-rank-p");
 
 
-                img.src = categories.attributes.posterImage.small;
-                h3.textContent = `${categories.attributes.canonicalTitle} - ${categories.attributes.startDate}`;
-                p.innerHTML = `&nbsp; ${categories.attributes.synopsis}`;
-                h3Mobile.textContent = `${categories.attributes.canonicalTitle} - ${categories.attributes.startDate}`;
+                img.src = posterImage.small;
+                h3.textContent = `${canonicalTitle} - ${startDate}`;
+                popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+                p.innerHTML = `&nbsp; ${synopsis}`;
+                h3Mobile.textContent = `${canonicalTitle} - ${startDate}`;
                 categoriesDiv.appendChild(div);
                 div.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
@@ -53,6 +58,7 @@ const categories = async () => {
                 articleMobile.appendChild(h3Mobile)
                 spanTooltip.appendChild(asideDetails);
                 asideDetails.appendChild(h3);
+                asideDetails.appendChild(popularityRankP);
                 asideDetails.appendChild(p);
 
                 const cardImgs = document.querySelectorAll('.tooltip img')

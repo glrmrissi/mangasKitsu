@@ -24,13 +24,14 @@ export async function fetchManga(name, isLoadMore = false) {
         }
 
         data.data.forEach(manga => {
-            const { canonicalTitle, synopsis, posterImage, ageRating, startDate } = manga.attributes
+            const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank} = manga.attributes
             const div = document.createElement("div");
             const divTooltip = document.createElement("section");
             const spanTooltip = document.createElement("span");
             const asideDetails = document.createElement("aside")
             const h3 = document.createElement("h3")
             const p = document.createElement("p");
+            const popularityRankP = document.createElement("p");
             const img = document.createElement("img");
             const articleMobile = document.createElement("article");
             const h3Mobile = document.createElement("h3");
@@ -40,9 +41,11 @@ export async function fetchManga(name, isLoadMore = false) {
             spanTooltip.classList.add("tooltiptext");
             asideDetails.classList.add("details-tooltip");
             articleMobile.classList.add("article-mobile");
+            popularityRankP.classList.add("popularity-rank-p");
 
             img.src = posterImage.small;
             h3.textContent = `${canonicalTitle} - ${startDate}`;
+            popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
             p.innerHTML = `&nbsp; ${synopsis}`;
             h3Mobile.textContent = `${canonicalTitle} - ${startDate}`;
             div.appendChild(divTooltip);
@@ -52,6 +55,7 @@ export async function fetchManga(name, isLoadMore = false) {
             divTooltip.appendChild(img);
             spanTooltip.appendChild(asideDetails);
             asideDetails.appendChild(h3);
+            asideDetails.appendChild(popularityRankP);
             asideDetails.appendChild(p);
 
 
