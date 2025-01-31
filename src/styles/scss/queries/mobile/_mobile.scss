@@ -1,14 +1,18 @@
 @media (min-width: 0px) and (max-width: $max-width-mobile) {
     .main-container {
-        padding: 5%;
+        padding: 0;
         width: 100%;
         height: 100%;
         overflow-x: hidden;
     }
-    
+
     .side-bar {
         left: -75vw;
         width: 40vw;
+    }
+
+    .slider-container {
+        padding: 2vh;
     }
 
     .slider-car {
@@ -29,7 +33,7 @@
         object-fit: cover;
         overflow: hidden;
         position: relative;
-    } 
+    }
 
     .imgs-slider .overlay {
         padding: 2vh;
@@ -38,22 +42,27 @@
     .imgs-slider img {
         padding: 1vh;
     }
-    
+
+    .slider-car .imgs-slider {
+        position: relative;
+        width: calc(100%/5);
+        transition: all .3s;
+        &:hover {
+            width: 20%;
+        }
+    }
+
     .grid-launcher {
         grid-template-columns: repeat(2, 1fr);
-        padding: 4vh;
+        padding: 2vh;
         gap: 5px;
     }
+
     .grid .overlay {
         padding: 3vh;
         box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
         -webkit-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
         -moz-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
-    }    
-    
-    .text-overlay {
-        user-select: none;
-        font-size: 0.9em;
     }
 
     // Search 
@@ -62,9 +71,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .text-overlay {
+        user-select: none;
+        font-size: 0.9em;
+    }
+
     .mangasSection {
         width: 100%;
-        padding: 0;
+        padding: 2vh;
     }
 
     // Category 
@@ -72,6 +86,7 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+
     .category {
         position: relative;
         display: grid;
@@ -79,16 +94,17 @@
         width: 100%;
         height: 100%;
     }
-    
+
     .categoryMangasShow {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);    
+        grid-template-columns: repeat(2, 1fr);
         flex-wrap: wrap;
     }
 
     .tooltip {
         display: flex;
         flex-direction: column;
+
         img {
             width: 100%;
         }
@@ -103,9 +119,10 @@
         width: 164px;
         height: 100%;
         overflow: hidden;
+
         h3 {
             font-size: 0.7em;
         }
     }
-    
+
 }

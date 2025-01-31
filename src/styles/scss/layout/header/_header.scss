@@ -52,9 +52,9 @@
 }
 
 .mangaInput {
-    border: solid $primary-font-color 2px;
+    border: solid $primary-font-color 1px;
     color: $primary-font-color;
-    border-radius: 6px;
+    border-radius: 40px;
     padding: 3px;
     font-weight: 600;
     margin-right: 20px;
@@ -69,8 +69,8 @@
         color: transparent;
     }
 
-    &:focus {
-        border: solid $secondary-font-color 2px;
+    &:focus, &:valid {
+        border: solid $secondary-font-color 1px;
     }
 }
 

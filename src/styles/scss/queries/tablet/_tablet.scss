@@ -21,6 +21,15 @@
         overflow: hidden;
     }
 
+    .slider-car .imgs-slider {
+        position: relative;
+        width: calc(100%/5);
+        transition: all .3s;
+        &:hover {
+            width: 20%;
+        }
+    }
+
     .imgs-slider {
         position: relative;
         display: flex;

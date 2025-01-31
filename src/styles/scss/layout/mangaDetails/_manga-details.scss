@@ -52,7 +52,6 @@
     align-items: center;
     background-color: transparent;
     backdrop-filter: blur(10px);
-    padding: 40px 20px;
     margin: 0 20px;
     border-radius: 4px;
     flex: 1;
@@ -72,7 +71,8 @@
 }
 
 .right-side p {
-    padding: 8vh 0;
+    padding: 8vh;
+    font-size: 1em;
 }
 
 .img-details {

@@ -34,6 +34,7 @@ body {
   font-weight: 500;
   font-style: normal;
   width: 100%;
+  min-width: 100%;
   height: auto;
   flex-wrap: wrap;
 }
@@ -217,6 +218,9 @@ body.loadingCursor {
   width: 100%;
   height: 100%;
 }
+.tooltip img {
+  border-radius: 4px;
+}
 
 .tooltiptext {
   visibility: hidden;
@@ -385,9 +389,9 @@ body.loadingCursor {
 }
 
 .mangaInput {
-  border: solid #e0e0e0 2px;
+  border: solid #e0e0e0 1px;
   color: #e0e0e0;
-  border-radius: 6px;
+  border-radius: 40px;
   padding: 3px;
   font-weight: 600;
   margin-right: 20px;
@@ -405,8 +409,8 @@ body.loadingCursor {
   padding: 0 5px;
   color: transparent;
 }
-.mangaInput:focus {
-  border: solid #6c498b 2px;
+.mangaInput:focus, .mangaInput:valid {
+  border: solid #6c498b 1px;
 }
 
 .div-input-search-main input:focus ~ label,
@@ -662,7 +666,7 @@ body.loadingCursor {
   position: relative;
   display: flex;
   width: 100%;
-  height: 35vh;
+  height: 35dvh;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -677,10 +681,14 @@ body.loadingCursor {
 .imgs-slider {
   position: relative;
   display: flex;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
   position: relative;
+}
+.imgs-slider:hover {
+  filter: brightness(90%);
 }
 .imgs-slider img {
   width: 100%;
@@ -689,9 +697,6 @@ body.loadingCursor {
   transition: transform 0.3s;
   cursor: pointer;
   transition: all 0.3s;
-}
-.imgs-slider img:hover {
-  filter: brightness(80%);
 }
 
 .imgs-slider .overlay {
@@ -707,6 +712,11 @@ body.loadingCursor {
 .slider-car .imgs-slider {
   position: relative;
   width: 20%;
+  transition: all 0.3s;
+}
+.slider-car .imgs-slider:hover {
+  width: 50dvh;
+  height: 100%;
 }
 
 .others-imgs {
@@ -983,7 +993,6 @@ footer {
   background-color: transparent;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  padding: 40px 20px;
   margin: 0 20px;
   border-radius: 4px;
   flex: 1;
@@ -1003,7 +1012,8 @@ footer {
 }
 
 .right-side p {
-  padding: 8vh 0;
+  padding: 8vh;
+  font-size: 1em;
 }
 
 .img-details {
@@ -1146,6 +1156,7 @@ footer {
   justify-content: center;
   align-items: center;
   min-width: 100%;
+  background-color: #242424;
   font-size: 0.9em;
   padding: 2px;
   height: 100%;
@@ -1164,7 +1175,7 @@ footer {
   width: 100%;
   height: 100%;
   gap: 20px;
-  padding: 2vh;
+  padding: 5vh;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -1211,6 +1222,14 @@ footer {
     width: 100%;
     height: 100%;
     overflow: hidden;
+  }
+  .slider-car .imgs-slider {
+    position: relative;
+    width: 20%;
+    transition: all 0.3s;
+  }
+  .slider-car .imgs-slider:hover {
+    width: 20%;
   }
   .imgs-slider {
     position: relative;
@@ -1276,7 +1295,7 @@ footer {
 }
 @media (min-width: 0px) and (max-width: 576px) {
   .main-container {
-    padding: 5%;
+    padding: 0;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -1284,6 +1303,9 @@ footer {
   .side-bar {
     left: -75vw;
     width: 40vw;
+  }
+  .slider-container {
+    padding: 2vh;
   }
   .slider-car {
     position: relative;
@@ -1310,9 +1332,17 @@ footer {
   .imgs-slider img {
     padding: 1vh;
   }
+  .slider-car .imgs-slider {
+    position: relative;
+    width: 20%;
+    transition: all 0.3s;
+  }
+  .slider-car .imgs-slider:hover {
+    width: 20%;
+  }
   .grid-launcher {
     grid-template-columns: repeat(2, 1fr);
-    padding: 4vh;
+    padding: 2vh;
     gap: 5px;
   }
   .grid .overlay {
@@ -1321,6 +1351,10 @@ footer {
     -webkit-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.8) inset;
     -moz-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.8) inset;
   }
+  .mangasSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .text-overlay {
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1328,12 +1362,8 @@ footer {
     font-size: 0.9em;
   }
   .mangasSection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .mangasSection {
     width: 100%;
-    padding: 0;
+    padding: 2vh;
   }
   .gridCategory {
     display: grid;
