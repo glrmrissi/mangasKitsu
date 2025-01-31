@@ -40,16 +40,20 @@
     }
     
     .grid-launcher {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr);
         padding: 4vh;
         gap: 5px;
     }
     .grid .overlay {
         padding: 3vh;
+        box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
+        -webkit-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
+        -moz-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
     }    
     
     .text-overlay {
         user-select: none;
+        font-size: 0.9em;
     }
 
     // Search 

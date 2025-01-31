@@ -143,11 +143,13 @@ body.loadingCursor {
     color: $primary-font-color;
     transition: all .3s;
     z-index: 1;
+    span {
+        padding-left: 0.3dvw;
+    }
 }
 
 .hover-effect-nav:hover {
     color: $secondary-font-color;
-
 }
 
 .wave {

@@ -83,7 +83,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             offset += 18;
-            console.log(offset)
             categories();
         }
     });

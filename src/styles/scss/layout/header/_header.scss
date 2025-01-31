@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 5dvh;
-    background-color: $background-main;
+    background-color: $background-secondary;
     color: $primary-font-color;
     backdrop-filter: blur(10px);
 }
@@ -36,20 +36,48 @@
     transition: linear 0.2s;
 }
 
+.div-input-search-main {
+    position: relative;
+
+    label {
+        position: absolute;
+        padding: 0.5em;
+        transform: translateY(-50%);
+        top: 50%;
+        left: 1em;
+        pointer-events: none;
+        font-size: 0.8em;
+        transition: .3s;
+    }
+}
+
 .mangaInput {
-    border: none;
-    border-radius: 9px;
-    padding: 2px 7px;
+    border: solid $primary-font-color 2px;
+    color: $primary-font-color;
+    border-radius: 6px;
+    padding: 3px;
+    font-weight: 600;
     margin-right: 20px;
-    background: $input-search-color url('../../../../../src/icon/search.svg') no-repeat center right;
+    background: transparent url('../../../../../src/icon/search.svg') no-repeat center right;
     background-position: right 10px center;
     background-clip: padding-box;
     background-size: 8%;
     outline: none;
+
+    &::placeholder {
+        padding: 0 5px;
+        color: transparent;
+    }
+
+    &:focus {
+        border: solid $secondary-font-color 2px;
+    }
 }
 
-
-.mangaInput::placeholder {
-    padding: 0 5px;
-    color: $background-main;
-}   
+.div-input-search-main input:focus~label,
+.div-input-search-main input:valid~label {
+    color: $secondary-font-color;
+    background-color: $background-secondary;
+    top: 0%;
+    font-size: 0.5em;
+}

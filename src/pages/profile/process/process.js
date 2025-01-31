@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (savedImg) {
         imgUser.setAttribute('src', savedImg);
         profilePhotoGlobal.setAttribute('src', savedImg);
-    }
+    }  
     file.addEventListener('change', async function () {
         const chosedFile = this.files[0];
         if (chosedFile) {

@@ -136,6 +136,9 @@ body.loadingCursor {
   transition: all 0.3s;
   z-index: 1;
 }
+.hover-effect-nav span {
+  padding-left: 0.3dvw;
+}
 
 .hover-effect-nav:hover {
   color: #6c498b;
@@ -330,7 +333,7 @@ body.loadingCursor {
   justify-content: space-between;
   align-items: center;
   height: 5dvh;
-  background-color: #121212;
+  background-color: #1b1b1b;
   color: #e0e0e0;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -367,26 +370,51 @@ body.loadingCursor {
   transition: linear 0.2s;
 }
 
+.div-input-search-main {
+  position: relative;
+}
+.div-input-search-main label {
+  position: absolute;
+  padding: 0.5em;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 1em;
+  pointer-events: none;
+  font-size: 0.8em;
+  transition: 0.3s;
+}
+
 .mangaInput {
-  border: none;
-  border-radius: 9px;
-  padding: 2px 7px;
+  border: solid #e0e0e0 2px;
+  color: #e0e0e0;
+  border-radius: 6px;
+  padding: 3px;
+  font-weight: 600;
   margin-right: 20px;
-  background: #dbdbdb url("../../../../../src/icon/search.svg") no-repeat center right;
+  background: transparent url("../../../../../src/icon/search.svg") no-repeat center right;
   background-position: right 10px center;
   background-clip: padding-box;
   background-size: 8%;
   outline: none;
 }
-
 .mangaInput::-moz-placeholder {
   padding: 0 5px;
-  color: #121212;
+  color: transparent;
 }
-
 .mangaInput::placeholder {
   padding: 0 5px;
-  color: #121212;
+  color: transparent;
+}
+.mangaInput:focus {
+  border: solid #6c498b 2px;
+}
+
+.div-input-search-main input:focus ~ label,
+.div-input-search-main input:valid ~ label {
+  color: #6c498b;
+  background-color: #1b1b1b;
+  top: 0%;
+  font-size: 0.5em;
 }
 
 .profile-infos {
@@ -827,9 +855,11 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #1b1b1b;
   width: 100%;
   height: 100%;
   padding: 1vh 0;
+  z-index: 1;
 }
 
 .nav-list {
@@ -844,7 +874,7 @@ footer {
   word-break: break-all;
   flex-wrap: wrap;
   gap: 5px;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .shrink {
@@ -853,6 +883,12 @@ footer {
   align-items: center;
   padding: 1vh;
   width: 100%;
+}
+.shrink a {
+  z-index: 1;
+}
+.shrink span {
+  z-index: 1;
 }
 
 .hover_side_bar {
@@ -880,7 +916,7 @@ footer {
   margin: 0 0.8vh;
   padding: 0.5vh;
   color: #fff;
-  background-color: #1b1b1b;
+  background-color: #242424;
   z-index: 1;
 }
 .nav-link a {
@@ -895,7 +931,7 @@ footer {
   display: flex;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  min-height: 95dvh;
 }
 
 .mg-details {
@@ -1275,17 +1311,21 @@ footer {
     padding: 1vh;
   }
   .grid-launcher {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr);
     padding: 4vh;
     gap: 5px;
   }
   .grid .overlay {
     padding: 3vh;
+    box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.8) inset;
+    -webkit-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.8) inset;
+    -moz-box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.8) inset;
   }
   .text-overlay {
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
+    font-size: 0.9em;
   }
   .mangasSection {
     display: grid;
