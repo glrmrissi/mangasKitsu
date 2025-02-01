@@ -6,14 +6,15 @@
 }
 
 .category {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: auto;
     height: 100%;
     margin: 0 0 5dvh 0;
     gap: 3px;
     right: 0%;
     z-index: 1;
+
     li {
         word-break: break-all;
         list-style: none;
@@ -61,7 +62,27 @@
 }
 
 .highlight-title {
-    color: $highlight-color;
+    color: $tertiary-font-color;
+}
+
+#categoriesSelect {
+    padding: 1dvh;
+    font-size: 1em;
+    background-color: $background-secondary;
+    color: $primary-font-color;
+    outline: none;
+    border: none;
+}
+
+#categoriesSelect:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
 }
 
 #listItem {

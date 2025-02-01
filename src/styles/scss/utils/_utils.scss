@@ -71,7 +71,7 @@ body.loadingCursor {
 .loading {
     position: fixed;
     top: 50%;
-    left: 47%;
+    left: 48%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,14 +86,7 @@ body.loadingCursor {
     font-weight: 600;
     font-size: 1em;
     color: #fff;
-    text-decoration: none;
-    background-clip: text;
-    background-image: linear-gradient(to right,
-            $secondary-font-color,
-            $tertiary-font-color 50%,
-            $primary-font-color 50%);
-    background-size: 200% 100%;
-    background-position: -100%;
+    text-decoration: none;   
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
@@ -195,7 +188,7 @@ body.loadingCursor {
 }
 
 #btnTop:hover {
-    background-color: #2727279c;
+    background-color: #272727ab;
 }
 
 .arrow {
@@ -278,7 +271,7 @@ body.loadingCursor {
 
 .details-tooltip {
     text-overflow: ellipsis;
-    font-size: 0.8em;
+    font-size: 0.7em;
     max-height: 100%;
     overflow: auto;
 
@@ -314,8 +307,7 @@ body.loadingCursor {
 }
 
 .popularity-rank-p {
-    font-size: 0.9em;
-    font-size: 600;
+    font-weight: 500;
     padding: 7px 0 7px 0;
 }
 

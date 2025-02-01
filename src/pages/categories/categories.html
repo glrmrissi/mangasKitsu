@@ -12,62 +12,64 @@
 <body>
     <header class="header_main">
         <nav>
-          <div class="shrink">
-            <a href="../../../index.html" target="_self"><span class=""><img src="../../../src/icon/logo.png"
-              class="logo" srcset=""></span></a>
-          </div>
-          <div class="profile-icon">
-            <a href="../../../src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal" class="iconsSize"
-                src="../../../src/icon/profile.svg" alt="Profile Icon"></a>
-          </div>
+            <div class="shrink">
+                <a href="../../../index.html" target="_self"><span class=""><img src="../../../src/icon/logo.png"
+                            class="logo" srcset=""></span></a>
+            </div>
+            <div class="profile-icon">
+                <a href="../../../src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal"
+                        class="iconsSize" src="../../../src/icon/profile.svg" alt="Profile Icon"></a>
+            </div>
         </nav>
-      </header>
+    </header>
     <div id="btnTop" onmousedown="ocultar()">
         <i class="arrow up"></i>
     </div>
     <main class="main-container">
         <section class="gridCategory">
             <aside class="category">
-                <li><a class="categoriesNames" value="Adventure">Adventure</a></li>
-                <li><a class="categoriesNames" value="Action">Action</a></li>
-                <li><a class="categoriesNames" value="Romance">Romance</a></li>
-                <li><a class="categoriesNames" value="Science fiction">Science fiction</a></li>
-                <li><a class="categoriesNames" value="Drama">Drama</a></li>
-                <li><a class="categoriesNames" value="Earth">Earth</a></li>
-                <li><a class="categoriesNames" value="Yaoi">Yaoi</a></li>
-                <li><a class="categoriesNames" value="Shoujo Ai">Shoujo Ai</a></li>
-                <li><a class="categoriesNames" value="Sports">Sports</a></li>
-                <li><a class="categoriesNames" value="Music">Music</a></li>
-                <li><a class="categoriesNames" value="Supernatural">Supernatural</a></li>
-                <li><a class="categoriesNames" value="Harem">Harem</a></li>
-                <li><a class="categoriesNames" value="Shounen">Shounen</a></li>
-                <li><a class="categoriesNames" value="Thriller">Thriller</a></li>
-                <li><a class="categoriesNames" value="Seinen">Seinen</a></li>
-                <li><a class="categoriesNames" value="Kids">Kids</a></li>
-                <li><a class="categoriesNames" value="Shounen Ai">Shounen Ai</a></li>
-                <li><a class="categoriesNames" value="Shoujo">Shoujo</a></li>
-                <li><a class="categoriesNames" value="Asia">Asia</a></li>
-                <li><a class="categoriesNames" value="Demon">Demon</a></li>
-                <li><a class="categoriesNames" value="Fantasy world">Fantasy world</a></li>
-                <li><a class="categoriesNames" value="Military">Military</a></li>
-                <li><a class="categoriesNames" value="Comedy">Comedy</a></li>
-                <li><a class="categoriesNames" value="School Life">School Life</a></li>
-                <li><a class="categoriesNames" value="Slice of Life">Slice of Life</a></li>
-                <li><a class="categoriesNames" value="Ecchi">Ecchi</a></li>
-                <li><a class="categoriesNames" value="Historical">Historical</a></li>
-                <li><a class="categoriesNames" value="Magic">Magic</a></li>
-                <li><a class="categoriesNames" value="Mystery">Mystery</a></li>
-                <li><a class="categoriesNames" value="Psychological">Psychological</a></li>
-                <li><a class="categoriesNames" value="Japan">Japan</a></li>
-                <li><a class="categoriesNames" value="Horror">Horror</a></li>
-                <li><a class="categoriesNames" value="Present">Present</a></li>
-                <li><a class="categoriesNames" value="Martial Arts">Martial Arts</a></li>
-                <li><a class="categoriesNames" value="Isekai">Isekai</a></li>
-                <li><a class="categoriesNames" value="Mecha">Mecha</a></li>
-                <li><a class="categoriesNames" value="Super Power">Super Power</a></li>
-                <li><a class="categoriesNames" value="Violence">Violence</a></li>
-                <li><a class="categoriesNames" value="Josei">Josei</a></li>
-                <li><a class="categoriesNames" value="Crime">Crime</a></li>
+                <select name="categoriesSelect" id="categoriesSelect">
+                    <option class="categoriesNames" value="Action">Action</option>
+                    <option class="categoriesNames" value="Adventure">Adventure</option>
+                    <option class="categoriesNames" value="Asia">Asia</option>
+                    <option class="categoriesNames" value="Comedy">Comedy</option>
+                    <option class="categoriesNames" value="Crime">Crime</option>
+                    <option class="categoriesNames" value="Demon">Demon</option>
+                    <option class="categoriesNames" value="Drama">Drama</option>
+                    <option class="categoriesNames" value="Earth">Earth</option>
+                    <option class="categoriesNames" value="Ecchi">Ecchi</option>
+                    <option class="categoriesNames" value="Fantasy world">Fantasy world</option>
+                    <option class="categoriesNames" value="Harem">Harem</option>
+                    <option class="categoriesNames" value="Historical">Historical</option>
+                    <option class="categoriesNames" value="Horror">Horror</option>
+                    <option class="categoriesNames" value="Isekai">Isekai</option>
+                    <option class="categoriesNames" value="Japan">Japan</option>
+                    <option class="categoriesNames" value="Josei">Josei</option>
+                    <option class="categoriesNames" value="Kids">Kids</option>
+                    <option class="categoriesNames" value="Magic">Magic</option>
+                    <option class="categoriesNames" value="Martial Arts">Martial Arts</option>
+                    <option class="categoriesNames" value="Mecha">Mecha</option>
+                    <option class="categoriesNames" value="Military">Military</option>
+                    <option class="categoriesNames" value="Music">Music</option>
+                    <option class="categoriesNames" value="Mystery">Mystery</option>
+                    <option class="categoriesNames" value="Present">Present</option>
+                    <option class="categoriesNames" value="Psychological">Psychological</option>
+                    <option class="categoriesNames" value="Romance">Romance</option>
+                    <option class="categoriesNames" value="School Life">School Life</option>
+                    <option class="categoriesNames" value="Science fiction">Science fiction</option>
+                    <option class="categoriesNames" value="Seinen">Seinen</option>
+                    <option class="categoriesNames" value="Shoujo">Shoujo</option>
+                    <option class="categoriesNames" value="Shoujo Ai">Shoujo Ai</option>
+                    <option class="categoriesNames" value="Shounen">Shounen</option>
+                    <option class="categoriesNames" value="Shounen Ai">Shounen Ai</option>
+                    <option class="categoriesNames" value="Slice of Life">Slice of Life</option>
+                    <option class="categoriesNames" value="Sports">Sports</option>
+                    <option class="categoriesNames" value="Super Power">Super Power</option>
+                    <option class="categoriesNames" value="Supernatural">Supernatural</option>
+                    <option class="categoriesNames" value="Thriller">Thriller</option>
+                    <option class="categoriesNames" value="Violence">Violence</option>
+                    <option class="categoriesNames" value="Yaoi">Yaoi</option>
+                </select>
             </aside>
         </section>
         <div class="title-realeased">

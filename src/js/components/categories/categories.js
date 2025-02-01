@@ -44,7 +44,6 @@ const categories = async () => {
                 articleMobile.classList.add("article-mobile");
                 popularityRankP.classList.add("popularity-rank-p");
 
-
                 img.src = posterImage.small;
                 h3.textContent = `${canonicalTitle} - ${startDate}`;
                 popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`

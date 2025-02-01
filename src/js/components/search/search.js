@@ -58,7 +58,6 @@ export async function fetchManga(name, isLoadMore = false) {
             asideDetails.appendChild(popularityRankP);
             asideDetails.appendChild(p);
 
-
             div.addEventListener('click', () => {
                 console.log(manga.id)
                 localStorage.setItem('selectedAnimeId', manga.id)
