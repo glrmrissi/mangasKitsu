@@ -99,6 +99,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         flex-wrap: wrap;
+        padding: 1vh;
+        margin: 0;
     }
 
     .tooltip {

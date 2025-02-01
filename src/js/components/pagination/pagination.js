@@ -37,7 +37,6 @@ export async function renderPagination() {
     paginationContainer.innerHTML = "";
     const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
     const endPage = Math.min(totalPages, startPage + visiblePages);
-
     for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.innerText = i;
@@ -47,7 +46,7 @@ export async function renderPagination() {
         }
 
         button.addEventListener("click", () => {
-            window.scrollTo(0, 600);
+            window.scrollTo(0, 700);
             currentPage = i;
             loadPage(currentPage);
             document.querySelectorAll('.grid').forEach((grid) => {

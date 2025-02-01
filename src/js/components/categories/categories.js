@@ -24,15 +24,19 @@ const categories = async () => {
         .then(response => response.json())
         .then(data => {
             data.data.forEach(categories => {
-                const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank} = categories.attributes
+                const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank, mangaType} = categories.attributes
+                const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
+                const date = startDate.slice(0, 4);
 
                 const div = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
                 const asideDetails = document.createElement("aside")
-                const h3 = document.createElement("h3")
+                const h3 = document.createElement("h3");
+                const relevantInfos = document.createElement("div");
                 const p = document.createElement("p");
                 const popularityRankP = document.createElement("p");
+                const pTypeManga = document.createElement("p");
                 const img = document.createElement("img");
                 const articleMobile = document.createElement("article");
                 const h3Mobile = document.createElement("h3");
@@ -41,14 +45,17 @@ const categories = async () => {
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
+                relevantInfos.classList.add("relevant-infos")
                 articleMobile.classList.add("article-mobile");
                 popularityRankP.classList.add("popularity-rank-p");
 
                 img.src = posterImage.small;
-                h3.textContent = `${canonicalTitle} - ${startDate}`;
-                popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+                h3.textContent = `${canonicalTitle} - ${date}`;
+                popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+                pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
                 p.innerHTML = `&nbsp; ${synopsis}`;
-                h3Mobile.textContent = `${canonicalTitle} - ${startDate}`;
+                h3Mobile.textContent = `${canonicalTitle} - ${date}`;
+
                 categoriesDiv.appendChild(div);
                 div.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
@@ -57,14 +64,16 @@ const categories = async () => {
                 articleMobile.appendChild(h3Mobile)
                 spanTooltip.appendChild(asideDetails);
                 asideDetails.appendChild(h3);
-                asideDetails.appendChild(popularityRankP);
+                asideDetails.appendChild(relevantInfos)
+                relevantInfos.appendChild(popularityRankP);
+                relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
 
-                const cardImgs = document.querySelectorAll('.tooltip img')
+                const cardImgs = document.querySelectorAll('.card-front img')
                 cardImgs.forEach((cardImg) => {
                     cardImg.onload = () => {
-                        document.querySelectorAll('.tooltip').forEach((tooltip) => {
-                            tooltip.classList.remove('loadingGrid');
+                        document.querySelectorAll('.card-front').forEach((card_front) => {
+                            card_front.classList.remove('loadingGrid');
                         });
                     };
                 });

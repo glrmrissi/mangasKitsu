@@ -198,7 +198,7 @@ body.loadingCursor {
   transform: rotate(-135deg);
 }
 
-.tooltip.loadingGrid {
+.card-front.loadingGrid {
   width: 256px;
   height: 362px;
   background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
@@ -295,9 +295,13 @@ body.loadingCursor {
   text-overflow: ellipsis;
 }
 
+.relevant-infos {
+  padding: 0 0 7px 0;
+}
+
 .popularity-rank-p {
   font-weight: 500;
-  padding: 7px 0 7px 0;
+  padding: 7px 0 1px 0;
 }
 
 @keyframes shimmer {
@@ -703,7 +707,8 @@ body.loadingCursor {
 .imgs-slider .overlay {
   position: absolute;
   display: flex;
-  padding: 1vh;
+  padding: 0.5vh 1vh;
+  background-color: #1b1b1b;
   color: #e0e0e0;
   font-size: 1.4em;
   font-weight: 600;
@@ -1143,7 +1148,6 @@ footer {
   flex-direction: column;
   width: auto;
   height: 100%;
-  margin: 0 0 5dvh 0;
   gap: 3px;
   right: 0%;
   z-index: 1;
@@ -1401,6 +1405,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     flex-wrap: wrap;
+    padding: 1vh;
+    margin: 0;
   }
   .tooltip {
     display: flex;

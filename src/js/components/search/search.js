@@ -24,14 +24,19 @@ export async function fetchManga(name, isLoadMore = false) {
         }
 
         data.data.forEach(manga => {
-            const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank} = manga.attributes
+            const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank, mangaType} = manga.attributes
+            const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
+            const date = startDate.slice(0, 4);
+            
             const div = document.createElement("div");
             const divTooltip = document.createElement("section");
             const spanTooltip = document.createElement("span");
             const asideDetails = document.createElement("aside")
             const h3 = document.createElement("h3")
+            const relevantInfos = document.createElement("div");
             const p = document.createElement("p");
             const popularityRankP = document.createElement("p");
+            const pTypeManga = document.createElement("p");
             const img = document.createElement("img");
             const articleMobile = document.createElement("article");
             const h3Mobile = document.createElement("h3");
@@ -40,14 +45,16 @@ export async function fetchManga(name, isLoadMore = false) {
             divTooltip.classList.add("tooltip");
             spanTooltip.classList.add("tooltiptext");
             asideDetails.classList.add("details-tooltip");
+            relevantInfos.classList.add("relevant-infos")
             articleMobile.classList.add("article-mobile");
             popularityRankP.classList.add("popularity-rank-p");
 
             img.src = posterImage.small;
-            h3.textContent = `${canonicalTitle} - ${startDate}`;
+            h3.textContent = `${canonicalTitle} - ${date}`;
             popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+            pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
             p.innerHTML = `&nbsp; ${synopsis}`;
-            h3Mobile.textContent = `${canonicalTitle} - ${startDate}`;
+            h3Mobile.textContent = `${canonicalTitle} - ${date}`;
             div.appendChild(divTooltip);
             div.appendChild(articleMobile);
             articleMobile.appendChild(h3Mobile)
@@ -55,7 +62,9 @@ export async function fetchManga(name, isLoadMore = false) {
             divTooltip.appendChild(img);
             spanTooltip.appendChild(asideDetails);
             asideDetails.appendChild(h3);
-            asideDetails.appendChild(popularityRankP);
+            asideDetails.appendChild(relevantInfos)
+            relevantInfos.appendChild(popularityRankP);
+            relevantInfos.appendChild(pTypeManga);
             asideDetails.appendChild(p);
 
             div.addEventListener('click', () => {

@@ -56,7 +56,8 @@
 .imgs-slider .overlay {
     position: absolute;
     display: flex;
-    padding: 1vh;
+    padding: 0.5vh 1vh;
+    background-color: $background-secondary;
     color: $primary-font-color;
     font-size: 1.4em;
     font-weight: 600;
