@@ -4,7 +4,7 @@ let offsetCustom = 18;
 export async function fetchManga(name, isLoadMore = false) {
     const url = isLoadMore
         ? `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=${offsetCustom}`
-        : `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=10`;
+        : `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=18`;
 
 
     showLoading();
