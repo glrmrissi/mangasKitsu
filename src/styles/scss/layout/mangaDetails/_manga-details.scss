@@ -79,3 +79,19 @@
     width: 250px;
     height: 355px;
 }
+
+.btn-details {
+    opacity: 60%;
+}
+
+.actived.btn-details {
+    opacity: 100%;
+}
+
+.section-details  {
+    display: none;
+}
+
+.actived.section-details  {
+    display: flex;
+}

@@ -23,13 +23,36 @@
     </nav>
   </header>
   <main class="main-details">
-    <div class="mg-details" id="manga-details">
-    </div>
+    <section style="width: 100%;" class="pagination-details">
+      <nav class="btns-pagination-details">
+        <button class="btn-details actived">Synopsis</button>
+        <button class="btn-details">Characters</button>
+        <button class="btn-details">Chapters</button>
+        <button class="btn-details">Reviews</button>
+      </nav>
+      <section class="section-details actived">
+        <div class="mg-details" id="manga-details">
+        </div>
+      </section>
+      <section class="section-details">
+        <div id="characters" class="characters">
+
+        </div>
+      </section>
+      <section class="section-details">
+        Characters
+      </section>
+      <section class="section-details">
+        Characters
+      </section>
+    </section>
   </main>
   </div>
   <div id="btnTop" onmousedown="ocultar()">
     <i class="arrow up"></i>
   </div>
+  <script src="../../../src/js/components/paginationDetails/paginationDetails.js"></script>
+  <script src="../../../src/js/components/paginationDetails/characters/characters.js"></script>
   <script type="module" src="../../../src/js/components/loadProfilePhoto/loadProfilePhoto.js"></script>
   <script src="../../../src/js/components/goToTop/goToTop.js"></script>
   <script src="js/script.js"></script>
