@@ -27,7 +27,6 @@ export async function fetchManga(name, isLoadMore = false) {
             const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank, mangaType} = manga.attributes
             const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
             const date = startDate.slice(0, 4);
-            
             const div = document.createElement("div");
             const divTooltip = document.createElement("section");
             const spanTooltip = document.createElement("span");

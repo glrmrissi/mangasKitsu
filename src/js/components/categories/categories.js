@@ -5,13 +5,14 @@ const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
 const categorySelected = document.querySelectorAll(".categoriesNames");
 const titleCategory = document.getElementById("titleCategory")
+
 categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
         url = btns.getAttribute("value")
-        titleCategory.innerHTML = `Categories <span class="highlight-title">- ${url}</span>`
         setTimeout(function () {
             target.style.display = "flex"
         }, 1000);
+        titleCategory.innerHTML = `Categories <span class="highlight-title">- ${url}</span>`
         categoriesDiv.innerHTML = "";
         offset = 18
         categories();
@@ -23,8 +24,11 @@ const categories = async () => {
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
-            data.data.forEach(categories => {
-                const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank, mangaType} = categories.attributes
+            const allItems = data.data;
+
+            allItems.forEach(categories => {
+                const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = categories.attributes;
+
                 const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
                 const date = startDate.slice(0, 4);
 

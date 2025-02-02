@@ -690,10 +690,14 @@ body.loadingCursor {
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
-  position: relative;
 }
 .imgs-slider:hover {
   filter: brightness(90%);
+}
+.imgs-slider:hover .overlay {
+  transition: transform 0.3s ease-in-out, opacity 0.2s linear;
+  opacity: 0;
+  transform: translate(-100%, -100%);
 }
 .imgs-slider img {
   width: 100%;
@@ -1201,6 +1205,7 @@ footer {
   padding: 1dvh;
   font-size: 1em;
   background-color: #1b1b1b;
+  border: solid 1px #865cb1;
   color: #e0e0e0;
   outline: none;
   border: none;
@@ -1212,6 +1217,7 @@ footer {
   top: 14px;
   right: 10px;
   width: 0;
+  border: solid 1px #865cb1;
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;

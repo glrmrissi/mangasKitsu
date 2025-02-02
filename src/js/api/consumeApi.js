@@ -1,6 +1,6 @@
 /* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/
-
 import { renderPagination, fetchMangas } from "../components/pagination/pagination.js";
+
 
 const fetchMangasSliders = async () => {
     fetch('https://kitsu.io/api/edge/trending/manga')

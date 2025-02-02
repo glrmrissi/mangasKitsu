@@ -40,9 +40,13 @@
     width: 100%;
     object-fit: cover;
     overflow: hidden;
-    position: relative;
     &:hover {
         filter: brightness(90%);
+        .overlay {
+            transition: transform .3s ease-in-out, opacity .2s linear;
+            opacity: 0;
+            transform: translate(-100%, -100%);
+        }
     }
     img {
         width: 100%;

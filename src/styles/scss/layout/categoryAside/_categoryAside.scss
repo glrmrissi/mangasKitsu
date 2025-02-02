@@ -68,6 +68,7 @@
     padding: 1dvh;
     font-size: 1em;
     background-color: $background-secondary;
+    border:solid 1px $highlight-color;
     color: $primary-font-color;
     outline: none;
     border: none;
@@ -79,6 +80,7 @@
     top: 14px;
     right: 10px;
     width: 0;
+    border:solid 1px $highlight-color;
     height: 0;
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
