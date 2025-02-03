@@ -14,7 +14,7 @@ async function displayMangaDetails() {
   
   const manga = await fetchMangaDetails(mangaId);
   const mangaDetails = document.getElementById('manga-details');
-  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount } = manga.attributes
+  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters } = manga.attributes
   const statusUpperCase = status.charAt(0).toUpperCase() + status.slice(1);
   document.title = `Details ${titles.en || titles.jp || canonicalTitle || titles.en_jp || "Don't have title"} - Rissi`;
   

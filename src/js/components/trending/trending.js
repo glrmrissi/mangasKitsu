@@ -38,12 +38,6 @@ const fetchMangasSliders = async () => {
                 const imgElementSlider = document.createElement("img");
                 overlayImg.className = "overlay"
 
-                let countOverlay = 0;
-
-                for (var i = 0; i < sliderItems.length; i++) {
-                    countOverlay++;
-                }
-                overlayImg.textContent = countOverlay;
                 imgElementSlider.src = posterImage.large
                 divSliderCard.appendChild(overlayImg)
                 divSliderCard.appendChild(imgElementSlider)
