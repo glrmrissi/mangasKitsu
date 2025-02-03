@@ -43,6 +43,19 @@ body.loadingCursor {
   cursor: progress;
 }
 
+.box {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(25px);
+  transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.box.show {
+  filter: blur(0px);
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .d-center {
   display: flex;
   justify-content: center;
@@ -651,6 +664,7 @@ body.loadingCursor {
   padding-top: 1vh;
   overflow: hidden;
   position: relative;
+  animation: fadeSlideIn 0.2s ease-in-out;
 }
 
 .limited-overflow {

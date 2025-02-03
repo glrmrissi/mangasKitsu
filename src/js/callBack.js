@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
         'src/js/script.js',
-        'src/js/components/styles.js'
+        'src/js/components/styles.js',
+        'src/js/components/fadeInOut/fadeInOut.js'
 
     ], function () {
         // console.log("Scripts carregados");
