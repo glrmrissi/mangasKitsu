@@ -1,5 +1,5 @@
 /* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/
-import { renderPagination, fetchMangas } from "../components/pagination/pagination.js";
+import { renderPagination, fetchMangas } from "../../modules/pagination/pagination.js";
 
 
 const fetchMangasSliders = async () => {

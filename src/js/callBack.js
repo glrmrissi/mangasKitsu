@@ -26,14 +26,13 @@ function loadScripts(scripts, callback) {
 };
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
-        'src/js/components/search/btnSearch.js',
-        'src/js/components/search/search.js',
-        'src/js/components/loadProfilePhoto/loadProfilePhoto.js',
+        'src/js/modules/search/btnSearch.js',
+        'src/js/modules/search/search.js',
+        'src/js/modules/loadProfilePhoto/loadProfilePhoto.js',
         'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
-        'src/js/script.js',
         'src/js/components/styles.js',
-        'src/js/components/fadeInOut/fadeInOut.js'
+        'src/js/modules/fadeInOut/fadeInOut.js'
 
     ], function () {
         // console.log("Scripts carregados");
