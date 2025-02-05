@@ -1,32 +1,32 @@
-let url = null;
+const categorySelector = document.querySelector("#categoriesSelect")
+const defaultCategory = categorySelector.options[categorySelector.selectedIndex]
+let url = defaultCategory.value;
 let offset = 0;
 let limit = 18;
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
+    
 const categorySelected = document.querySelectorAll(".categoriesNames");
 const titleCategory = document.getElementById("titleCategory")
 const submitFilter = document.querySelector("#submitFilter")
 
-function loadCategorySelected() {
+ titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+
+categorySelected.forEach(btns => {
+    btns.addEventListener("click", () => {
+        url = btns.value
+    })
+})
+submitFilter.addEventListener("click", () => {
     setTimeout(function () {
         target.style.display = "flex"
     }, 1000);
-    categorySelected.forEach(btns => {
-        btns.addEventListener("click", () => {
-            let url = btns.getAttribute("value")
-            
-            submitFilter.addEventListener("click", () => {
-                titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
-                categoriesDiv.innerHTML = "";
-                offset = 18
-                categories();
-                console.log("submit", url)
-            })
-        })
-    })
-}
+    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+    categoriesDiv.innerHTML = "";
+    offset = 18
+    categories();
+})
 
-loadCategorySelected()
 
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
