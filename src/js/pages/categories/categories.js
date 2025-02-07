@@ -1,35 +1,30 @@
 const categorySelector = document.querySelector("#categoriesSelect")
 const defaultCategory = categorySelector.options[categorySelector.selectedIndex]
 let url = defaultCategory.value;
-let offset = 0;
+let offset = 18;
 let limit = 18;
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
-    
+
 const categorySelected = document.querySelectorAll(".categoriesNames");
 const titleCategory = document.getElementById("titleCategory")
 const submitFilter = document.querySelector("#submitFilter")
 
- titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+setTimeout(() => {
+    target.style.display = "flex"; 
+}, 1000);
 
 categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
         url = btns.value
     })
 })
-submitFilter.addEventListener("click", () => {
-    setTimeout(function () {
-        target.style.display = "flex"
-    }, 1000);
-    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
-    categoriesDiv.innerHTML = "";
-    offset = 18
-    categories();
-})
 
 
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
+    console.log(KitsuUrl)
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
@@ -106,10 +101,27 @@ const categories = async () => {
 
 categories();
 
+function filterCategory() {
+    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+    categoriesDiv.innerHTML = "";
+    offset = 0;
+    categories();
+}
+
+submitFilter.addEventListener("click", filterCategory);
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        filterCategory()
+    }
+});
+
+
+// Ativado quando passar o carai do 1 segundo e aumenta lá na URL
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             offset += 18;
+            console.log(offset)
             categories();
         }
     });

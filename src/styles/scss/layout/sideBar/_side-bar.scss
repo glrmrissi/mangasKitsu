@@ -76,13 +76,14 @@
     align-items: center;
     text-align: center;
     height: auto;
-    padding: 0.2vw;
+    padding: 0.3vw;
     color: #fff;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 0px;
     transition: all 0.3s;
     z-index: 1;
     &:hover {
+        border-radius: 50%;
         background-color: $highlight-color;
     }
 }

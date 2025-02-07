@@ -14,10 +14,17 @@
 .grid.loadingGrid{ // TESTAR DEPOIS
     width: 256px;
     height: 362px;
-    background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
     background-size: 200% 100%;
-    animation: shimmer 1s infinite;
+    animation: skeleton-loading 1s linear infinite alternate;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+}
+
+.grid.loadingGrid .overlay { // TESTAR DEPOIS
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    &:hover {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .grid {
