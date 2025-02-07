@@ -13,11 +13,11 @@ const fetchMangasSliders = async () => {
             // Nota: passar para textcontent
             trendSlider.innerHTML = `
         <aside class="limited-overflow">
-        <div class="title">
+        <div class="title box">
             <h1 class="hover-effect">Most read:</h1>
         </div>
             <section id="my" class="slider">
-                <article class="slider-car first">
+                <article class="slider-car">
                 </article>    
             </section>
         </aside>
@@ -47,6 +47,7 @@ const fetchMangasSliders = async () => {
                 }
                 overlayImg.textContent = countOverlay;
                 imgElementSlider.src = posterImage.large
+                imgElementSlider.classList.add("box")
                 divSliderCard.appendChild(overlayImg)
                 divSliderCard.appendChild(imgElementSlider)
 
@@ -75,6 +76,7 @@ export async function renderMangas(mangas) {
 
         const mangaItem = document.createElement("div");
         mangaItem.classList.add("loadingGrid");
+        mangaItem.classList.add("box");
         mangaItem.classList.add("grid");
 
         const img = document.createElement("img");

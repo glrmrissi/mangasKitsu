@@ -1,4 +1,4 @@
-const observer = new IntersectionObserver((entries) => {
+let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
@@ -6,6 +6,15 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove("show");
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.07 });
 
-document.querySelectorAll(".box").forEach(box => observer.observe(box));
+function observerNewBoxes() {
+    document.querySelectorAll(".box").forEach(box => observer.observe(box));
+}
+
+let mutationObserver = new MutationObserver(observerNewBoxes);
+
+let container = document.querySelector(".main-container"); 
+mutationObserver.observe(container, { childList: true, subtree: true });
+
+observerNewBoxes();

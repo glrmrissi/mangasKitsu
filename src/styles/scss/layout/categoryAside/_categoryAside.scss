@@ -7,10 +7,10 @@
 
 .category {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: auto;
     height: 100%;
-    gap: 3px;
+    gap: 6px;
     right: 0%;
     z-index: 1;
 
@@ -95,4 +95,15 @@
 
 .article-mobile {
     display: none;
+}
+
+#submitFilter {
+    background-color: $background-secondary;
+    border:solid 1px $highlight-color;
+    color: $primary-font-color;
+    width: 6dvw;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: $highlight-color;
+    }
 }

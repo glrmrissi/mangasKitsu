@@ -46,14 +46,14 @@ body.loadingCursor {
 .box {
   opacity: 0;
   filter: blur(10px);
-  transform: translateY(25px);
+  transform: translate(25px, 25px);
   transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .box.show {
   filter: blur(0px);
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0);
 }
 
 .d-center {
@@ -214,9 +214,7 @@ body.loadingCursor {
 .card-front.loadingGrid {
   width: 256px;
   height: 362px;
-  background: linear-gradient(-45deg, #574868 25%, #201a27 50%);
-  background-size: 200% 100%;
-  animation: shimmer 1s infinite;
+  animation: skeleton-loading 1s linear infinite alternate;
   border-radius: 4px;
 }
 
@@ -1214,10 +1212,10 @@ footer {
 
 .category {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: auto;
   height: 100%;
-  gap: 3px;
+  gap: 6px;
   right: 0%;
   z-index: 1;
 }
@@ -1297,6 +1295,17 @@ footer {
 
 .article-mobile {
   display: none;
+}
+
+#submitFilter {
+  background-color: #1b1b1b;
+  border: solid 1px #865cb1;
+  color: #e0e0e0;
+  width: 6dvw;
+  transition: background-color 0.3s;
+}
+#submitFilter:hover {
+  background-color: #865cb1;
 }
 
 .developers {

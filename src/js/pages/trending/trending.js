@@ -1,53 +1,70 @@
 // Por enquanto está página é um teste!
 
+const categoriesDiv = document.getElementById("categoriesMain");
 const fetchMangasSliders = async () => {
-    fetch('https://kitsu.io/api/edge/trending/manga?page[limit]=18&page[offset]=18')
+    let kitsuUrl = "https://kitsu.io/api/edge/manga?page[limit]=18&page[offset]=18"
+    console.log(kitsuUrl)
+    fetch(kitsuUrl)
         .then(response => response.json())
         .then(data => {
 
-            const sliderContainer = document.getElementById('slider_container')
-            const trendSlider = document.createElement('div');
-
-
-            trendSlider.innerHTML = `
-        <aside class="limited-overflow">
-        <div class="title">
-            <h1 class="hover-effect">Trending</h1>
-        </div>
-            <section id="my" class="slider">
-                <article class="slider-car first">
-                </article>    
-            </section>
-        </aside>
-            `
-            sliderContainer.appendChild(trendSlider);
-            const sliderCard = trendSlider.querySelector(".slider-car")
-
             data.data.forEach(manga => {
 
-                const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
+                const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = manga.attributes;
 
-                const divSliderCard = document.createElement("div")
+                const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
 
-                divSliderCard.className = "imgs-slider"
-                sliderCard.appendChild(divSliderCard)
+                let date = startDate ? startDate.slice(0, 4) : "Date not found"
 
-                const sliderItems = Array.from(sliderCard.children);
+                let contentNotFound = [
+                    "../../../src/imgs/cntf-1.jpg",
+                    "../../../src/imgs/cntf-2.jpg",
+                    "../../../src/imgs/cntf-3.jpg"
+                ];
 
-                const overlayImg = document.createElement("span");
-                const imgElementSlider = document.createElement("img");
-                overlayImg.className = "overlay"
+                const div = document.createElement("div");
+                const divTooltip = document.createElement("div");
+                const spanTooltip = document.createElement("span");
+                const asideDetails = document.createElement("aside")
+                const h3 = document.createElement("h3");
+                const relevantInfos = document.createElement("div");
+                const p = document.createElement("p");
+                const popularityRankP = document.createElement("p");
+                const pTypeManga = document.createElement("p");
+                const img = document.createElement("img");
+                const articleMobile = document.createElement("article");
+                const h3Mobile = document.createElement("h3");
 
-                imgElementSlider.src = posterImage.large
-                divSliderCard.appendChild(overlayImg)
-                divSliderCard.appendChild(imgElementSlider)
+                div.classList.add("card-front");
+                divTooltip.classList.add("tooltip");
+                spanTooltip.classList.add("tooltiptext");
+                asideDetails.classList.add("details-tooltip");
+                relevantInfos.classList.add("relevant-infos")
+                articleMobile.classList.add("article-mobile");
+                popularityRankP.classList.add("popularity-rank-p");
 
-                divSliderCard.addEventListener('click', () => {
-                    console.log("Setedetdawfaw")
-                    localStorage.setItem('selectedAnimeId', manga.id)
+                img.src = posterImage.large || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
+                h3.textContent = `${canonicalTitle} - ${date}`;
+                popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+                pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
+                p.innerHTML = `&nbsp; ${synopsis}`;
+                h3Mobile.textContent = `${canonicalTitle} - ${date}`;
 
-                    window.open('src/pages/details/details-manga.html', '_blank')
-                })
+                categoriesDiv.appendChild(div);
+                div.appendChild(divTooltip);
+                divTooltip.appendChild(spanTooltip);
+                divTooltip.appendChild(img);
+                div.appendChild(articleMobile);
+                articleMobile.appendChild(h3Mobile)
+                spanTooltip.appendChild(asideDetails);
+                asideDetails.appendChild(h3);
+                asideDetails.appendChild(relevantInfos)
+                relevantInfos.appendChild(popularityRankP);
+                relevantInfos.appendChild(pTypeManga);
+                asideDetails.appendChild(p);
+
+
+
             });
         })
         .catch(error => {

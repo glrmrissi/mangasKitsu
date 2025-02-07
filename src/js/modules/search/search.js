@@ -47,6 +47,7 @@ export async function fetchManga(name, isLoadMore = false) {
             relevantInfos.classList.add("relevant-infos")
             articleMobile.classList.add("article-mobile");
             popularityRankP.classList.add("popularity-rank-p");
+            img.classList.add("box");
 
             img.src = posterImage.small;
             h3.textContent = `${canonicalTitle} - ${date}`;

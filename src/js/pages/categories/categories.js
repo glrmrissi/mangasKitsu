@@ -24,7 +24,6 @@ categorySelected.forEach(btns => {
 
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
-    console.log(KitsuUrl)
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
@@ -34,7 +33,13 @@ const categories = async () => {
                 const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = categories.attributes;
 
                 const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
-                const date = startDate.slice(0, 4);
+                let date = startDate ? startDate.slice(0,4) : "Date not found"
+
+                let contentNotFound = [
+                    "../../../src/imgs/cntf-1.jpg",
+                    "../../../src/imgs/cntf-2.jpg",
+                    "../../../src/imgs/cntf-3.jpg"
+                ];
 
                 const div = document.createElement("div");
                 const divTooltip = document.createElement("div");
@@ -56,8 +61,9 @@ const categories = async () => {
                 relevantInfos.classList.add("relevant-infos")
                 articleMobile.classList.add("article-mobile");
                 popularityRankP.classList.add("popularity-rank-p");
+                img.classList.add("box");
 
-                img.src = posterImage.small;
+                img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
                 h3.textContent = `${canonicalTitle} - ${date}`;
                 popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
                 pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
