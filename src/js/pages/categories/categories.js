@@ -12,7 +12,7 @@ const submitFilter = document.querySelector("#submitFilter")
 
 titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
 setTimeout(() => {
-    target.style.display = "flex"; 
+    target.style.display = "flex";
 }, 1000);
 
 categorySelected.forEach(btns => {
@@ -23,17 +23,17 @@ categorySelected.forEach(btns => {
 
 
 const categories = async () => {
+    showLoading()
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
             const allItems = data.data;
-
             allItems.forEach(categories => {
                 const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = categories.attributes;
 
                 const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
-                let date = startDate ? startDate.slice(0,4) : "Date not found"
+                let date = startDate ? startDate.slice(0, 4) : "Date not found"
 
                 let contentNotFound = [
                     "../../../src/imgs/cntf-1.jpg",
@@ -99,6 +99,7 @@ const categories = async () => {
                     window.open('../../../src/pages/details/details-manga.html', '_blank')
                 });
             });
+            hideLoading();
         })
         .catch(error => {
             console.log(error.message, "Erro em categories")
@@ -127,7 +128,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             offset += 18;
-            console.log(offset)
             categories();
         }
     });

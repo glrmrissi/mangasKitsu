@@ -1,5 +1,6 @@
 .gridCategory {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 5vh;
@@ -8,12 +9,16 @@
 .category {
     display: flex;
     flex-direction: row;
-    width: auto;
+    width: 100%;
     height: 100%;
     gap: 6px;
     right: 0%;
+    padding: 1dvh 0 1dvh 0;
     z-index: 1;
 
+    select {
+        width: 100%;
+    }
     li {
         word-break: break-all;
         list-style: none;
@@ -64,28 +69,6 @@
     color: $tertiary-font-color;
 }
 
-#categoriesSelect {
-    padding: 1dvh;
-    font-size: 1em;
-    background-color: $background-secondary;
-    border:solid 1px $highlight-color;
-    color: $primary-font-color;
-    outline: none;
-    border: none;
-}
-
-#categoriesSelect:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    border:solid 1px $highlight-color;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-}
-
 #listItem {
     position: absolute;
     display: none;
@@ -101,7 +84,7 @@
     background-color: $background-secondary;
     border:solid 1px $highlight-color;
     color: $primary-font-color;
-    width: 6dvw;
+    width: 10dvw;
     transition: background-color 0.3s;
     &:hover {
         background-color: $highlight-color;

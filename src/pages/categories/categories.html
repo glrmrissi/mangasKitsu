@@ -35,8 +35,9 @@
             <h1 id="titleCategory" class="hover-effect">Categories  <span class="highlight-title"> - Action</span></h1>
         </div>
         <section class="gridCategory">
+            <h3>Filters:</h3>
             <aside class="category">
-                <select name="categoriesSelect" id="categoriesSelect">
+                <select class="select" name="categoriesSelect" id="categoriesSelect">
                     <option class="categoriesNames" value="Action">Action</option>
                     <option class="categoriesNames" value="Adventure">Adventure</option>
                     <option class="categoriesNames" value="Asia">Asia</option>
@@ -78,6 +79,13 @@
                     <option class="categoriesNames" value="Violence">Violence</option>
                     <option class="categoriesNames" value="Yaoi">Yaoi</option>
                 </select>
+                <select class="select" name="" id="">
+                    <option value="Any">Any</option>
+                </select>
+                </select>
+                <select class="select" name="" id="">
+                    <option value="Any">Any</option>
+                </select>
                 <button id="submitFilter" type="submit">Submit</button>
             </aside>
 
@@ -85,6 +93,7 @@
         <section class="categoryMangasShow" id="categoriesMain"></section>
     </main>
     <div id="listItem">🌭</div>
+    <script src="../../../src/js/modules/loading/loading.js"></script>
     <script type="module" src="../../../src/js/modules/search/btnSearch.js"></script>
     <script type="module" src="../../../src/js/modules/search/search.js"></script>
     <script src="../../../src/js/modules/goToTop/goToTop.js"></script>

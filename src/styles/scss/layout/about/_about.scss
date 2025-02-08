@@ -4,6 +4,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+
     div {
         display: flex;
         flex-direction: column;
@@ -12,13 +13,18 @@
         min-height: 100%;
         margin: 1vh;
         overflow: hidden;
+
         img {
-            width: 15dvw;
-            height: 15dvw;
             object-fit: cover;
         }
     }
+
     h3 {
         padding: 0 0 1dvh 0;
     }
+}
+
+.gif-about {
+    width: 15dvw;
+    height: 15dvw;
 }

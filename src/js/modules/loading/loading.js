@@ -8,8 +8,10 @@ function showLoading(customImagePath) {
     const label = document.createElement("label");
     const img = document.createElement("img");
     
-    img.src = customImagePath || window.AppConfig.loadingImage;
+    // Local host
+    // img.src = customImagePath || window.AppConfig.loadingImage;
     
+    img.src = "https://glrmrissi.github.io/mangasKitsu/src/imgs/load.gif"
     img.alt = "Loading...";
     document.body.appendChild(div);
     label.appendChild(img);
