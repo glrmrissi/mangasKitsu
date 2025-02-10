@@ -5,6 +5,12 @@
     animation: fadeSlideIn .2s ease-in-out;
 }
 
+
+.slider-container.skeleton-load {
+    height: 35dvh;
+    background-color: $background-secondary;
+}
+
 .limited-overflow {
     width: 100%;
     overflow: hidden;

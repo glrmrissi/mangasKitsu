@@ -52,11 +52,20 @@ const fetchMangasSliders = async () => {
                 divSliderCard.appendChild(imgElementSlider)
 
                 divSliderCard.addEventListener('click', () => {
-                    console.log("Setedetdawfaw")
                     localStorage.setItem('selectedAnimeId', manga.id)
 
                     window.open('src/pages/details/details-manga.html', '_blank')
                 })
+
+                const cardImgs = document.querySelectorAll('.imgs-slider img')
+                cardImgs.forEach((cardImg) => {
+                    cardImg.onload = () => {
+                        document.querySelectorAll('.imgs-slider').forEach((imgsSlider) => {
+                            imgsSlider.classList.remove('loadingGrid');
+                            sliderContainer.classList.remove("skeleton-load");
+                        });
+                    };
+                });
             });
         })
         .catch(error => {
@@ -102,14 +111,15 @@ export async function renderMangas(mangas) {
         mangaContainer.appendChild(mangaItem);
 
         const cardImgs = document.querySelectorAll('.grid img')
-            cardImgs.forEach((cardImg) => {
-               cardImg.onload = () => {
-                   document.querySelectorAll('.grid').forEach((grid) => {
-                       grid.classList.remove('loadingGrid');
-                   });
-               };
-           });
-   
+        cardImgs.forEach((cardImg) => {
+            cardImg.onload = () => {
+                document.querySelectorAll('.grid').forEach((grid) => {
+                    grid.classList.remove('loadingGrid');
+                    mangaContainer.classList.remove("skeleton-load");
+                });
+            };
+        });
+
 
         mangaItem.addEventListener('click', () => {
             console.log(manga.id)

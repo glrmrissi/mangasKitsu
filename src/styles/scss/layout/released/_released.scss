@@ -11,9 +11,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.grid-launcher.skeleton-load {
+    height: 70vh;
+    background-color: $background-secondary;
+}
+
 .grid.loadingGrid{ // TESTAR DEPOIS
-    width: 256px;
-    height: 362px;
+    width: 246px;
+    height: 352px;
     background-size: 200% 100%;
     animation: skeleton-loading 1s linear infinite alternate;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
