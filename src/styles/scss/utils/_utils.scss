@@ -237,6 +237,10 @@ body.loadingCursor {
     display: inline-block;
 }
 
+.glitch-effect {
+    filter: hue-rotate(90deg);
+}
+
 .up {
     transform: rotate(-135deg);
 }

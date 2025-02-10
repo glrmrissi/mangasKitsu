@@ -1,14 +1,13 @@
 const categorySelector = document.querySelector("#categoriesSelect")
 const defaultCategory = categorySelector.options[categorySelector.selectedIndex]
-let url = defaultCategory.value;
-let offset = 18;
-let limit = 18;
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
-
 const categorySelected = document.querySelectorAll(".categoriesNames");
 const titleCategory = document.getElementById("titleCategory")
 const submitFilter = document.querySelector("#submitFilter")
+let url = defaultCategory.value;
+let offset = 18;
+let limit = 18;
 
 titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
 setTimeout(() => {
@@ -20,7 +19,6 @@ categorySelected.forEach(btns => {
         url = btns.value
     })
 })
-
 
 const categories = async () => {
     showLoading()
@@ -111,7 +109,7 @@ categories();
 function filterCategory() {
     titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
     categoriesDiv.innerHTML = "";
-    offset = 0;
+    offset = 18;
     categories();
 }
 

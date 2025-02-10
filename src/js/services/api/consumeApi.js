@@ -13,7 +13,7 @@ const fetchMangasSliders = async () => {
             // Nota: passar para textcontent
             trendSlider.innerHTML = `
         <aside class="limited-overflow">
-        <div class="title box">
+        <div class="title skeleton-load box">
             <h1 class="hover-effect">Most read:</h1>
         </div>
             <section id="my" class="slider">
