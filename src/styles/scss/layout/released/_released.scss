@@ -69,9 +69,9 @@
     left: 0;
     right: 0;
     background-color: #ffffff00;
-    box-shadow: -1px 40px 27px 20px rgba(0, 0, 0, 0.50) inset;
-    -webkit-box-shadow: -1px 15px 27px 20px rgba(0, 0, 0, 0.50) inset;
-    -moz-box-shadow: -1px 15px 27px 20px rgba(0, 0, 0, 0.50) inset;
+    box-shadow: -1px 40px 27px 20px var(--shadow-overlay) inset;
+    -webkit-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
+    -moz-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
     font-weight: 600;
     height: 100%;
     border-radius: 4px;
@@ -83,9 +83,9 @@
 }
 
 .grid:hover .overlay {
-    box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.80) inset;
-    -webkit-box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.80) inset;
-    -moz-box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.80) inset;
+    box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
+    -webkit-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
+    -moz-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
     background-color: #ffffff11;
 }
 

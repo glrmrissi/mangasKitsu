@@ -7,10 +7,34 @@ if (savedTheme) {
   body.setAttribute("data-theme", savedTheme);
 }
 
+const fillWhite = document.querySelectorAll(".fillWhite")
+
+
 toggleTheme.addEventListener("click", () => {
   const currentTheme = body.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
 
+  if (newTheme === "light") {
+    fillWhite.forEach(el => {
+      el.classList.remove("fillWhite");
+    });
+  } else {
+    fillWhite.forEach(el => {
+      el.classList.add("fillWhite");
+    });
+  }
   body.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme); 
+  localStorage.setItem("theme", newTheme);
 });
+
+const foreachtest = fillWhite.forEach(el => {el.classList.remove("fillWhite");});
+
+fillWhite.forEach(el => {
+  el.classList.remove("fillWhite");
+});
+if (savedTheme === "light") {
+} else {
+  fillWhite.forEach(el => {
+    el.classList.add("fillWhite");
+  });
+}

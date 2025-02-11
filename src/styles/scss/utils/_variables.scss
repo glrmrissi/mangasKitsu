@@ -34,6 +34,7 @@ $themes : (
         loading-color-secondary: #f0f3f5,
         action-color: #020202,
         input-search-color: #dbdbdb,
+        shadow-overlay: #000000cc,
     ),
     light: (
         background-main: #f4f4f4, 
@@ -43,14 +44,15 @@ $themes : (
         tooltip: #dcdcdc, 
         highlight-color: #865cb1, 
         primary-font-color: #000000,
-        secondary-font-color: #6c498b, 
-        tertiary-font-color: #503769, 
+        secondary-font-color: #8157a5, 
+        tertiary-font-color: #624480, 
         button-pagination-color: #00bcd4, 
         border-shadow-color: #3C3A53, 
         loading-color-main: #b1bac0, 
         loading-color-secondary: #f0f3f5, 
         action-color: #020202, 
         input-search-color: #dbdbdb,
+        shadow-overlay: #ffffffcc,
     )
     );
 

@@ -7,14 +7,15 @@
   --tooltip: #dcdcdc;
   --highlight-color: #865cb1;
   --primary-font-color: #000000;
-  --secondary-font-color: #6c498b;
-  --tertiary-font-color: #503769;
+  --secondary-font-color: #8157a5;
+  --tertiary-font-color: #624480;
   --button-pagination-color: #00bcd4;
   --border-shadow-color: #3C3A53;
   --loading-color-main: #b1bac0;
   --loading-color-secondary: #f0f3f5;
   --action-color: #020202;
   --input-search-color: #dbdbdb;
+  --shadow-overlay: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme=dark] {
@@ -33,6 +34,7 @@
   --loading-color-secondary: #f0f3f5;
   --action-color: #020202;
   --input-search-color: #dbdbdb;
+  --shadow-overlay: rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -60,8 +62,6 @@ body {
   background-color: var(--background-main);
   color: var(--primary-font-color);
   font-family: sans-serif;
-  /* background-image:
-      url(../imgs/back.jpg); */
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -623,9 +623,9 @@ body.loadingCursor {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0);
-  box-shadow: -1px 40px 27px 20px rgba(0, 0, 0, 0.5) inset;
-  -webkit-box-shadow: -1px 15px 27px 20px rgba(0, 0, 0, 0.5) inset;
-  -moz-box-shadow: -1px 15px 27px 20px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: -1px 40px 27px 20px var(--shadow-overlay) inset;
+  -webkit-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
+  -moz-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
   font-weight: 600;
   height: 100%;
   border-radius: 4px;
@@ -637,9 +637,9 @@ body.loadingCursor {
 }
 
 .grid:hover .overlay {
-  box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.8) inset;
-  -webkit-box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.8) inset;
-  -moz-box-shadow: -1px 120px 50px 20px rgba(0, 0, 0, 0.8) inset;
+  box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
+  -webkit-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
+  -moz-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
   background-color: rgba(255, 255, 255, 0.0666666667);
 }
 
@@ -798,6 +798,7 @@ body.loadingCursor {
   font-size: 1.4em;
   font-weight: 600;
   left: 0;
+  z-index: 1;
 }
 
 .slider-car .imgs-slider {
