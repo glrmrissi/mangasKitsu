@@ -1,18 +1,69 @@
-$background-main: #121212;
-$background-secondary: #1b1b1b;
-$background-tertiary: #444343;
-$btn-nav-link: #242424;
-$tooltip: #211f22;
-$highlight-color: #865cb1;
-$primary-font-color: #e0e0e0;
-$secondary-font-color: #6c498b;
-$tertiary-font-color: #503769;
-$button-pagination-color: #00bcd4;
-$border-shadow-color: #3C3A53;
-$loading-color-main: #b1bac0;
-$loading-color-secondary: #f0f3f5;
-$action-color: #020202;
-$input-search-color: #dbdbdb;
+// $background-main: #121212;
+// $background-secondary: #1b1b1b;
+// $background-tertiary: #444343;
+// $btn-nav-link: #242424;
+// $tooltip: #211f22;
+// $highlight-color: #865cb1;
+// $primary-font-color: #e0e0e0;
+// $secondary-font-color: #6c498b;
+// $tertiary-font-color: #503769;
+// $button-pagination-color: #00bcd4;
+// $border-shadow-color: #3C3A53;
+// $loading-color-main: #b1bac0;
+// $loading-color-secondary: #f0f3f5;
+// $action-color: #020202;
+// $input-search-color: #dbdbdb;
 $max-width-mobile: 576px;
 $max-width-tablet: 820px;
 $max-width-notebook: 1024px;
+
+$themes : (
+    dark: (
+        background-main: #121212,
+        background-secondary: #1b1b1b,
+        background-tertiary: #444343,
+        btn-nav-link: #242424,
+        tooltip: #211f22,
+        highlight-color: #865cb1,
+        primary-font-color: #e0e0e0,
+        secondary-font-color: #6c498b,
+        tertiary-font-color: #503769,
+        button-pagination-color: #00bcd4,
+        border-shadow-color: #3C3A53,
+        loading-color-main: #b1bac0,
+        loading-color-secondary: #f0f3f5,
+        action-color: #020202,
+        input-search-color: #dbdbdb,
+    ),
+    light: (
+        background-main: #f4f4f4, 
+        background-secondary: #e0e0e0, 
+        background-tertiary: #d1d1d1, 
+        btn-nav-link: #dbdbdb, 
+        tooltip: #dcdcdc, 
+        highlight-color: #865cb1, 
+        primary-font-color: #000000,
+        secondary-font-color: #6c498b, 
+        tertiary-font-color: #503769, 
+        button-pagination-color: #00bcd4, 
+        border-shadow-color: #3C3A53, 
+        loading-color-main: #b1bac0, 
+        loading-color-secondary: #f0f3f5, 
+        action-color: #020202, 
+        input-search-color: #dbdbdb,
+    )
+    );
+
+    @mixin theme($theme-name) {
+    @each $key, $value in map-get($themes, $theme-name) {
+        --#{$key}: #{$value};
+    }
+}
+
+[data-theme="light"] {
+    @include theme(light);
+}
+
+[data-theme="dark"] {
+    @include theme(dark);
+}

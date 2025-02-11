@@ -1,59 +1,96 @@
 .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0.8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.8vh;
+}
+
+.search input {
+  display: flex;
+  background-color: var(--background-main);
+  backdrop-filter: blur(30px);
+  color: var(--primary-font-color);
+  border: 3px solid #000;
+  padding: 0.2vh;
+  margin-right: 2vh;
+  box-shadow: 6px 6px 0 var(--primary-font-color);
+}
+
+.input:focus::after {
+  content: "|";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  animation: blink 0.7s step-end infinite;
+}
+
+.search input::placeholder {
+  padding: 1vh;
+  border-color: #0066ff;
+  color: var(--primary-font-color);
+}
+
+.search input:focus {
+  outline: 2px #ffffff;
+  animation: shake 0.4s ease-in-out;
+}
+
+.search input::selection {
+  color: #0066ff;
+}
+
+.mangaInput {
+  border: solid var(--primary-font-color) 1px;
+  color: var(--primary-font-color);
+  border-radius: 40px;
+  padding: 3px;
+  font-weight: 600;
+  margin-right: 20px;
+  background: transparent url('../../../../../src/icon/search.svg') no-repeat center right;
+  background-position: right 10px center;
+  background-clip: padding-box;
+  background-size: 8%;
+  outline: none;
+
+  &::placeholder {
+    padding: 0 5px;
+    color: transparent;
   }
-  
-  .search input {
-    display: flex;
-    background-color: #ffffff;
-    backdrop-filter: blur(30px);
-    color: #000000;
-    border: 3px solid #000;
-    padding: 0.2vh;
-    margin-right: 2vh;
-    box-shadow: 6px 6px 0 #000000;
+
+  &:focus,
+  &:valid {
+    border: solid var(--secondary-font-color) 1px;
   }
-  
-  .input:focus::after {
-    content: "|";
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    animation: blink 0.7s step-end infinite;
+}
+
+.div-input-search-main input:focus~label,
+.div-input-search-main input:valid~label {
+  color: var(--secondary-font-color);
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  top: 0%;
+  font-size: 0.5em;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  
-  .search input::placeholder {
-    padding: 1vh;
-    border-color: #0066ff;
-    color: #000000;
+
+  25% {
+    transform: translateX(-2px) rotate(-2deg);
   }
-  
-  .search input:focus {
-    outline: 2px #ffffff;
-    animation: shake 0.4s ease-in-out;
+
+  50% {
+    transform: translateX(2px) rotate(2deg);
   }
-  
-  .search input::selection {
-    color: #0066ff;
+
+  75% {
+    transform: translateX(-2px) rotate(-2deg);
   }
-  
-  @keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-2px) rotate(-2deg);
-    }
-    50% {
-      transform: translateX(2px) rotate(2deg);
-    }
-    75% {
-      transform: translateX(-2px) rotate(-2deg);
-    }
-    100% {
-      transform: translateX(0);
-    }
+
+  100% {
+    transform: translateX(0);
   }
+}

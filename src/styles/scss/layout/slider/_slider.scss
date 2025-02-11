@@ -8,7 +8,7 @@
 
 .slider-container.skeleton-load {
     height: 35dvh;
-    background-color: $background-secondary;
+    background-color: var(--background-secondary);
 }
 
 .limited-overflow {
@@ -68,8 +68,8 @@
     position: absolute;
     display: flex;
     padding: 0.5vh 1vh;
-    background-color: $background-secondary;
-    color: $primary-font-color;
+    background-color: var(--background-secondary);
+    color: var(--primary-font-color);
     font-size: 1.4em;
     font-weight: 600;
     left: 0;

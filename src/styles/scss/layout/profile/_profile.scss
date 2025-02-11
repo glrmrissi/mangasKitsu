@@ -25,8 +25,8 @@
 }
 
 .user_img {
-    border: 2px $tertiary-font-color solid;
-    box-shadow: 2px 0px 30px 10px$tertiary-font-color;
+    border: 2px var(--tertiary-font-color) solid;
+    box-shadow: 2px 0px 30px 10px var(--tertiary-font-color);
     width: 130px;
     height: 130px; 
     border-radius: 50%;
@@ -57,7 +57,7 @@
     padding: 2px 2px;
     border-radius: 50%;
     cursor: pointer;
-    color: $primary-font-color;
+    color: var(--primary-font-color);
     background-color: #00000013;
     &:hover {
         filter: brightness(80%);

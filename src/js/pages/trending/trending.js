@@ -62,9 +62,6 @@ const fetchMangasSliders = async () => {
                 relevantInfos.appendChild(popularityRankP);
                 relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
-
-
-
             });
         })
         .catch(error => {

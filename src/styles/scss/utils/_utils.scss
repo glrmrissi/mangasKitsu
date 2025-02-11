@@ -8,11 +8,11 @@
 
 *::-webkit-scrollbar {
     width: 3px;
-    background-color: $background-main;
+    background-color: var(--background-main);
 }
 
 *::-webkit-scrollbar-thumb {
-    background: $secondary-font-color;
+    background: var(--secondary-font-color);
     border-radius: 8px;
 }
 
@@ -22,8 +22,8 @@ html {
 
 body {
     position: relative;
-    background-color: $background-main;
-    color: $primary-font-color;
+    background-color: var(--background-main);
+    color: var(--primary-font-color);
     font-family: sans-serif;
     /* background-image:
         url(../imgs/back.jpg); */
@@ -99,7 +99,7 @@ body.loadingCursor {
     display: flex;
     font-weight: 600;
     font-size: 1em;
-    color: #fff;
+    color: var(--primary-font-color);
     text-decoration: none;
     height: 100%;
     z-index: 1;
@@ -114,7 +114,7 @@ body.loadingCursor {
         height: 3px;
         border-radius: 6px;
         transform-origin: right;
-        background: $secondary-font-color;
+        background: var(--secondary-font-color);
         transition: transform 0.3s, ease-in-out 0.3s;
         transform: scaleX(0);
         z-index: 0;
@@ -131,7 +131,7 @@ body.loadingCursor {
 
     &:hover {
         letter-spacing: 1px;
-        color: $tertiary-font-color;
+        color: var(--tertiary-font-color);
         transform-origin: left;
         background-position: 0%;
     }
@@ -140,9 +140,9 @@ body.loadingCursor {
 .select {
     padding: 1dvh;
     font-size: 1em;
-    background-color: $background-secondary;
-    border: solid 1px $highlight-color;
-    color: $primary-font-color;
+    background-color: var(--background-secondary);
+    border: solid 1px var(--highlight-color);
+    color: var(--primary-font-color);
     outline: none;
     border: none;
 
@@ -152,7 +152,7 @@ body.loadingCursor {
         top: 14px;
         right: 10px;
         width: 0;
-        border: solid 1px $highlight-color;
+        border: solid 1px var(--highlight-color);
         height: 0;
         border: 6px solid transparent;
         border-color: #fff transparent transparent transparent;
@@ -170,7 +170,7 @@ body.loadingCursor {
     text-decoration: none;
     background-color: transparent;
     font-size: 1em;
-    color: $primary-font-color;
+    color: var(--primary-font-color);
     transition: all .3s;
     z-index: 1;
 
@@ -180,7 +180,7 @@ body.loadingCursor {
 }
 
 .hover-effect-nav:hover {
-    color: $secondary-font-color;
+    color: var(--secondary-font-color);
 }
 
 .wave {
@@ -190,7 +190,7 @@ body.loadingCursor {
     width: 100%;
     height: 100px;
     position: relative;
-    background-color: $secondary-font-color;
+    background-color: var(--secondary-font-color);
     overflow: hidden;
 }
 
@@ -201,7 +201,7 @@ body.loadingCursor {
     left: 0;
     width: 200%;
     height: 100%;
-    background-color: $tertiary-font-color;
+    background-color: var(--tertiary-font-color);
     border-radius: 50%;
     animation: wave 7s infinite cubic-bezier(0.45, 0, 0.58, 1);
 }
@@ -269,7 +269,7 @@ body.loadingCursor {
     visibility: hidden;
     width: 100%;
     height: 100%;
-    background-color: $tooltip;
+    background-color: var(--tooltip);
     border: 1px solid #4c464e;
     color: #fff;
     padding: 5px;
@@ -290,7 +290,7 @@ body.loadingCursor {
     margin-left: -5px;
     border-width: 15px;
     border-style: solid;
-    border-color: transparent $tooltip transparent transparent;
+    border-color: transparent var(--tooltip) transparent transparent;
     z-index: 1;
 }
 
@@ -301,7 +301,7 @@ body.loadingCursor {
 .tooltiptext.right::after {
     top: 15%;
     left: 100%;
-    border-color: transparent transparent transparent $tooltip;
+    border-color: transparent transparent transparent var(--tooltip);
 }
 
 .tooltip:hover .tooltiptext {
@@ -318,7 +318,7 @@ body.loadingCursor {
     h3 {
         width: 100%;
         white-space: wrap;
-        color: $highlight-color;
+        color: var(--highlight-color);
     }
 
     p {
@@ -400,10 +400,10 @@ body.loadingCursor {
 
 @keyframes skeleton-loading {
     0% {
-        background-color: $loading-color-main;
+        background-color: var(--loading-color-main);
     }
 
     100% {
-        background-color: $loading-color-secondary;
+        background-color: var(--loading-color-secondary);
     }
 }

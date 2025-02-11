@@ -50,11 +50,11 @@ footer {
     img {
         padding: 1vh;
         border-radius: 7px;
-        background-color: $tertiary-font-color;
+        background-color: var(--tertiary-font-color);
         transition: all 0.3s;
         &:hover {
             border-radius: 14px;
-            background-color: $secondary-font-color;
+            background-color: var(--secondary-font-color);
         }
     }
 

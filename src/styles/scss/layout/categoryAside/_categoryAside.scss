@@ -9,6 +9,7 @@
 .category {
     display: flex;
     flex-direction: row;
+    color: var(--primary-font-color);
     width: 100%;
     height: 100%;
     gap: 6px;
@@ -29,7 +30,7 @@
         justify-content: center;
         align-items: center;
         min-width: 100%;
-        background-color: $btn-nav-link;
+        background-color: var(--btn-nav-link);
         font-size: 0.9em;
         padding: 2px;
         height: 100%;
@@ -38,7 +39,7 @@
         text-decoration: none;
 
         &:hover {
-            background-color: $secondary-font-color;
+            background-color: var(--secondary-font-color);
         }
     }
 }
@@ -56,7 +57,7 @@
 
     div {
         border-radius: 4px;
-        background-color: $background-secondary;
+        background-color: var(--background-secondary);
     }
 
     img {
@@ -66,7 +67,7 @@
 }
 
 .highlight-title {
-    color: $tertiary-font-color;
+    color: var(--tertiary-font-color);
 }
 
 #listItem {
@@ -81,12 +82,12 @@
 }
 
 #submitFilter {
-    background-color: $background-secondary;
-    border:solid 1px $highlight-color;
-    color: $primary-font-color;
+    background-color: var(--background-secondary);
+    border:solid 1px var(--highlight-color);
+    color: var(--primary-font-color);
     width: 10dvw;
     transition: background-color 0.3s;
     &:hover {
-        background-color: $highlight-color;
+        background-color: var(--highlight-color);
     }
 }
