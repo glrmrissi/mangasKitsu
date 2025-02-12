@@ -5,36 +5,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="shortcut icon" href="../../../src/icon/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../../src/styles/import.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending</title>
+  <link rel="shortcut icon" href="../../../src/icon/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../../../src/styles/import.css">
 </head>
 
-<body style="height: 90vh;" data-theme="dark">
-    <header class="header_main">
-        <nav>
-          <div class="shrink">
-            <a href="../../../index.html" target="_self"><span class=""><img src="../../../src/icon/logo.png"
-              class="logo" srcset=""></span></a>
-          </div>
-          <div class="profile-icon">
-            <a href="../../../src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal" class="iconsSize"
-                src="../../../src/icon/profile.svg" alt="Profile Icon"></a>
-          </div>
-        </nav>
-      </header>
-    <main class="main-container">
-        <section class="trending">
-            <!-- Aqui será exibido o código seu zé bunda -->
-        </section>
-        <section class="categoryMangasShow" id="categoriesMain">
-            <!-- Está em js/api/consumeApi.js-->
-        </section>
-    </main>
-    <script src="../../../src/js/services/theme/theme.js"></script>
-    <script type="module" src="../../../src/js/modules/loadProfilePhoto/loadProfilePhoto.js"></script>
-    <script src="../../../src/js/pages/trending/trending.js"></script>
-  </body>
+<body data-theme="dark">
+  <header class="header_main">
+    <nav>
+      <div class="shrink">
+        <a href="../../../index.html" target="_self"><span class=""><img src="../../../src/icon/logo.png" class="logo"
+              srcset=""></span></a>
+      </div>
+      <div>
+        <img style="width: 3dvh; padding: 0.3dvh; cursor: pointer;" class="fillWhite" id="toggle_theme"
+          src="src/icon/cloud-moon-fill.svg" alt="">
+      </div>
+      <div class="div-input-search-main">
+        <input class="mangaInput" type="text" id="mangasName" name="input_search" placeholder="" required />
+        <label for="input_search">Name: </label>
+      </div>
+      <div class="profile-icon">
+        <a href="../../../src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal" class="iconsSize"
+            src="../../../src/icon/profile.svg" alt="Profile Icon"></a>
+      </div>
+    </nav>
+  </header>
+  <main class="main-container">
+    <section class="trending">
+      <!-- Aqui será exibido o código seu zé bunda -->
+    </section>
+    <section class="categoryMangasShow" id="categoriesMain">
+      <!-- Está em js/api/consumeApi.js-->
+    </section>
+  </main>
+  <footer id="footer" class="box">
+    <!-- Está em src/templates/footer/footer.js -->
+  </footer>
+  <div class="wave box"></div>
+  <script src="../../../src/js/services/theme/theme.js"></script>
+  <script src="../../../src/templates/footer/footer.js"></script>
+  <script type="module" src="../../../src/js/modules/search/btnSearch.js"></script>
+  <script type="module" src="../../../src/js/modules/search/search.js"></script>
+  <script type="module" src="../../../src/js/modules/loadProfilePhoto/loadProfilePhoto.js"></script>
+  <script type="module" src="../../../src/js/modules/fadeInOut/fadeInOut.js"></script>
+  <script src="../../../src/js/pages/trending/trending.js"></script>
+</body>
+
 </html>

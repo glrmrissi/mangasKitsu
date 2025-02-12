@@ -9,6 +9,7 @@
 .category {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     color: var(--primary-font-color);
     width: 100%;
     height: 100%;
@@ -85,7 +86,7 @@
     background-color: var(--background-secondary);
     border:solid 1px var(--highlight-color);
     color: var(--primary-font-color);
-    width: 10dvw;
+    padding: 1dvh;
     transition: background-color 0.3s;
     &:hover {
         background-color: var(--highlight-color);
