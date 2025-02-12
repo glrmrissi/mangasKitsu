@@ -1,14 +1,25 @@
+.main-container-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 .profile-infos {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(45deg, #574868, #251e2e, #574868);
+    background: linear-gradient(45deg, var(--secondary-font-color), var(--border-shadow-color), var(--secondary-font-color));
     background-size: 400% 400%;
     animation: waveAnimation 7s ease-in-out infinite;
     box-shadow: 20px 20px 10px 10px #251e2e;
-    width: 100%;
+    width: 75%;
     height: 50dvh;
+    overflow: hidden;
     border-radius: 4px;
 }
 
@@ -25,16 +36,16 @@
 }
 
 .user_img {
-    border: 2px var(--tertiary-font-color) solid;
-    box-shadow: 2px 0px 30px 10px var(--tertiary-font-color);
+    border: 2px var(--secondary-font-color) solid;
+    box-shadow: 2px 0px 30px 10px var(--secondary-font-color);
     width: 130px;
-    height: 130px; 
+    height: 130px;
     border-radius: 50%;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #photo {
@@ -59,6 +70,7 @@
     cursor: pointer;
     color: var(--primary-font-color);
     background-color: #00000013;
+
     &:hover {
         filter: brightness(80%);
         backdrop-filter: brightness(80%);

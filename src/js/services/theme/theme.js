@@ -17,10 +17,12 @@ toggleTheme.addEventListener("click", () => {
   if (newTheme === "light") {
     fillWhite.forEach(el => {
       el.classList.remove("fillWhite");
+      toggleTheme.src = "src/icon/cloud-sun-fill.svg"
     });
   } else {
     fillWhite.forEach(el => {
       el.classList.add("fillWhite");
+      toggleTheme.src = "src/icon/cloud-moon-fill.svg"
     });
   }
   body.setAttribute("data-theme", newTheme);
