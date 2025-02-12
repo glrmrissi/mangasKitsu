@@ -19,6 +19,7 @@ const paths = {
     "../../../src/icon/cloud-moon-fill.svg"
   ]
 }
+
 toggleTheme.addEventListener("click", () => {
   const currentTheme = body.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
