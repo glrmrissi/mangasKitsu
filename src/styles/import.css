@@ -1047,7 +1047,7 @@ footer {
 
 .mg-details p {
   font-weight: 500;
-  color: #fff;
+  color: var(--primary-font-color);
 }
 
 .grid-manga-details {
@@ -1106,7 +1106,7 @@ footer {
   flex: 2;
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: var(--primary-font-color);
 }
 
 .right-side p {
