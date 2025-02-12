@@ -7,7 +7,7 @@ if (savedTheme) {
   body.setAttribute("data-theme", savedTheme);
 }
 
-const fillWhite = document.querySelectorAll(".fillWhite")
+const fillWhite = document.querySelectorAll(".fillWhite");
 
 
 toggleTheme.addEventListener("click", () => {
@@ -17,26 +17,26 @@ toggleTheme.addEventListener("click", () => {
   if (newTheme === "light") {
     fillWhite.forEach(el => {
       el.classList.remove("fillWhite");
-      toggleTheme.src = "src/icon/cloud-sun-fill.svg"
+      toggleTheme.src = "src/icon/cloud-sun-fill.svg" && "../../../src/icon/cloud-sun-fill.svg";
     });
   } else {
     fillWhite.forEach(el => {
       el.classList.add("fillWhite");
-      toggleTheme.src = "src/icon/cloud-moon-fill.svg"
+      toggleTheme.src = "src/icon/cloud-moon-fill.svg" && "../../../src/icon/cloud-moon-fill.svg";
     });
   }
   body.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
 });
 
-const foreachtest = fillWhite.forEach(el => {el.classList.remove("fillWhite");});
-
-fillWhite.forEach(el => {
-  el.classList.remove("fillWhite");
-});
 if (savedTheme === "light") {
+  fillWhite.forEach(el => {
+    el.classList.remove("fillWhite");
+    toggleTheme.src = "src/icon/cloud-sun-fill.svg" && "../../../src/icon/cloud-sun-fill.svg";
+  });
 } else {
   fillWhite.forEach(el => {
     el.classList.add("fillWhite");
+    toggleTheme.src = "src/icon/cloud-moon-fill.svg" && "../../../src/icon/cloud-moon-fill.svg";
   });
 }

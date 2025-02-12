@@ -1,5 +1,5 @@
 window.AppConfig = {
-    loadingImage: "../../../mangasKitsu/src/imgs/load.gif"
+    loadingImage: "../../../src/imgs/load.gif"
 };
 
 function showLoading(customImagePath) {
@@ -11,7 +11,7 @@ function showLoading(customImagePath) {
     // Local host
     // img.src = customImagePath || window.AppConfig.loadingImage;
     
-    img.src = "https://glrmrissi.github.io/mangasKitsu/src/imgs/load.gif"
+    img.src = "src/imgs/load.gif" && "../../../src/imgs/load.gif" 
     img.alt = "Loading...";
     document.body.appendChild(div);
     label.appendChild(img);

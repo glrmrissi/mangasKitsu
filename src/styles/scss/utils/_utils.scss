@@ -49,6 +49,7 @@ body.loadingCursor {
     filter: blur(10px);
     transform: translate(25px, 25px);
     transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out, filter 0.2s ease-in-out;
+    overflow: hidden;
 }
 
 .box.show {
