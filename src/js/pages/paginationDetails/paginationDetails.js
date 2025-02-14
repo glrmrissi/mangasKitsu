@@ -10,5 +10,4 @@ for (let i = 0; i < btn_details.length; i++) {
         btn_details[i].classList.add("actived");
         section_details[i].classList.add("actived");
     }
-    console.log("111")
 }

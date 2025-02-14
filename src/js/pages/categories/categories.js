@@ -126,7 +126,6 @@ if(!target) {
     body.appendChild(divListItem)
 } 
 
-
 // Ativado quando passar o carai do 1 segundo e aumenta lá na URL
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

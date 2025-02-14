@@ -24,6 +24,8 @@ function loadScripts(scripts, callback) {
     }
     loadNextScripts();
 };
+
+
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
         'src/js/modules/search/btnSearch.js',
@@ -32,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
         'src/js/components/styles.js',
-        'src/js/modules/fadeInOut/fadeInOut.js'
+        'src/js/modules/fadeInOut/fadeInOut.js',
+        'src/js/services/theme/theme.js',
+        'src/js/modules/goToTop/goToTop.js',
 
     ], function () {
         // console.log("Scripts carregados");

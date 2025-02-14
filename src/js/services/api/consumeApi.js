@@ -7,7 +7,7 @@ const fetchMangasSliders = async () => {
         .then(response => response.json())
         .then(data => {
 
-            const sliderContainer = document.getElementById('slider_container')
+            const sliderContainer = document.getElementById('slider_container');
             const trendSlider = document.createElement('div');
 
             // Nota: passar para textcontent
@@ -23,22 +23,22 @@ const fetchMangasSliders = async () => {
         </aside>
             `
             sliderContainer.appendChild(trendSlider);
-            const sliderCard = trendSlider.querySelector(".slider-car")
+            const sliderCard = trendSlider.querySelector(".slider-car");
 
             data.data.forEach(manga => {
 
-                const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes
+                const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes;
 
-                const divSliderCard = document.createElement("div")
+                const divSliderCard = document.createElement("div");
 
-                divSliderCard.className = "imgs-slider"
-                sliderCard.appendChild(divSliderCard)
+                divSliderCard.className = "imgs-slider";
+                sliderCard.appendChild(divSliderCard);
 
                 const sliderItems = Array.from(sliderCard.children);
 
                 const overlayImg = document.createElement("span");
                 const imgElementSlider = document.createElement("img");
-                overlayImg.className = "overlay"
+                overlayImg.className = "overlay";
 
                 let countOverlay = 0;
 
@@ -46,18 +46,18 @@ const fetchMangasSliders = async () => {
                     countOverlay++;
                 }
                 overlayImg.textContent = countOverlay;
-                imgElementSlider.src = posterImage.large
-                imgElementSlider.classList.add("box")
-                divSliderCard.appendChild(overlayImg)
-                divSliderCard.appendChild(imgElementSlider)
+                imgElementSlider.src = posterImage.large;
+                imgElementSlider.classList.add("box");
+                divSliderCard.appendChild(overlayImg);
+                divSliderCard.appendChild(imgElementSlider);
 
                 divSliderCard.addEventListener('click', () => {
-                    localStorage.setItem('selectedAnimeId', manga.id)
+                    localStorage.setItem('selectedAnimeId', manga.id);
 
-                    window.open('src/pages/details/details-manga.html', '_blank')
+                    window.open('src/pages/details/details-manga.html', '_blank');
                 })
 
-                const cardImgs = document.querySelectorAll('.imgs-slider img')
+                const cardImgs = document.querySelectorAll('.imgs-slider img');
                 cardImgs.forEach((cardImg) => {
                     cardImg.onload = () => {
                         document.querySelectorAll('.imgs-slider').forEach((imgsSlider) => {
@@ -69,7 +69,7 @@ const fetchMangasSliders = async () => {
             });
         })
         .catch(error => {
-            console.error(error)
+            console.error(error);
         })
 }
 
@@ -80,8 +80,7 @@ export async function renderMangas(mangas) {
     mangaContainer.innerHTML = "";
 
     mangas.forEach((manga) => {
-
-        const { canonicalTitle, synopsis, posterImage, averageRating } = manga.attributes
+        const { canonicalTitle, synopsis, posterImage, averageRating } = manga.attributes;
 
         const mangaItem = document.createElement("div");
         mangaItem.classList.add("loadingGrid");
@@ -98,10 +97,10 @@ export async function renderMangas(mangas) {
         const textOverlay = document.createElement("span");
         const ageRatingOverlay = document.createElement("span");
 
-        textOverlay.classList.add("text-overlay")
-        ageRatingOverlay.classList.add("text-overlay")
-        ageRatingOverlay.textContent = `${averageRating}`
-        textOverlay.textContent = `${canonicalTitle}`
+        textOverlay.classList.add("text-overlay");
+        ageRatingOverlay.classList.add("text-overlay");
+        ageRatingOverlay.textContent = `${averageRating}`;
+        textOverlay.textContent = `${canonicalTitle}`;
 
         ageRatingOverlay.appendChild(textOverlay);
         overlay.appendChild(textOverlay);
@@ -110,7 +109,7 @@ export async function renderMangas(mangas) {
 
         mangaContainer.appendChild(mangaItem);
 
-        const cardImgs = document.querySelectorAll('.grid img')
+        const cardImgs = document.querySelectorAll('.grid img');
         cardImgs.forEach((cardImg) => {
             cardImg.onload = () => {
                 document.querySelectorAll('.grid').forEach((grid) => {
@@ -122,18 +121,17 @@ export async function renderMangas(mangas) {
 
 
         mangaItem.addEventListener('click', () => {
-            console.log(manga.id)
-            localStorage.setItem('selectedAnimeId', manga.id)
+            localStorage.setItem('selectedAnimeId', manga.id);
 
-            window.open('src/pages/details/details-manga.html', '_blank')
+            window.open('src/pages/details/details-manga.html', '_blank');
         })
 
-        hideLoading()
+        hideLoading();
     });
 }
 
 export async function loadPage(page) {
-    const mangas = await fetchMangas(page);
+    const mangas = await fetchMangas(page); // Está em pagination.js
     renderMangas(mangas);
-    renderPagination()
+    renderPagination();
 }
