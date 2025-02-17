@@ -80,16 +80,23 @@
     height: 355px;
 }
 
+.btns-pagination-details {
+    display: flex;
+    justify-content: center;
+    background: var(--background-primary);
+    padding: 0;
+}
+
 .btn-details {
     background-color: var(--background-tertiary);
     color: var(--primary-font-color);
-    margin: 10px 0 2px 0;
+    margin: 0;
+    padding: 0;
     width: 6dvw;
     height: 4dvh;
     opacity: 60%;
     outline: none;
     border: none;
-    border-radius: 10px 0 10px 0;
 }
 
 .actived.btn-details {

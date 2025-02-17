@@ -1112,16 +1112,23 @@ footer {
   height: 355px;
 }
 
+.btns-pagination-details {
+  display: flex;
+  justify-content: center;
+  background: var(--background-primary);
+  padding: 0;
+}
+
 .btn-details {
   background-color: var(--background-tertiary);
   color: var(--primary-font-color);
-  margin: 10px 0 2px 0;
+  margin: 0;
+  padding: 0;
   width: 6dvw;
   height: 4dvh;
   opacity: 60%;
   outline: none;
   border: none;
-  border-radius: 10px 0 10px 0;
 }
 
 .actived.btn-details {
@@ -1489,6 +1496,9 @@ footer {
   .article-mobile h3 {
     font-size: 0.7em;
   }
+  .btn-details {
+    width: 100%;
+  }
 }
 @media (min-width: 0px) and (max-width: 576px) {
   .main-container {
@@ -1599,5 +1609,8 @@ footer {
   }
   .article-mobile h3 {
     font-size: 0.7em;
+  }
+  .btn-details {
+    width: 100%;
   }
 }/*# sourceMappingURL=import.css.map */
