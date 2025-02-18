@@ -286,6 +286,7 @@ body.loadingCursor {
   display: flex;
   width: 100%;
   height: 100%;
+  color: var(--primary-font-color);
 }
 .tooltip img {
   border-radius: 4px;
@@ -297,7 +298,7 @@ body.loadingCursor {
   height: 100%;
   background-color: var(--tooltip);
   border: 1px solid #4c464e;
-  color: #fff;
+  color: var(--primary-font-color);
   padding: 5px;
   position: absolute;
   z-index: 1;
@@ -1457,6 +1458,10 @@ footer {
     padding: 4vh;
     gap: 5px;
   }
+  .grid.loadingGrid {
+    width: 150px;
+    height: 212px;
+  }
   .grid .overlay {
     padding: 3vh;
   }
@@ -1552,6 +1557,10 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     padding: 2vh;
     gap: 5px;
+  }
+  .grid.loadingGrid {
+    width: 150px;
+    height: 212px;
   }
   .grid .overlay {
     padding: 3vh;

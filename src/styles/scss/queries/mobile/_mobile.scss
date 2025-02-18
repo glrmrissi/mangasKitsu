@@ -59,6 +59,11 @@
         gap: 5px;
     }
 
+    .grid.loadingGrid{
+        width: 150px;
+        height: 212px;
+    }
+
     .grid .overlay {
         padding: 3vh;
         box-shadow: -1px 50px 50px 20px rgba(0, 0, 0, 0.80) inset;
