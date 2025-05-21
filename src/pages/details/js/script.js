@@ -24,19 +24,26 @@ async function displayMangaDetails() {
       </div>
       <section class="grid-manga-details">
         <aside class="left-side d-center">
-          <h2>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Content not found"}</h2>
-          <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
-          <div class="infos-details">
-            <p><strong>Status:</strong>&nbsp; ${statusUpperCase || "Content not found"}</p>
-            <p><strong>Views:</strong>&nbsp; ${userCount || "Content not found"}</p>
-            <p><strong>Rating:</strong>&nbsp; ${averageRating || "Content not found"}</p>
-            <p><strong>Chapters:</strong>&nbsp; ${volumeCount || "Content not found"}</p>
+          <div>
+            <h2>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Content not found"}</h2>
+            <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
+            <div class="infos-details">
+              <p><strong>Status:</strong>&nbsp; ${statusUpperCase || "Content not found"}</p>
+              <p><strong>Views:</strong>&nbsp; ${userCount || "Content not found"}</p>
+              <p><strong>Rating:</strong>&nbsp; ${averageRating || "Content not found"}</p>
+              <p><strong>Chapters:</strong>&nbsp; ${volumeCount || "Content not found"}</p>
+            </div>
           </div>
           </aside>
           <aside class="right-side d-center">
+          <div class="title-synopsis">
+            <h2>Synopsis:</h2>
+          </div>
+          <div class="paragrafer-synopsis">
             <p>&nbsp; &nbsp;${synopsis || "Content not found"}</p>
-            </aside>
-            </section>
+          </div>
+          </aside>
+      </section>
             `;
 }
 

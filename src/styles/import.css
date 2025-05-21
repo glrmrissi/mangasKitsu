@@ -16,6 +16,7 @@
   --action-color: #020202;
   --input-search-color: #dbdbdb;
   --shadow-overlay: rgba(235, 235, 235, 0.8);
+  --background-details: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme=dark] {
@@ -35,6 +36,7 @@
   --action-color: #020202;
   --input-search-color: #dbdbdb;
   --shadow-overlay: rgba(0, 0, 0, 0.8);
+  --background-details: rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -1034,9 +1036,9 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   width: 100%;
-  height: 100%;
+  height: 100dvh;
 }
 
 .mg-details p {
@@ -1045,24 +1047,22 @@ footer {
 }
 
 .grid-manga-details {
-  position: absolute;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  top: 25vh;
+  top: 15vh;
   left: 15%;
   float: right;
 }
 
 .banner_manga {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   overflow: hidden;
 }
-
 .banner_manga img {
   width: 100%;
   height: 100%;
@@ -1074,11 +1074,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  margin: 0 20px;
-  padding: 1vh;
+  margin: 0 6vh;
+  padding: 4vh 0vh;
   border-radius: 4px;
   flex: 1;
   flex-direction: column;
@@ -1089,22 +1086,31 @@ footer {
 .infos-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 3dvw 0 3dvw;
+  padding: 0.5dvh 0;
 }
 
 .right-side {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 2;
   width: 100%;
   height: 100%;
+  margin: 4vh 0;
   color: var(--primary-font-color);
+}
+.right-side .title-synopsis {
+  width: 100%;
+}
+.right-side .paragrafer-synopsis {
+  width: 100%;
+  height: 100%;
 }
 
 .right-side p {
-  padding: 8vh;
+  padding: 1vh;
+  margin: 1dvh 8dvh;
   font-size: 1em;
 }
 
@@ -1114,7 +1120,7 @@ footer {
 }
 
 .btns-pagination-details {
-  display: flex;
+  display: none;
   justify-content: center;
   background: var(--background-primary);
   padding: 0;
