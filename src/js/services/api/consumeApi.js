@@ -1,17 +1,18 @@
-/* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto*/
-import { renderPagination, fetchMangas } from "../../modules/pagination/pagination.js";
-
+/* Deveria estar consumindo somente a Api, porém sou burro e fiz tudo junto */
+import {
+  renderPagination,
+  fetchMangas,
+} from "../../modules/pagination/pagination.js";
 
 const fetchMangasSliders = async () => {
-    fetch('https://kitsu.io/api/edge/trending/manga')
-        .then(response => response.json())
-        .then(data => {
+  fetch("https://kitsu.io/api/edge/trending/manga")
+    .then((response) => response.json())
+    .then((data) => {
+      const sliderContainer = document.getElementById("slider_container");
+      const trendSlider = document.createElement("div");
 
-            const sliderContainer = document.getElementById('slider_container');
-            const trendSlider = document.createElement('div');
-
-            // Nota: passar para textcontent
-            trendSlider.innerHTML = `
+      // Nota: passar para textcontent
+      trendSlider.innerHTML = `
         <aside class="limited-overflow">
         <div class="title skeleton-load box">
             <h1 class="hover-effect">Most read:</h1>
@@ -21,117 +22,122 @@ const fetchMangasSliders = async () => {
                 </article>    
             </section>
         </aside>
-            `
-            sliderContainer.appendChild(trendSlider);
-            const sliderCard = trendSlider.querySelector(".slider-car");
+            `;
+      sliderContainer.appendChild(trendSlider);
+      const sliderCard = trendSlider.querySelector(".slider-car");
 
-            data.data.forEach(manga => {
+      data.data.forEach((manga) => {
+        const { canonicalTitle, synopsis, posterImage, ageRating } =
+          manga.attributes;
 
-                const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes;
+        const divSliderCard = document.createElement("div");
 
-                const divSliderCard = document.createElement("div");
+        divSliderCard.className = "imgs-slider";
+        sliderCard.appendChild(divSliderCard);
 
-                divSliderCard.className = "imgs-slider";
-                sliderCard.appendChild(divSliderCard);
+        const sliderItems = Array.from(sliderCard.children);
 
-                const sliderItems = Array.from(sliderCard.children);
+        const overlayImg = document.createElement("span");
+        const imgElementSlider = document.createElement("img");
+        overlayImg.className = "overlay";
 
-                const overlayImg = document.createElement("span");
-                const imgElementSlider = document.createElement("img");
-                overlayImg.className = "overlay";
+        let countOverlay = 0;
 
-                let countOverlay = 0;
+        for (var i = 0; i < sliderItems.length; i++) {
+          countOverlay++;
+        }
+        overlayImg.textContent = countOverlay;
+        imgElementSlider.src = posterImage.large;
+        imgElementSlider.title = canonicalTitle;
+        imgElementSlider.alt = canonicalTitle;
+        imgElementSlider.tabIndex = 0;
+        imgElementSlider.classList.add("box");
+        divSliderCard.appendChild(overlayImg);
+        divSliderCard.appendChild(imgElementSlider);
 
-                for (var i = 0; i < sliderItems.length; i++) {
-                    countOverlay++;
-                }
-                overlayImg.textContent = countOverlay;
-                imgElementSlider.src = posterImage.large;
-                imgElementSlider.classList.add("box");
-                divSliderCard.appendChild(overlayImg);
-                divSliderCard.appendChild(imgElementSlider);
+        divSliderCard.addEventListener("click", () => {
+          localStorage.setItem("selectedAnimeId", manga.id);
 
-                divSliderCard.addEventListener('click', () => {
-                    localStorage.setItem('selectedAnimeId', manga.id);
+          window.open("src/pages/details/details-manga.html", "_blank");
+        });
 
-                    window.open('src/pages/details/details-manga.html', '_blank');
-                })
-
-                const cardImgs = document.querySelectorAll('.imgs-slider img');
-                cardImgs.forEach((cardImg) => {
-                    cardImg.onload = () => {
-                        document.querySelectorAll('.imgs-slider').forEach((imgsSlider) => {
-                            imgsSlider.classList.remove('loadingGrid');
-                            sliderContainer.classList.remove("skeleton-load");
-                        });
-                    };
-                });
+        const cardImgs = document.querySelectorAll(".imgs-slider img");
+        cardImgs.forEach((cardImg) => {
+          cardImg.onload = () => {
+            document.querySelectorAll(".imgs-slider").forEach((imgsSlider) => {
+              imgsSlider.classList.remove("loadingGrid");
+              sliderContainer.classList.remove("skeleton-load");
             });
-        })
-        .catch(error => {
-            console.error(error);
-        })
-}
+          };
+        });
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
-fetchMangasSliders()
+fetchMangasSliders();
 
 const mangaContainer = document.getElementById("manga-container");
 export async function renderMangas(mangas) {
-    mangaContainer.innerHTML = "";
+  mangaContainer.innerHTML = "";
 
-    mangas.forEach((manga) => {
-        const { canonicalTitle, synopsis, posterImage, averageRating } = manga.attributes;
+  mangas.forEach((manga) => {
+    const { canonicalTitle, synopsis, posterImage, averageRating } =
+      manga.attributes;
 
-        const mangaItem = document.createElement("div");
-        mangaItem.classList.add("loadingGrid");
-        mangaItem.classList.add("box");
-        mangaItem.classList.add("grid");
+    const mangaItem = document.createElement("div");
+    mangaItem.classList.add("loadingGrid");
+    mangaItem.classList.add("box");
+    mangaItem.classList.add("grid");
 
-        const img = document.createElement("img");
-        img.src = posterImage.small;
-        img.alt = canonicalTitle;
+    const img = document.createElement("img");
+    img.src = posterImage.small;
+    
+    const overlay = document.createElement("span");
+    overlay.classList.add("overlay");
+    overlay.alt = canonicalTitle;
+    overlay.tabIndex = 0;
+    overlay.title = canonicalTitle;
 
-        const overlay = document.createElement("span");
-        overlay.classList.add("overlay");
+    const textOverlay = document.createElement("span");
+    const ageRatingOverlay = document.createElement("span");
 
-        const textOverlay = document.createElement("span");
-        const ageRatingOverlay = document.createElement("span");
+    textOverlay.classList.add("text-overlay");
+    ageRatingOverlay.classList.add("text-overlay");
+    ageRatingOverlay.textContent = `${averageRating}`;
+    textOverlay.textContent = `${canonicalTitle}`;
 
-        textOverlay.classList.add("text-overlay");
-        ageRatingOverlay.classList.add("text-overlay");
-        ageRatingOverlay.textContent = `${averageRating}`;
-        textOverlay.textContent = `${canonicalTitle}`;
+    ageRatingOverlay.appendChild(textOverlay);
+    overlay.appendChild(textOverlay);
+    mangaItem.appendChild(overlay);
+    mangaItem.appendChild(img);
 
-        ageRatingOverlay.appendChild(textOverlay);
-        overlay.appendChild(textOverlay);
-        mangaItem.appendChild(overlay);
-        mangaItem.appendChild(img);
+    mangaContainer.appendChild(mangaItem);
 
-        mangaContainer.appendChild(mangaItem);
-
-        const cardImgs = document.querySelectorAll('.grid img');
-        cardImgs.forEach((cardImg) => {
-            cardImg.onload = () => {
-                document.querySelectorAll('.grid').forEach((grid) => {
-                    grid.classList.remove('loadingGrid');
-                    mangaContainer.classList.remove("skeleton-load");
-                });
-            };
+    const cardImgs = document.querySelectorAll(".grid img");
+    cardImgs.forEach((cardImg) => {
+      cardImg.onload = () => {
+        document.querySelectorAll(".grid").forEach((grid) => {
+          grid.classList.remove("loadingGrid");
+          mangaContainer.classList.remove("skeleton-load");
         });
-
-
-        mangaItem.addEventListener('click', () => {
-            localStorage.setItem('selectedAnimeId', manga.id);
-
-            window.open('src/pages/details/details-manga.html', '_blank');
-        })
-
-        hideLoading();
+      };
     });
+
+    mangaItem.addEventListener("click", () => {
+      localStorage.setItem("selectedAnimeId", manga.id);
+
+      window.open("src/pages/details/details-manga.html", "_blank");
+    });
+
+    hideLoading();
+  });
 }
 
 export async function loadPage(page) {
-    const mangas = await fetchMangas(page); // Está em pagination.js
-    renderMangas(mangas);
-    renderPagination();
+  const mangas = await fetchMangas(page); // Está em pagination.js
+  renderMangas(mangas);
+  renderPagination();
 }

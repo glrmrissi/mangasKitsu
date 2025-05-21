@@ -5,7 +5,6 @@
     animation: fadeSlideIn .2s ease-in-out;
 }
 
-
 .slider-container.skeleton-load {
     height: 35dvh;
     background-color: var(--background-secondary);
@@ -67,9 +66,10 @@
 .imgs-slider .overlay {
     position: absolute;
     display: flex;
-    padding: 0.5vh 1vh;
     background-color: var(--background-secondary);
+    border-radius: 0 0 3px 0;
     color: var(--primary-font-color);
+    padding: 0.5vh 1vh;
     font-size: 1.4em;
     font-weight: 600;
     left: 0;

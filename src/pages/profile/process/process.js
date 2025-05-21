@@ -1,3 +1,5 @@
+// Working for while
+
 document.addEventListener("DOMContentLoaded", function () {
   let imageUrl;
   const reader = new FileReader();
@@ -9,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const file = document.getElementById("file");
 
   savedImg
-    ? imgUser.setAttribute(
+    ? (imgUser.setAttribute(
         "src",
         savedImg
-      )(profilePhotoGlobal.setAttribute("src", savedImg))
+      ), profilePhotoGlobal.setAttribute("src", savedImg))
     : savedImg;
 
   file == null ? (file = "") : file;
