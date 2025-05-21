@@ -44,6 +44,8 @@ const fetchMangasSliders = async () => {
                 popularityRankP.classList.add("popularity-rank-p");
 
                 img.src = posterImage.large || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
+                img.alt = canonicalTitle;
+                img.tabIndex = 0;
                 h3.textContent = `${canonicalTitle} - ${date}`;
                 popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
                 pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;

@@ -34,8 +34,9 @@ $themes : (
         loading-color-secondary: #f0f3f5,
         action-color: #020202,
         input-search-color: #dbdbdb,
+        background-search-img: transparent url('../../../../../src/icon/search.svg') no-repeat center right,
         shadow-overlay: #000000cc,
-        background-details: #000000cc
+        background-details: #000000cc,
     ),
     light: (
         background-main: #f0f0f0, 
@@ -53,6 +54,7 @@ $themes : (
         loading-color-secondary: #f0f3f5, 
         action-color: #020202, 
         input-search-color: #dbdbdb,
+        background-search-img: transparent url('../../../../../src/icon/searchBlack.svg') no-repeat center right,
         shadow-overlay: #ebebebcc,
         background-details: #ffffffcc
     )
