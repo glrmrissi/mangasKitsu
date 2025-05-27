@@ -37,6 +37,7 @@ $themes : (
         background-search-img: transparent url('../../../../../src/icon/search.svg') no-repeat center right,
         shadow-overlay: #000000cc,
         background-details: #000000cc,
+        box-shadow-banner-details: #0000008f,
     ),
     light: (
         background-main: #f0f0f0, 
@@ -56,7 +57,9 @@ $themes : (
         input-search-color: #dbdbdb,
         background-search-img: transparent url('../../../../../src/icon/searchBlack.svg') no-repeat center right,
         shadow-overlay: #ebebebcc,
-        background-details: #ffffffcc
+        background-details: #ffffffcc,
+        box-shadow-banner-details: #ffffff8f,
+
     )
     );
 

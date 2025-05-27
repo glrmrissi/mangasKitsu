@@ -14,7 +14,7 @@ async function displayMangaDetails() {
   
   const manga = await fetchMangaDetails(mangaId);
   const mangaDetails = document.getElementById('manga-details');
-  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters } = manga.attributes
+  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters, ageRating } = manga.attributes
   const statusUpperCase = status.charAt(0).toUpperCase() + status.slice(1);
   document.title = `Details ${titles.en || titles.jp || canonicalTitle || titles.en_jp || "Don't have title"} - Rissi`;
   
@@ -28,6 +28,7 @@ async function displayMangaDetails() {
             <h2>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Content not found"}</h2>
             <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
             <div class="infos-details">
+              <p><strong>Age:</strong>&nbsp; ${ageRating || "Content not found"}</p>
               <p><strong>Status:</strong>&nbsp; ${statusUpperCase || "Content not found"}</p>
               <p><strong>Views:</strong>&nbsp; ${userCount || "Content not found"}</p>
               <p><strong>Rating:</strong>&nbsp; ${averageRating || "Content not found"}</p>
