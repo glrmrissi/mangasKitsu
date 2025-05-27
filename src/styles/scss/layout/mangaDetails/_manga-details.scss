@@ -28,7 +28,13 @@
     align-items: center;
     width: 100%;
     height: 20vh;
+    box-shadow: 0px 20px 20px var(--box-shadow-banner-details);
     overflow: hidden;
+    transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
+    &:hover {
+        filter: saturate(2);
+        height: 40vh;
+    }
     img {
         width: 100%;
         height: 100%;
@@ -76,7 +82,7 @@
 
 .right-side p {
     padding: 1vh;
-    margin: 1dvh 8dvh;
+    margin: 1dvh 2dvh;
     font-size: 1em;
 }
 
