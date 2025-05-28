@@ -2,23 +2,44 @@ import { fetchApi } from "./fetchApi.js";
 
 export const fetchMangasSliders = async () => {
   const url = "https://kitsu.io/api/edge/trending/manga";
-    fetchApi(url)
+  fetchApi(url)
     .then((data) => {
       const sliderContainer = document.getElementById("slider_container");
       const trendSlider = document.createElement("div");
 
       // Nota: passar para textcontent
-      trendSlider.innerHTML = `
-        <aside class="limited-overflow">
-        <div class="title skeleton-load box">
-            <h1 class="hover-effect">Most read:</h1>
-        </div>
-            <section id="my" class="slider">
-                <article class="slider-car">
-                </article>    
-            </section>
-        </aside>
-            `;
+    //   //trendSlider.innerHTML = `
+    //     <aside class="limited-overflow">
+    //     <div class="title skeleton-load box">
+    //         <h1 class="hover-effect">Most read:</h1>
+    //     </div>
+    //         <section id="my" class="slider">
+    //             <article class="slider-car">
+    //             </article>    
+    //         </section>
+    //     </aside>
+    //         `;
+      const aside = document.createElement("aside");
+      const divTitle = document.createElement("div");
+      const title = document.createElement("h1");
+      const section = document.createElement("section");
+      const article = document.createElement("article");
+
+      aside.classList.add("limited-overflow");
+      divTitle.classList.add("title");
+      divTitle.classList.add("skeleton-load");
+      divTitle.classList.add("box");
+      title.classList.add("hover-effect");
+      title.textContent = "Most read:"
+      section.classList.add("slider");
+      section.id = "my";
+      article.classList.add("slider-car");
+
+      divTitle.appendChild(title);
+      section.appendChild(article);
+      aside.appendChild(divTitle);
+      aside.appendChild(section)
+      trendSlider.appendChild(aside);
       sliderContainer.appendChild(trendSlider);
       const sliderCard = trendSlider.querySelector(".slider-car");
 
