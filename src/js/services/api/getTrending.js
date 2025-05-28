@@ -6,19 +6,6 @@ export const fetchMangasSliders = async () => {
     .then((data) => {
       const sliderContainer = document.getElementById("slider_container");
       const trendSlider = document.createElement("div");
-
-      // Nota: passar para textcontent
-    //   //trendSlider.innerHTML = `
-    //     <aside class="limited-overflow">
-    //     <div class="title skeleton-load box">
-    //         <h1 class="hover-effect">Most read:</h1>
-    //     </div>
-    //         <section id="my" class="slider">
-    //             <article class="slider-car">
-    //             </article>    
-    //         </section>
-    //     </aside>
-    //         `;
       const aside = document.createElement("aside");
       const divTitle = document.createElement("div");
       const title = document.createElement("h1");
@@ -75,7 +62,7 @@ export const fetchMangasSliders = async () => {
         divSliderCard.addEventListener("click", () => {
           localStorage.setItem("selectedAnimeId", manga.id);
 
-          window.open("src/pages/details/details-manga.html", "_blank");
+          window.open("src/pages/details/details-manga.html", "_self");
         });
 
         const cardImgs = document.querySelectorAll(".imgs-slider img");

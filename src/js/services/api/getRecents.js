@@ -49,7 +49,7 @@ export async function renderMangas(mangas) {
     mangaItem.addEventListener("click", () => {
       localStorage.setItem("selectedAnimeId", manga.id);
 
-      window.open("src/pages/details/details-manga.html", "_blank");
+      window.open("src/pages/details/details-manga.html", "_self");
     });
 
     hideLoading();
