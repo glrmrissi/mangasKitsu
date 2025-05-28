@@ -1,4 +1,4 @@
-import { loadPage } from "../../services/api/consumeApi.js";
+import { loadPage } from "../../services/api/loadPage.js";
 
 let visiblePages = 8
 let totalPages = 1;
