@@ -25,7 +25,6 @@ function loadScripts(scripts, callback) {
     loadNextScripts();
 };
 
-
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
         'src/js/modules/search/btnSearch.js',
@@ -42,3 +41,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // console.log("Scripts carregados");
     }, { type: "module", defer: true })
 })
+
+console.log("What u looking? 👀")

@@ -10,15 +10,14 @@ async function displayMangaDetails() {
     document.body.innerHTML = '<p>Erro: Nenhum mangá selecionado.</p>';
     return;
   }
-
   
   const manga = await fetchMangaDetails(mangaId);
   const mangaDetails = document.getElementById('manga-details');
-  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters, ageRating, chapterCount, mangaType } = manga.attributes
+  const {coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters, ageRating, chapterCount, mangaType} = manga.attributes
+  
   const statusUpperCase = status.charAt(0).toUpperCase() + status.slice(1);
   const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
   document.title = `Details ${titles.en || titles.jp || canonicalTitle || titles.en_jp || "Don't have title"} - Rissi`;
-  
   mangaDetails.innerHTML = `
     <div class="banner_manga">
       <img src="${coverImage?.original || posterImage.original || posterImage.large || posterImage.small}" />
