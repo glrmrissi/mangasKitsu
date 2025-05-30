@@ -5,9 +5,10 @@ import {
 import { renderMangas } from "./getRecents.js";
 import { fetchMangasSliders } from "./getTrending.js"
 
+fetchMangasSliders();
+
 export async function loadPage(page) {
   const mangas = await fetchMangas(page); // Está em ../../modules/pagination/pagination.js
   renderMangas(mangas);
   renderPagination();
-  fetchMangasSliders();
 }

@@ -148,7 +148,7 @@ body.loadingCursor {
 }
 .hover-effect:after {
   content: "";
-  bottom: -4px;
+  bottom: -1px;
   position: absolute;
   left: 0px;
   width: 0%;
@@ -168,9 +168,9 @@ body.loadingCursor {
   transform: scaleX(1);
 }
 .hover-effect:hover {
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   color: var(--secondary-font-color);
-  transform-origin: left;
+  transform-origin: right;
   background-position: 0%;
 }
 
@@ -866,8 +866,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.8em;
   color: #ffffff;
   width: 100%;

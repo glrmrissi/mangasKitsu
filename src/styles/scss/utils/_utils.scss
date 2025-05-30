@@ -102,10 +102,10 @@ body.loadingCursor {
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
-
+    
     &:after {
         content: "";
-        bottom: -4px;
+        bottom: -1px;
         position: absolute;
         left: 0px;
         width: 0%;
@@ -117,7 +117,7 @@ body.loadingCursor {
         transform: scaleX(0);
         z-index: 0;
     }
-
+    
     &:hover::after {
         color: var(--secondary-font-color);
         width: 100%;
@@ -127,9 +127,9 @@ body.loadingCursor {
     }
 
     &:hover {
-        letter-spacing: 1px;
+        letter-spacing: 0.2px;
         color: var(--secondary-font-color);
-        transform-origin: left;
+        transform-origin: right;
         background-position: 0%;
     }
 }

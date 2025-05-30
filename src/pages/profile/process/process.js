@@ -11,10 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const file = document.getElementById("file");
 
   savedImg
-    ? (imgUser.setAttribute(
-        "src",
-        savedImg
-      ), profilePhotoGlobal.setAttribute("src", savedImg))
+    ? (imgUser.setAttribute("src", savedImg),
+      profilePhotoGlobal.setAttribute("src", savedImg))
     : savedImg;
 
   file == null ? (file = "") : file;
@@ -35,9 +33,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-export function getImageProfile() {
+const pathImg = [
+  "/src/icon/profile.svg",
+  "src/icon/profile.svg",
+  "../../src/icon/profile.svg",
+  "../../../src/icon/profile.svg"
+];
+
+// Sendo exportada em loadProfilePhoto.js
+
+export async function getImageProfile() {
   const imageUrl = localStorage.getItem("userImage");
-  return (
-    imageUrl || ("src/icon/profile.svg" && "../../../src/icon/profile.svg")
-  );
-}
+
+  if (imageUrl) return imageUrl
+
+  let path;
+  for (path of pathImg) {
+    try {
+      const response = await fetch(path);
+      if (response.ok) {
+        return path;
+      }
+    } catch (error) {
+      console.error(`Error: ${path}`);
+    }
+  }
+};
