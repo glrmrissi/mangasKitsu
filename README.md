@@ -9,13 +9,15 @@ Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e J
 - **HTML5** — Estrutura semântica da página.
 - **SCSS (SASS)** — Pré-processador CSS para estilização modular e reaproveitável.
 - **JavaScript (Vanilla JS)** — Lógica da aplicação e integração com a API.
-- **Kitsu API** — Fonte dos dados de animes/mangas, consumida via requisições HTTP.
+- **Kitsu API** — Fonte dos dados de mangas, consumida via requisições HTTP.
+
 
 ---
 
 ## 🔄 Funcionalidades
 
 - Exibição de mangas atualizados diretamente da API.
+- Paginação com controle de navegação.
 - Paginação com controle de navegação (próxima / anterior).
 - Pesquisa dinâmica
 - Categorias com filtragem
@@ -33,6 +35,11 @@ Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e J
 2. Entre na pasta
    ```bash
    cd mangasKitsu
+
+---
+3. Entre na pasta
+   ```bash
+   code .
 
 ---
 

@@ -28,13 +28,13 @@ async function displayMangaDetails() {
             <h2>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Title not found"}</h2>
             <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
             <div class="infos-details">
-              <p><strong>🔮 Type:</strong>&nbsp; ${ mangaTypeUpperCase || "Type not found"}</p>
-              <p><strong>📺 Age:</strong>&nbsp; ${ageRating || "Age Rating not found"}</p>
-              <p><strong>🔎 Status:</strong>&nbsp; ${statusUpperCase || "Status not found"}</p>
+              <p><strong>📂 Type:</strong>&nbsp; ${ mangaTypeUpperCase || "Type not found"}</p>
+              <p><strong>🔞 Age:</strong>&nbsp; ${ageRating || "Age Rating not found"}</p>
+              <p><strong>📶 Status:</strong>&nbsp; ${statusUpperCase || "Status not found"}</p>
               <p><strong>🧐 Views:</strong>&nbsp; ${userCount || "Views not found"}</p>
-              <p><strong>✨ Rating:</strong>&nbsp; ${averageRating || "Rating not found"}</p>
-              <p><strong>📖 Chapters:</strong>&nbsp; ${ chapterCount || "Chapters not found"}</p>
-              <p><strong>📚 Volumes:</strong>&nbsp; ${ volumeCount || "Volumes not found"}</p>
+              <p><strong>⭐ Rating:</strong>&nbsp; ${averageRating || "Rating not found"}</p>
+              <p><strong>📄 Chapters:</strong>&nbsp; ${ chapterCount || "Chapters not found"}</p>
+              <p><strong>📘 Volumes:</strong>&nbsp; ${ volumeCount || "Volumes not found"}</p>
             </div>
           </div>
           </aside>
