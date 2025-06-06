@@ -35,6 +35,11 @@ Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e J
    cd mangasKitsu
 
 ---
+3. Entre na pasta
+   ```bash
+   code .
+
+---
 
 📂 Estrutura do Projeto
   ```bash
