@@ -72,14 +72,6 @@ body.loadingCursor {
     z-index: 1;
 }
 
-.fillWhite {
-    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
-}
-
-.fillBlack {
-    filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg);
-}
-
 .loading {
     position: fixed;
     top: 50%;
@@ -160,6 +152,10 @@ body.loadingCursor {
     display: none;
 }
 
+.fillWhite {
+    filter: var(--filter-icons);
+}
+
 .hover-effect-nav {
     outline: none;
     border: none;
@@ -170,14 +166,16 @@ body.loadingCursor {
     color: var(--primary-font-color);
     transition: all .3s;
     z-index: 1;
-
     span {
         padding-left: 0.3dvw;
     }
-}
-
-.hover-effect-nav:hover {
-    color: var(--secondary-font-color);
+    &:hover {
+        color: var(--secondary-font-color);
+        .fillWhite {
+            filter: var(--filter-icons-hover);
+            transition: filter .3s ease-in-out;
+        }
+    }
 }
 
 .wave {

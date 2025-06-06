@@ -14,25 +14,16 @@ export async function renderMangas(mangas) {
 
     const img = document.createElement("img");
     img.src = posterImage.small;
-
-    const overlay = document.createElement("span");
-    overlay.classList.add("overlay");
-    overlay.alt = canonicalTitle;
-    overlay.tabIndex = 0;
-    overlay.title = canonicalTitle;
+    img.title = canonicalTitle;
+    img.alt = canonicalTitle;
 
     const textOverlay = document.createElement("span");
-    const ageRatingOverlay = document.createElement("span");
 
     textOverlay.classList.add("text-overlay");
-    ageRatingOverlay.classList.add("text-overlay");
-    ageRatingOverlay.textContent = `${averageRating}`;
     textOverlay.textContent = `${canonicalTitle}`;
 
-    ageRatingOverlay.appendChild(textOverlay);
-    overlay.appendChild(textOverlay);
-    mangaItem.appendChild(overlay);
     mangaItem.appendChild(img);
+    mangaItem.appendChild(textOverlay);
 
     mangaContainer.appendChild(mangaItem);
 

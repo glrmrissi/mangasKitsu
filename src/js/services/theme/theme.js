@@ -7,8 +7,6 @@ if (savedTheme) {
   body.setAttribute("data-theme", savedTheme);
 }
 
-const fillWhite = document.querySelectorAll(".fillWhite");
-
 const paths = {
   sun: [
     "src/icon/cloud-sun-fill.svg",
@@ -28,16 +26,6 @@ toggleTheme.addEventListener("click", () => {
   
   setValidImage(toggleTheme, themeType);
 
-  if (newTheme === "light") {
-    fillWhite.forEach(el => {
-      el.classList.remove("fillWhite");
-    });
-  } else {
-    fillWhite.forEach(el => {
-      el.classList.add("fillWhite");
-    });
-  }
-
   body.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
 });
@@ -55,15 +43,5 @@ function setValidImage(element, themeType) {
 }
 
 const themeType = savedTheme === "light" ? "sun" : "moon";
-
-if (savedTheme === "light") {
-  fillWhite.forEach(el => {
-    el.classList.remove("fillWhite");
-  });
-} else {
-  fillWhite.forEach(el => {
-    el.classList.add("fillWhite");
-  });
-}
 
 setValidImage(toggleTheme, themeType);
