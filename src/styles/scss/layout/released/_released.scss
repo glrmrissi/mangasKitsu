@@ -15,7 +15,8 @@
     background-color: var(--background-secondary);
 }
 
-.grid.loadingGrid{ // TESTAR DEPOIS
+.grid.loadingGrid {
+    // TESTAR DEPOIS
     width: 246px;
     height: 352px;
     background-size: 200% 100%;
@@ -24,16 +25,10 @@
     border-radius: 4px;
 }
 
-.grid.loadingGrid .overlay { // TESTAR DEPOIS
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
-    &:hover {
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
-    }
-}
-
 .grid {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -42,6 +37,7 @@
     transition: all 0.3s;
 
     &:hover {
+        background-color: var(--background-overlay-realeases);
         cursor: pointer;
         backdrop-filter: brightness(80%);
     }
@@ -59,35 +55,6 @@
 }
 
 
-.grid .overlay {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    left: 0;
-    right: 0;
-    background-color: #ffffff00;
-    box-shadow: -1px 40px 27px 20px var(--shadow-overlay) inset;
-    -webkit-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
-    -moz-box-shadow: -1px 15px 27px 20px var(--shadow-overlay) inset;
-    font-weight: 600;
-    height: 100%;
-    border-radius: 4px;
-    padding: 1vh;
-    opacity: 1;
-    overflow: hidden;
-    transition: .3s ease;
-    z-index: 1;
-}
-
-.grid:hover .overlay {
-    box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
-    -webkit-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
-    -moz-box-shadow: -1px 100px 50px 20px var(--shadow-overlay) inset;
-    background-color: #ffffff11;
-}
-
 .title-realeased {
     position: relative;
     display: flex;
@@ -102,21 +69,15 @@
 }
 
 .text-overlay {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    padding: 1vh;
-    font-size: 1em;
+    padding: 0.5em;
+    font-size: 0.8em;
     width: 100%;
+    max-width: 15em;
     height: 100%;
-    text-overflow: ellipsis;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     text-align: center;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     overflow-y: auto;
     z-index: 1;
 }
