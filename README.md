@@ -1,6 +1,6 @@
-# Catálogo de Animes com Kitsu API
+# Catálogo de Mangas com Kitsu API
 
-Este é um projeto de catálogo de animes desenvolvido utilizando HTML, SCSS e JavaScript puro. A aplicação consome a [Kitsu API](https://kitsu.docs.apiary.io/) para exibir uma lista de animes com paginação dinâmica.
+Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e JavaScript puro. A aplicação consome a [Kitsu API](https://kitsu.docs.apiary.io/) para exibir uma lista de mangas com paginação dinâmica.
 
 ---
 
@@ -9,14 +9,14 @@ Este é um projeto de catálogo de animes desenvolvido utilizando HTML, SCSS e J
 - **HTML5** — Estrutura semântica da página.
 - **SCSS (SASS)** — Pré-processador CSS para estilização modular e reaproveitável.
 - **JavaScript (Vanilla JS)** — Lógica da aplicação e integração com a API.
-- **Kitsu API** — Fonte dos dados de animes, consumida via requisições HTTP.
+- **Kitsu API** — Fonte dos dados de mangas, consumida via requisições HTTP.
 
 ---
 
 ## 🔄 Funcionalidades
 
-- Exibição de animes atualizados diretamente da API.
-- Paginação com controle de navegação (próxima / anterior).
+- Exibição de mangas atualizados diretamente da API.
+- Paginação com controle de navegação.
 - Pesquisa dinâmica
 - Categorias com filtragem
 - Layout limpo e responsivo com SCSS.
@@ -33,6 +33,11 @@ Este é um projeto de catálogo de animes desenvolvido utilizando HTML, SCSS e J
 2. Entre na pasta
    ```bash
    cd mangasKitsu
+
+---
+3. Entre na pasta
+   ```bash
+   code .
 
 ---
 
