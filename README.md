@@ -11,12 +11,14 @@ Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e J
 - **JavaScript (Vanilla JS)** — Lógica da aplicação e integração com a API.
 - **Kitsu API** — Fonte dos dados de mangas, consumida via requisições HTTP.
 
+
 ---
 
 ## 🔄 Funcionalidades
 
 - Exibição de mangas atualizados diretamente da API.
 - Paginação com controle de navegação.
+- Paginação com controle de navegação (próxima / anterior).
 - Pesquisa dinâmica
 - Categorias com filtragem
 - Layout limpo e responsivo com SCSS.
