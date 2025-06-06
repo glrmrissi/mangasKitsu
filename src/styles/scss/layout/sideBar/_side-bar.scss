@@ -63,9 +63,11 @@
     align-items: center;
     padding: 1vh;
     width: 100%;
+
     a {
         z-index: 1;
     }
+
     span {
         z-index: 1;
     }
@@ -83,6 +85,7 @@
     border-radius: 0px;
     transition: all 0.3s;
     z-index: 1;
+
     &:hover {
         border-radius: 50%;
         background-color: var(--highlight-color);
@@ -97,8 +100,12 @@
     margin: 0 0.8vh;
     padding: 0.5vh;
     color: #fff;
-    background-color: var(--btn-nav-link);
     z-index: 1;
+
+    &:hover {
+        background-color: var(--btn-nav-link);
+    }
+
     a {
         display: flex;
         width: 100%;

@@ -23,9 +23,9 @@ async function displayMangaDetails() {
       <img src="${coverImage?.original || posterImage.original || posterImage.large || posterImage.small}" />
       </div>
       <section class="grid-manga-details">
-        <aside class="left-side d-center">
+        <aside class="left-side">
           <div>
-            <h2>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Title not found"}</h2>
+            <h3>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Title not found"}</h3>
             <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
             <div class="infos-details">
               <p><strong>📂 Type:</strong>&nbsp; ${ mangaTypeUpperCase || "Type not found"}</p>
@@ -38,7 +38,7 @@ async function displayMangaDetails() {
             </div>
           </div>
           </aside>
-          <aside class="right-side d-center">
+          <aside class="right-side">
           <div class="title-synopsis">
             <h2>Synopsis:</h2>
           </div>
