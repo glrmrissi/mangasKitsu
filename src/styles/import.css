@@ -42,7 +42,7 @@
   --loading-color-secondary: #f0f3f5;
   --action-color: #020202;
   --input-search-color: #dbdbdb;
-  --background-search-img: transparent url("../../../../../src/icon/search.svg") no-repeat center right;
+  --background-search-img: transparent url("../../../src/icon/search.svg") no-repeat center right;
   --shadow-overlay: rgba(0, 0, 0, 0.8);
   --background-details: rgba(0, 0, 0, 0.8);
   --box-shadow-banner-details: rgba(0, 0, 0, 0.5607843137);
