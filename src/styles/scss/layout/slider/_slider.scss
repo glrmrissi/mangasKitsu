@@ -140,6 +140,7 @@
 }
 
 .swiper-pagination {
+    width: auto;
     text-align: left;
     transform: translate3d(200px, -100px,0);
 }
@@ -157,4 +158,12 @@
     background-color: var(--secondary-font-color);
     transition: width 0.3s ease;
     width: 1.5em;
+}
+
+.logo-manga-slider {
+    position: absolute;
+    width: 20em;
+    left: 150px;
+    bottom: 450px;
+    z-index: 9999;
 }
