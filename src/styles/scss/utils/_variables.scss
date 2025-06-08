@@ -17,6 +17,12 @@ $max-width-mobile: 576px;
 $max-width-tablet: 820px;
 $max-width-notebook: 1024px;
 
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 $themes : (dark: (background-main: #24262e,
         background-secondary: #1e1f27,
         background-tertiary: #212022,

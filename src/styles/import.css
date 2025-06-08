@@ -435,8 +435,14 @@ body.loadingCursor {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
+.header_main a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
-.header_main nav {
+.nav-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -821,6 +827,18 @@ body.loadingCursor {
           user-select: none;
 }
 
+.cat-inside-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.cat-inside-box img {
+  padding: 2px;
+  width: 10em;
+}
+
 footer {
   position: relative;
   display: flex;
@@ -946,7 +964,7 @@ footer {
 }
 
 .shrink {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   padding: 1vh;
@@ -992,10 +1010,46 @@ footer {
 }
 .nav-link a {
   display: flex;
+  height: 100%;
   width: 100%;
   padding: 5px;
   height: 100%;
   z-index: 1;
+}
+
+.navigation_desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-list-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  height: 100%;
+}
+
+.nav-link-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: 0.9em;
+  text-align: center;
+}
+.nav-link-desktop a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }
 
 .mg-details {
@@ -1414,6 +1468,12 @@ footer {
     left: -40vw;
     width: 40vw;
   }
+  .shrink {
+    display: flex;
+  }
+  .navigation_desktop {
+    display: none;
+  }
   .slider-car {
     position: relative;
     display: grid;
@@ -1514,6 +1574,12 @@ footer {
   .side-bar {
     left: -75vw;
     width: 40vw;
+  }
+  .shrink {
+    display: flex;
+  }
+  .navigation_desktop {
+    display: none;
   }
   .slider-container {
     padding: 2vh;

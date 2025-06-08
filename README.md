@@ -28,14 +28,12 @@ Este é um projeto de catálogo de mangas desenvolvido utilizando HTML, SCSS e J
 1. Clone o repositório:
    ```bash
    git clone https://github.com/glrmrissi/mangasKitsu.git
-
    
 2. Entre na pasta
    ```bash
    cd mangasKitsu
 
----
-3. Entre na pasta
+3. Na pasta
    ```bash
    code .
 
