@@ -46,7 +46,7 @@ export async function renderPagination() {
         }
 
         button.addEventListener("click", () => {
-            window.scrollTo(0, 700);
+            window.scrollTo(0, 1300);
             currentPage = i;
             loadPage(currentPage);
             document.querySelectorAll('.grid').forEach((grid) => {
