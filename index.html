@@ -84,6 +84,13 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
+                <div class="logo-manga-slider">
+                    <picture>
+                        <source srcset="src/imgs/slider/logoJujutsu.png" media="(orientation: portrait)">
+                        <img src="src/imgs/slider/logoJujutsu.png" alt="" srcset="">
+                    </picture>
+                    Jujutsu Kaisen
+                </div>
                 <img src="src/imgs/slider/jujutsuSlider.jpg" alt="Jujutsu Kaisen">
             </div>
             <div class="swiper-slide">
@@ -93,7 +100,6 @@
                 <img src="src/imgs/slider/chainsawmanSlider.jpg" alt="Chainsaw Man">
             </div>
         </div>
-
         <div class="swiper-pagination"></div>
     </div>
     <main class="main-container">
@@ -123,27 +129,6 @@
         </footer>
     </main>
     <div class="wave"></div>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            autoplay: {
-                delay: 3000,
-            },
-        });
-    </script>
 
     <script src="src/js/callBack.js" defer></script>
     <script src="src/js/modules/loading/loading.js"></script>

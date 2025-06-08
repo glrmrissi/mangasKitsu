@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'src/js/modules/fadeInOut/fadeInOut.js',
         'src/js/services/theme/theme.js',
         'src/js/modules/goToTop/goToTop.js',
+        'src/js/modules/swiper/swiper.js',
 
     ], function () {
         // console.log("Scripts carregados");
