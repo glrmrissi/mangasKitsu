@@ -852,6 +852,26 @@ body.loadingCursor {
      object-fit: cover;
 }
 
+.swiper-pagination {
+  text-align: left;
+  transform: translate3d(200px, -100px, 0);
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-in-out;
+  opacity: 100%;
+  background-color: var(--primary-font-color);
+}
+
+.swiper-pagination-bullet-active {
+  border-radius: 6px;
+  background-color: var(--secondary-font-color);
+  transition: width 0.3s ease;
+  width: 1.5em;
+}
+
 .cat-inside-box {
   display: flex;
   justify-content: center;
