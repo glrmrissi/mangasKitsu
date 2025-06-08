@@ -6,9 +6,13 @@
     background-color: var(--background-secondary);
     color: var(--primary-font-color);
     backdrop-filter: blur(10px);
+    a {
+        @include center;
+         height: 100%;
+    }
 }
 
-.header_main nav {
+.nav-main {
     display: flex;
     justify-content: space-between;
     align-items: center;

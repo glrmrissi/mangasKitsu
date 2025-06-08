@@ -11,6 +11,14 @@
         width: 40vw;
     }
 
+    .shrink {
+        display: flex;
+    }
+    
+    .navigation_desktop {
+        display: none;
+    }
+
     .slider-car {
         position: relative;
         display: grid;

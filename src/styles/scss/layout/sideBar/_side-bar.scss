@@ -58,7 +58,7 @@
 }
 
 .shrink {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 1vh;
@@ -108,6 +108,7 @@
 
     a {
         display: flex;
+        height: 100%;
         width: 100%;
         padding: 5px;
         height: 100%;
