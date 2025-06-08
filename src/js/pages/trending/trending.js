@@ -64,6 +64,11 @@ const fetchMangasSliders = async () => {
                 relevantInfos.appendChild(popularityRankP);
                 relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
+                div.addEventListener("click", () => {
+                        localStorage.setItem("selectedAnimeId", manga.id);
+    
+                        window.open("../../../src/pages/details/details-manga.html", "_self");
+                });
             });
         })
         .catch(error => {

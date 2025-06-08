@@ -12,6 +12,14 @@
         width: 40vw;
     }
 
+    .shrink {
+        display: flex;
+    }
+
+    .navigation_desktop {
+        display: none;
+    }
+
     .slider-container {
         padding: 2vh;
     }
@@ -138,5 +146,9 @@
     .btn-details {
         width: 100%;
     } 
+
+    .paragrafer-synopsis {
+        max-width: 100%;
+    }
 
 }

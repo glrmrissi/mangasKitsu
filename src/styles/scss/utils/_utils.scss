@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap';
+
 * {
     margin: 0;
     padding: 0;
@@ -72,14 +73,6 @@ body.loadingCursor {
     z-index: 1;
 }
 
-.fillWhite {
-    filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
-}
-
-.fillBlack {
-    filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg);
-}
-
 .loading {
     position: fixed;
     top: 50%;
@@ -102,10 +95,10 @@ body.loadingCursor {
     height: 100%;
     z-index: 1;
     transition: all 0.3s;
-
+    
     &:after {
         content: "";
-        bottom: -4px;
+        bottom: -1px;
         position: absolute;
         left: 0px;
         width: 0%;
@@ -117,7 +110,7 @@ body.loadingCursor {
         transform: scaleX(0);
         z-index: 0;
     }
-
+    
     &:hover::after {
         color: var(--secondary-font-color);
         width: 100%;
@@ -127,9 +120,9 @@ body.loadingCursor {
     }
 
     &:hover {
-        letter-spacing: 1px;
+        letter-spacing: 0.2px;
         color: var(--secondary-font-color);
-        transform-origin: left;
+        transform-origin: right;
         background-position: 0%;
     }
 }
@@ -160,6 +153,10 @@ body.loadingCursor {
     display: none;
 }
 
+.fillWhite {
+    filter: var(--filter-icons);
+}
+
 .hover-effect-nav {
     outline: none;
     border: none;
@@ -170,14 +167,9 @@ body.loadingCursor {
     color: var(--primary-font-color);
     transition: all .3s;
     z-index: 1;
-
     span {
         padding-left: 0.3dvw;
     }
-}
-
-.hover-effect-nav:hover {
-    color: var(--secondary-font-color);
 }
 
 .wave {
@@ -316,13 +308,14 @@ body.loadingCursor {
     h3 {
         width: 100%;
         white-space: wrap;
-        color: var(--highlight-color);
+        font-weight: 600;
+        color: var(--primary-font-color);
     }
 
     p {
         width: 100%;
         height: 100%;
-        font-weight: 500;
+        font-weight: 400;
         white-space: wrap;
         text-overflow: ellipsis;
     }
@@ -350,7 +343,7 @@ body.loadingCursor {
 }
 
 .popularity-rank-p {
-    font-weight: 500;
+    font-weight: 400;
     padding: 7px 0 1px 0;
 }   
 

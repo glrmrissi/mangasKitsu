@@ -17,19 +17,24 @@ $max-width-mobile: 576px;
 $max-width-tablet: 820px;
 $max-width-notebook: 1024px;
 
-$themes : (
-    dark: (
-        background-main: #121212,
-        background-secondary: #1b1b1b,
-        background-tertiary: #444343,
-        btn-nav-link: #242424,
-        tooltip: #211f22,
-        highlight-color: #865cb1,
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$themes : (dark: (background-main: #24262e,
+        background-secondary: #1e1f27,
+        background-tertiary: #212022,
+        background-overlay-realeases: #1c1d25,
+        btn-nav-link: #2b2c33,
+        tooltip: #212022,
+        highlight-color: #23242c,
         primary-font-color: #e0e0e0,
-        secondary-font-color: #6c498b,
-        tertiary-font-color: #503769,
+        secondary-font-color: #5658a3,
+        tertiary-font-color: #3f4188,
         button-pagination-color: #00bcd4,
-        border-shadow-color: #3C3A53,
+        border-shadow-color: #373452,
         loading-color-main: #b1bac0,
         loading-color-secondary: #f0f3f5,
         action-color: #020202,
@@ -38,32 +43,35 @@ $themes : (
         shadow-overlay: #000000cc,
         background-details: #000000cc,
         box-shadow-banner-details: #0000008f,
+        filter-icons: invert(1) sepia(1) saturate(5) hue-rotate(180deg),
+        filter-icons-hover: invert(36%) sepia(13%) saturate(2465%) hue-rotate(200deg) brightness(90%) contrast(82%)
     ),
-    light: (
-        background-main: #f0f0f0, 
-        background-secondary: #e2e2e2, 
-        background-tertiary: #c5c5c5, 
-        btn-nav-link: #dbdbdb, 
-        tooltip: #dcdcdc, 
-        highlight-color: #856d9b, 
+    light: (background-main: #f0f0f0,
+        background-secondary: #e2e2e2,
+        background-tertiary: #c5c5c5,
+        background-overlay-realeases: #77668d,
+        btn-nav-link: #dbdbdb,
+        tooltip: #dcdcdc,
+        highlight-color: #856d9b,
         primary-font-color: #000000,
-        secondary-font-color: #815ca1, 
-        tertiary-font-color:  #7b6091, 
-        button-pagination-color: #00bcd4, 
-        border-shadow-color: #726f9b, 
-        loading-color-main: #b1bac0, 
-        loading-color-secondary: #f0f3f5, 
-        action-color: #020202, 
+        secondary-font-color: #815ca1,
+        tertiary-font-color: #7b6091,
+        button-pagination-color: #00bcd4,
+        border-shadow-color: #726f9b,
+        loading-color-main: #b1bac0,
+        loading-color-secondary: #f0f3f5,
+        action-color: #020202,
         input-search-color: #dbdbdb,
         background-search-img: transparent url('../../../../../src/icon/searchBlack.svg') no-repeat center right,
         shadow-overlay: #ebebebcc,
         background-details: #ffffffcc,
         box-shadow-banner-details: #ffffff8f,
+        filter-icons: invert(0) sepia(0) saturate(0) hue-rotate(0deg),
+        filter-icons-hover: invert(45%) sepia(9%) saturate(2545%) hue-rotate(229deg) brightness(87%) contrast(86%)
 
-    )
-    );
+    ));
 
-    @mixin theme($theme-name) {
+@mixin theme($theme-name) {
     @each $key, $value in map-get($themes, $theme-name) {
         --#{$key}: #{$value};
     }

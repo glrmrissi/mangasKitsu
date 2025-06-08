@@ -11,6 +11,14 @@
         width: 40vw;
     }
 
+    .shrink {
+        display: flex;
+    }
+    
+    .navigation_desktop {
+        display: none;
+    }
+
     .slider-car {
         position: relative;
         display: grid;
@@ -109,9 +117,12 @@
         }
     }
     
-
     // manga details 
     .btn-details {
         width: 100%;
+    }
+
+    .paragrafer-synopsis {
+        max-width: 100%;
     }
 }
