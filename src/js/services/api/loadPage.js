@@ -12,3 +12,13 @@ export async function loadPage(page) {
   renderMangas(mangas);
   renderPagination();
 }
+
+
+// fetch('http://localhost:3000/anime/2')
+//   .then(res => res.text())
+//   .then(xmlStr => {
+//     const parser = new DOMParser();
+//     const xml = parser.parseFromString(xmlStr, 'application/xml');
+//     const title = xml.querySelector('anime > info[name="title"]').textContent;
+//     console.log('Título:', title);
+//   });
