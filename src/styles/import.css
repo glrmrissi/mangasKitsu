@@ -2,6 +2,7 @@
 [data-theme=light] {
   --background-main: #f0f0f0;
   --background-secondary: #e2e2e2;
+  --background-header: rgba(201, 201, 201, 0.2941176471);
   --background-tertiary: #c5c5c5;
   --background-overlay-realeases: #77668d;
   --btn-nav-link: #dbdbdb;
@@ -27,7 +28,7 @@
 [data-theme=dark] {
   --background-main: #24262e;
   --background-secondary: #1e1f27;
-  --background-header: rgba(30, 31, 39, 0.4862745098);
+  --background-header: rgba(30, 31, 39, 0.3294117647);
   --background-tertiary: #212022;
   --background-overlay-realeases: #1c1d25;
   --btn-nav-link: #2b2c33;
@@ -215,6 +216,9 @@ body.loadingCursor {
 }
 .hover-effect-nav span {
   padding-left: 0.3dvw;
+}
+.hover-effect-nav:hover {
+  color: var(--secondary-font-color);
 }
 
 .wave {
@@ -488,6 +492,7 @@ body.loadingCursor {
   top: 50%;
   left: 1em;
   pointer-events: none;
+  font-family: Tahoma;
   font-size: 0.8em;
   transition: 0.3s;
 }
@@ -961,6 +966,7 @@ footer {
 .side-bar.resize_shrink_side_bar {
   position: fixed;
   left: 0vw;
+  z-index: 99999;
 }
 
 .side-bar-overlay {
@@ -1501,6 +1507,7 @@ footer {
   overflow: hidden;
 }
 .developers div img {
+  border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }

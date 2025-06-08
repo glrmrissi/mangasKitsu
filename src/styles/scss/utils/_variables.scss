@@ -18,14 +18,14 @@ $max-width-tablet: 820px;
 $max-width-notebook: 1024px;
 
 @mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 $themes : (dark: (background-main: #24262e,
         background-secondary: #1e1f27,
-        background-header: #1e1f277c,
+        background-header: #1e1f2754,
         background-tertiary: #212022,
         background-overlay-realeases: #1c1d25,
         btn-nav-link: #2b2c33,
@@ -45,10 +45,10 @@ $themes : (dark: (background-main: #24262e,
         background-details: #000000cc,
         box-shadow-banner-details: #0000008f,
         filter-icons: invert(1) sepia(1) saturate(5) hue-rotate(180deg),
-        filter-icons-hover: invert(36%) sepia(13%) saturate(2465%) hue-rotate(200deg) brightness(90%) contrast(82%)
-    ),
+        filter-icons-hover: invert(36%) sepia(13%) saturate(2465%) hue-rotate(200deg) brightness(90%) contrast(82%)),
     light: (background-main: #f0f0f0,
         background-secondary: #e2e2e2,
+        background-header: #c9c9c94b,
         background-tertiary: #c5c5c5,
         background-overlay-realeases: #77668d,
         btn-nav-link: #dbdbdb,
@@ -68,9 +68,7 @@ $themes : (dark: (background-main: #24262e,
         background-details: #ffffffcc,
         box-shadow-banner-details: #ffffff8f,
         filter-icons: invert(0) sepia(0) saturate(0) hue-rotate(0deg),
-        filter-icons-hover: invert(45%) sepia(9%) saturate(2545%) hue-rotate(229deg) brightness(87%) contrast(86%)
-
-    ));
+        filter-icons-hover: invert(45%) sepia(9%) saturate(2545%) hue-rotate(229deg) brightness(87%) contrast(86%)));
 
 @mixin theme($theme-name) {
     @each $key, $value in map-get($themes, $theme-name) {
