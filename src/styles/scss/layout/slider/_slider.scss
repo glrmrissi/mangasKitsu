@@ -46,14 +46,17 @@
     width: 100%;
     object-fit: cover;
     overflow: hidden;
+
     &:hover {
         filter: brightness(90%);
+
         .overlay {
             opacity: 0;
             transform: translate(-100%, -100%);
             transition: transform .3s ease-in-out, opacity .2s linear;
         }
     }
+
     img {
         width: 100%;
         object-fit: cover;
@@ -80,11 +83,13 @@
     position: relative;
     width: calc(100%/5);
     transition: all .3s;
+
     &:hover {
         width: 50dvh;
         height: 100%;
     }
 }
+
 .others-imgs {
     width: 100%;
     height: 100%;
@@ -127,8 +132,29 @@
     width: 100%;
     padding-right: 0;
     margin-right: 0;
+
     img {
         width: 100%;
         object-fit: cover;
     }
+}
+
+.swiper-pagination {
+    text-align: left;
+    transform: translate3d(200px, -100px,0);
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease-in-out;
+    opacity: 100%;
+    background-color: var(--primary-font-color);
+}
+
+.swiper-pagination-bullet-active {
+    border-radius: 6px;
+    background-color: var(--secondary-font-color);
+    transition: width 0.3s ease;
+    width: 1.5em;
 }
