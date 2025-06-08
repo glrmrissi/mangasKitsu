@@ -170,6 +170,10 @@ body.loadingCursor {
     span {
         padding-left: 0.3dvw;
     }
+
+    &:hover {
+        color: var(--secondary-font-color);
+    }
 }
 
 .wave {
