@@ -27,6 +27,7 @@
 [data-theme=dark] {
   --background-main: #24262e;
   --background-secondary: #1e1f27;
+  --background-header: rgba(30, 31, 39, 0.4862745098);
   --background-tertiary: #212022;
   --background-overlay-realeases: #1c1d25;
   --btn-nav-link: #2b2c33;
@@ -426,14 +427,17 @@ body.loadingCursor {
   }
 }
 .header_main {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 5dvh;
-  background-color: var(--background-secondary);
-  color: var(--primary-font-color);
+  background-color: var(--background-header);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+  color: var(--primary-font-color);
+  z-index: 9999;
 }
 .header_main a {
   display: flex;
@@ -825,6 +829,27 @@ body.loadingCursor {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.swiper {
+  height: 100vh;
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-right: 0;
+  margin-right: 0;
+}
+.swiper-slide img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .cat-inside-box {
@@ -1276,7 +1301,9 @@ footer {
 .div-input-search-main input:focus ~ label,
 .div-input-search-main input:valid ~ label {
   color: var(--secondary-font-color);
-  background-color: var(--background-secondary);
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 8px;
   top: 0%;
   font-size: 0.5em;
