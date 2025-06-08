@@ -1,3 +1,5 @@
+import { getAnime } from "./getAnimeId.js";
+
 const mangaContainer = document.getElementById("manga-container");
 export async function renderMangas(mangas) {
   // o parametro mangas esta sendo carregado juntamente com o pagination.js em loadPage, tem uma const com await lá...
@@ -35,14 +37,10 @@ export async function renderMangas(mangas) {
           mangaContainer.classList.remove("skeleton-load");
         });
       };
+      
     });
-
-    mangaItem.addEventListener("click", () => {
-      localStorage.setItem("selectedAnimeId", manga.id);
-
-      window.open("src/pages/details/details-manga.html", "_self");
-    });
-
+    
     hideLoading();
+    getAnime(mangaItem, manga.id)
   });
 }
