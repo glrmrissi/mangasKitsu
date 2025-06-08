@@ -67,7 +67,8 @@
 .div-input-search-main input:focus~label,
 .div-input-search-main input:valid~label {
   color: var(--secondary-font-color);
-  background-color: var(--background-secondary);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   top: 0%;
   font-size: 0.5em;

@@ -110,3 +110,25 @@
     cursor: pointer;
     user-select: none;
 }
+
+// Slider above header 
+
+.swiper {
+    height: 100vh;
+}
+
+.swiper-wrapper {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+    margin-right: 0;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}

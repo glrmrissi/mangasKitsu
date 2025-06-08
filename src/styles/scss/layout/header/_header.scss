@@ -1,11 +1,14 @@
 .header_main {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 5dvh;
-    background-color: var(--background-secondary);
-    color: var(--primary-font-color);
+    background-color: var(--background-header);
     backdrop-filter: blur(10px);
+    color: var(--primary-font-color);
+    z-index: 9999;
     a {
         @include center;
          height: 100%;
