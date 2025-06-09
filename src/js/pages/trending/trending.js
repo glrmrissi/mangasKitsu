@@ -1,4 +1,4 @@
-// Por enquanto está página é um teste!
+import { getAnime } from "../../../../src/js/services/api/getAnimeId.js"
 
 const categoriesDiv = document.getElementById("categoriesMain");
 const fetchMangasSliders = async () => {
@@ -22,7 +22,7 @@ const fetchMangasSliders = async () => {
                     "../../../src/imgs/cntf-3.jpg"
                 ];
 
-                const div = document.createElement("div");
+                const mangaItem = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
                 const asideDetails = document.createElement("aside")
@@ -35,7 +35,7 @@ const fetchMangasSliders = async () => {
                 const articleMobile = document.createElement("article");
                 const h3Mobile = document.createElement("h3");
 
-                div.classList.add("card-front");
+                mangaItem.classList.add("card-front");
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
@@ -52,11 +52,11 @@ const fetchMangasSliders = async () => {
                 p.innerHTML = `&nbsp; ${synopsis}`;
                 h3Mobile.textContent = `${canonicalTitle} - ${date}`;
 
-                categoriesDiv.appendChild(div);
-                div.appendChild(divTooltip);
+                categoriesDiv.appendChild(mangaItem);
+                mangaItem.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
                 divTooltip.appendChild(img);
-                div.appendChild(articleMobile);
+                mangaItem.appendChild(articleMobile);
                 articleMobile.appendChild(h3Mobile)
                 spanTooltip.appendChild(asideDetails);
                 asideDetails.appendChild(h3);
@@ -64,11 +64,7 @@ const fetchMangasSliders = async () => {
                 relevantInfos.appendChild(popularityRankP);
                 relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
-                div.addEventListener("click", () => {
-                        localStorage.setItem("selectedAnimeId", manga.id);
-    
-                        window.open("../../../src/pages/details/details-manga.html", "_self");
-                });
+                getAnime(mangaItem, manga.id);
             });
         })
         .catch(error => {

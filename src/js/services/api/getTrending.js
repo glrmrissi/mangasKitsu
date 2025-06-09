@@ -1,4 +1,5 @@
 import { fetchApi } from "./fetchApi.js";
+import { getAnime } from "./getAnimeId.js";
 
 export const fetchMangasSliders = async () => {
   const url = "https://kitsu.io/api/edge/trending/manga";
@@ -34,10 +35,10 @@ export const fetchMangasSliders = async () => {
         const { canonicalTitle, synopsis, posterImage, ageRating } =
           manga.attributes;
 
-        const divSliderCard = document.createElement("div");
+        const mangaItem = document.createElement("div");
 
-        divSliderCard.className = "imgs-slider";
-        sliderCard.appendChild(divSliderCard);
+        mangaItem.className = "imgs-slider";
+        sliderCard.appendChild(mangaItem);
 
         const sliderItems = Array.from(sliderCard.children);
 
@@ -56,15 +57,10 @@ export const fetchMangasSliders = async () => {
         imgElementSlider.alt = canonicalTitle;
         imgElementSlider.tabIndex = 0;
         imgElementSlider.classList.add("box");
-        divSliderCard.appendChild(overlayImg);
-        divSliderCard.appendChild(imgElementSlider);
-
-        divSliderCard.addEventListener("click", () => {
-          localStorage.setItem("selectedAnimeId", manga.id);
-
-          window.open("src/pages/details/details-manga.html", "_self");
-        });
-
+        mangaItem.appendChild(overlayImg);
+        mangaItem.appendChild(imgElementSlider);
+        
+        getAnime(mangaItem, manga.id)
         const cardImgs = document.querySelectorAll(".imgs-slider img");
         cardImgs.forEach((cardImg) => {
           cardImg.onload = () => {
