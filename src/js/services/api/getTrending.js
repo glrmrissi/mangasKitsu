@@ -16,7 +16,6 @@ export const fetchMangasSliders = async () => {
       aside.classList.add("limited-overflow");
       divTitle.classList.add("title");
       divTitle.classList.add("skeleton-load");
-      divTitle.classList.add("box");
       title.classList.add("hover-effect");
       title.textContent = "Most read:"
       section.classList.add("slider");
