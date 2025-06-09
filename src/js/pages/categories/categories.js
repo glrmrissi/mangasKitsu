@@ -1,3 +1,5 @@
+import { getAnime } from "../../../../src/js/services/api/getAnimeId.js"
+
 const categorySelector = document.querySelector("#categoriesSelect")
 const defaultCategory = categorySelector.options[categorySelector.selectedIndex]
 const categoriesDiv = document.getElementById("categoriesMain");
@@ -27,8 +29,8 @@ const categories = async () => {
         .then(response => response.json())
         .then(data => {
             const allItems = data.data;
-            allItems.forEach(categories => {
-                const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = categories.attributes;
+            allItems.forEach(manga => {
+                const { mangaType, canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank } = manga.attributes;
 
                 const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
                 let date = startDate ? startDate.slice(0, 4) : "Date not found"
@@ -39,7 +41,7 @@ const categories = async () => {
                     "../../../src/imgs/cntf-3.jpg"
                 ];
 
-                const div = document.createElement("div");
+                const mangaItem = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
                 const asideDetails = document.createElement("aside")
@@ -52,7 +54,7 @@ const categories = async () => {
                 const articleMobile = document.createElement("article");
                 const h3Mobile = document.createElement("h3");
 
-                div.classList.add("card-front");
+                mangaItem.classList.add("card-front");
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
@@ -68,11 +70,11 @@ const categories = async () => {
                 p.innerHTML = `&nbsp; ${synopsis}`;
                 h3Mobile.textContent = `${canonicalTitle} - ${date}`;
 
-                categoriesDiv.appendChild(div);
-                div.appendChild(divTooltip);
+                categoriesDiv.appendChild(mangaItem);
+                mangaItem.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
                 divTooltip.appendChild(img);
-                div.appendChild(articleMobile);
+                mangaItem.appendChild(articleMobile);
                 articleMobile.appendChild(h3Mobile)
                 spanTooltip.appendChild(asideDetails);
                 asideDetails.appendChild(h3);
@@ -90,12 +92,7 @@ const categories = async () => {
                     };
                 });
 
-                div.addEventListener('click', () => {
-                    console.log(categories.id)
-                    localStorage.setItem('selectedAnimeId', categories.id);
-
-                    window.open('../../../src/pages/details/details-manga.html', '_blank')
-                });
+                getAnime(mangaItem, manga.id);
             });
             hideLoading();
         })

@@ -41,6 +41,6 @@ export async function renderMangas(mangas) {
     });
     
     hideLoading();
-    getAnime(mangaItem, manga.id)
+    getAnime(mangaItem, manga.id);
   });
 }
