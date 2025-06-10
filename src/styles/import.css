@@ -1533,6 +1533,16 @@ footer {
   height: 15dvw;
 }
 
+.main-manga {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.manga-div {
+  display: flex;
+}
+
 @media (min-width: 576px) and (max-width: 820px) {
   .main-container {
     padding: 5%;
