@@ -49,7 +49,7 @@ async function displayMangaDetails() {
           </div>
           </aside>
       </section>
-            `;
+      `;
 }
 
 displayMangaDetails();
