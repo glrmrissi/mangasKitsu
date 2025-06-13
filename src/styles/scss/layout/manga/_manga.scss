@@ -2,8 +2,22 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .manga-div {
     display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.manga-item {
+    padding-bottom: 0.6em;
+    
+    &:hover {
+        background-color: var(--background-overlay-realeases);
+        cursor: pointer;
+        backdrop-filter: brightness(80%);
+    }
 }
