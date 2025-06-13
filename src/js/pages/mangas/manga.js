@@ -3,7 +3,7 @@ import { getAnime } from "../../services/api/getAnimeId.js";
 
 let url;
 export const fetchMangasPage = async () => {
-  fetch("../../links/links.json")
+  fetch("https://raw.githubusercontent.com/glrmrissi/mangasKitsuJson/refs/heads/main/links.json")
     .then(response => response.json())
     .then(data => {
       data.linksMangas.forEach((link) => {
