@@ -10,11 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const savedImg = localStorage.getItem("userImage");
   const file = document.getElementById("file");
 
-  savedImg
-    ? (imgUser.setAttribute("src", savedImg),
-      profilePhotoGlobal.setAttribute("src", savedImg))
-    : savedImg;
 
+  if (savedImg) {
+    if (!imgUser) {
+      return;
+    } else {
+      imgUser.setAttribute("src", savedImg);
+    }
+    profilePhotoGlobal.setAttribute("src", savedImg);
+  }
+  
   file == null ? (file = "") : file;
 
   file.addEventListener("change", async function () {
@@ -25,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("userImage", imageUrl);
 
         profilePhotoGlobal.setAttribute("src", imageUrl);
+
         imgUser.setAttribute("src", imageUrl);
         localStorage.setItem("userImage", imageUrl);
       });
