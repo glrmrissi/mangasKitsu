@@ -19,12 +19,26 @@
 }
 
 .manga-item {
-    padding-bottom: 0.6em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+
     h3 {
-        width: 100%;
-        max-width: 100%;
         text-align: center;
+        width: 100%;
+        max-width: 15em;
+        height: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
     }
+
+    img {
+        width: 100%;
+    }
+
     &:hover {
         background-color: var(--background-overlay-realeases);
         cursor: pointer;

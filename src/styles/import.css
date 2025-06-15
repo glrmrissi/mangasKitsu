@@ -431,7 +431,7 @@ body.loadingCursor {
   }
 }
 .header_main {
-  position: sticky;
+  position: sticky !important;
   top: 0;
   left: 0;
   display: flex;
@@ -1554,12 +1554,23 @@ footer {
 }
 
 .manga-item {
-  padding-bottom: 0.6em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 .manga-item h3 {
-  width: 100%;
-  max-width: 100%;
   text-align: center;
+  width: 100%;
+  max-width: 15em;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+.manga-item img {
+  width: 100%;
 }
 .manga-item:hover {
   background-color: var(--background-overlay-realeases);
