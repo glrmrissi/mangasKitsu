@@ -152,14 +152,13 @@ class Header extends HTMLElement {
         });
     }
 
-    sideBar() {
+    async sideBar() {
         const btnShrink = this.shadowRoot.querySelectorAll(".btn_shrink")
-        const overlayShrink = this.shadowRoot.querySelector(".side-bar-overlay")
+        const sideBarOverlay = this.shadowRoot.getElementById("sideBarOverlay");
         const header = this.shadowRoot.getElementById("side_bar");
 
         btnShrink.forEach((btn) => {
             btn.addEventListener("click", () => {
-                const sideBarOverlay = this.shadowRoot.getElementById("sideBarOverlay");
                 if (header.classList.contains("resize_shrink_side_bar")) {
                     sideBarOverlay.style.display = "none";
                     header.classList.remove("resize_shrink_side_bar");
@@ -172,7 +171,7 @@ class Header extends HTMLElement {
             });
         });
         function loadShrinkOverlay() {
-            overlayShrink.addEventListener("click", () => {
+            sideBarOverlay.addEventListener("click", () => {
                 if (header.classList.contains("resize_shrink_side_bar")) {
                     sideBarOverlay.style.display = "none";
                     header.classList.remove("resize_shrink_side_bar");
@@ -185,7 +184,7 @@ class Header extends HTMLElement {
             })
         }
 
-        loadShrinkOverlay();
+        await loadShrinkOverlay();
     }
 }
 
