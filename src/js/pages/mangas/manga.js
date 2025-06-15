@@ -17,6 +17,9 @@ function loadSectionsMangas(url) {
   const mainManga = document.querySelector("#mainManga")
   fetchApi(url)
     .then((data) => {
+      let urlObj = new URL(url);
+
+      urlObj = urlObj.searchParams.get("filter[categories]")
       const mangaDiv = document.createElement("section");
       const titleCategory = document.createElement("h2");
 
@@ -24,15 +27,8 @@ function loadSectionsMangas(url) {
 
       mainManga.appendChild(titleCategory);
 
-      fetch(categoriesTitleUrl)
-        .then(response => response.json())
-        .then(data => {
-          titleCategory.textContent = data.data[0].attributes.title;
-          // console.log(`Categoria: ${data.data[0].attributes.title}`)
-        })
-        .catch(error => {
-          console.error("Erro ao buscar categorias:", error);
-        });
+      const upperCaseTitleCategory = urlObj.charAt().toUpperCase() + urlObj.slice(1);
+      titleCategory.textContent = upperCaseTitleCategory;
 
 
       data.data.forEach((manga) => {
@@ -47,7 +43,13 @@ function loadSectionsMangas(url) {
         title.classList.add("text-overlay")
         title.textContent = canonicalTitle;
 
-        img.src = posterImage.small;
+        let contentNotFound = [
+          "../../../src/imgs/cntf-1.jpg",
+          "../../../src/imgs/cntf-2.jpg",
+          "../../../src/imgs/cntf-3.jpg"
+        ];
+
+        img.src = posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
         img.title = canonicalTitle;
 
         mangaItem.appendChild(img);
