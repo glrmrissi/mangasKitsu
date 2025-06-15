@@ -1,12 +1,12 @@
 import { getImageProfile } from "../../../src/pages/profile/process/process.js";
 
 const pathParts = location.pathname.split("/").filter(Boolean);
-const firstFolder = pathParts.length > 0 ? pathParts[0] : "";
+const firstFolder = pathParts.length > 0 ? pathParts : "";
 
-const baseURL =  firstFolder === "src" || firstFolder === "mangasKitsu"
+const baseURL =  firstFolder[0] === "src" || firstFolder[1] === "src"
   ? `../../../`
   : "/";
-  console.log(firstFolder, baseURL)
+  console.log(firstFolder)
 
 class Header extends HTMLElement {
     constructor() {
