@@ -7,14 +7,24 @@
 }
 
 .manga-div {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 2vh 5vh;
+    border-radius: 5px;
     overflow: hidden;
-    overflow-x: auto;
 }
 
 .manga-item {
     padding-bottom: 0.6em;
-    
+    h3 {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
     &:hover {
         background-color: var(--background-overlay-realeases);
         cursor: pointer;
