@@ -27,14 +27,10 @@ function loadScripts(scripts, callback) {
 
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
-        'src/js/modules/search/btnSearch.js',
         'src/js/modules/search/search.js',
-        'src/js/modules/loadProfilePhoto/loadProfilePhoto.js',
         'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
-        'src/js/components/styles.js',
         'src/js/modules/fadeInOut/fadeInOut.js',
-        'src/js/services/theme/theme.js',
         'src/js/modules/goToTop/goToTop.js',
         'src/js/modules/swiper/swiper.js',
 

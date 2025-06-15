@@ -12,72 +12,7 @@
 </head>
 
 <body data-theme="dark">
-    <header class="header_main">
-        <nav class="nav-main">
-            <div class="shrink">
-                <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize" src="src/icon/list-ul.svg"
-                        alt="Button of side bar" srcset="">
-                </span>
-            </div>
-            <nav class="navigation_desktop">
-                <ul class="nav-list-desktop">
-                    <a href="index.html" target="_self"><img src="src/icon/logo.png" class="logo" srcset=""></a>
-                    <li class="nav-link-desktop"><a class="hover-effect-nav" href="index.html">
-                            <span>Home</span></a></li>
-                    <li class="nav-link-desktop"><a class="hover-effect-nav"
-                            href="src/pages/categories/categories.html"><span>Categories</span></a></li>
-                    <li class="nav-link-desktop"><a class="hover-effect-nav"
-                            href="src/pages/mangas/mangas.html"><span>Mangas</span></a></li>
-                    <li class="nav-link-desktop"><a class="hover-effect-nav" href="src/pages/trending/trending.html"
-                            target="_self"><span>Trending</span></a>
-                    </li>
-                    <li class="nav-link-desktop"><a class="hover-effect-nav" href="src/pages/about/about.html"
-                            target="_self"><span>About</span></a>
-                    </li>
-                </ul>
-            </nav>
-            <div>
-                <img style="width: 3dvh; padding: 0.3dvh; cursor: pointer;" class="fillWhite" id="toggle_theme"
-                    src="src/icon/cloud-moon-fill.svg" alt="">
-            </div>
-            <div class="div-input-search-main">
-                <input class="mangaInput" type="text" id="mangasName" name="input_search" placeholder="" required />
-                <label for="input_search">Name: </label>
-            </div>
-            <div class="profile-icon">
-                <a href="src/pages/profile/profile.html" target="_self"><img id="profilePhotoGlobal" class="iconsSize"
-                        src="./src/icon/profile.svg" alt="Profile Icon"></a>
-            </div>
-        </nav>
-    </header>
-    <aside class="side-bar" id="side_bar">
-        <div class="side-bar-overlay" id="sideBarOverlay"></div>
-        <nav class="navigation">
-            <div class="shrink">
-                <a href="index.html" target="_self"><span class=""><img src="src/icon/logo.png" class="logo"
-                            srcset=""></span></a>
-                <span class="hover_side_bar btn_shrink"><img class="fillWhite iconsSize" src="src/icon/arrow-left.svg"
-                        alt="" srcset=""></span>
-            </div>
-            <ul class="nav-list" id="header_nav">
-                <li class="nav-link"><a class="hover-effect-nav" href="index.html">
-                        <img class="fillWhite iconsSize" src="src/icon/house.svg" alt="">
-                        <span>Home</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="src/pages/categories/categories.html"><img
-                            class="fillWhite iconsSize" src="src/icon/bar-chart-steps.svg"
-                            alt=""><span>Categories</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="src/pages/mangas/mangas.html"><img
-                            class="fillWhite iconsSize" src="src/icon/book.svg" alt=""><span>Mangas</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="src/pages/trending/trending.html"
-                        target="_self"><img class="fillWhite iconsSize" src="src/icon/bar-chart.svg"
-                            alt=""><span>Trending</span></a>
-                </li>
-                <li class="nav-link"><a class="hover-effect-nav" href="src/pages/about/about.html" target="_self"><img
-                            class="fillWhite iconsSize" src="src/icon/question-circle.svg" alt=""><span>About</span></a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <header-component></header-component>
     <div id="btnTop" onmousedown="ocultar()">
         <i class="arrow up"></i>
     </div>
@@ -159,6 +94,7 @@
 
     <script src="src/js/callBack.js" defer></script>
     <script src="src/js/modules/loading/loading.js"></script>
+    <script type="module" src="src/templates/header/header.js"></script>
     <script type="module" src="src/js/services/api/loadPage.js" defer></script>
     <script type="module" src="src/js/modules/pagination/pagination.js" defer></script>
 </body>
