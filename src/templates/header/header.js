@@ -5,8 +5,8 @@ const firstFolder = pathParts.length > 0 ? pathParts : "";
 
 const baseURL =  firstFolder[0] === "src" || firstFolder[1] === "src"
   ? `../../../`
-  : "/";
-  console.log(firstFolder)
+  : "";
+console.log(firstFolder[0], firstFolder[1])
 
 class Header extends HTMLElement {
     constructor() {
