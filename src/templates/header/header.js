@@ -3,10 +3,9 @@ import { getImageProfile } from "../../../src/pages/profile/process/process.js";
 const pathParts = location.pathname.split("/").filter(Boolean);
 const firstFolder = pathParts.length > 0 ? pathParts : "";
 
-const baseURL =  firstFolder[0] === "src" || firstFolder[1] === "src"
-  ? `../../../`
-  : "";
-console.log(firstFolder[0], firstFolder[1])
+const baseURL = firstFolder[0] === "src" || firstFolder[1] === "src"
+    ? `../../../`
+    : "";
 
 class Header extends HTMLElement {
     constructor() {
@@ -30,6 +29,9 @@ class Header extends HTMLElement {
                                     <span>Home</span></a></li>
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/categories/categories.html"><span>Categories</span></a></li>
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/mangas/mangas.html"><span>Mangas</span></a></li>
+                            <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><span>Manhwas</span></a></li>
+                            <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><span>Manhuas</span></a></li>
+                            
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/trending/trending.html"
                                     target="_self"><span>Trending</span></a>
                             </li>
@@ -70,6 +72,8 @@ class Header extends HTMLElement {
                             alt=""><span>Categories</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/mangas/mangas.html"><img
                             class="fillWhite iconsSize" src="${baseURL}src/icon/book.svg" alt=""><span>Mangas</span></a></li>
+                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><span>Manhwas</span></a></li>
+                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><span>Manhuas</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="src/pages/trending/trending.html"
                         target="_self"><img class="fillWhite iconsSize" src="${baseURL}src/icon/bar-chart.svg"
                             alt=""><span>Trending</span></a>
@@ -107,7 +111,7 @@ class Header extends HTMLElement {
                 `${baseURL}src/icon/cloud-sun-fill.svg`,
             ],
             moon: [
-                 `${baseURL}src/icon/cloud-moon-fill.svg`,
+                `${baseURL}src/icon/cloud-moon-fill.svg`,
             ]
         }
         const toggleTheme = this.shadowRoot.querySelector("#toggle_theme");
