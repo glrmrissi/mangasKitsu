@@ -1,5 +1,3 @@
-import { getImageProfile } from "../../../src/pages/profile/process/process.js";
-
 const pathParts = location.pathname.split("/").filter(Boolean);
 const firstFolder = pathParts.length > 0 ? pathParts : "";
 
@@ -12,6 +10,7 @@ class Header extends HTMLElement {
         super();
 
         const shadow = this.attachShadow({ mode: 'open' });
+
         shadow.innerHTML = `
         <link rel="stylesheet" href="${baseURL}src/styles/import.css">
           <header class="header_main">
@@ -86,17 +85,61 @@ class Header extends HTMLElement {
     </aside>
       `;
 
+        this.connectedImageUploadOnChange();
         this.theme();
         this.search();
         this.sideBar();
     }
 
-    connectedCallback() {
+    connectedImageUploadOnChange() {
+        let imageUrl;
+        const reader = new FileReader();
+        const file = document.querySelector("#file");
+        const imgDiv = this.shadowRoot.querySelector(".user_img");
+        const imgUser = document.querySelector("#photo");
+        const uploadbtn = this.shadowRoot.querySelector("#btnupload");
+        const savedImg = localStorage.getItem("userImage");
         const profilePhotoGlobal = this.shadowRoot.querySelector("#profilePhotoGlobal");
-        window.addEventListener("load", async function () {
-            profilePhotoGlobal.setAttribute("src", await getImageProfile());
+
+
+        if (savedImg) {
+            if (!imgUser) {
+                console.log("img user is only on profile.html")
+            } else {
+                imgUser.setAttribute("src", savedImg);
+            }
+            profilePhotoGlobal.setAttribute("src", savedImg);
+        }
+
+       if(!file) {
+            console.log("file is actually null");
+       } else {
+           file.addEventListener("change", async function () {
+               const chosedFile = this.files[0];
+               if (chosedFile) {
+                   reader.addEventListener("load", function () {
+                       imageUrl = reader.result;
+                       localStorage.setItem("userImage", imageUrl);
+    
+                       profilePhotoGlobal.setAttribute("src", imageUrl);
+    
+                       imgUser.setAttribute("src", imageUrl);
+                       localStorage.setItem("userImage", imageUrl);
+                   });
+                   reader.readAsDataURL(chosedFile);
+               }
+           });
+       }
+        function getImageProfile() {
+            const imageUrl = localStorage.getItem("userImage");
+
+            if (imageUrl) return imageUrl 
+        };
+        this.shadowRoot.addEventListener("load", async function () {
+            profilePhotoGlobal.setAttribute("src", getImageProfile());
         });
     }
+
 
     theme() {
         const body = document.body;
