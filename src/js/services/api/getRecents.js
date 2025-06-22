@@ -15,7 +15,7 @@ export async function renderMangas(mangas) {
     mangaItem.classList.add("grid");
 
     const img = document.createElement("img");
-    img.src = posterImage.small;
+    img.src = posterImage.small || posterImage.medium || posterImage.large;
     img.title = canonicalTitle;
     img.alt = canonicalTitle;
 
