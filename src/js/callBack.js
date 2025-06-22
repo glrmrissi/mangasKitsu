@@ -28,7 +28,6 @@ function loadScripts(scripts, callback) {
 document.addEventListener("DOMContentLoaded", function () {
     loadScripts([
         'src/js/modules/search/search.js',
-        'src/pages/profile/process/process.js',
         'src/templates/footer/footer.js',
         'src/js/modules/fadeInOut/fadeInOut.js',
         'src/js/modules/goToTop/goToTop.js',
