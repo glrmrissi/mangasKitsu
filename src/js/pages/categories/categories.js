@@ -1,30 +1,40 @@
 import { getAnime } from "../../../../src/js/services/api/getAnimeId.js"
 
-const categorySelector = document.querySelector("#categoriesSelect")
-const defaultCategory = categorySelector.options[categorySelector.selectedIndex]
+const categorySelector = document.querySelector("#categoriesSelect");
+const categoryTypes = document.querySelector("#categoriesTypes");
+const defaultCategory = categorySelector.options[categorySelector.selectedIndex];
+const defaultTypes = categoryTypes.options[categoryTypes.selectedIndex];
+
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
 const categorySelected = document.querySelectorAll(".categoriesNames");
-const titleCategory = document.getElementById("titleCategory")
-const submitFilter = document.querySelector("#submitFilter")
+const categoryType = document.querySelectorAll(".categoriesType");
+const titleCategory = document.getElementById("titleCategory");
+const submitFilter = document.querySelector("#submitFilter");
 let url = defaultCategory.value;
 let offset = 18;
 let limit = 18;
-
-titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+let subTypeUrl = defaultTypes.value;
+titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`;
 setTimeout(() => {
     target.style.display = "flex";
 }, 1000);
 
 categorySelected.forEach(btns => {
     btns.addEventListener("click", () => {
-        url = btns.value
+        url = btns.value;
+    })
+})
+categoryType.forEach(btns => {
+    btns.addEventListener("click", () => {
+        subTypeUrl = btns.value;
     })
 })
 
 const categories = async () => {
     showLoading()
-    let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&page[limit]=${limit}&page[offset]=${offset}`
+    let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&filter[subtype]=${encodeURIComponent(subTypeUrl)}&page[limit]=${limit}&page[offset]=${offset}`
+    console.log(KitsuUrl)
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
@@ -44,7 +54,7 @@ const categories = async () => {
                 const mangaItem = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
-                const asideDetails = document.createElement("aside")
+                const asideDetails = document.createElement("aside");
                 const h3 = document.createElement("h3");
                 const relevantInfos = document.createElement("div");
                 const p = document.createElement("p");
@@ -65,20 +75,20 @@ const categories = async () => {
 
                 img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
                 h3.textContent = `${canonicalTitle} - ${date}`;
-                popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
+                popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`;
                 pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
                 p.innerHTML = `&nbsp; ${synopsis}`;
-                h3Mobile.textContent = `${canonicalTitle} - ${date}`;
+                h3Mobile.textContent = `${canonicalTitle} - ${date}`;;
 
                 categoriesDiv.appendChild(mangaItem);
                 mangaItem.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
                 divTooltip.appendChild(img);
                 mangaItem.appendChild(articleMobile);
-                articleMobile.appendChild(h3Mobile)
+                articleMobile.appendChild(h3Mobile);
                 spanTooltip.appendChild(asideDetails);
                 asideDetails.appendChild(h3);
-                asideDetails.appendChild(relevantInfos)
+                asideDetails.appendChild(relevantInfos);
                 relevantInfos.appendChild(popularityRankP);
                 relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
@@ -97,14 +107,11 @@ const categories = async () => {
             hideLoading();
         })
         .catch(error => {
-            console.log(error.message, "Erro em categories")
-        })
+            console.log(error.message, "Erro em categories");
+        });
 }
-
-categories();
-
 function filterCategory() {
-    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`
+    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`;
     categoriesDiv.innerHTML = "";
     offset = 18;
     categories();
@@ -113,14 +120,14 @@ function filterCategory() {
 submitFilter.addEventListener("click", filterCategory);
 window.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        filterCategory()
+        filterCategory();
     }
 });
 
 if(!target) {
     const divListItem = document.createElement("div");
-    divListItem.setAttribute("id", "listItem")
-    body.appendChild(divListItem)
+    divListItem.setAttribute("id", "listItem");
+    body.appendChild(divListItem);
 } 
 
 // Ativado quando passar o carai do 1 segundo e aumenta lá na URL
