@@ -4,7 +4,7 @@ let observer = new IntersectionObserver((entries) => {
             entry.target.classList.add("show");
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.01 });
 
 function observerNewBoxes() {
     document.querySelectorAll(".box").forEach(box => observer.observe(box));
