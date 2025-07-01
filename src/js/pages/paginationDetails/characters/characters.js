@@ -1,21 +1,26 @@
-// const divCharacters = document.getElementById("characters");
+const divCharacters = document.getElementById("characters");
 
-// async function x() {
-//     const mangaId = localStorage.getItem('selectedAnimeId');
-//     await fetch(`https://kitsu.io/api/edge/manga/${mangaId}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             data.data.forEach(character=> {
-//                 const img = document.createElement("img");
-//                 const imageUrl = character.attributes.posterImage.large
-//                 img.src = imageUrl;
-//                 img.alt = character.attributes && character.attributes.name ? character.attributes.name : 'Nome do Personagem';
-            
-//                 divCharacters.appendChild(img);
-            
-//             });
-//         })
-//         .catch(error => console.error("Erro ao buscar os personagens:", error));
-// }
+let mangaId = new URL(location);
 
-// x()
+mangaId = mangaId.searchParams.get("id")
+
+async function x() {
+    await fetch(`https://kitsu.io/api/edge/manga/${mangaId}/characters?include=character&page[limit]=20`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.included)
+            const datas = data.included
+            datas.forEach((characters) => {
+                const image = document.createElement("img");
+                image.src = characters?.attributes?.image?.original;
+
+                if(image != null) {
+                    divCharacters.appendChild(image)
+                }
+
+            });
+        })
+        .catch(error => console.error("Erro ao buscar os personagens:", error));
+}
+
+x()
