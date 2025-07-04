@@ -1,4 +1,6 @@
 const divCharacters = document.getElementById("characters");
+const charactersGrid = document.createElement("div");
+charactersGrid.classList.add("grid_characters");
 
 let mangaId = new URL(location);
 
@@ -10,13 +12,33 @@ async function x() {
         .then(data => {
             console.log(data.included)
             const datas = data.included
-            datas.forEach((characters) => {
+            if(datas === undefined) {
                 const image = document.createElement("img");
-                image.src = characters?.attributes?.image?.original;
-
-                if(image != null) {
-                    divCharacters.appendChild(image)
+                image.src = "../../../src/imgs/confuseCat.png";
+                image.style.width = "500px"
+                image.title = "Not found characters";
+                image.alt = "Not found characters";
+                image.classList.add("img-characters");
+                const h1 = document.createElement("h1");
+                h1.textContent = "Not Found Characters"
+                divCharacters.appendChild(image);
+                divCharacters.appendChild(h1);
+            }
+            datas.forEach((characters) => {
+                const imgsUrl = characters?.attributes?.image?.original;
+                const divImgCharacters = document.createElement("article");
+                const image = document.createElement("img");
+                image.classList.add("img-characters");
+                divImgCharacters.classList.add("div-grid-characters");
+                image.src = imgsUrl;
+                
+                if(imgsUrl != null || imgsUrl != undefined) {
+                    divCharacters.textContent = ""
+                    divImgCharacters.appendChild(image);
+                    charactersGrid.appendChild(divImgCharacters)
+                    divCharacters.appendChild(charactersGrid);
                 }
+                
 
             });
         })
