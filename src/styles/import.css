@@ -1248,7 +1248,7 @@ footer {
   color: var(--primary-font-color);
   margin: 0;
   padding: 0;
-  width: 6dvw;
+  width: 100%;
   height: 4dvh;
   opacity: 60%;
   outline: none;
@@ -1256,8 +1256,7 @@ footer {
 }
 
 .actived.btn-details {
-  border: 3px var(--border-shadow-color) solid;
-  box-shadow: inset 0px 0px 10px 0px var(--border-shadow-color);
+  animation: shadowMovi 3s infinite;
   opacity: 100%;
 }
 
@@ -1269,6 +1268,53 @@ footer {
   display: flex;
 }
 
+.characters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.grid_characters {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.div-grid-characters {
+  width: 100%;
+  height: 100%;
+}
+
+.img-characters {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@keyframes shadowMovi {
+  0% {
+    box-shadow: 41px 21px 58px -13px var(--border-shadow-color) inset;
+  }
+  25% {
+    box-shadow: 21px 21px 58px -23px var(--border-shadow-color) inset;
+  }
+  50% {
+    box-shadow: -21px 21px 58px -73px var(--border-shadow-color) inset;
+  }
+  75% {
+    box-shadow: -41px 21px 58px -23px var(--border-shadow-color) inset;
+  }
+  100% {
+    box-shadow: 21px 21px 58px -13px var(--border-shadow-color) inset;
+  }
+}
 .search {
   display: flex;
   justify-content: center;
@@ -1467,7 +1513,6 @@ footer {
   gap: 20px;
   padding: 5vh;
   border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .categoryMangasShow div {
   border-radius: 4px;
