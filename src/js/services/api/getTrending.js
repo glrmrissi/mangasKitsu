@@ -3,6 +3,7 @@ import { getAnime } from "./getAnimeId.js";
 
 export const fetchMangasSliders = async () => {
   const url = "https://kitsu.io/api/edge/trending/manga";
+  showLoading();
   fetchApi(url)
     .then((data) => {
       const sliderContainer = document.getElementById("slider_container");
@@ -70,6 +71,7 @@ export const fetchMangasSliders = async () => {
           };
         });
       });
+      hideLoading();
     })
     .catch((error) => {
       console.error(error);
