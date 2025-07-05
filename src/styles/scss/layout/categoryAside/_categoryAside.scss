@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 5vh;
+    padding: 0 5vh;
 }
 
 .category {
@@ -18,9 +18,6 @@
     padding: 1dvh 0 1dvh 0;
     z-index: 1;
 
-    select {
-        width: 100%;
-    }
     li {
         word-break: break-all;
         list-style: none;
@@ -83,10 +80,11 @@
 
 #submitFilter {
     background-color: var(--background-secondary);
-    border:solid 1px var(--highlight-color);
+    border: solid 1px var(--highlight-color);
     color: var(--primary-font-color);
     padding: 1dvh;
     transition: background-color 0.3s;
+
     &:hover {
         background-color: var(--highlight-color);
     }
