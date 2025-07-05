@@ -7,6 +7,7 @@ let mangaId = new URL(location);
 mangaId = mangaId.searchParams.get("id")
 
 async function x() {
+    showLoading();
     await fetch(`https://kitsu.io/api/edge/manga/${mangaId}/characters?include=character&page[limit]=20`)
         .then(response => response.json())
         .then(data => {
@@ -23,6 +24,7 @@ async function x() {
                 h1.textContent = "Not Found Characters"
                 divCharacters.appendChild(image);
                 divCharacters.appendChild(h1);
+                hideLoading();
             }
             datas.forEach((characters) => {
                 const imgsUrl = characters?.attributes?.image?.original;
@@ -38,11 +40,9 @@ async function x() {
                     charactersGrid.appendChild(divImgCharacters)
                     divCharacters.appendChild(charactersGrid);
                 }
-                
-
             });
+            hideLoading();
         })
         .catch(error => console.error("Erro ao buscar os personagens:", error));
-}
-
+    }
 x()
