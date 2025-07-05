@@ -37,7 +37,6 @@ export async function renderMangas(mangas) {
           mangaContainer.classList.remove("skeleton-load");
         });
       };
-      
     });
     
     hideLoading();

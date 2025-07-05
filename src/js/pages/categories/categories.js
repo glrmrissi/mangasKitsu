@@ -15,7 +15,7 @@ let url = defaultCategory.value;
 let offset = 18;
 let limit = 18;
 let subTypeUrl = defaultTypes.value;
-titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`;
+titleCategory.innerHTML = `${url}`;
 setTimeout(() => {
     target.style.display = "flex";
 }, 1000);
@@ -31,8 +31,8 @@ categoryType.forEach(btns => {
     })
 })
 
+showLoading();
 const categories = async () => {
-    showLoading()
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&filter[subtype]=${encodeURIComponent(subTypeUrl)}&page[limit]=${limit}&page[offset]=${offset}`
     console.log(KitsuUrl)
     fetch(KitsuUrl)
@@ -111,9 +111,10 @@ const categories = async () => {
         });
 }
 function filterCategory() {
-    titleCategory.innerHTML = `Categories  <span class="highlight-title"> - ${url}</span>`;
+    titleCategory.innerHTML = `${url}`;
     categoriesDiv.innerHTML = "";
     offset = 18;
+    showLoading();
     categories();
 }
 
