@@ -45,7 +45,7 @@
   --input-search-color: #dbdbdb;
   --background-search-img: transparent url("../../../src/icon/search.svg") no-repeat center right;
   --shadow-overlay: rgba(0, 0, 0, 0.8);
-  --background-details: rgba(0, 0, 0, 0.8);
+  --background-details: rgba(0, 0, 0, 0.5215686275);
   --box-shadow-banner-details: rgba(0, 0, 0, 0.5607843137);
   --filter-icons: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
   --filter-icons-hover: invert(36%) sepia(13%) saturate(2465%) hue-rotate(200deg) brightness(90%) contrast(82%);
@@ -1185,19 +1185,20 @@ footer {
   align-items: center;
   width: 100%;
   height: 20vh;
-  box-shadow: 0px 20px 20px var(--box-shadow-banner-details);
+  background-color: transparent;
   overflow: hidden;
   transition-property: height, filter;
   transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 .banner_manga:hover {
-  filter: saturate(2);
+  filter: saturate(1.2);
   height: 45vh;
   transition-delay: 0.4s;
 }
 .banner_manga img {
   width: 100%;
   height: 100%;
+  border-radius: 0 0 6px 6px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1222,7 +1223,6 @@ footer {
   overflow: hidden;
   width: 100%;
   max-width: 13em;
-  height: 100%;
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1265,19 +1265,36 @@ footer {
   height: 355px;
 }
 
+.pagination-details {
+  display: flex;
+  overflow: auto;
+}
+
+.wrapper-btns {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+}
+
 .btns-pagination-details {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   background: var(--background-primary);
-  padding: 0;
+  gap: 3px;
+  z-index: 10;
+  padding: 10px;
 }
 
 .btn-details {
   background-color: var(--background-tertiary);
   color: var(--primary-font-color);
   margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 10px 20px;
+  width: 10rem;
   height: 4dvh;
   opacity: 60%;
   outline: none;
@@ -1291,6 +1308,7 @@ footer {
 
 .section-details {
   display: none;
+  width: 100%;
 }
 
 .actived.section-details {
@@ -1318,13 +1336,6 @@ footer {
 .div-grid-characters {
   width: 100%;
   height: 100%;
-}
-
-.img-characters {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 @keyframes shadowMovi {
