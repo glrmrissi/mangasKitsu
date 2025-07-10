@@ -35,7 +35,7 @@
 
     &:hover {
         filter: saturate(1.2);
-        height: 45vh;
+        height: 30vh;
         transition-delay: 0.4s;
     }
 
@@ -115,7 +115,6 @@
 
 .pagination-details {
     display: flex;
-    overflow: auto;
 }
 
 .wrapper-btns {
@@ -174,11 +173,14 @@
 
 .grid_characters {
     display: grid;
-    place-items: center;
     grid-template-columns: repeat(6, 1fr);
+    place-items: center;
     width: 100%;
     height: 100%;
-    gap: 10px;
+    gap: 20px;
+    padding: 2vh 5vh;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .div-grid-characters {
@@ -186,6 +188,13 @@
     height: 100%;
 }
 
+.div-grid-characters img {
+    width: 225px;
+    height: 350px;
+    border-radius: 4px;
+    image-rendering: auto;
+    object-fit: cover;
+}
 
 @keyframes shadowMovi {
     0% {
