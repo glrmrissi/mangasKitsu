@@ -30,13 +30,9 @@ class Header extends HTMLElement {
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/mangas/mangas.html"><span>Mangas</span></a></li>
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><span>Manhwas</span></a></li>
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><span>Manhuas</span></a></li>
-                            
-                            <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/trending/trending.html"
-                                    target="_self"><span>Trending</span></a>
-                            </li>
                             <li class="nav-link-desktop"><a class="hover-effect-nav" href="${baseURL}src/pages/about/about.html"
                                     target="_self"><span>About</span></a>
-                            </li>
+                            </li> 
                         </ul>
                     </nav>
                     <div>
@@ -73,10 +69,6 @@ class Header extends HTMLElement {
                             class="fillWhite iconsSize" src="${baseURL}src/icon/book.svg" alt=""><span>Mangas</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><span>Manhwas</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><span>Manhuas</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="src/pages/trending/trending.html"
-                        target="_self"><img class="fillWhite iconsSize" src="${baseURL}src/icon/bar-chart.svg"
-                            alt=""><span>Trending</span></a>
-                </li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/about/about.html" target="_self"><img
                             class="fillWhite iconsSize" src="${baseURL}src/icon/question-circle.svg" alt=""><span>About</span></a>
                 </li>
