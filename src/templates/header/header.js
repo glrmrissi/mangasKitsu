@@ -67,8 +67,8 @@ class Header extends HTMLElement {
                             alt=""><span>Categories</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/mangas/mangas.html"><img
                             class="fillWhite iconsSize" src="${baseURL}src/icon/book.svg" alt=""><span>Mangas</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><span>Manhwas</span></a></li>
-                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><span>Manhuas</span></a></li>
+                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhwas/manhwas.html"><img class="fillWhite iconsSize" src="${baseURL}src/icon/book-half.svg" alt=""><span>Manhwas</span></a></li>
+                <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/manhuas/manhuas.html"><img class="fillWhite iconsSize" src="${baseURL}src/icon/book-fill.svg" alt=""><span>Manhuas</span></a></li>
                 <li class="nav-link"><a class="hover-effect-nav" href="${baseURL}src/pages/about/about.html" target="_self"><img
                             class="fillWhite iconsSize" src="${baseURL}src/icon/question-circle.svg" alt=""><span>About</span></a>
                 </li>
@@ -103,29 +103,29 @@ class Header extends HTMLElement {
             profilePhotoGlobal.setAttribute("src", savedImg);
         }
 
-       if(!file) {
+        if (!file) {
             console.log("file is actually null");
-       } else {
-           file.addEventListener("change", async function () {
-               const chosedFile = this.files[0];
-               if (chosedFile) {
-                   reader.addEventListener("load", function () {
-                       imageUrl = reader.result;
-                       localStorage.setItem("userImage", imageUrl);
-    
-                       profilePhotoGlobal.setAttribute("src", imageUrl);
-    
-                       imgUser.setAttribute("src", imageUrl);
-                       localStorage.setItem("userImage", imageUrl);
-                   });
-                   reader.readAsDataURL(chosedFile);
-               }
-           });
-       }
+        } else {
+            file.addEventListener("change", async function () {
+                const chosedFile = this.files[0];
+                if (chosedFile) {
+                    reader.addEventListener("load", function () {
+                        imageUrl = reader.result;
+                        localStorage.setItem("userImage", imageUrl);
+
+                        profilePhotoGlobal.setAttribute("src", imageUrl);
+
+                        imgUser.setAttribute("src", imageUrl);
+                        localStorage.setItem("userImage", imageUrl);
+                    });
+                    reader.readAsDataURL(chosedFile);
+                }
+            });
+        }
         function getImageProfile() {
             const imageUrl = localStorage.getItem("userImage");
 
-            if (imageUrl) return imageUrl 
+            if (imageUrl) return imageUrl
         };
         this.shadowRoot.addEventListener("load", async function () {
             profilePhotoGlobal.setAttribute("src", getImageProfile());
