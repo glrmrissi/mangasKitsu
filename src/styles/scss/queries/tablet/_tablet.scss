@@ -14,7 +14,7 @@
     .shrink {
         display: flex;
     }
-    
+
     .navigation_desktop {
         display: none;
     }
@@ -33,6 +33,7 @@
         position: relative;
         width: calc(100%/5);
         transition: all .3s;
+
         &:hover {
             width: 20%;
         }
@@ -62,8 +63,8 @@
         padding: 4vh;
         gap: 5px;
     }
-    
-    .grid.loadingGrid{
+
+    .grid.loadingGrid {
         width: 150px;
         height: 212px;
     }
@@ -112,17 +113,34 @@
         width: 164px;
         height: 100%;
         overflow: hidden;
+
         h3 {
             font-size: 0.7em;
         }
     }
-    
+
     // manga details 
+    .paragrafer-synopsis {
+        max-width: 100%;
+    }
+
+    .pagination-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btns-pagination-details {
+        width: 100%;
+        flex-direction: row;
+        padding: 0;
+    }
+
     .btn-details {
         width: 100%;
     }
 
-    .paragrafer-synopsis {
-        max-width: 100%;
+    .grid_characters {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1vh;
     }
 }

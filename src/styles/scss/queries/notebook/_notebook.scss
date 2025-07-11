@@ -1,0 +1,21 @@
+@media (min-width: $max-width-tablet) and (max-width: $max-width-notebook) {
+     .pagination-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btns-pagination-details {
+        width: 100%;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .btn-details {
+        width: 100%;
+    }
+
+    .grid_characters {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1vh;
+    }
+}

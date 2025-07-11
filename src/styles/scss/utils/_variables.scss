@@ -23,6 +23,40 @@ $max-width-notebook: 1024px;
     align-items: center;
 }
 
+@mixin text_overlay {
+    padding: 0.5em;
+    font-size: 0.8em;
+    min-width: 100%;
+    color: var(--primary-font-color);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-y: auto;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin effect_hover_on_background_manga_images {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: var(--background-overlay-realeases);
+        cursor: pointer;
+        backdrop-filter: brightness(80%);
+    }
+
+    &hover::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
+        mix-blend-mode: multiply;
+    }
+}
+
 $themes : (dark: (background-main: #24262e,
         background-secondary: #1e1f27,
         background-header: #1e1f2754,
@@ -42,7 +76,7 @@ $themes : (dark: (background-main: #24262e,
         input-search-color: #dbdbdb,
         background-search-img: transparent url('../../../src/icon/search.svg') no-repeat center right,
         shadow-overlay: #000000cc,
-        background-details: #000000cc,
+        background-details: #00000085,
         box-shadow-banner-details: #0000008f,
         filter-icons: invert(1) sepia(1) saturate(5) hue-rotate(180deg),
         filter-icons-hover: invert(36%) sepia(13%) saturate(2465%) hue-rotate(200deg) brightness(90%) contrast(82%)),

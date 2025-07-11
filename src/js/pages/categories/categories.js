@@ -124,6 +124,8 @@ window.addEventListener("keydown", (event) => {
         filterCategory();
     }
 });
+hideLoading();
+filterCategory();
 
 if(!target) {
     const divListItem = document.createElement("div");
@@ -136,6 +138,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             offset += 18;
+            showLoading();
             categories();
         }
     });

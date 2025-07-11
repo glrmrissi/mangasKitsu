@@ -26,17 +26,24 @@ async function x() {
                 divCharacters.appendChild(h1);
                 hideLoading();
             }
+
             datas.forEach((characters) => {
                 const imgsUrl = characters?.attributes?.image?.original;
                 const divImgCharacters = document.createElement("article");
                 const image = document.createElement("img");
+                const titleCharacter = document.createElement("p")
+
                 image.classList.add("img-characters");
                 divImgCharacters.classList.add("div-grid-characters");
+                titleCharacter.classList.add("text-overlay")
+
                 image.src = imgsUrl;
                 
+                titleCharacter.textContent = characters.attributes?.names?.en || characters.attributes?.names?.ja_jp;
                 if(imgsUrl != null || imgsUrl != undefined) {
                     divCharacters.textContent = ""
                     divImgCharacters.appendChild(image);
+                    divImgCharacters.appendChild(titleCharacter)
                     charactersGrid.appendChild(divImgCharacters)
                     divCharacters.appendChild(charactersGrid);
                 }

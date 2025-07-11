@@ -28,20 +28,21 @@
     align-items: center;
     width: 100%;
     height: 20vh;
-    box-shadow: 0px 20px 20px var(--box-shadow-banner-details);
+    background-color: transparent;
     overflow: hidden;
     transition-property: height, filter;
     transition: height 0.3s ease-in-out, filter 0.3s ease-in-out;
 
     &:hover {
-        filter: saturate(2);
-        height: 45vh;
+        filter: saturate(1.2);
+        height: 30vh;
         transition-delay: 0.4s;
     }
 
     img {
         width: 100%;
         height: 100%;
+        border-radius: 0 0 6px 6px;
         object-fit: cover;
     }
 }
@@ -66,7 +67,6 @@
         overflow: hidden;
         width: 100%;
         max-width: 13em;
-        height: 100%;
         white-space: wrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -112,19 +112,35 @@
     height: 355px;
 }
 
+.pagination-details {
+    display: flex;
+}
+
+.wrapper-btns {
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+}
+
 .btns-pagination-details {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     background: var(--background-primary);
-    padding: 0;
+    gap: 3px;
+    z-index: 10;
+    padding: 10px;
 }
 
 .btn-details {
     background-color: var(--background-tertiary);
     color: var(--primary-font-color);
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 10px 20px;
+    width: 10rem;
     height: 4dvh;
     opacity: 60%;
     outline: none;
@@ -132,12 +148,13 @@
 }
 
 .actived.btn-details {
-    animation: shadowMovi  3s infinite;
+    animation: shadowMovi 3s infinite;
     opacity: 100%;
 }
 
 .section-details {
     display: none;
+    width: 100%;
 }
 
 .actived.section-details {
@@ -152,24 +169,32 @@
     width: 100%;
     height: 100%;
 }
+
 .grid_characters {
     display: grid;
-    place-items: center;
     grid-template-columns: repeat(6, 1fr);
+    place-items: center;
     width: 100%;
     height: 100%;
     gap: 10px;
+    padding: 2vh;
+    border-radius: 5px;
+    overflow: hidden;
 }
-
 
 .div-grid-characters {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
+    @include effect_hover_on_background_manga_images;
 }
 
-.img-characters {
+.div-grid-characters img {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
+    image-rendering: auto;
     object-fit: cover;
 }
 
@@ -177,16 +202,20 @@
     0% {
         box-shadow: 41px 21px 58px -13px var(--border-shadow-color) inset;
     }
+
     25% {
         box-shadow: 21px 21px 58px -23px var(--border-shadow-color) inset;
     }
+
     50% {
         box-shadow: -21px 21px 58px -73px var(--border-shadow-color) inset;
     }
+
     75% {
         box-shadow: -41px 21px 58px -23px var(--border-shadow-color) inset;
     }
+
     100% {
         box-shadow: 21px 21px 58px -13px var(--border-shadow-color) inset;
-    }   
+    }
 }

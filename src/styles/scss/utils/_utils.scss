@@ -73,6 +73,10 @@ body.loadingCursor {
     z-index: 1;
 }
 
+.text-overlay {
+    @include text_overlay;
+}
+
 .loader {
     position: fixed;
     top: 50%;
@@ -80,11 +84,10 @@ body.loadingCursor {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     filter: brightness(100%);
     width: 40px;
     aspect-ratio: 1;
-    color: #ff3636;
+    color: var(--secondary-font-color);
     background:
     conic-gradient(from 134deg at top, currentColor 92deg, #0000 0) top,
     conic-gradient(from -46deg at bottom, currentColor 92deg, #0000 0) bottom;
@@ -191,25 +194,6 @@ body.loadingCursor {
 
 .fillWhite {
     filter: var(--filter-icons);
-}
-
-.hover-effect-nav {
-    outline: none;
-    border: none;
-    list-style: none;
-    text-decoration: none;
-    background-color: transparent;
-    font-size: 1em;
-    color: var(--primary-font-color);
-    transition: all .3s;
-    z-index: 1;
-    span {
-        padding-left: 0.3dvw;
-    }
-
-    &:hover {
-        color: var(--secondary-font-color);
-    }
 }
 
 .wave {
