@@ -10,7 +10,7 @@ export default function loadSectionMangas(url) {
 
       urlObj = urlObj.searchParams.get("filter[categories]")
       const mangaDiv = document.createElement("section");
-      const titleCategory = document.createElement("h2");
+      const titleCategory = document.createElement("p");
 
       const categoriesTitleUrl = data.data[0].relationships.categories.links.related;
 
@@ -24,7 +24,7 @@ export default function loadSectionMangas(url) {
         const { canonicalTitle, synopsis, posterImage, ageRating } = manga.attributes;
 
         const mangaItem = document.createElement("div");
-        const title = document.createElement("h3");
+        const title = document.createElement("p");
         const img = document.createElement("img");
 
         mangaDiv.classList.add("manga-div")
