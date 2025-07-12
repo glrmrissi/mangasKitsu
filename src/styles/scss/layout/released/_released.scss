@@ -35,6 +35,7 @@
     height: 100%;
     overflow: hidden;
     @include effect_hover_on_background_manga_images;
+    @include effect_camera_invert;
 }
 
 

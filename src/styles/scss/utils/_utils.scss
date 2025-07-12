@@ -99,6 +99,7 @@ body.loadingCursor {
 .loader:before {
     content: '';
     position: absolute;
+    border-radius: 6px;
     inset: 0;
     --g: currentColor 14.5px, #0000 0 calc(100% - 14.5px), currentColor 0;
     background:

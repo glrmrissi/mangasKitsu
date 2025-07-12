@@ -13,6 +13,7 @@ export async function renderMangas(mangas) {
     mangaItem.classList.add("loadingGrid");
     mangaItem.classList.add("box");
     mangaItem.classList.add("grid");
+    mangaItem.tabIndex = 0;
 
     const img = document.createElement("img");
     img.src = posterImage.small || posterImage.medium || posterImage.large;

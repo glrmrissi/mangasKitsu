@@ -39,6 +39,7 @@ $max-width-notebook: 1024px;
 
 @mixin effect_hover_on_background_manga_images {
     transition: all 0.3s ease-in-out;
+
     &:hover {
         background-color: var(--background-overlay-realeases);
         cursor: pointer;
@@ -54,6 +55,93 @@ $max-width-notebook: 1024px;
         height: 100%;
         background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
         mix-blend-mode: multiply;
+    }
+}
+
+@mixin effect_camera {
+    position: relative;
+    &::before,
+    &::after {
+        content: '';
+        height: 5px;
+        width: 5px;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: 0;
+    }
+
+    &::before {
+        content: '';
+        left: 0;
+        bottom: 3px;
+        border-top: 3px solid var(--secondary-font-color);
+        border-right: 3px solid var(--secondary-font-color);
+        transform: translate(100%, 50%);
+    }
+
+    &:after {
+        content: '';
+        right: 0;
+        top: 3px;
+        color: var(--secondary-font-color);
+        border-bottom: 3px solid var(--secondary-font-color);
+        border-left: 3px solid var(--secondary-font-color);
+        transform: translate(-100%, -50%)
+    }
+    
+    &:hover:before,
+    &:hover:after {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    
+    &:hover {
+        color: var(--secondary-font-color);
+    }
+}
+
+@mixin effect_camera_invert {
+    
+    &::before,
+    &::after {
+        content: '';
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: 0;
+    }
+    
+    &::before {
+        content: '';
+        right: 0;
+        top: 0;
+        border-top: 5px solid var(--secondary-font-color);
+        border-right: 5px solid var(--secondary-font-color);
+        transform: translate(100%, 50%);
+    }
+    
+    &:after {
+        content: '';
+        left: 0;
+        bottom: 0;
+        color: var(--secondary-font-color);
+        border-bottom: 5px solid var(--secondary-font-color);
+        border-left: 5px solid var(--secondary-font-color);
+        transform: translate(-100%, -50%)
+    }
+
+    &:hover:before,
+    &:hover:after {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    
+    &:hover {
+        color: var(--secondary-font-color);
+    }
+    &:focus {
+        filter: brightness(1.1);
     }
 }
 
