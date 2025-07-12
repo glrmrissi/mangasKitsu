@@ -32,45 +32,6 @@
         background-color: transparent;
         font-size: 1em;
         padding: 0.2em;
-
-        &::before,
-        &::after {
-            content: '';
-            height: 5px;
-            width: 5px;
-            position: absolute;
-            transition: all .35s ease;
-            opacity: 0;
-        }
-
-        &::before {
-            content: '';
-            left: 0;
-            bottom: 3px;
-            border-top: 3px solid var(--secondary-font-color);
-            border-right: 3px solid var(--secondary-font-color);
-            transform: translate(100%, 50%);
-        }
-
-        &:after {
-            content: '';
-            right: 0;
-            top: 3px;
-            color: var(--secondary-font-color);
-            border-bottom: 3px solid var(--secondary-font-color);
-            border-left: 3px solid var(--secondary-font-color);
-            transform: translate(-100%, -50%)
-        }
-
-        &:hover:before,
-        &:hover:after {
-            transform: translate(0, 0);
-            opacity: 1;
-        }
-
-        &:hover {
-            color: var(--secondary-font-color);
-        }
+        @include effect_camera;
     }
-
 }

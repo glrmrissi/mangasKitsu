@@ -157,6 +157,7 @@ body.loadingCursor {
 .loader:before {
   content: "";
   position: absolute;
+  border-radius: 6px;
   inset: 0;
   --g: currentColor 14.5px, #0000 0 calc(100% - 14.5px), currentColor 0;
   background: linear-gradient(45deg, var(--g)), linear-gradient(-45deg, var(--g));
@@ -484,11 +485,90 @@ body.loadingCursor {
   height: 100%;
 }
 
-.profile-icon {
+.theme-icon {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0.5em;
+}
+.theme-icon::before, .theme-icon::after {
+  content: "";
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.theme-icon::before {
+  content: "";
+  left: 0;
+  bottom: 3px;
+  border-top: 3px solid var(--secondary-font-color);
+  border-right: 3px solid var(--secondary-font-color);
+  transform: translate(100%, 50%);
+}
+.theme-icon:after {
+  content: "";
+  right: 0;
+  top: 3px;
+  color: var(--secondary-font-color);
+  border-bottom: 3px solid var(--secondary-font-color);
+  border-left: 3px solid var(--secondary-font-color);
+  transform: translate(-100%, -50%);
+}
+.theme-icon:hover:before, .theme-icon:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.theme-icon:hover {
+  color: var(--secondary-font-color);
+}
+.theme-icon img {
+  width: 100%;
+}
+
+.profile-icon {
   border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.profile-icon::before, .profile-icon::after {
+  content: "";
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.profile-icon::before {
+  content: "";
+  left: 0;
+  bottom: 3px;
+  border-top: 3px solid var(--secondary-font-color);
+  border-right: 3px solid var(--secondary-font-color);
+  transform: translate(100%, 50%);
+}
+.profile-icon:after {
+  content: "";
+  right: 0;
+  top: 3px;
+  color: var(--secondary-font-color);
+  border-bottom: 3px solid var(--secondary-font-color);
+  border-left: 3px solid var(--secondary-font-color);
+  transform: translate(-100%, -50%);
+}
+.profile-icon:hover:before, .profile-icon:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.profile-icon:hover {
+  color: var(--secondary-font-color);
 }
 
 .profile-icon img {
@@ -667,6 +747,41 @@ body.loadingCursor {
   height: 100%;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
   mix-blend-mode: multiply;
+}
+.grid::before, .grid::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.grid::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 5px solid var(--secondary-font-color);
+  border-right: 5px solid var(--secondary-font-color);
+  transform: translate(100%, 50%);
+}
+.grid:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  color: var(--secondary-font-color);
+  border-bottom: 5px solid var(--secondary-font-color);
+  border-left: 5px solid var(--secondary-font-color);
+  transform: translate(-100%, -50%);
+}
+.grid:hover:before, .grid:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.grid:hover {
+  color: var(--secondary-font-color);
+}
+.grid:focus {
+  filter: brightness(1.1);
 }
 
 .title-realeased {
@@ -1134,6 +1249,7 @@ footer {
   background-color: transparent;
   font-size: 1em;
   padding: 0.2em;
+  position: relative;
 }
 .nav-link-desktop a::before, .nav-link-desktop a::after {
   content: "";
@@ -1685,6 +1801,7 @@ footer {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 .manga-item:hover {
@@ -1702,6 +1819,41 @@ footer {
   height: 100%;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
   mix-blend-mode: multiply;
+}
+.manga-item::before, .manga-item::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.manga-item::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 5px solid var(--secondary-font-color);
+  border-right: 5px solid var(--secondary-font-color);
+  transform: translate(100%, 50%);
+}
+.manga-item:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  color: var(--secondary-font-color);
+  border-bottom: 5px solid var(--secondary-font-color);
+  border-left: 5px solid var(--secondary-font-color);
+  transform: translate(-100%, -50%);
+}
+.manga-item:hover:before, .manga-item:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.manga-item:hover {
+  color: var(--secondary-font-color);
+}
+.manga-item:focus {
+  filter: brightness(1.1);
 }
 .manga-item p {
   text-align: center;
