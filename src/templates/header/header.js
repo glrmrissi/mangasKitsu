@@ -35,7 +35,7 @@ class Header extends HTMLElement {
                             </li> 
                         </ul>
                     </nav>
-                    <div>
+                    <div class="theme-icon">
                         <img style="width: 3dvh; padding: 0.3dvh; cursor: pointer;" class="fillWhite" id="toggle_theme"
                             src="${baseURL}src/icon/cloud-moon-fill.svg" alt="">
                     </div>
