@@ -1383,7 +1383,6 @@ footer {
 
 .paragrafer-synopsis {
   width: 100%;
-  max-width: 70%;
   height: 100%;
 }
 
@@ -1841,15 +1840,14 @@ footer {
 
 .manga-item {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
-  flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .manga-item:hover {
   background-color: var(--background-overlay-realeases);
@@ -1909,7 +1907,6 @@ footer {
   max-width: 15em;
   white-space: nowrap;
   overflow: hidden;
-  overflow-y: hidden;
   text-overflow: ellipsis;
 }
 .manga-item img {

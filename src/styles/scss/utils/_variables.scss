@@ -22,6 +22,21 @@ $max-width-notebook: 1024px;
     align-items: center;
 }
 
+@mixin d_r {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin d_c {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin wh_100 {
+    width: 100%;
+    height: 100%;
+}
+
 @mixin grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

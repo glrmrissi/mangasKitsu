@@ -1,8 +1,6 @@
 .gridCategory {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+    @include d_c;
+    @include wh_100;
     padding: 0 5vh;
 }
 
@@ -11,8 +9,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     color: var(--primary-font-color);
-    width: 100%;
-    height: 100%;
+    @include wh_100;
     gap: 6px;
     right: 0%;
     padding: 1dvh 0 1dvh 0;

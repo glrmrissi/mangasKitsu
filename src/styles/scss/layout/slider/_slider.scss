@@ -90,8 +90,7 @@
 }
 
 .others-imgs {
-    width: 100%;
-    height: 100%;
+   @include wh_100;
     padding-top: 10vh;
 }
 
@@ -173,8 +172,7 @@
 
 .overlay-slide {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    @include wh_100;
     box-shadow: 65px -43px 180px 0px rgba(0, 0, 0, 0.75) inset;
     -webkit-box-shadow: 65px -43px 180px 0px rgba(0, 0, 0, 0.75) inset;
     -moz-box-shadow: 65px -43px 180px 0px rgba(0, 0, 0, 0.75) inset;
