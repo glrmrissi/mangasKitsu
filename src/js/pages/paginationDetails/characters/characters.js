@@ -2,7 +2,7 @@ const divCharacters = document.getElementById("characters");
 const charactersGrid = document.createElement("div");
 const loadMore = document.createElement("button");
 
-charactersGrid.classList.add("grid_characters");
+charactersGrid.classList.add("grid-launcher");
 
 let mangaId = new URL(location);
 mangaId = mangaId.searchParams.get("id");

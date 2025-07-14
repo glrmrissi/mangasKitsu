@@ -27,7 +27,7 @@ export default function loadSectionMangas(url) {
         const title = document.createElement("p");
         const img = document.createElement("img");
 
-        mangaDiv.classList.add("manga-div")
+        mangaDiv.classList.add("grid-launcher")
         mangaItem.classList.add("manga-item")
         title.classList.add("text-overlay")
         title.textContent = canonicalTitle;

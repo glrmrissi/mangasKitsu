@@ -7,7 +7,7 @@ const defaultTypes = categoryTypes.options[categoryTypes.selectedIndex];
 
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
-const categorySelected = document.querySelectorAll(".categoriesNames");
+const categorySelected = document.querySelectorAll(".grid-launcher");
 const categoryType = document.querySelectorAll(".categoriesType");
 const titleCategory = document.getElementById("titleCategory");
 const submitFilter = document.querySelector("#submitFilter");
@@ -62,7 +62,7 @@ const categories = async () => {
                 const pTypeManga = document.createElement("p");
                 const img = document.createElement("img");
                 const articleMobile = document.createElement("article");
-                const h3Mobile = document.createElement("h3");
+                const h3Mobile = document.createElement("span");
 
                 mangaItem.classList.add("card-front");
                 divTooltip.classList.add("tooltip");
@@ -71,6 +71,7 @@ const categories = async () => {
                 relevantInfos.classList.add("relevant-infos")
                 articleMobile.classList.add("article-mobile");
                 popularityRankP.classList.add("popularity-rank-p");
+                h3Mobile.classList.add("text-overlay");
                 img.classList.add("box");
 
                 img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
