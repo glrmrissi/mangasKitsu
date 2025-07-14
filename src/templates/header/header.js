@@ -185,7 +185,7 @@ class Header extends HTMLElement {
         mangasName.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 const mangaName = mangasName.value;
-                const searchUrl = `../../../src/pages/search/search.html?name=${encodeURIComponent(mangaName)}`
+                const searchUrl = `${baseURL}src/pages/search/search.html?name=${encodeURIComponent(mangaName)}`
                 window.open(searchUrl, '_blank');
             }
         });
