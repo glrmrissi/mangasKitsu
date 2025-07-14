@@ -8,8 +8,19 @@
     }
 
     .side-bar {
+        position: fixed;
+        top: 0vh;
         left: -75vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         width: 40vw;
+        height: 100dvh;
+        min-height: 100vh;
+        background-color: var(--background-main);
+        transition: all 0.3s;
+        z-index: 999;
     }
 
     .shrink {
@@ -133,12 +144,10 @@
     }
 
     .pagination-details {
-        display: flex;
-        flex-direction: column;
+        @include d_r;
     }
 
     .btns-pagination-details {
-        flex-direction: row;
         padding: 0;
     }
 
@@ -148,5 +157,12 @@
 
     .grid_characters {
         @include grid(repeat(2, 1fr));
+    }
+
+    // about 
+
+    .h_about {
+        @include d_c;
+        padding: 1em;
     }
 }

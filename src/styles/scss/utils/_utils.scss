@@ -68,12 +68,6 @@ body.loadingCursor {
     transform: translate(0, 0);
 }
 
-.d-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .iconsSize {
     width: 1.2em;
 }
@@ -91,9 +85,7 @@ body.loadingCursor {
     position: fixed;
     top: 50%;
     left: 49%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     filter: brightness(100%);
     width: 40px;
     aspect-ratio: 1;
@@ -269,7 +261,6 @@ body.loadingCursor {
     transform: rotate(-135deg);
 }
 
-
 .card-front.loadingGrid {
     width: 256px;
     height: 362px;
@@ -346,8 +337,7 @@ body.loadingCursor {
     }
 
     p {
-        width: 100%;
-        height: 100%;
+        @include wh_100;
         font-weight: 400;
         white-space: wrap;
         text-overflow: ellipsis;

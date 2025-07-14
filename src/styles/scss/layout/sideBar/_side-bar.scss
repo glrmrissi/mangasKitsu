@@ -1,3 +1,7 @@
+.side-bar {
+    display: none;
+}
+
 .side-bar.resize_shrink_side_bar {
     position: fixed;
     left: 0vw;
@@ -12,22 +16,6 @@
     @include wh_100;
     background-color: rgba(0, 0, 0, 0.5);
     filter: blur(3px);
-}
-
-.side-bar {
-    position: fixed;
-    top: 0vh;
-    left: -16vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 10%;
-    height: 100dvh;
-    min-height: 100vh;
-    background-color: var(--background-main);
-    transition: all 0.3s;
-    z-index: 999;
 }
 
 .navigation {
@@ -72,13 +60,11 @@
 }
 
 .hover_side_bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     text-align: center;
     height: auto;
     padding: 0.3vw;
-    color: #fff;
+    color: var(--primary-font-color);
     cursor: pointer;
     border-radius: 0px;
     transition: all 0.3s;
@@ -87,6 +73,15 @@
     &:hover {
         border-radius: 50%;
         background-color: var(--highlight-color);
+    }
+}
+
+.hover-effect-nav {
+    color: var(--primary-font-color);
+    text-decoration: none;
+    font-size: 1em;
+    span {
+        padding: 0.2rem;
     }
 }
 
