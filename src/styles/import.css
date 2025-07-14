@@ -17,7 +17,7 @@
   --loading-color-secondary: #f0f3f5;
   --action-color: #020202;
   --input-search-color: #dbdbdb;
-  --background-search-img: transparent url("../../../../../src/icon/searchBlack.svg") no-repeat center right;
+  --background-search-img: transparent url("../../../src/icon/searchBlack.svg") no-repeat center right;
   --shadow-overlay: rgba(235, 235, 235, 0.8);
   --background-details: rgba(255, 255, 255, 0.8);
   --box-shadow-banner-details: rgba(255, 255, 255, 0.5607843137);
