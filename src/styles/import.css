@@ -4,7 +4,7 @@
   --background-secondary: #e2e2e2;
   --background-header: rgba(201, 201, 201, 0.2941176471);
   --background-tertiary: #c5c5c5;
-  --background-overlay-realeases: #77668d;
+  --background-overlay-realeases: #e4e4e4;
   --btn-nav-link: #dbdbdb;
   --tooltip: #dcdcdc;
   --highlight-color: #856d9b;
@@ -94,6 +94,23 @@ body.loadingCursor {
   cursor: progress;
 }
 
+.grid-launcher {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.grid-launcher.skeleton-load {
+  height: 70vh;
+  background-color: var(--background-secondary);
+}
+
 .box {
   opacity: 0;
   filter: blur(10px);
@@ -126,7 +143,8 @@ body.loadingCursor {
 .text-overlay {
   padding: 0.5em;
   font-size: 0.8em;
-  min-width: 100%;
+  width: 100%;
+  max-width: 15em;
   color: var(--primary-font-color);
   text-align: center;
   white-space: nowrap;
@@ -491,6 +509,7 @@ body.loadingCursor {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
   padding: 0.5em;
 }
 .theme-icon::before, .theme-icon::after {
@@ -537,6 +556,7 @@ body.loadingCursor {
   align-items: center;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 .profile-icon::before, .profile-icon::after {
   content: "";
@@ -695,23 +715,6 @@ body.loadingCursor {
   overflow-x: hidden;
 }
 
-.grid-launcher {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  padding: 2vh 5vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.grid-launcher.skeleton-load {
-  height: 70vh;
-  background-color: var(--background-secondary);
-}
-
 .grid.loadingGrid {
   width: 246px;
   height: 352px;
@@ -722,15 +725,15 @@ body.loadingCursor {
 }
 
 .grid {
+  transition: all 0.3s ease-in-out;
   position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
 }
 .grid:hover {
   background-color: var(--background-overlay-realeases);
@@ -750,8 +753,8 @@ body.loadingCursor {
 }
 .grid::before, .grid::after {
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 1.5rem;
+  width: 1.5rem;
   position: absolute;
   transition: all 0.35s ease;
   opacity: 0;
@@ -814,8 +817,8 @@ body.loadingCursor {
 
 .pagination button {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 5px 10px;
   max-width: 30px;
   font-size: 16px;
@@ -910,8 +913,8 @@ body.loadingCursor {
   background-color: var(--background-secondary);
   border-radius: 0 0 3px 0;
   color: var(--primary-font-color);
-  padding: 0.5vh 1vh;
-  font-size: 1.4em;
+  padding: 0.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   left: 0;
   z-index: 1;
@@ -945,7 +948,7 @@ body.loadingCursor {
   align-items: center;
   flex-direction: column;
   margin: 1vh;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   list-style: none;
   word-break: break-all;
   flex-wrap: wrap;
@@ -1250,6 +1253,7 @@ footer {
   font-size: 1em;
   padding: 0.2em;
   position: relative;
+  overflow: hidden;
 }
 .nav-link-desktop a::before, .nav-link-desktop a::after {
   content: "";
@@ -1379,7 +1383,6 @@ footer {
 
 .paragrafer-synopsis {
   width: 100%;
-  max-width: 70%;
   height: 100%;
 }
 
@@ -1452,24 +1455,16 @@ footer {
   height: 100%;
 }
 
-.grid_characters {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 10px;
-  padding: 2vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
 .div-grid-characters {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
   transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 .div-grid-characters:hover {
   background-color: var(--background-overlay-realeases);
@@ -1486,6 +1481,41 @@ footer {
   height: 100%;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0));
   mix-blend-mode: multiply;
+}
+.div-grid-characters::before, .div-grid-characters::after {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+.div-grid-characters::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 5px solid var(--secondary-font-color);
+  border-right: 5px solid var(--secondary-font-color);
+  transform: translate(100%, 50%);
+}
+.div-grid-characters:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  color: var(--secondary-font-color);
+  border-bottom: 5px solid var(--secondary-font-color);
+  border-left: 5px solid var(--secondary-font-color);
+  transform: translate(-100%, -50%);
+}
+.div-grid-characters:hover:before, .div-grid-characters:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.div-grid-characters:hover {
+  color: var(--secondary-font-color);
+}
+.div-grid-characters:focus {
+  filter: brightness(1.1);
 }
 
 .div-grid-characters img {
@@ -1706,10 +1736,10 @@ footer {
   place-items: center;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   gap: 20px;
-  padding: 5vh;
-  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .categoryMangasShow div {
   border-radius: 4px;
@@ -1784,25 +1814,16 @@ footer {
   overflow: hidden;
 }
 
-.manga-div {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  padding: 2vh 5vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
 .manga-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
 }
 .manga-item:hover {
   background-color: var(--background-overlay-realeases);
@@ -1822,8 +1843,8 @@ footer {
 }
 .manga-item::before, .manga-item::after {
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 1.5rem;
+  width: 1.5rem;
   position: absolute;
   transition: all 0.35s ease;
   opacity: 0;
@@ -1862,7 +1883,6 @@ footer {
   max-width: 15em;
   white-space: nowrap;
   overflow: hidden;
-  overflow-y: hidden;
   text-overflow: ellipsis;
 }
 .manga-item img {
@@ -1920,7 +1940,7 @@ footer {
     position: relative;
   }
   .imgs-slider .overlay {
-    padding: 2vh;
+    padding: 0.4rem 0.7rem;
   }
   .imgs-slider img {
     padding: 0.5vh;
@@ -2011,15 +2031,20 @@ footer {
   .navigation_desktop {
     display: none;
   }
-  .slider-container {
-    padding: 2vh;
-  }
   .slider-car {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
     overflow: hidden;
   }
   .imgs-slider {
@@ -2034,10 +2059,7 @@ footer {
     position: relative;
   }
   .imgs-slider .overlay {
-    padding: 2vh;
-  }
-  .imgs-slider img {
-    padding: 1vh;
+    padding: 0.3rem 0.7rem;
   }
   .slider-car .imgs-slider {
     position: relative;
@@ -2048,9 +2070,15 @@ footer {
     width: 20%;
   }
   .grid-launcher {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 2vh;
-    gap: 5px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .grid.loadingGrid {
     width: 150px;
@@ -2065,6 +2093,13 @@ footer {
   .mangasSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .text-overlay {
     -webkit-user-select: none;
@@ -2079,6 +2114,13 @@ footer {
   .gridCategory {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .category {
     position: relative;
@@ -2089,7 +2131,15 @@ footer {
   }
   .categoryMangasShow {
     display: grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
     flex-wrap: wrap;
     padding: 1vh;
     margin: 0;
@@ -2106,12 +2156,9 @@ footer {
   }
   .article-mobile {
     display: flex;
-    width: 164px;
+    width: 100%;
     height: 100%;
     overflow: hidden;
-  }
-  .article-mobile h3 {
-    font-size: 0.7em;
   }
   .btn-details {
     width: 100%;
@@ -2131,8 +2178,15 @@ footer {
     width: 100%;
   }
   .grid_characters {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 1vh;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 @media (min-width: 820px) and (max-width: 1024px) {

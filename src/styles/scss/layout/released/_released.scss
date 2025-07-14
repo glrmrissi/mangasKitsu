@@ -1,20 +1,3 @@
-.grid-launcher {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    place-items: center;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
-    padding: 2vh 5vh;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.grid-launcher.skeleton-load {
-    height: 70vh;
-    background-color: var(--background-secondary);
-}
-
 .grid.loadingGrid {
     // TESTAR DEPOIS
     width: 246px;
@@ -26,16 +9,15 @@
 }
 
 .grid {
-    position: relative;
+    @include effect_hover_on_background_manga_images;
+    @include effect_camera_invert;
+
+    // TODO: A
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    @include effect_hover_on_background_manga_images;
-    @include effect_camera_invert;
+    @include wh_100;
 }
 
 
@@ -66,9 +48,7 @@
 }
 
 .pagination button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center;
     padding: 5px 10px;
     max-width: 30px;
     font-size: 16px;

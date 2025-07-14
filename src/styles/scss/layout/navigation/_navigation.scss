@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    @include wh_100;
 }
 
 .nav-list-desktop {
@@ -14,8 +13,7 @@
 
 .nav-link-desktop {
     @include center;
-    width: 100%;
-    height: 100%;
+    @include wh_100;
     font-weight: 400;
     font-size: 0.95em;
     text-align: center;

@@ -1,31 +1,14 @@
 .main-manga {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.manga-div {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    place-items: center;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
-    padding: 2vh 5vh;
-    border-radius: 5px;
+    @include d_c;
+    @include wh_100;
     overflow: hidden;
 }
 
 .manga-item {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    @include centerWithColumn;
     @include effect_hover_on_background_manga_images;
     @include effect_camera_invert;
+    @include wh_100;
 
     p {
         text-align: center;
@@ -34,13 +17,11 @@
         max-width: 15em;
         white-space: nowrap;
         overflow: hidden;
-        overflow-y: hidden;
         text-overflow: ellipsis;
     }
 
     img {
-        width: 100%;
-        height: 100%;
+        @include wh_100;
         border-radius: 4px;
         image-rendering: auto;
         object-fit: cover;
