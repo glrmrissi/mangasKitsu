@@ -29,19 +29,18 @@
     position: relative;
     @include center;
     @include effect_camera;
-    padding: 0.5em;
+    width: 4dvh;
 
     img {
-        width: 100%;
+        width: 3.7dvh;
+        height: 4dvh
     }
 }
 
 .profile-icon {
-    border-radius: 50%;
-    position: relative;
     @include center;
-    height: 100%;
     @include effect_camera;
+    height: 100%;
 }
 
 .profile-icon img {

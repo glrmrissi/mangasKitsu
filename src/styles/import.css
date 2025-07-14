@@ -504,7 +504,7 @@ body.loadingCursor {
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 0.5em;
+  width: 4dvh;
 }
 .theme-icon::before, .theme-icon::after {
   content: "";
@@ -539,18 +539,17 @@ body.loadingCursor {
   color: var(--secondary-font-color);
 }
 .theme-icon img {
-  width: 100%;
+  width: 3.7dvh;
+  height: 4dvh;
 }
 
 .profile-icon {
-  border-radius: 50%;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 .profile-icon::before, .profile-icon::after {
   content: "";
