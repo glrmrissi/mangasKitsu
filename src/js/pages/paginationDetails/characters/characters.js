@@ -26,8 +26,10 @@ async function loadCharacters() {
                 image.classList.add("img-characters");
                 divImgCharacters.classList.add("div-grid-characters");
                 titleCharacter.classList.add("text-overlay");
+                
+                const contentNotFound = "../../../src/imgs/cntf-1.png";
 
-                image.src = imgsUrl;
+                image.src = imgsUrl || contentNotFound;
 
                 titleCharacter.textContent = characters.attributes?.names?.en || characters.attributes?.names?.ja_jp;
                 if (imgsUrl != null || imgsUrl != undefined) {
@@ -38,6 +40,7 @@ async function loadCharacters() {
                     divCharacters.appendChild(charactersGrid);
                 }
             });
+
             let ultimo = datas[datas.length - 1]
             if (ultimo === datas[datas.length - 1]) {
                 loadMore.textContent = "Load more characters";

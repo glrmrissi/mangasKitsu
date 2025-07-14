@@ -11,11 +11,13 @@ const categorySelected = document.querySelectorAll(".grid-launcher");
 const categoryType = document.querySelectorAll(".categoriesType");
 const titleCategory = document.getElementById("titleCategory");
 const submitFilter = document.querySelector("#submitFilter");
+
 let url = defaultCategory.value;
 let offset = 18;
 let limit = 18;
 let subTypeUrl = defaultTypes.value;
 titleCategory.innerHTML = `${url}`;
+
 setTimeout(() => {
     target.style.display = "flex";
 }, 1000);
@@ -25,6 +27,7 @@ categorySelected.forEach(btns => {
         url = btns.value;
     })
 })
+
 categoryType.forEach(btns => {
     btns.addEventListener("click", () => {
         subTypeUrl = btns.value;
@@ -45,11 +48,7 @@ const categories = async () => {
                 const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
                 let date = startDate ? startDate.slice(0, 4) : "Date not found"
 
-                let contentNotFound = [
-                    "../../../src/imgs/cntf-1.jpg",
-                    "../../../src/imgs/cntf-2.jpg",
-                    "../../../src/imgs/cntf-3.jpg"
-                ];
+                const contentNotFound = "../../../src/imgs/cntf-1.png";
 
                 const mangaItem = document.createElement("div");
                 const divTooltip = document.createElement("div");
@@ -74,7 +73,7 @@ const categories = async () => {
                 h3Mobile.classList.add("text-overlay");
                 img.classList.add("box");
 
-                img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
+                img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound;
                 h3.textContent = `${canonicalTitle} - ${date}`;
                 popularityRankP.textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`;
                 pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;

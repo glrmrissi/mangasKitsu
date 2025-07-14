@@ -32,13 +32,9 @@ export default function loadSectionMangas(url) {
         title.classList.add("text-overlay")
         title.textContent = canonicalTitle;
 
-        let contentNotFound = [
-          "../../../src/imgs/cntf-1.jpg",
-          "../../../src/imgs/cntf-2.jpg",
-          "../../../src/imgs/cntf-3.jpg"
-        ];
-
-        img.src = posterImage.small || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
+        const contentNotFound = "../../../src/imgs/cntf-1.png";
+        
+        img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound;
         img.title = canonicalTitle;
 
         mangaItem.appendChild(img);

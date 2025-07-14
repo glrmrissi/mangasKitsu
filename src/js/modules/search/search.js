@@ -8,7 +8,6 @@ export async function fetchManga(name, isLoadMore = false) {
         ? `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=${offsetCustom}`
         : `https://kitsu.io/api/edge/manga?filter[text]=${name}&page[limit]=18&page[offset]=18`;
 
-
     showLoading();
 
     try {
@@ -28,6 +27,9 @@ export async function fetchManga(name, isLoadMore = false) {
         data.data.forEach(manga => {
             const { canonicalTitle, synopsis, posterImage, ageRating, startDate, popularityRank, ratingRank, mangaType} = manga.attributes
             const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
+
+            const contentNotFound = "../../../src/imgs/cntf-1.png";
+
             const date = startDate.slice(0, 4);
             const mangaItem = document.createElement("div");
             const divTooltip = document.createElement("section");
@@ -51,12 +53,13 @@ export async function fetchManga(name, isLoadMore = false) {
             popularityRankP.classList.add("popularity-rank-p");
             img.classList.add("box");
 
-            img.src = posterImage.small;
+            img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound;
             h3.textContent = `${canonicalTitle} - ${date}`;
             popularityRankP .textContent = `🎉 #${popularityRank} Most popular ✨ #${ratingRank} Rated`
             pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
             p.innerHTML = `&nbsp; ${synopsis}`;
             h3Mobile.textContent = `${canonicalTitle} - ${date}`;
+
             mangaItem.appendChild(divTooltip);
             mangaItem.appendChild(articleMobile);
             articleMobile.appendChild(h3Mobile)
