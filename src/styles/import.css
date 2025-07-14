@@ -94,6 +94,23 @@ body.loadingCursor {
   cursor: progress;
 }
 
+.grid-launcher {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.grid-launcher.skeleton-load {
+  height: 70vh;
+  background-color: var(--background-secondary);
+}
+
 .box {
   opacity: 0;
   filter: blur(10px);
@@ -696,23 +713,6 @@ body.loadingCursor {
   height: 100%;
   min-height: 100%;
   overflow-x: hidden;
-}
-
-.grid-launcher {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  padding: 2vh 5vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.grid-launcher.skeleton-load {
-  height: 70vh;
-  background-color: var(--background-secondary);
 }
 
 .grid.loadingGrid {
@@ -1455,18 +1455,6 @@ footer {
   height: 100%;
 }
 
-.grid_characters {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  padding: 2vh 5vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
 .div-grid-characters {
   display: flex;
   justify-content: center;
@@ -1749,7 +1737,7 @@ footer {
   width: 100%;
   height: 100%;
   gap: 20px;
-  padding: 2vh 5vh;
+  padding: 1.5rem 2rem;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -1823,18 +1811,6 @@ footer {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-}
-
-.manga-div {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  padding: 2vh 5vh;
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -2055,15 +2031,20 @@ footer {
   .navigation_desktop {
     display: none;
   }
-  .slider-container {
-    padding: 2vh;
-  }
   .slider-car {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
     overflow: hidden;
   }
   .imgs-slider {
@@ -2080,9 +2061,6 @@ footer {
   .imgs-slider .overlay {
     padding: 0.3rem 0.7rem;
   }
-  .imgs-slider img {
-    padding: 1vh;
-  }
   .slider-car .imgs-slider {
     position: relative;
     width: 20%;
@@ -2092,9 +2070,15 @@ footer {
     width: 20%;
   }
   .grid-launcher {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 2vh;
-    gap: 5px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .grid.loadingGrid {
     width: 150px;
@@ -2109,6 +2093,13 @@ footer {
   .mangasSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .text-overlay {
     -webkit-user-select: none;
@@ -2123,6 +2114,13 @@ footer {
   .gridCategory {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
   .category {
     position: relative;
@@ -2133,7 +2131,15 @@ footer {
   }
   .categoryMangasShow {
     display: grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
     flex-wrap: wrap;
     padding: 1vh;
     margin: 0;
@@ -2150,12 +2156,9 @@ footer {
   }
   .article-mobile {
     display: flex;
-    width: 164px;
+    width: 100%;
     height: 100%;
     overflow: hidden;
-  }
-  .article-mobile h3 {
-    font-size: 0.7em;
   }
   .btn-details {
     width: 100%;
@@ -2175,8 +2178,15 @@ footer {
     width: 100%;
   }
   .grid_characters {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 1vh;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 @media (min-width: 820px) and (max-width: 1024px) {

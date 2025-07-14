@@ -37,14 +37,14 @@ $max-width-notebook: 1024px;
     height: 100%;
 }
 
-@mixin grid {
+@mixin grid($columns) {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: $columns;
     place-items: center;
     width: 100%;
     height: 100%;
     gap: 20px;
-    padding: 2vh 5vh;
+    padding: 1.5rem 2rem;
     border-radius: 5px;
     overflow: hidden;
 }

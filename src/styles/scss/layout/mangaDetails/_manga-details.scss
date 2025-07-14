@@ -163,10 +163,6 @@
     @include wh_100;
 }
 
-.grid_characters {
-    @include grid;
-}
-
 .div-grid-characters {
     @include center;
     flex-direction: column;

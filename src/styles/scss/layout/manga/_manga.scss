@@ -4,10 +4,6 @@
     overflow: hidden;
 }
 
-.manga-div {
-    @include grid;
-}
-
 .manga-item {
     @include centerWithColumn;
     @include effect_hover_on_background_manga_images;

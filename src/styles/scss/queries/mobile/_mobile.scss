@@ -20,17 +20,10 @@
         display: none;
     }
 
-    .slider-container {
-        padding: 2vh;
-    }
-
     .slider-car {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+        @include center;
+        @include wh_100;
+        @include grid(repeat(2, 1fr))
     }
 
     .imgs-slider {
@@ -48,10 +41,6 @@
         padding: 0.3rem 0.7rem;
     }
 
-    .imgs-slider img {
-        padding: 1vh;
-    }
-
     .slider-car .imgs-slider {
         position: relative;
         width: calc(100%/5);
@@ -63,9 +52,7 @@
     }
 
     .grid-launcher {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 2vh;
-        gap: 5px;
+        @include grid(repeat(2, 1fr))
     }
 
     .grid.loadingGrid {
@@ -82,8 +69,7 @@
 
     // Search 
     .mangasSection {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        @include grid(repeat(2, 1fr))
     }
 
     .text-overlay {
@@ -98,8 +84,7 @@
 
     // Category 
     .gridCategory {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        @include grid(repeat(1, 1fr))
     }
 
     .category {
@@ -112,7 +97,7 @@
 
     .categoryMangasShow {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        @include grid(repeat(2, 1fr));
         flex-wrap: wrap;
         padding: 1vh;
         margin: 0;
@@ -133,13 +118,8 @@
 
     .article-mobile {
         display: flex;
-        width: 164px;
-        height: 100%;
+        @include wh_100;
         overflow: hidden;
-
-        h3 {
-            font-size: 0.7em;
-        }
     }
 
     // manga details
@@ -167,7 +147,6 @@
     }
 
     .grid_characters {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 1vh;
+        @include grid(repeat(2, 1fr));
     }
 }

@@ -40,7 +40,7 @@
 }
 
 .categoryMangasShow {
-    @include grid;
+    @include grid(repeat(6, 1fr));
     div {
         border-radius: 4px;
         background-color: var(--background-secondary);

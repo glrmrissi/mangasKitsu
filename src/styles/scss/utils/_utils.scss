@@ -43,6 +43,16 @@ body {
 body.loadingCursor {
     cursor: progress;
 }
+// GRID FOR PAGINATION 6X1
+
+.grid-launcher {
+   @include grid(repeat(6, 1fr))
+}
+
+.grid-launcher.skeleton-load {
+    height: 70vh;
+    background-color: var(--background-secondary);
+}
 
 .box {
     opacity: 0;
