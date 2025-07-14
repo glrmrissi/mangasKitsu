@@ -120,9 +120,9 @@
 
 .btns-pagination-details {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     background: var(--background-primary);
     gap: 3px;
     z-index: 10;
@@ -156,10 +156,7 @@
 }
 
 .characters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include centerWithColumn;
     @include wh_100;
 }
 

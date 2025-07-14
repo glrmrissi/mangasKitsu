@@ -125,12 +125,6 @@ body.loadingCursor {
   transform: translate(0, 0);
 }
 
-.d-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .iconsSize {
   width: 1.2em;
 }
@@ -1098,6 +1092,10 @@ footer {
      object-fit: cover;
 }
 
+.side-bar {
+  display: none;
+}
+
 .side-bar.resize_shrink_side_bar {
   position: fixed;
   left: 0vw;
@@ -1113,22 +1111,6 @@ footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   filter: blur(3px);
-}
-
-.side-bar {
-  position: fixed;
-  top: 0vh;
-  left: -16vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 10%;
-  height: 100dvh;
-  min-height: 100vh;
-  background-color: var(--background-main);
-  transition: all 0.3s;
-  z-index: 999;
 }
 
 .navigation {
@@ -1179,7 +1161,7 @@ footer {
   text-align: center;
   height: auto;
   padding: 0.3vw;
-  color: #fff;
+  color: var(--primary-font-color);
   cursor: pointer;
   border-radius: 0px;
   transition: all 0.3s;
@@ -1188,6 +1170,15 @@ footer {
 .hover_side_bar:hover {
   border-radius: 50%;
   background-color: var(--highlight-color);
+}
+
+.hover-effect-nav {
+  color: var(--primary-font-color);
+  text-decoration: none;
+  font-size: 1em;
+}
+.hover-effect-nav span {
+  padding: 0.2rem;
 }
 
 .nav-link {
@@ -1411,9 +1402,9 @@ footer {
 
 .btns-pagination-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
   background: var(--background-primary);
   gap: 3px;
   z-index: 10;
@@ -1448,9 +1439,9 @@ footer {
 
 .characters {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -1656,6 +1647,12 @@ footer {
   place-items: center;
   width: 100%;
   height: 100%;
+  gap: 20px;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
   padding: 5vh;
   gap: 20px;
   border-radius: 5px;
@@ -1700,10 +1697,9 @@ footer {
 .category {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  color: var(--primary-font-color);
   width: 100%;
   height: 100%;
+  color: var(--primary-font-color);
   gap: 6px;
   right: 0%;
   padding: 1dvh 0 1dvh 0;
@@ -1776,6 +1772,12 @@ footer {
   background-color: var(--highlight-color);
 }
 
+.h_about {
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+}
+
 .developers {
   display: flex;
   justify-content: center;
@@ -1793,7 +1795,6 @@ footer {
   overflow: hidden;
 }
 .developers div img {
-  border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1801,9 +1802,22 @@ footer {
   padding: 0 0 1dvh 0;
 }
 
-.gif-about {
-  width: 15dvw;
-  height: 15dvw;
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: left;
+  width: 100%;
+}
+.aboutme p {
+  width: 100%;
+  text-align: justify;
+  padding: 0.3rem;
+}
+.aboutme h3 {
+  padding: 0.2rem;
+  width: 100%;
 }
 
 .main-manga {
@@ -1902,8 +1916,19 @@ footer {
     overflow-x: hidden;
   }
   .side-bar {
-    left: -40vw;
+    position: fixed;
+    top: 0vh;
+    left: -75vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 40vw;
+    height: 100dvh;
+    min-height: 100vh;
+    background-color: var(--background-main);
+    transition: all 0.3s;
+    z-index: 999;
   }
   .shrink {
     display: flex;
@@ -2012,6 +2037,10 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     padding: 1vh;
   }
+  .h_about {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 0px) and (max-width: 576px) {
   .main-container {
@@ -2022,8 +2051,19 @@ footer {
     overflow-x: hidden;
   }
   .side-bar {
+    position: fixed;
+    top: 0vh;
     left: -75vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 40vw;
+    height: 100dvh;
+    min-height: 100vh;
+    background-color: var(--background-main);
+    transition: all 0.3s;
+    z-index: 999;
   }
   .shrink {
     display: flex;
@@ -2168,10 +2208,9 @@ footer {
   }
   .pagination-details {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .btns-pagination-details {
-    flex-direction: row;
     padding: 0;
   }
   .btn-details {
@@ -2187,6 +2226,11 @@ footer {
     padding: 1.5rem 2rem;
     border-radius: 5px;
     overflow: hidden;
+  }
+  .h_about {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
   }
 }
 @media (min-width: 820px) and (max-width: 1024px) {

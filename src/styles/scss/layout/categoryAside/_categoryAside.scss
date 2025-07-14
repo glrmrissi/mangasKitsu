@@ -5,11 +5,9 @@
 }
 
 .category {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: var(--primary-font-color);
+    @include d_r;
     @include wh_100;
+    color: var(--primary-font-color);
     gap: 6px;
     right: 0%;
     padding: 1dvh 0 1dvh 0;
@@ -21,9 +19,7 @@
     }
     
     a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         min-width: 100%;
         background-color: var(--btn-nav-link);
         font-size: 0.9em;

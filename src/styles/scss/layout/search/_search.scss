@@ -1,7 +1,5 @@
 .mangasSection {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    place-items: center;
+    @include grid(repeat(6, 1fr));
     @include wh_100;
     padding: 5vh;
     gap: 20px;

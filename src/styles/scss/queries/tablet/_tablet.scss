@@ -7,8 +7,19 @@
     }
 
     .side-bar {
-        left: -40vw;
+        position: fixed;
+        top: 0vh;
+        left: -75vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         width: 40vw;
+        height: 100dvh;
+        min-height: 100vh;
+        background-color: var(--background-main);
+        transition: all 0.3s;
+        z-index: 999;
     }
 
     .shrink {
@@ -142,5 +153,11 @@
     .grid_characters {
         grid-template-columns: repeat(4, 1fr);
         padding: 1vh;
+    }
+
+    // about
+
+    .h_about {
+        @include d_c;
     }
 }
