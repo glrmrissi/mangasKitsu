@@ -18,7 +18,7 @@ if (query.trim() !== '') {
 function loadMoremanga() {
   const loadMoreButton = document.getElementById("loadMoreButton");
   if (nextPageUrl) {
-    loadMoreButton.style.display = "flex"
+    loadMoreButton.style.display = "flex";
     fetchManga(query, true);
   }
 }

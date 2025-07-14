@@ -16,12 +16,9 @@ const fetchMangasSliders = async () => {
 
                 let date = startDate ? startDate.slice(0, 4) : "Date not found"
 
-                let contentNotFound = [
-                    "../../../src/imgs/cntf-1.jpg",
-                    "../../../src/imgs/cntf-2.jpg",
-                    "../../../src/imgs/cntf-3.jpg"
-                ];
-
+                const contentNotFound = "../../../src/imgs/cntf-1.png";
+                
+                
                 const mangaItem = document.createElement("div");
                 const divTooltip = document.createElement("div");
                 const spanTooltip = document.createElement("span");
@@ -34,7 +31,7 @@ const fetchMangasSliders = async () => {
                 const img = document.createElement("img");
                 const articleMobile = document.createElement("article");
                 const h3Mobile = document.createElement("h3");
-
+                
                 mangaItem.classList.add("card-front");
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
@@ -42,8 +39,8 @@ const fetchMangasSliders = async () => {
                 relevantInfos.classList.add("relevant-infos")
                 articleMobile.classList.add("article-mobile");
                 popularityRankP.classList.add("popularity-rank-p");
-
-                img.src = posterImage.large || contentNotFound[Math.floor(Math.random() * contentNotFound.length)];
+                
+                img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound;
                 img.alt = canonicalTitle;
                 img.tabIndex = 0;
                 h3.textContent = `${canonicalTitle} - ${date}`;
@@ -51,7 +48,7 @@ const fetchMangasSliders = async () => {
                 pTypeManga.textContent = `Type: ${mangaTypeUpperCase}`;
                 p.innerHTML = `&nbsp; ${synopsis}`;
                 h3Mobile.textContent = `${canonicalTitle} - ${date}`;
-
+                
                 categoriesDiv.appendChild(mangaItem);
                 mangaItem.appendChild(divTooltip);
                 divTooltip.appendChild(spanTooltip);
