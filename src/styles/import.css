@@ -105,6 +105,10 @@ body.loadingCursor {
   border-radius: 5px;
   overflow: hidden;
 }
+.grid-launcher img {
+  width: 16rem;
+  height: 22.625rem;
+}
 
 .grid-launcher.skeleton-load {
   height: 70vh;
@@ -321,8 +325,8 @@ body.loadingCursor {
 }
 
 .card-front.loadingGrid {
-  width: 256px;
-  height: 362px;
+  width: 16rem;
+  height: 22.625rem;
   animation: skeleton-loading 1s linear infinite alternate;
   border-radius: 4px;
 }
@@ -408,7 +412,8 @@ body.loadingCursor {
   cursor: pointer;
 }
 .card-front img {
-  width: 100%;
+  width: 16rem;
+  height: 22.625rem;
 }
 .card-front h4 {
   width: 250px;
@@ -793,13 +798,6 @@ body.loadingCursor {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-
-.grid img {
-  width: 100%;
-  border-radius: 4px;
-  height: auto;
-  image-rendering: auto;
 }
 
 .pagination {
@@ -1657,6 +1655,10 @@ footer {
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.mangasSection img {
+  width: 16rem;
+  height: 22.625rem;
+}
 
 .load-btn {
   display: flex;
@@ -1736,13 +1738,13 @@ footer {
   border-radius: 5px;
   overflow: hidden;
 }
+.categoryMangasShow img {
+  width: 16rem;
+  height: 22.625rem;
+}
 .categoryMangasShow div {
   border-radius: 4px;
   background-color: var(--background-secondary);
-}
-.categoryMangasShow img {
-  width: 100%;
-  cursor: pointer;
 }
 
 .highlight-title {
@@ -1974,10 +1976,6 @@ footer {
     padding: 4vh;
     gap: 5px;
   }
-  .grid.loadingGrid {
-    width: 150px;
-    height: 212px;
-  }
   .grid .overlay {
     padding: 3vh;
   }
@@ -2086,6 +2084,10 @@ footer {
     border-radius: 5px;
     overflow: hidden;
   }
+  .slider-car img {
+    width: 16rem;
+    height: 22.625rem;
+  }
   .imgs-slider {
     position: relative;
     display: flex;
@@ -2119,6 +2121,10 @@ footer {
     border-radius: 5px;
     overflow: hidden;
   }
+  .grid-launcher img {
+    width: 16rem;
+    height: 22.625rem;
+  }
   .grid.loadingGrid {
     width: 150px;
     height: 212px;
@@ -2139,6 +2145,10 @@ footer {
     padding: 1.5rem 2rem;
     border-radius: 5px;
     overflow: hidden;
+  }
+  .mangasSection img {
+    width: 16rem;
+    height: 22.625rem;
   }
   .text-overlay {
     -webkit-user-select: none;
@@ -2161,6 +2171,10 @@ footer {
     border-radius: 5px;
     overflow: hidden;
   }
+  .gridCategory img {
+    width: 16rem;
+    height: 22.625rem;
+  }
   .category {
     position: relative;
     display: flex;
@@ -2182,6 +2196,10 @@ footer {
     flex-wrap: wrap;
     padding: 1vh;
     margin: 0;
+  }
+  .categoryMangasShow img {
+    width: 16rem;
+    height: 22.625rem;
   }
   .tooltip {
     display: flex;
@@ -2207,7 +2225,7 @@ footer {
   }
   .pagination-details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .btns-pagination-details {
     width: 100%;
@@ -2227,6 +2245,10 @@ footer {
     padding: 1.5rem 2rem;
     border-radius: 5px;
     overflow: hidden;
+  }
+  .grid_characters img {
+    width: 16rem;
+    height: 22.625rem;
   }
   .h_about {
     display: flex;

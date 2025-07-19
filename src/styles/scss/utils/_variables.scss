@@ -47,6 +47,11 @@ $max-width-notebook: 1024px;
     padding: 1.5rem 2rem;
     border-radius: 5px;
     overflow: hidden;
+
+    img {
+        width: 16rem;
+        height: 22.625rem;
+    }
 }
 
 @mixin text_overlay {
