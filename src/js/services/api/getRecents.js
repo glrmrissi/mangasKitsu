@@ -6,22 +6,24 @@ export async function renderMangas(mangas) {
   mangaContainer.innerHTML = "";
 
   mangas.forEach((manga) => {
-    const { canonicalTitle, synopsis, posterImage, averageRating } =
+    const { canonicalTitle, synopsis, posterImage, averageRating, coverImage } =
       manga.attributes;
 
+    const contentNotFound = "../../../src/imgs/cntf-1.png";
+    const img = document.createElement("img");
     const mangaItem = document.createElement("div");
+
     mangaItem.classList.add("loadingGrid");
     mangaItem.classList.add("box");
     mangaItem.classList.add("grid");
     mangaItem.tabIndex = 0;
 
-    const img = document.createElement("img");
-    img.src = posterImage.small || posterImage.medium || posterImage.large;
     img.title = canonicalTitle;
     img.alt = canonicalTitle;
 
     const textOverlay = document.createElement("span");
 
+    img.src = posterImage?.large || posterImage?.medium || posterImage?.small || contentNotFound;
     textOverlay.classList.add("text-overlay");
     textOverlay.textContent = `${canonicalTitle}`;
 
@@ -39,7 +41,7 @@ export async function renderMangas(mangas) {
         });
       };
     });
-    
+
     hideLoading();
     getAnime(mangaItem, manga.id);
   });
