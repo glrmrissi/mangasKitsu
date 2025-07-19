@@ -2,6 +2,9 @@ let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            if (entry.target.classList.contains("show")) {
+                observer.unobserve(entry.target);
+            }
         }
     });
 }, { threshold: 0.01 });
@@ -12,7 +15,7 @@ function observerNewBoxes() {
 
 let mutationObserver = new MutationObserver(observerNewBoxes);
 
-let container = document.querySelector(".main-container"); 
+let container = document.querySelector(".main-container");
 mutationObserver.observe(container, { childList: true, subtree: true });
 
 observerNewBoxes();
