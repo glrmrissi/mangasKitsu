@@ -12,8 +12,6 @@ export default function loadSectionMangas(url) {
       const mangaDiv = document.createElement("section");
       const titleCategory = document.createElement("p");
 
-      const categoriesTitleUrl = data.data[0].relationships.categories.links.related;
-
       mainManga.appendChild(titleCategory);
 
       const upperCaseTitleCategory = urlObj.charAt().toUpperCase() + urlObj.slice(1);
@@ -34,7 +32,7 @@ export default function loadSectionMangas(url) {
 
         const contentNotFound = "../../../src/imgs/cntf-1.png";
         
-        img.src = posterImage.large || posterImage.medium || posterImage.small || contentNotFound;
+        img.src = posterImage?.large || posterImage?.medium || posterImage?.small || contentNotFound;
         img.title = canonicalTitle;
 
         mangaItem.appendChild(img);
