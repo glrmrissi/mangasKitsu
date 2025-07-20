@@ -45,7 +45,6 @@ async function loadCharacters() {
             if (ultimo === datas[datas.length - 1]) {
                 loadMore.textContent = "Load more characters";
                 divCharacters.appendChild(loadMore);
-                console.log("created")
             } else {
                 console.info("Last child not found");
             }
