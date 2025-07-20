@@ -49,8 +49,9 @@ $max-width-notebook: 1024px;
     overflow: hidden;
 
     img {
-        width: 16rem;
-        height: 22.625rem;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 22.625;
     }
 }
 
