@@ -5,6 +5,7 @@ let totalPages = 1;
 let currentPage = 1;
 let pageSize = 18;
 const paginationContainer = document.getElementById("pagination");
+
 export async function fetchMangas(page) {
     const offset = (page - 1) * pageSize;
     showLoading()
@@ -37,6 +38,21 @@ export async function renderPagination() {
     paginationContainer.innerHTML = "";
     const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
     const endPage = Math.min(totalPages, startPage + visiblePages);
+
+    function firstLastBtn(btn, currentButton) {
+        btn.addEventListener("click", () => {
+            currentPage = currentButton;
+            loadPage(currentPage);
+        });
+    }
+
+    const firstButton = document.createElement("button");
+    firstButton.textContent = "L"
+    paginationContainer.appendChild(firstButton)
+    firstLastBtn(firstButton, startPage)
+
+
+    // load btns between first and last btns.
     for (let i = startPage; i <= endPage; i++) {
         const button = document.createElement("button");
         button.innerText = i;
@@ -57,9 +73,13 @@ export async function renderPagination() {
             });
             button.classList.add("active");
         });
-
         paginationContainer.appendChild(button);
     }
+
+    const lastButton = document.createElement("button");
+    lastButton.textContent = "R"
+    paginationContainer.appendChild(lastButton);
+    firstLastBtn(lastButton, endPage);
 }
 
 loadPage(currentPage);
