@@ -90,10 +90,6 @@ body {
   flex-wrap: wrap;
 }
 
-body.loadingCursor {
-  cursor: progress;
-}
-
 .grid-launcher {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -106,19 +102,21 @@ body.loadingCursor {
   overflow: hidden;
 }
 .grid-launcher img {
-  width: 16rem;
-  height: 22.625rem;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/22.625;
 }
 
 .grid-launcher.skeleton-load {
-  height: 70vh;
+  height: 90vh;
   background-color: var(--background-secondary);
+  border-radius: 4px;
 }
 
 .box {
   opacity: 0;
   filter: blur(10px);
-  transform: translate(25px, 25px);
+  transform: translate(25px, 0px);
   transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out, filter 0.2s ease-in-out;
   overflow: hidden;
 }
@@ -410,10 +408,6 @@ body.loadingCursor {
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer;
-}
-.card-front img {
-  width: 16rem;
-  height: 22.625rem;
 }
 .card-front h4 {
   width: 250px;
@@ -805,8 +799,8 @@ body.loadingCursor {
   justify-content: center;
   gap: 5px;
 }
-
 .pagination button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -820,11 +814,11 @@ body.loadingCursor {
   border-radius: 50%;
   background-color: var(--background-secondary);
   color: var(--primary-font-color);
-  font-weight: 400;
   transition: all 0.4s;
+  z-index: 1;
 }
 .pagination button:hover {
-  box-shadow: inset 0 0 0 1em var(--secondary-font-color);
+  box-shadow: 0 0 0.2em 0.2em var(--secondary-font-color);
 }
 
 .pagination button.active {
@@ -1656,8 +1650,9 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .mangasSection img {
-  width: 16rem;
-  height: 22.625rem;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/22.625;
 }
 
 .load-btn {
@@ -1739,8 +1734,9 @@ footer {
   overflow: hidden;
 }
 .categoryMangasShow img {
-  width: 16rem;
-  height: 22.625rem;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/22.625;
 }
 .categoryMangasShow div {
   border-radius: 4px;
@@ -2085,8 +2081,9 @@ footer {
     overflow: hidden;
   }
   .slider-car img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .imgs-slider {
     position: relative;
@@ -2122,8 +2119,9 @@ footer {
     overflow: hidden;
   }
   .grid-launcher img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .grid.loadingGrid {
     width: 150px;
@@ -2147,8 +2145,9 @@ footer {
     overflow: hidden;
   }
   .mangasSection img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .text-overlay {
     -webkit-user-select: none;
@@ -2172,8 +2171,9 @@ footer {
     overflow: hidden;
   }
   .gridCategory img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .category {
     position: relative;
@@ -2198,8 +2198,9 @@ footer {
     margin: 0;
   }
   .categoryMangasShow img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .tooltip {
     display: flex;
@@ -2247,8 +2248,9 @@ footer {
     overflow: hidden;
   }
   .grid_characters img {
-    width: 16rem;
-    height: 22.625rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/22.625;
   }
   .h_about {
     display: flex;

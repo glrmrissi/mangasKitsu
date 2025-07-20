@@ -1,5 +1,5 @@
 function loadScripts(scripts, callback) {
-    let index = 0;
+    let index = 1;
 
     function loadNextScripts() {
         if (index < scripts.length) {
