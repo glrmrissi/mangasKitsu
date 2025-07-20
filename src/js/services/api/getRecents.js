@@ -1,6 +1,14 @@
 import { getAnime } from "./getAnimeId.js";
 
 const mangaContainer = document.getElementById("manga-container");
+
+const pathParts = location.pathname.split("/").filter(Boolean);
+const firstFolder = pathParts.length > 0 ? pathParts : "";
+
+const baseURL = firstFolder[0] === "src" || firstFolder[1] === "src"
+  ? `../../../`
+  : "";
+  
 export async function renderMangas(mangas) {
   // o parametro mangas esta sendo carregado juntamente com o pagination.js em loadPage, tem uma const com await lá...
   mangaContainer.innerHTML = "";
@@ -9,7 +17,7 @@ export async function renderMangas(mangas) {
     const { canonicalTitle, synopsis, posterImage, averageRating, coverImage } =
       manga.attributes;
 
-    const contentNotFound = "../../../src/imgs/cntf-1.png";
+    const contentNotFound = `${baseURL}src/imgs/cntf-1.png`;
     const img = document.createElement("img");
     const mangaItem = document.createElement("div");
 
