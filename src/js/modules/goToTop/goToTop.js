@@ -14,4 +14,6 @@ function ocultar() {
     }
 }
 
-window.addEventListener("scroll", ocultar)
+setTimeout(() => {
+  window.addEventListener("scroll", ocultar)
+}, "500");
