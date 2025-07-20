@@ -18,10 +18,11 @@ async function displayMangaDetails() {
   const { coverImage, posterImage, titles, canonicalTitle, status, averageRating, volumeCount, synopsis, userCount, mangaCharacters, ageRating, chapterCount, mangaType } = manga.attributes
   const statusUpperCase = status.charAt(0).toUpperCase() + status.slice(1);
   const mangaTypeUpperCase = mangaType.charAt(0).toUpperCase() + mangaType.slice(1);
+  const contentNotFound = `../../../src/imgs/cntf-1.png`;
   document.title = `Details ${titles.en || titles.jp || canonicalTitle || titles.en_jp || "Don't have a title"} - Rissi`;
   mangaDetails.innerHTML = `
     <div class="banner_manga">
-      <img src="${coverImage?.original || posterImage?.original || posterImage?.large || posterImage?.small}" />
+      <img src="${coverImage?.original || posterImage?.original || posterImage?.large || posterImage?.small || contentNotFound}" />
       </div>
       <section class="grid-manga-details">
         <aside class="left-side">
