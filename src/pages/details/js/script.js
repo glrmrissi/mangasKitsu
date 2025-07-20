@@ -28,7 +28,7 @@ async function displayMangaDetails() {
         <aside class="left-side">
           <div>
             <h3>${titles.en || titles.en_jp || canonicalTitle || titles.ja_jp || "Title not found"}</h3>
-            <img class="img-details" src="${posterImage.large}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
+            <img class="img-details" src="${coverImage?.original || posterImage?.original || posterImage?.large || posterImage?.small || contentNotFound}" alt="${titles.en || titles.en_jp || titles.ja_jp}" />
             <div class="infos-details">
               <p><strong>📂 Type:</strong>&nbsp; ${mangaTypeUpperCase || "Type not found"}</p>
               <p><strong>🔞 Age:</strong>&nbsp; ${ageRating || "Age Rating not found"}</p>
