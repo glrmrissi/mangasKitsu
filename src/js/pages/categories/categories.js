@@ -7,14 +7,14 @@ const defaultTypes = categoryTypes.options[categoryTypes.selectedIndex];
 
 const categoriesDiv = document.getElementById("categoriesMain");
 const target = document.querySelector("#listItem");
-const categorySelected = document.querySelectorAll(".grid-launcher");
+const categorySelected = document.querySelectorAll(".categoriesSelect");
 const categoryType = document.querySelectorAll(".categoriesType");
 const titleCategory = document.getElementById("titleCategory");
 const submitFilter = document.querySelector("#submitFilter");
 
-let url = defaultCategory.value;
 let offset = 18;
 let limit = 18;
+let url = defaultCategory.value;
 let subTypeUrl = defaultTypes.value;
 titleCategory.innerHTML = `${url}`;
 
@@ -38,6 +38,7 @@ showLoading();
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&filter[subtype]=${encodeURIComponent(subTypeUrl)}&page[limit]=${limit}&page[offset]=${offset}`
     console.log(KitsuUrl)
+    console.log(url)
     fetch(KitsuUrl)
         .then(response => response.json())
         .then(data => {
@@ -110,6 +111,8 @@ const categories = async () => {
             console.log(error.message, "Erro em categories");
         });
 }
+
+submitFilter.addEventListener("click", filterCategory);
 function filterCategory() {
     titleCategory.innerHTML = `${url}`;
     categoriesDiv.innerHTML = "";
@@ -118,7 +121,6 @@ function filterCategory() {
     categories();
 }
 
-submitFilter.addEventListener("click", filterCategory);
 window.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         filterCategory();
