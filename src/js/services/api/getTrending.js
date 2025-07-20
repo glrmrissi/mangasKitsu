@@ -1,6 +1,13 @@
 import { fetchApi } from "./fetchApi.js";
 import { getAnime } from "./getAnimeId.js";
 
+const pathParts = location.pathname.split("/").filter(Boolean);
+const firstFolder = pathParts.length > 0 ? pathParts : "";
+
+const baseURL = firstFolder[0] === "src" || firstFolder[1] === "src"
+  ? `../../../`
+  : "";
+
 export const fetchMangasSliders = async () => {
   const url = "https://kitsu.io/api/edge/trending/manga";
   showLoading();
@@ -51,15 +58,17 @@ export const fetchMangasSliders = async () => {
         for (var i = 0; i < sliderItems.length; i++) {
           countOverlay++;
         }
+
+        const contentNotFound = `${baseURL}src/imgs/cntf-1.png`;
         overlayImg.textContent = countOverlay;
-        imgElementSlider.src = posterImage.large;
+        imgElementSlider.src = posterImage?.large || posterImage?.medium || posterImage?.small || contentNotFound;
         imgElementSlider.title = canonicalTitle;
         imgElementSlider.alt = canonicalTitle;
         imgElementSlider.tabIndex = 0;
         imgElementSlider.classList.add("box");
         mangaItem.appendChild(overlayImg);
         mangaItem.appendChild(imgElementSlider);
-        
+
         getAnime(mangaItem, manga.id)
         const cardImgs = document.querySelectorAll(".imgs-slider img");
         cardImgs.forEach((cardImg) => {
