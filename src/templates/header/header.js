@@ -95,17 +95,13 @@ class Header extends HTMLElement {
 
 
         if (savedImg) {
-            if (!imgUser) {
-                console.log("img user is only on profile.html")
-            } else {
+            if (imgUser != null) {
                 imgUser.setAttribute("src", savedImg);
             }
             profilePhotoGlobal.setAttribute("src", savedImg);
         }
 
-        if (!file) {
-            console.log("file is actually null");
-        } else {
+        if (file != null) {
             file.addEventListener("change", async function () {
                 const chosedFile = this.files[0];
                 if (chosedFile) {
