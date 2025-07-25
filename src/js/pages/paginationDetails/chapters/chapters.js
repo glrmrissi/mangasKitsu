@@ -31,9 +31,6 @@ function load() {
                 titlespan.textContent = title;
                 img.src = thumbnail || contentNotFound;
 
-                console.log(title)
-                console.log(thumbnail)
-
                 if (title != null) {
                     containerImgTitle.appendChild(titlespan)
                     containerImgTitle.appendChild(img)

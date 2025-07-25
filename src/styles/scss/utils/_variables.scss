@@ -183,6 +183,8 @@ $max-width-notebook: 1024px;
     }
 }
 
+$assetsURL : "/src/icon/";
+
 $themes : (dark: (background-main: #24262e,
         background-secondary: #1e1f27,
         background-header: #1e1f2754,
@@ -200,7 +202,7 @@ $themes : (dark: (background-main: #24262e,
         loading-color-secondary: #f0f3f5,
         action-color: #020202,
         input-search-color: #dbdbdb,
-        background-search-img: transparent url('../../../src/icon/search.svg') no-repeat center right,
+        background-search-img: transparent url('#{$assetsURL}/search.svg') no-repeat center right,
         shadow-overlay: #000000cc,
         background-details: #00000085,
         box-shadow-banner-details: #0000008f,
@@ -223,7 +225,7 @@ $themes : (dark: (background-main: #24262e,
         loading-color-secondary: #f0f3f5,
         action-color: #020202,
         input-search-color: #dbdbdb,
-        background-search-img: transparent url('../../../src/icon/searchBlack.svg') no-repeat center right,
+        background-search-img: transparent url('#{$assetsURL}/searchBlack.svg') no-repeat center right,
         shadow-overlay: #ebebebcc,
         background-details: #ffffffcc,
         box-shadow-banner-details: #ffffff8f,
