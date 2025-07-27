@@ -40,12 +40,11 @@ export async function renderMangas(mangas) {
 
     mangaContainer.appendChild(mangaItem);
 
-    const cardImgs = document.querySelectorAll(".grid img");
+    const cardImgs = document.querySelectorAll(".grid");
     cardImgs.forEach((cardImg) => {
       cardImg.onload = () => {
         document.querySelectorAll(".grid").forEach((grid) => {
           grid.classList.remove("loadingGrid");
-          mangaContainer.classList.remove("skeleton-load");
         });
       };
     });

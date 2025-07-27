@@ -8,6 +8,8 @@ const baseURL = firstFolder[0] === "src" || firstFolder[1] === "src"
   ? `../../../`
   : "";
 
+
+
 export const fetchMangasSliders = async () => {
   const url = "https://kitsu.io/api/edge/trending/manga";
   showLoading();
@@ -23,12 +25,12 @@ export const fetchMangasSliders = async () => {
 
       aside.classList.add("limited-overflow");
       divTitle.classList.add("title");
-      divTitle.classList.add("skeleton-load");
       title.classList.add("hover-effect");
       title.textContent = "Most read:"
       section.classList.add("slider");
       section.id = "my";
       article.classList.add("slider-car");
+
 
       divTitle.appendChild(title);
       section.appendChild(article);
@@ -45,6 +47,8 @@ export const fetchMangasSliders = async () => {
         const mangaItem = document.createElement("div");
 
         mangaItem.className = "imgs-slider";
+        mangaItem.classList.add("loadingGrid");
+
         sliderCard.appendChild(mangaItem);
 
         const sliderItems = Array.from(sliderCard.children);
@@ -70,19 +74,16 @@ export const fetchMangasSliders = async () => {
         mangaItem.appendChild(imgElementSlider);
 
         getAnime(mangaItem, manga.id)
-        const cardImgs = document.querySelectorAll(".imgs-slider img");
+
+        const cardImgs = document.querySelectorAll('.imgs-slider')
         cardImgs.forEach((cardImg) => {
-          cardImg.onload = () => {
-            document.querySelectorAll(".imgs-slider").forEach((imgsSlider) => {
-              imgsSlider.classList.remove("loadingGrid");
-              sliderContainer.classList.remove("skeleton-load");
-            });
-          };
+              cardImg.classList.remove('loadingGrid');
         });
+
       });
       hideLoading();
     })
     .catch((error) => {
       console.error(error);
     });
-};
+}

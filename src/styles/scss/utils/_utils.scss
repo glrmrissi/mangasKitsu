@@ -259,7 +259,7 @@ body {
     transform: rotate(-135deg);
 }
 
-.card-front.loadingGrid {
+.loadingGrid {
     width: 16rem;
     height: 22.625rem;
     animation: skeleton-loading 1s linear infinite alternate;
