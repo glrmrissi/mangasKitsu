@@ -31,10 +31,11 @@ categorySelected.forEach(btns => {
 categoryType.forEach(btns => {
     btns.addEventListener("click", () => {
         subTypeUrl = btns.value;
-    })
-})
+    });
+});
 
 showLoading();
+
 const categories = async () => {
     let KitsuUrl = `https://kitsu.io/api/edge/manga?filter[categories]=${encodeURIComponent(url)}&filter[subtype]=${encodeURIComponent(subTypeUrl)}&page[limit]=${limit}&page[offset]=${offset}`
     console.log(KitsuUrl)
@@ -65,6 +66,7 @@ const categories = async () => {
                 const h3Mobile = document.createElement("span");
 
                 mangaItem.classList.add("card-front");
+                mangaItem.classList.add("loadingGrid");
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
@@ -94,15 +96,6 @@ const categories = async () => {
                 relevantInfos.appendChild(pTypeManga);
                 asideDetails.appendChild(p);
 
-                const cardImgs = document.querySelectorAll('.card-front img')
-                cardImgs.forEach((cardImg) => {
-                    cardImg.onload = () => {
-                        document.querySelectorAll('.card-front').forEach((card_front) => {
-                            card_front.classList.remove('loadingGrid');
-                        });
-                    };
-                });
-
                 getAnime(mangaItem, manga.id);
             });
             hideLoading();
@@ -129,13 +122,12 @@ window.addEventListener("keydown", (event) => {
 hideLoading();
 filterCategory();
 
-if(!target) {
+if (!target) {
     const divListItem = document.createElement("div");
     divListItem.setAttribute("id", "listItem");
     body.appendChild(divListItem);
-} 
+}
 
-// Ativado quando passar o carai do 1 segundo e aumenta lá na URL
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {

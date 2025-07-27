@@ -25,7 +25,7 @@ export async function fetchMangas(page) {
         hideLoading();
         const safeMangas = data.data.filter((manga) => manga.attributes.ageRating !== 'R18');
 
-        return safeMangas
+        return safeMangas;
     } catch (error) {
         console.error("Erro ao carregar mangás:", error);
         return [];
@@ -47,9 +47,9 @@ export async function renderPagination() {
     }
 
     const firstButton = document.createElement("button");
-    firstButton.textContent = "L"
-    paginationContainer.appendChild(firstButton)
-    firstLastBtn(firstButton, startPage)
+    firstButton.textContent = "L";
+    paginationContainer.appendChild(firstButton);
+    firstLastBtn(firstButton, startPage);
 
 
     // load btns between first and last btns.
@@ -77,7 +77,7 @@ export async function renderPagination() {
     }
 
     const lastButton = document.createElement("button");
-    lastButton.textContent = "R"
+    lastButton.textContent = "R";
     paginationContainer.appendChild(lastButton);
     firstLastBtn(lastButton, endPage);
 }

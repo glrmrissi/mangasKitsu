@@ -13,8 +13,8 @@
   --tertiary-font-color: #7b6091;
   --button-pagination-color: #00bcd4;
   --border-shadow-color: #726f9b;
-  --loading-color-main: #b1bac0;
-  --loading-color-secondary: #f0f3f5;
+  --loading-color-main: #6e7477;
+  --loading-color-secondary: #545758;
   --action-color: #020202;
   --input-search-color: #dbdbdb;
   --background-search-img: transparent url("/src/icon//searchBlack.svg") no-repeat center right;
@@ -322,7 +322,7 @@ body {
   transform: rotate(-135deg);
 }
 
-.card-front.loadingGrid {
+.loadingGrid {
   width: 16rem;
   height: 22.625rem;
   animation: skeleton-loading 1s linear infinite alternate;
