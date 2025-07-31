@@ -66,7 +66,6 @@ const categories = async () => {
                 const h3Mobile = document.createElement("span");
 
                 mangaItem.classList.add("card-front");
-                mangaItem.classList.add("loadingGrid");
                 divTooltip.classList.add("tooltip");
                 spanTooltip.classList.add("tooltiptext");
                 asideDetails.classList.add("details-tooltip");
