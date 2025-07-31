@@ -47,7 +47,6 @@ export const fetchMangasSliders = async () => {
         const mangaItem = document.createElement("div");
 
         mangaItem.className = "imgs-slider";
-        mangaItem.classList.add("loadingGrid");
 
         sliderCard.appendChild(mangaItem);
 
@@ -74,11 +73,6 @@ export const fetchMangasSliders = async () => {
         mangaItem.appendChild(imgElementSlider);
 
         getAnime(mangaItem, manga.id)
-
-        const cardImgs = document.querySelectorAll('.imgs-slider')
-        cardImgs.forEach((cardImg) => {
-              cardImg.classList.remove('loadingGrid');
-        });
 
       });
       hideLoading();

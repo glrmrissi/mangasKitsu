@@ -21,7 +21,6 @@ export async function renderMangas(mangas) {
     const img = document.createElement("img");
     const mangaItem = document.createElement("div");
 
-    mangaItem.classList.add("loadingGrid");
     mangaItem.classList.add("box");
     mangaItem.classList.add("grid");
     mangaItem.tabIndex = 0;
@@ -39,16 +38,7 @@ export async function renderMangas(mangas) {
     mangaItem.appendChild(textOverlay);
 
     mangaContainer.appendChild(mangaItem);
-
-    const cardImgs = document.querySelectorAll(".grid");
-    cardImgs.forEach((cardImg) => {
-      cardImg.onload = () => {
-        document.querySelectorAll(".grid").forEach((grid) => {
-          grid.classList.remove("loadingGrid");
-        });
-      };
-    });
-
+   
     hideLoading();
     getAnime(mangaItem, manga.id);
   });
