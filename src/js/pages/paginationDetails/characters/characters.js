@@ -1,6 +1,7 @@
 const divCharacters = document.getElementById("characters");
 const charactersGrid = document.createElement("div");
 const loadMore = document.createElement("button");
+loadMore.classList.add("load-btn")
 
 charactersGrid.classList.add("grid-launcher");
 
