@@ -30,6 +30,7 @@
     @include center;
     @include effect_camera;
     width: 4dvh;
+    padding: 0.4dvh;
 
     img {
         width: 3.7dvh;
@@ -41,6 +42,7 @@
     @include center;
     @include effect_camera;
     height: 100%;
+    padding: 0.3dvh;
 }
 
 .profile-icon img {
