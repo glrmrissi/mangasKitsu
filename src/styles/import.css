@@ -504,6 +504,7 @@ body {
   position: relative;
   overflow: hidden;
   width: 4dvh;
+  padding: 0.4dvh;
 }
 .theme-icon::before, .theme-icon::after {
   content: "";
@@ -549,6 +550,7 @@ body {
   position: relative;
   overflow: hidden;
   height: 100%;
+  padding: 0.3dvh;
 }
 .profile-icon::before, .profile-icon::after {
   content: "";
@@ -1608,8 +1610,6 @@ footer {
 .div-input-search-main input:valid ~ label {
   color: var(--secondary-font-color);
   background-color: transparent;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   border-radius: 8px;
   top: 0%;
   font-size: 0.5em;
